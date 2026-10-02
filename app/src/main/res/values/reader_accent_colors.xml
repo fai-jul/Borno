@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alternate-syllable colour: deep blue on light themes, warm amber on Night -->
+    <color name="reader_accent_light">#2457C5</color>
+    <color name="reader_accent_night">#FFC857</color>
+</resources>

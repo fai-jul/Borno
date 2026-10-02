@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reader_tap_hint">যেকোনো শব্দে ট্যাপ করো, শুনবে আর অংশগুলো দেখবে</string>
+    <string name="setting_syllables">অক্ষরের অংশে রং দাও</string>
+    <string name="setting_syllables_hint">শুধু বাংলা শব্দের জন্য</string>
+    <string name="word_listen">🔊  শোনো</string>
+    <string name="word_parts">ভেঙে দেখো</string>
+    <string name="word_joined">যুক্তাক্ষর</string>
+    <string name="word_no_bangla_voice">এই ফোনে এখনো বাংলা ভয়েস নেই। বাংলা শব্দ শুনতে একটি ভয়েস নামিয়ে নাও।</string>
+    <string name="word_get_voice">বাংলা ভয়েস নামাও</string>
+    <string name="word_tts_unavailable">এই মুহূর্তে এই ফোনে শোনানোর সুবিধা পাওয়া যাচ্ছে না।</string>
+</resources>

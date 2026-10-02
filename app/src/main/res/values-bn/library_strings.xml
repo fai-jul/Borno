@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="library_subtitle">কী পড়বে, বেছে নাও</string>
+    <string name="library_swipe_hint">ডানে টানলে সংরক্ষণ, বাঁয়ে টানলে পড়া হয়েছে</string>
+    <string name="chip_all">সব</string>
+    <string name="chip_saved">⭐ সংরক্ষিত</string>
+    <string name="chip_levels_all">সব স্তর</string>
+    <string name="library_minutes">%1$d মিনিট</string>
+    <string name="library_empty">এই ফিল্টারে কোনো লেখা নেই</string>
+    <string name="library_empty_saved">এখনো কিছু সংরক্ষণ করোনি। কোনো লেখা ডানে টেনে সংরক্ষণ করো।</string>
+    <string name="swipe_save">⭐  সংরক্ষণ</string>
+    <string name="swipe_unsave">সংরক্ষণ সরাও</string>
+    <string name="swipe_read">✓  পড়া হয়েছে</string>
+    <string name="swipe_unread">না-পড়া করো</string>
+    <string name="msg_saved">সংরক্ষিত হয়েছে</string>
+    <string name="msg_unsaved">সংরক্ষণ থেকে সরানো হয়েছে</string>
+    <string name="msg_read">পড়া হয়েছে হিসেবে চিহ্নিত</string>
+    <string name="msg_unread">না-পড়া হিসেবে চিহ্নিত</string>
+    <string name="action_undo">ফিরিয়ে নাও</string>
+</resources>

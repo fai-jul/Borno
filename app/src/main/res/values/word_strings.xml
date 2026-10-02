@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reader_tap_hint">Tap any word to hear it and see its parts</string>
+    <string name="setting_syllables">Colour the syllables</string>
+    <string name="setting_syllables_hint">Bangla words only</string>
+    <string name="word_listen">🔊  Listen</string>
+    <string name="word_parts">Break it into parts</string>
+    <string name="word_joined">Joined letters</string>
+    <string name="word_no_bangla_voice">This phone has no Bangla voice yet. Install one to hear Bangla words.</string>
+    <string name="word_get_voice">Get Bangla voice</string>
+    <string name="word_tts_unavailable">Speech is not available on this phone right now.</string>
+</resources>

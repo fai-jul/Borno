@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="288dp"
+    android:height="288dp"
+    android:viewportWidth="288"
+    android:viewportHeight="288">
+    <!-- teal disc -->
+    <path
+        android:fillColor="#187B7B"
+        android:pathData="M144,144m-72,0a72,72 0,1 1,144 0a72,72 0,1 1,-144 0" />
+    <!-- open book: left page -->
+    <path
+        android:fillColor="#FFFDF8"
+        android:pathData="M140,112 L140,186 Q112,174 88,180 L88,106 Q112,100 140,112 Z" />
+    <!-- open book: right page -->
+    <path
+        android:fillColor="#FFFDF8"
+        android:pathData="M148,112 L148,186 Q176,174 200,180 L200,106 Q176,100 148,112 Z" />
+    <!-- mango spark -->
+    <path
+        android:fillColor="#F4A62A"
+        android:pathData="M144,84m-9,0a9,9 0,1 1,18 0a9,9 0,1 1,-18 0" />
+</vector>

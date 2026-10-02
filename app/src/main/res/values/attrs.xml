@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FeatureCardView">
+        <attr name="featureTitle" format="string" />
+        <attr name="featureSubtitle" format="string" />
+        <attr name="featureEmoji" format="string" />
+        <attr name="featureAccent" format="color" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+        <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+        <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+        <uses-permission android:name="android.permission.CAMERA" />
+        <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+        <!-- Lets the app see installed text-to-speech engines (needed on Android 11+) -->
+        <queries>
+            <intent>
+                <action android:name="android.intent.action.TTS_SERVICE" />
+            </intent>
+        </queries>
+
+        <uses-permission android:name="android.permission.CAMERA" />
+        <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+
+        <application
+            android:name=".DyslexiaApp"
+            android:allowBackup="false"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@drawable/ic_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/ic_logo"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.DyslexiaSupport"
+            tools:targetApi="34">
+
+            <!-- The only entry point. Splash theme; postSplashScreenTheme switches to the app theme. -->
+            <activity
+                android:name=".ui.splash.LauncherActivity"
+                android:exported="true"
+                android:theme="@style/Theme.DyslexiaSupport.Splash">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+
+            <activity
+                android:name=".ui.auth.LoginActivity"
+                android:exported="false"
+                android:windowSoftInputMode="adjustResize" />
+
+            <activity
+                android:name=".ui.auth.RegisterActivity"
+                android:exported="false"
+                android:windowSoftInputMode="adjustResize" />
+
+            <activity
+                android:name=".ui.home.MainActivity"
+                android:exported="false" />
+
+            <activity
+                android:name=".ui.common.PlaceholderActivity"
+                android:exported="false" />
+
+            <activity
+                android:name=".ui.vocabulary.VocabularyActivity"
+                android:exported="false"
+                android:windowSoftInputMode="adjustResize" />
+
+            <activity
+                android:name=".ui.scan.ScanActivity" android:exported="false" />
+
+            <service
+                android:name=".ui.reader.ReaderForegroundService"
+                android:exported="false"
+                android:foregroundServiceType="mediaPlayback" />
+
+
+            <!-- Lets the in-app language choice persist on Android 12 and below -->
+            <service
+                android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+                android:enabled="false"
+                android:exported="false">
+                <meta-data
+                    android:name="autoStoreLocales"
+                    android:value="true" />
+            </service>
+        </application>
+</manifest>

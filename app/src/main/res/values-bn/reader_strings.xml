@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reader_settings_title">পড়ার সেটিং</string>
+    <string name="setting_text_size">লেখার আকার</string>
+    <string name="setting_line_spacing">লাইনের ফাঁক</string>
+    <string name="setting_word_spacing">শব্দের ফাঁক</string>
+    <string name="setting_letter_spacing">অক্ষরের ফাঁক</string>
+    <string name="setting_letter_hint">বাংলার জন্য কম রাখাই ভালো</string>
+    <string name="setting_background">পটভূমি</string>
+    <string name="action_reset">রিসেট করো</string>
+    <string name="theme_cream">ক্রিম</string>
+    <string name="theme_yellow">হলুদ</string>
+    <string name="theme_mint">পুদিনা</string>
+    <string name="theme_sky">আকাশি</string>
+    <string name="theme_peach">পিচ</string>
+    <string name="theme_night">রাত</string>
+</resources>

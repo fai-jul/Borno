@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Neutrals: warm, never pure white/black (calmer for dyslexic readers) -->
+    <color name="ds_cream">#FBF6EC</color>
+    <color name="ds_surface">#FFFDF8</color>
+    <color name="ds_sand">#F1E8D6</color>
+    <color name="ds_ink">#2B2A33</color>
+    <color name="ds_ink_soft">#66636F</color>
+
+    <!-- Brand -->
+    <color name="ds_primary">#187B7B</color>
+    <color name="ds_primary_container">#CFEDEA</color>
+    <color name="ds_on_primary_container">#0B3B3B</color>
+
+    <!-- Section accents (cards, charts, exercises) -->
+    <color name="ds_mango">#F4A62A</color>
+    <color name="ds_coral">#EF6F5E</color>
+    <color name="ds_leaf">#4FAE5C</color>
+    <color name="ds_sky">#4DB3E6</color>
+    <color name="ds_plum">#7A5BC7</color>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="library_subtitle">Choose something to read</string>
+    <string name="library_swipe_hint">Swipe right to save, left to mark as read</string>
+    <string name="chip_all">All</string>
+    <string name="chip_saved">⭐ Saved</string>
+    <string name="chip_levels_all">All levels</string>
+    <string name="chip_level_1" translatable="false">★</string>
+    <string name="chip_level_2" translatable="false">★★</string>
+    <string name="chip_level_3" translatable="false">★★★</string>
+    <string name="lang_bn_label" translatable="false">বাংলা</string>
+    <string name="lang_en_label" translatable="false">English</string>
+    <string name="library_meta" translatable="false">%1$s · %2$s · %3$s</string>
+    <string name="library_minutes">%1$d min</string>
+    <string name="library_empty">No texts match these filters</string>
+    <string name="library_empty_saved">Nothing saved yet. Swipe a text to the right to save it.</string>
+    <string name="swipe_save">⭐  Save</string>
+    <string name="swipe_unsave">Unsave</string>
+    <string name="swipe_read">✓  Mark read</string>
+    <string name="swipe_unread">Mark unread</string>
+    <string name="msg_saved">Saved</string>
+    <string name="msg_unsaved">Removed from saved</string>
+    <string name="msg_read">Marked as read</string>
+    <string name="msg_unread">Marked as unread</string>
+    <string name="action_undo">Undo</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guide_title">Reading guide</string>
+    <string name="guide_off">Off</string>
+    <string name="guide_ruler">Ruler</string>
+    <string name="guide_focus">Focus</string>
+    <string name="guide_lines">Lines in view</string>
+    <string name="guide_hint">Drag the band up or down over the text</string>
+    <string name="guide_cd">Reading guide. Drag to move.</string>
+</resources>

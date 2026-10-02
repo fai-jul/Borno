@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/ds_space_xl"
+        android:paddingTop="@dimen/ds_space_sm"
+        android:paddingEnd="@dimen/ds_space_xl"
+        android:paddingBottom="@dimen/ds_space_xxl">
+
+        <TextView
+            style="@style/Ds.Text.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reader_settings_title" />
+
+        <!-- Text size -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_xl"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Ds.Text.Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/setting_text_size" />
+
+            <TextView
+                android:id="@+id/valueSize"
+                style="@style/Ds.Text.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/setting_text_size"
+            android:stepSize="1"
+            android:value="22"
+            android:valueFrom="16"
+            android:valueTo="40"
+            app:labelBehavior="gone" />
+
+        <!-- Line spacing (value/10) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Ds.Text.Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/setting_line_spacing" />
+
+            <TextView
+                android:id="@+id/valueLine"
+                style="@style/Ds.Text.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/setting_line_spacing"
+            android:stepSize="1"
+            android:value="16"
+            android:valueFrom="10"
+            android:valueTo="24"
+            app:labelBehavior="gone" />
+
+        <!-- Word spacing (dp) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Ds.Text.Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/setting_word_spacing" />
+
+            <TextView
+                android:id="@+id/valueWord"
+                style="@style/Ds.Text.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderWord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/setting_word_spacing"
+            android:stepSize="2"
+            android:value="4"
+            android:valueFrom="0"
+            android:valueTo="24"
+            app:labelBehavior="gone" />
+
+        <!-- Letter spacing (value/100 em) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Ds.Text.Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/setting_letter_spacing" />
+
+            <TextView
+                android:id="@+id/valueLetter"
+                style="@style/Ds.Text.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderLetter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/setting_letter_spacing"
+            android:stepSize="1"
+            android:value="0"
+            android:valueFrom="0"
+            android:valueTo="6"
+            app:labelBehavior="gone" />
+
+        <TextView
+            style="@style/Ds.Text.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_letter_hint" />
+
+        <!-- Syllable colours -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_xl"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Ds.Text.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setting_syllables" />
+
+                <TextView
+                    style="@style/Ds.Text.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setting_syllables_hint" />
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchSyllables"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/setting_syllables" />
+        </LinearLayout>
+
+        <!-- Themes -->
+        <TextView
+            style="@style/Ds.Text.Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_xl"
+            android:text="@string/setting_background" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/themeRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_md"
+            app:chipSpacingHorizontal="12dp"
+            app:chipSpacingVertical="12dp" />
+
+        <!-- Reading guide -->
+        <TextView
+            style="@style/Ds.Text.Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_xl"
+            android:text="@string/guide_title" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/guideGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_sm"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipGuideOff"
+                style="@style/Ds.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/guide_off" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipGuideRuler"
+                style="@style/Ds.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/guide_ruler" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipGuideFocus"
+                style="@style/Ds.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/guide_focus" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_md"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Ds.Text.Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/guide_lines" />
+
+            <TextView
+                android:id="@+id/valueGuide"
+                style="@style/Ds.Text.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderGuide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/guide_lines"
+            android:stepSize="1"
+            android:value="2"
+            android:valueFrom="1"
+            android:valueTo="3"
+            app:labelBehavior="gone" />
+
+        <TextView
+            style="@style/Ds.Text.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/guide_hint" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReset"
+            style="@style/Ds.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_lg"
+            android:text="@string/action_reset" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%dটি নতুন বিজ্ঞপ্তি</item>
+    <item quantity="other">%dটি নতুন বিজ্ঞপ্তি</item>
+  </plurals>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"হোমে নেভিগেট করুন"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"উপরে নেভিগেট করুন"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"আরও বিকল্প"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"হয়ে গেছে"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"সবগুলি দেখুন"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"একটি অ্যাপ বেছে নিন"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"বন্ধ আছে"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"চালু করুন"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"মুছুন"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Function+"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"space"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"সার্চ করুন…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"কোয়েরি মুছে ফেলুন"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"সার্চ কোয়েরি"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"সার্চ করুন"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"কোয়েরি জমা দিন"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"ভয়েস সার্চ করুন"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"শেয়ার করুন"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g>-এর সাথে শেয়ার করুন"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"সঙ্কুচিত করুন"</string>
+    <string name="action_back">ফিরে যাও</string>
+    <string name="action_reset">রিসেট করো</string>
+    <string name="action_share">অ্যাপ শেয়ার করো</string>
+    <string name="action_undo">ফিরিয়ে নাও</string>
+    <string name="app_name">সহজ পড়া</string>
+    <string name="bottomsheet_action_collapse">স্ক্রিনের নিচে অ্যাটাচ করা শিট আড়াল করুন</string>
+    <string name="bottomsheet_action_expand">স্ক্রিনের নিচে অ্যাটাচ করা শিট বড় করুন</string>
+    <string name="bottomsheet_action_expand_halfway">অর্ধেক প্রসারিত করুন</string>
+    <string name="bottomsheet_drag_handle_clicked">টেনে আনার হ্যান্ডেলে ডবল ট্যাপ করা হয়েছে</string>
+    <string name="bottomsheet_drag_handle_content_description">টেনে আনার হ্যান্ডেল</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"উত্তর দিন"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"ভিডিও"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"বাতিল করুন"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"কল কেটে দিন"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"ইনকামিং কল"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"চালু থাকা কল"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"ইনকামিং কল স্ক্রিনিং করা হচ্ছে"</string>
+    <string name="card_practice_sub">মজার অক্ষর ও শব্দের খেলা</string>
+    <string name="card_practice_title">অনুশীলন</string>
+    <string name="card_read_sub">তোমার মতো করে সহজ পড়া</string>
+    <string name="card_read_title">পড়ো</string>
+    <string name="card_scan_sub">পাতা থেকে লেখা পড়ো</string>
+    <string name="card_scan_title">স্ক্যান</string>
+    <string name="card_words_sub">তোমার জমানো শব্দ</string>
+    <string name="card_words_title">আমার শব্দ</string>
+    <string name="character_counter_content_description">%2$dটির মধ্যে %1$dটি অক্ষর লেখা হয়েছে</string>
+    <string name="character_counter_overflowed_content_description">অক্ষরের সীমা %1$d এর %2$d অতিক্রম করেছে</string>
+    <string name="chip_all">সব</string>
+    <string name="chip_levels_all">সব স্তর</string>
+    <string name="chip_saved">⭐ সংরক্ষিত</string>
+    <string name="clear_text_end_icon_content_description">টেক্সট মুছুন</string>
+    <string name="coming_soon">শীঘ্রই আসছে</string>
+    <string name="error_a11y_label">সমস্যা: সঠিক নয়</string>
+    <string name="error_icon_content_description">সমস্যা</string>
+    <string name="exposed_dropdown_menu_content_description">ড্রপ-ডাউন মেনু দেখুন</string>
+    <string name="guide_cd">পড়ার গাইড। টেনে সরাও।</string>
+    <string name="guide_focus">ফোকাস</string>
+    <string name="guide_hint">ব্যান্ডটি লেখার ওপর ওঠানামা করাও</string>
+    <string name="guide_lines">কয়টি লাইন দেখা যাবে</string>
+    <string name="guide_off">বন্ধ</string>
+    <string name="guide_ruler">রুলার</string>
+    <string name="guide_title">পড়ার গাইড</string>
+    <string name="home_greeting">হ্যালো! পড়তে প্রস্তুত?</string>
+    <string name="home_subtitle">শুরু করতে একটি বেছে নাও</string>
+    <string name="icon_content_description">ডায়ালগ আইকন</string>
+    <string name="item_view_role_description">ট্যাব</string>
+    <string name="library_empty">এই ফিল্টারে কোনো লেখা নেই</string>
+    <string name="library_empty_saved">এখনো কিছু সংরক্ষণ করোনি। কোনো লেখা ডানে টেনে সংরক্ষণ করো।</string>
+    <string name="library_minutes">%1$d মিনিট</string>
+    <string name="library_subtitle">কী পড়বে, বেছে নাও</string>
+    <string name="library_swipe_hint">ডানে টানলে সংরক্ষণ, বাঁয়ে টানলে পড়া হয়েছে</string>
+    <string name="material_clock_toggle_content_description">AM অথবা PM বেছে নিন</string>
+    <string name="material_hour_24h_suffix">%1$s ঘণ্টা</string>
+    <string name="material_hour_selection">ঘণ্টা বেছে নিন</string>
+    <string name="material_hour_suffix">%1$sটা বাজে</string>
+    <string name="material_minute_selection">মিনিট বেছে নিন</string>
+    <string name="material_minute_suffix">%1$s মিনিট</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_clock_mode_description">সময় ইনপুট দেওয়ার জন্য ঘড়ি মোডে যান।</string>
+    <string name="material_timepicker_hour">ঘণ্টা</string>
+    <string name="material_timepicker_minute">মিনিট</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="material_timepicker_select_time">সময় বেছে নিন</string>
+    <string name="material_timepicker_text_input_mode_description">সময় ইনপুট দেওয়ার জন্য পাঠ্য ইনপুট মোডে যান।</string>
+    <string name="msg_read">পড়া হয়েছে হিসেবে চিহ্নিত</string>
+    <string name="msg_saved">সংরক্ষিত হয়েছে</string>
+    <string name="msg_unread">না-পড়া হিসেবে চিহ্নিত</string>
+    <string name="msg_unsaved">সংরক্ষণ থেকে সরানো হয়েছে</string>
+    <string name="mtrl_badge_numberless_content_description">নতুন বিজ্ঞপ্তি</string>
+    <string name="mtrl_checkbox_state_description_checked">টিক চিহ্ন দেওয়া হয়েছে</string>
+    <string name="mtrl_checkbox_state_description_indeterminate">আংশিকভাবে টিক চিহ্ন দেওয়া হয়েছে</string>
+    <string name="mtrl_checkbox_state_description_unchecked">টিক চিহ্ন দেওয়া নেই</string>
+    <string name="mtrl_chip_close_icon_content_description">%1$s সরিয়ে দিন</string>
+    <string name="mtrl_exceed_max_badge_number_content_description" ns2:ignore="PluralsCandidate">%1$dটির বেশি নতুন বিজ্ঞপ্তি</string>
+    <string name="mtrl_picker_a11y_next_month">আগামী মাসে যান</string>
+    <string name="mtrl_picker_a11y_prev_month">আগের মাসে যান</string>
+    <string name="mtrl_picker_announce_current_range_selection">চালু হওয়ার তারিখ বাছুন: %1$s – শেষ হওয়ার তারিখ বাছুন: %2$s</string>
+    <string name="mtrl_picker_announce_current_selection">বর্তমান বাছাই: %1$s</string>
+    <string name="mtrl_picker_announce_current_selection_none">কোনওটিই নয়</string>
+    <string name="mtrl_picker_cancel">বাতিল করুন</string>
+    <string name="mtrl_picker_confirm">ঠিক আছে</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">তারিখ বেছে নিন</string>
+    <string name="mtrl_picker_date_header_unselected">বেছে নেওয়া তারিখ</string>
+    <string name="mtrl_picker_day_of_week_column_header">%1$s</string>
+    <string name="mtrl_picker_end_date_description">শেষ হওয়ার তারিখ %1$s</string>
+    <string name="mtrl_picker_invalid_format">ভুল ফর্ম্যাট।</string>
+    <string name="mtrl_picker_invalid_format_example">উদাহরণ: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">%1$s ফর্ম্যাটে লিখুন</string>
+    <string name="mtrl_picker_invalid_range">তারিখ সঠিক নয়।</string>
+    <string name="mtrl_picker_navigate_to_current_year_description">বর্তমান বছর %1$d-এ নেভিগেট করুন</string>
+    <string name="mtrl_picker_navigate_to_year_description">নেভিগেট করে %1$d সালে যান</string>
+    <string name="mtrl_picker_out_of_range">নির্দিষ্ট তারিখের বাইরে: %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">শুরুর তারিখ – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – সমাপ্তির তারিখ</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">রেঞ্জ বেছে নিন</string>
+    <string name="mtrl_picker_range_header_unselected">শুরুর তারিখ - সমাপ্তির তারিখ</string>
+    <string name="mtrl_picker_save">সেভ করুন</string>
+    <string name="mtrl_picker_start_date_description">শুরু হওয়ার তারিখ %1$s</string>
+    <string name="mtrl_picker_text_input_date_hint">তারিখ</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">সমাপ্তির তারিখ</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">শুরুর তারিখ</string>
+    <string name="mtrl_picker_text_input_day_abbr">d</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">y</string>
+    <string name="mtrl_picker_today_description">আজ %1$s</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">ক্যালেন্ডার ইনপুট মোডে বদল করুন</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Calendar ভিউতে পাল্টাতে ট্যাপ করুন</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">টেক্সট ইনপুট মোডে বদল করুন</string>
+    <string name="mtrl_picker_toggle_to_year_selection">বার্ষিক ভিউতে পাল্টাতে ট্যাপ করুন</string>
+    <string name="mtrl_timepicker_cancel">বাতিল করুন</string>
+    <string name="mtrl_timepicker_confirm">ঠিক আছে</string>
+    <string name="password_toggle_content_description">পাসওয়ার্ড দেখান</string>
+    <string name="reader_settings_title">পড়ার সেটিং</string>
+    <string name="reader_tap_hint">যেকোনো শব্দে ট্যাপ করো, শুনবে আর অংশগুলো দেখবে</string>
+    <string name="scan_add_page">➕ আরেকটি পাতা</string>
+    <string name="scan_allow_camera">ক্যামেরা চালু করো</string>
+    <string name="scan_body_empty">সংরক্ষণ করার মতো কিছু নেই</string>
+    <string name="scan_capture_cd">ছবি তোলো</string>
+    <string name="scan_close_cd">বন্ধ করো</string>
+    <string name="scan_crop_hint">লেখার চারপাশে কোণা টেনে ঠিক করো</string>
+    <string name="scan_default_title">স্ক্যান %1$s</string>
+    <string name="scan_discard">বাদ দাও</string>
+    <string name="scan_discard_title">এই স্ক্যান বাদ দেবে?</string>
+    <string name="scan_edit_hint">সংরক্ষণের আগে ভুল ঠিক করো</string>
+    <string name="scan_edit_title">লেখাটি দেখে নাও</string>
+    <string name="scan_error_camera">ক্যামেরা চালু করা যায়নি।</string>
+    <string name="scan_error_image">ছবিটি খোলা যায়নি। আবার চেষ্টা করো।</string>
+    <string name="scan_error_no_text">কোনো লেখা পাওয়া যায়নি। কাছ থেকে, বেশি আলোতে ছবি তোলো।</string>
+    <string name="scan_error_ocr">এই ফোনে লেখা পড়া কাজ করেনি। আবার চেষ্টা করো।</string>
+    <string name="scan_field_body">লেখা</string>
+    <string name="scan_field_title">শিরোনাম</string>
+    <string name="scan_gallery_cd">ছবি বেছে নাও</string>
+    <string name="scan_hint_camera">পাতাটি পর্দার ভেতরে রাখো</string>
+    <string name="scan_keep">সম্পাদনা চালিয়ে যাও</string>
+    <string name="scan_open_settings">সেটিংস খোলো</string>
+    <string name="scan_permission_title">পাতা স্ক্যান করতে ক্যামেরার অনুমতি লাগবে</string>
+    <string name="scan_read_text">লেখা পড়ো</string>
+    <string name="scan_retake">আবার তোলো</string>
+    <string name="scan_save">সংরক্ষণ</string>
+    <string name="scan_saved">সংরক্ষিত হয়েছে। ‘পড়ো’-তে পাবে।</string>
+    <string name="scan_working">পাতা পড়া হচ্ছে…</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"সার্চ করুন"</string>
+    <string name="searchview_clear_text_content_description">টেক্সট মুছুন</string>
+    <string name="searchview_navigation_content_description">ফিরে যান</string>
+    <string name="setting_background">পটভূমি</string>
+    <string name="setting_letter_hint">বাংলার জন্য কম রাখাই ভালো</string>
+    <string name="setting_letter_spacing">অক্ষরের ফাঁক</string>
+    <string name="setting_line_spacing">লাইনের ফাঁক</string>
+    <string name="setting_syllables">অক্ষরের অংশে রং দাও</string>
+    <string name="setting_syllables_hint">শুধু বাংলা শব্দের জন্য</string>
+    <string name="setting_text_size">লেখার আকার</string>
+    <string name="setting_word_spacing">শব্দের ফাঁক</string>
+    <string name="share_text">পড়ার এই সহায়ক অ্যাপটি ব্যবহার করে দেখো!</string>
+    <string name="side_sheet_accessibility_pane_title">সাইড শিট</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"৯৯৯+"</string>
+    <string name="swipe_read">✓  পড়া হয়েছে</string>
+    <string name="swipe_save">⭐  সংরক্ষণ</string>
+    <string name="swipe_unread">না-পড়া করো</string>
+    <string name="swipe_unsave">সংরক্ষণ সরাও</string>
+    <string name="theme_cream">ক্রিম</string>
+    <string name="theme_mint">পুদিনা</string>
+    <string name="theme_night">রাত</string>
+    <string name="theme_peach">পিচ</string>
+    <string name="theme_sky">আকাশি</string>
+    <string name="theme_yellow">হলুদ</string>
+    <string name="word_get_voice">বাংলা ভয়েস নামাও</string>
+    <string name="word_joined">যুক্তাক্ষর</string>
+    <string name="word_listen">🔊  শোনো</string>
+    <string name="word_no_bangla_voice">এই ফোনে এখনো বাংলা ভয়েস নেই। বাংলা শব্দ শুনতে একটি ভয়েস নামিয়ে নাও।</string>
+    <string name="word_parts">ভেঙে দেখো</string>
+    <string name="word_tts_unavailable">এই মুহূর্তে এই ফোনে শোনানোর সুবিধা পাওয়া যাচ্ছে না।</string>
+</resources>

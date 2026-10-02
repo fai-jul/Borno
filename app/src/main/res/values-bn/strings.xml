@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">সহজ পড়া</string>
+
+    <string name="home_greeting">হ্যালো! পড়তে প্রস্তুত?</string>
+    <string name="home_subtitle">শুরু করতে একটি বেছে নাও</string>
+
+    <string name="card_read_title">পড়ো</string>
+    <string name="card_read_sub">তোমার মতো করে সহজ পড়া</string>
+    <string name="card_practice_title">অনুশীলন</string>
+    <string name="card_practice_sub">মজার অক্ষর ও শব্দের খেলা</string>
+    <string name="card_words_title">আমার শব্দ</string>
+    <string name="card_words_sub">তোমার জমানো শব্দ</string>
+    <string name="card_scan_title">স্ক্যান</string>
+    <string name="card_scan_sub">পাতা থেকে লেখা পড়ো</string>
+
+    <string name="action_share">অ্যাপ শেয়ার করো</string>
+    <string name="action_back">ফিরে যাও</string>
+    <string name="share_text">পড়ার এই সহায়ক অ্যাপটি ব্যবহার করে দেখো!</string>
+    <string name="coming_soon">শীঘ্রই আসছে</string>
+</resources>

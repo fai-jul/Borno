@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sample_story_bn" translatable="false">একদিন সকালে ছোট্ট পাখিটি গাছের ডালে বসে গান গাইছিল। নিচে নদীর পাশে একটি খরগোশ ঘাস খাচ্ছিল। পাখিটি বলল, “এসো বন্ধু, আমরা একসাথে খেলি।” খরগোশ হেসে বলল, “চলো, আজ আমরা নদীর ধারে যাই।” দুই বন্ধু সারাদিন মজা করে খেলল। সন্ধ্যায় সূর্য ডুবে গেল, আর তারা বাড়ি ফিরে এল।</string>
+    <string name="sample_story_en" translatable="false">One sunny morning, a little bird sat on a branch and sang a song. Down by the river, a rabbit was eating grass. “Come, my friend, let’s play together,” said the bird. The rabbit smiled and said, “Yes, let’s go to the river.” The two friends played all day. When the sun went down, they went home happy.</string>
+    <string name="chip_sample_bn" translatable="false">বাংলা</string>
+    <string name="chip_sample_en" translatable="false">English</string>
+</resources>

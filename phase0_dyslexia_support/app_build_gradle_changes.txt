@@ -1,0 +1,15 @@
+// app/build.gradle.kts  -> only ADD the marked lines to what Android Studio generated
+
+android {
+    namespace = "com.dyslexiasupport"        // must match your package name
+    // keep compileSdk / defaultConfig from the template; make sure minSdk = 24
+
+    buildFeatures {
+        viewBinding = true                    // <-- ADD
+    }
+}
+
+dependencies {
+    implementation("androidx.core:core-splashscreen:1.0.1")   // <-- ADD
+    // keep the template ones: appcompat, material, constraintlayout, activity
+}

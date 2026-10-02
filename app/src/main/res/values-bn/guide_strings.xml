@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guide_title">পড়ার গাইড</string>
+    <string name="guide_off">বন্ধ</string>
+    <string name="guide_ruler">রুলার</string>
+    <string name="guide_focus">ফোকাস</string>
+    <string name="guide_lines">কয়টি লাইন দেখা যাবে</string>
+    <string name="guide_hint">ব্যান্ডটি লেখার ওপর ওঠানামা করাও</string>
+    <string name="guide_cd">পড়ার গাইড। টেনে সরাও।</string>
+</resources>

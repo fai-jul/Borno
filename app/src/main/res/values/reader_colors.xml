@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="reader_cream_bg">#FBF6EC</color>
+    <color name="reader_cream_text">#2B2A33</color>
+    <color name="reader_yellow_bg">#FFF4C2</color>
+    <color name="reader_yellow_text">#2E2A1F</color>
+    <color name="reader_mint_bg">#E2F2E6</color>
+    <color name="reader_mint_text">#1D3A2C</color>
+    <color name="reader_sky_bg">#E0EFFA</color>
+    <color name="reader_sky_text">#1B3347</color>
+    <color name="reader_peach_bg">#FBE4DA</color>
+    <color name="reader_peach_text">#3B2620</color>
+    <color name="reader_night_bg">#1F2330</color>
+    <color name="reader_night_text">#ECE8DD</color>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_hint_camera">পাতাটি পর্দার ভেতরে রাখো</string>
+    <string name="scan_permission_title">পাতা স্ক্যান করতে ক্যামেরার অনুমতি লাগবে</string>
+    <string name="scan_allow_camera">ক্যামেরা চালু করো</string>
+    <string name="scan_open_settings">সেটিংস খোলো</string>
+    <string name="scan_gallery_cd">ছবি বেছে নাও</string>
+    <string name="scan_capture_cd">ছবি তোলো</string>
+    <string name="scan_close_cd">বন্ধ করো</string>
+    <string name="scan_crop_hint">লেখার চারপাশে কোণা টেনে ঠিক করো</string>
+    <string name="scan_retake">আবার তোলো</string>
+    <string name="scan_read_text">লেখা পড়ো</string>
+    <string name="scan_working">পাতা পড়া হচ্ছে…</string>
+    <string name="scan_edit_title">লেখাটি দেখে নাও</string>
+    <string name="scan_edit_hint">সংরক্ষণের আগে ভুল ঠিক করো</string>
+    <string name="scan_field_title">শিরোনাম</string>
+    <string name="scan_field_body">লেখা</string>
+    <string name="scan_add_page">➕ আরেকটি পাতা</string>
+    <string name="scan_save">সংরক্ষণ</string>
+    <string name="scan_saved">সংরক্ষিত হয়েছে। ‘পড়ো’-তে পাবে।</string>
+    <string name="scan_default_title">স্ক্যান %1$s</string>
+    <string name="scan_body_empty">সংরক্ষণ করার মতো কিছু নেই</string>
+    <string name="scan_discard_title">এই স্ক্যান বাদ দেবে?</string>
+    <string name="scan_discard">বাদ দাও</string>
+    <string name="scan_keep">সম্পাদনা চালিয়ে যাও</string>
+    <string name="scan_error_image">ছবিটি খোলা যায়নি। আবার চেষ্টা করো।</string>
+    <string name="scan_error_no_text">কোনো লেখা পাওয়া যায়নি। কাছ থেকে, বেশি আলোতে ছবি তোলো।</string>
+    <string name="scan_error_ocr">এই ফোনে লেখা পড়া কাজ করেনি। আবার চেষ্টা করো।</string>
+    <string name="scan_error_camera">ক্যামেরা চালু করা যায়নি।</string>
+</resources>

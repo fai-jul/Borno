@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_hint_camera">Fit the page inside the screen</string>
+    <string name="scan_permission_title">Camera access is needed to scan pages</string>
+    <string name="scan_allow_camera">Allow camera</string>
+    <string name="scan_open_settings">Open settings</string>
+    <string name="scan_gallery_cd">Choose a photo</string>
+    <string name="scan_capture_cd">Take photo</string>
+    <string name="scan_close_cd">Close</string>
+    <string name="scan_crop_hint">Drag the corners to fit the text</string>
+    <string name="scan_retake">Retake</string>
+    <string name="scan_read_text">Read text</string>
+    <string name="scan_working">Reading the page…</string>
+    <string name="scan_edit_title">Check the text</string>
+    <string name="scan_edit_hint">Fix any mistakes before saving</string>
+    <string name="scan_field_title">Title</string>
+    <string name="scan_field_body">Text</string>
+    <string name="scan_add_page">➕ Add page</string>
+    <string name="scan_save">Save</string>
+    <string name="scan_saved">Saved. Find it in Read.</string>
+    <string name="scan_default_title">Scan %1$s</string>
+    <string name="scan_body_empty">Nothing to save yet</string>
+    <string name="scan_discard_title">Discard this scan?</string>
+    <string name="scan_discard">Discard</string>
+    <string name="scan_keep">Keep editing</string>
+    <string name="scan_error_image">Could not open this photo. Please try again.</string>
+    <string name="scan_error_no_text">No text found. Try a closer, brighter photo.</string>
+    <string name="scan_error_ocr">Text reading did not work on this phone. Please try again.</string>
+    <string name="scan_error_camera">The camera could not start.</string>
+</resources>

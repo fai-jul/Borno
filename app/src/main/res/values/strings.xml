@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Dyslexia Support</string>
+
+    <!-- Home -->
+    <string name="home_greeting">Hello! Ready to read?</string>
+    <string name="home_greeting_name">Hello, %1$s!</string>
+    <string name="home_subtitle">Pick something to start</string>
+    <string name="card_read_title">Read</string>
+    <string name="card_read_sub">Easy reading, your way</string>
+    <string name="card_practice_title">Practice</string>
+    <string name="card_practice_sub">Fun letter and word games</string>
+    <string name="card_words_title">My Words</string>
+    <string name="card_words_sub">Words you saved</string>
+    <string name="card_scan_title">Scan</string>
+    <string name="card_scan_sub">Read text from a page</string>
+
+    <!-- Common -->
+    <string name="action_share">Share app</string>
+    <string name="action_back">Go back</string>
+    <string name="share_text">Try this reading helper app!</string>
+    <string name="coming_soon">Coming soon</string>
+    <string name="guest_name">Friend</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_read">Read</string>
+    <string name="nav_practice">Practice</string>
+    <string name="nav_progress">Progress</string>
+    <string name="nav_profile">Me</string>
+
+    <!-- Login -->
+    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Log in to continue</string>
+    <string name="action_login">Log in</string>
+    <string name="action_guest">Continue as guest</string>
+    <string name="login_no_account">New here? Create an account</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Your name</string>
+
+    <!-- Register -->
+    <string name="register_title">Create your account</string>
+    <string name="register_subtitle">It takes less than a minute</string>
+    <string name="action_create_account">Create account</string>
+    <string name="register_have_account">Already have an account? Log in</string>
+    <string name="label_avatar">Pick your buddy</string>
+    <string name="label_role">I am a…</string>
+    <string name="role_child">Young learner</string>
+    <string name="role_learner">Teen or adult learner</string>
+    <string name="role_parent">Parent</string>
+    <string name="role_teacher">Teacher</string>
+
+    <!-- Validation -->
+    <string name="error_name_required">Please enter your name</string>
+    <string name="error_email_invalid">Enter a valid email</string>
+    <string name="error_password_short">At least 6 characters</string>
+    <string name="error_email_taken">This email is already registered</string>
+    <string name="error_login_failed">Email or password is wrong</string>
+
+    <!-- Profile -->
+    <string name="profile_language">Language</string>
+    <string name="profile_guest_note">You are using a guest account. Create an account to keep your progress safe.</string>
+    <string name="lang_english">English</string>
+    <string name="lang_bangla">বাংলা</string>
+    <string name="action_logout">Log out</string>
+</resources>

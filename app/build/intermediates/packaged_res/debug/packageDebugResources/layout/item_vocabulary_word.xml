@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/ds_space_md"
+    android:layout_marginVertical="@dimen/ds_space_xs"
+    app:cardBackgroundColor="@color/ds_surface"
+    app:cardCornerRadius="@dimen/ds_radius_md"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/ds_sand"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/ds_space_md">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textWord"
+                style="@style/Ds.Text.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/ds_ink"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/badgeLang"
+                style="@style/Ds.Text.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_emoji_badge"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:textColor="@color/ds_primary"
+                android:textSize="12sp" />
+
+            <ImageButton
+                android:id="@+id/btnListen"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/word_listen"
+                android:src="@android:drawable/ic_lock_silent_mode_off"
+                app:tint="@color/ds_primary" />
+
+            <ImageButton
+                android:id="@+id/btnFavorite"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/chip_saved"
+                android:src="@android:drawable/btn_star" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textSyllables"
+            style="@style/Ds.Text.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/ds_plum"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textDefinition"
+            style="@style/Ds.Text.Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/ds_ink_soft"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

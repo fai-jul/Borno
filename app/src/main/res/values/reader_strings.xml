@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reader_settings_title">Reading settings</string>
+    <string name="setting_text_size">Text size</string>
+    <string name="setting_line_spacing">Line spacing</string>
+    <string name="setting_word_spacing">Word spacing</string>
+    <string name="setting_letter_spacing">Letter spacing</string>
+    <string name="setting_letter_hint">Keep this low for Bangla</string>
+    <string name="setting_background">Background</string>
+    <string name="action_reset">Reset</string>
+    <string name="theme_cream">Cream</string>
+    <string name="theme_yellow">Sunny</string>
+    <string name="theme_mint">Mint</string>
+    <string name="theme_sky">Sky</string>
+    <string name="theme_peach">Peach</string>
+    <string name="theme_night">Night</string>
+</resources>

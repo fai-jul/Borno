@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/fragment_coming_soon.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/fragment_coming_soon.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/sheet_word.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/sheet_word.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/activity_scan.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/activity_scan.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/dialog_add_word.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/dialog_add_word.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/item_vocabulary_word.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/item_vocabulary_word.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/view_feature_card.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/view_feature_card.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/fragment_library.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/fragment_library.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/item_reading_text.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/item_reading_text.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/fragment_reader.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/fragment_reader.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/fragment_home.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/activity_placeholder.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/activity_placeholder.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/activity_register.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/sheet_reader_settings.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/sheet_reader_settings.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/activity_main.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/activity_login.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/fragment_profile.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-43:/layout/activity_vocabulary.xml",
+        "source": "com.dyslexiasupport.app-main-46:/layout/activity_vocabulary.xml"
+    }
+]
