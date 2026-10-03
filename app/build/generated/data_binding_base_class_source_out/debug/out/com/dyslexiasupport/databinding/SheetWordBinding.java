@@ -22,6 +22,9 @@ public final class SheetWordBinding implements ViewBinding {
   private final NestedScrollView rootView;
 
   @NonNull
+  public final MaterialButton btnAssistantWord;
+
+  @NonNull
   public final MaterialButton btnInstallVoice;
 
   @NonNull
@@ -49,11 +52,13 @@ public final class SheetWordBinding implements ViewBinding {
   public final TextView wordText;
 
   private SheetWordBinding(@NonNull NestedScrollView rootView,
-      @NonNull MaterialButton btnInstallVoice, @NonNull MaterialButton btnListen,
-      @NonNull MaterialButton btnSaveWord, @NonNull LinearLayout joinedList,
-      @NonNull LinearLayout joinedSection, @NonNull LinearLayout partsSection,
-      @NonNull TextView syllableText, @NonNull TextView ttsMessage, @NonNull TextView wordText) {
+      @NonNull MaterialButton btnAssistantWord, @NonNull MaterialButton btnInstallVoice,
+      @NonNull MaterialButton btnListen, @NonNull MaterialButton btnSaveWord,
+      @NonNull LinearLayout joinedList, @NonNull LinearLayout joinedSection,
+      @NonNull LinearLayout partsSection, @NonNull TextView syllableText,
+      @NonNull TextView ttsMessage, @NonNull TextView wordText) {
     this.rootView = rootView;
+    this.btnAssistantWord = btnAssistantWord;
     this.btnInstallVoice = btnInstallVoice;
     this.btnListen = btnListen;
     this.btnSaveWord = btnSaveWord;
@@ -92,6 +97,12 @@ public final class SheetWordBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnAssistantWord;
+      MaterialButton btnAssistantWord = ViewBindings.findChildViewById(rootView, id);
+      if (btnAssistantWord == null) {
+        break missingId;
+      }
+
       id = R.id.btnInstallVoice;
       MaterialButton btnInstallVoice = ViewBindings.findChildViewById(rootView, id);
       if (btnInstallVoice == null) {
@@ -146,8 +157,9 @@ public final class SheetWordBinding implements ViewBinding {
         break missingId;
       }
 
-      return new SheetWordBinding((NestedScrollView) rootView, btnInstallVoice, btnListen,
-          btnSaveWord, joinedList, joinedSection, partsSection, syllableText, ttsMessage, wordText);
+      return new SheetWordBinding((NestedScrollView) rootView, btnAssistantWord, btnInstallVoice,
+          btnListen, btnSaveWord, joinedList, joinedSection, partsSection, syllableText, ttsMessage,
+          wordText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

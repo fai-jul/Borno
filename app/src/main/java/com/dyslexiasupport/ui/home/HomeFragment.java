@@ -32,17 +32,30 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         SessionManager session = new SessionManager(requireContext());
-        binding.greeting.setText(getString(R.string.home_greeting_name, session.getName()));
+        binding.greeting.setText(
+                getString(R.string.home_greeting_name, session.getName())
+        );
 
-        binding.cardRead.setOnClickListener(v -> tabs().selectTab(R.id.nav_read));
-        binding.cardPractice.setOnClickListener(v -> tabs().selectTab(R.id.nav_practice));
+        binding.cardRead.setOnClickListener(v ->
+                tabs().selectTab(R.id.nav_read));
+
+        binding.cardPractice.setOnClickListener(v ->
+                tabs().selectTab(R.id.nav_practice));
+
         binding.cardWords.setOnClickListener(v ->
-                startActivity(new Intent(requireContext(), com.dyslexiasupport.ui.vocabulary.VocabularyActivity.class)));
+                startActivity(new Intent(
+                        requireContext(),
+                        com.dyslexiasupport.ui.vocabulary.VocabularyActivity.class
+                )));
+
         binding.cardScan.setOnClickListener(v ->
-                startActivity(new Intent(requireContext(), com.dyslexiasupport.ui.scan.ScanActivity.class)));
+                startActivity(new Intent(
+                        requireContext(),
+                        com.dyslexiasupport.ui.scan.ScanActivity.class
+                )));
+
         binding.btnShare.setOnClickListener(v -> shareApp());
     }
-
     private TabHost tabs() {
         return (TabHost) requireActivity();
     }

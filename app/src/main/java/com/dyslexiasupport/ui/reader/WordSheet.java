@@ -62,41 +62,63 @@ public class WordSheet extends BottomSheetDialogFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         word = requireArguments().getString(ARG_WORD, "");
         bangla = BanglaText.containsBangla(word);
 
         binding.wordText.setText(word);
         showBreakdown();
+
         binding.btnListen.setOnClickListener(v -> speak());
+
+        binding.btnAssistantWord.setOnClickListener(v ->
+                com.dyslexiasupport.ui.assistant.AssistantActivity.launch(
+                        requireContext(),
+                        word,
+                        com.dyslexiasupport.ai.AiTask.MEANING));
 
         binding.btnSaveWord.setOnClickListener(v -> {
             com.dyslexiasupport.data.repository.AppRepository repo =
                     new com.dyslexiasupport.data.repository.AppRepository(requireContext());
+
             com.dyslexiasupport.data.local.entity.WordEntity entity =
                     new com.dyslexiasupport.data.local.entity.WordEntity(
                             word,
                             "",
                             bangla ? "bn" : "en",
-                            binding.syllableText != null ? binding.syllableText.getText().toString() : "",
+                            binding.syllableText != null
+                                    ? binding.syllableText.getText().toString()
+                                    : "",
                             true,
                             System.currentTimeMillis()
                     );
+
             repo.insertWord(entity);
-            Toast.makeText(requireContext(), "Saved to My Words", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(
+                    requireContext(),
+                    "Saved to My Words",
+                    Toast.LENGTH_SHORT
+            ).show();
         });
 
         // Application context: the engine must not hold on to this sheet.
-        tts = new TextToSpeech(requireContext().getApplicationContext(), status -> {
-            if (binding == null) {
-                return;
-            }
-            ttsReady = status == TextToSpeech.SUCCESS;
-            if (ttsReady) {
-                configureVoice();
-            } else {
-                showVoiceProblem(R.string.word_tts_unavailable, false);
-            }
-        });
+        tts = new TextToSpeech(
+                requireContext().getApplicationContext(),
+                status -> {
+                    if (binding == null) {
+                        return;
+                    }
+
+                    ttsReady = status == TextToSpeech.SUCCESS;
+
+                    if (ttsReady) {
+                        configureVoice();
+                    } else {
+                        showVoiceProblem(R.string.word_tts_unavailable, false);
+                    }
+                }
+        );
     }
 
     private void configureVoice() {

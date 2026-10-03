@@ -107,8 +107,16 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
 
         binding.btnBack.setOnClickListener(v ->
                 requireActivity().getOnBackPressedDispatcher().onBackPressed());
+
         binding.btnSettings.setOnClickListener(v ->
                 new ReaderSettingsSheet().show(getChildFragmentManager(), "reader_settings"));
+
+        binding.btnAssistant.setOnClickListener(v -> {
+            if (currentReadingText != null) {
+                com.dyslexiasupport.ui.assistant.AssistantActivity.launch(
+                        requireContext(), currentReadingText.body, null);
+            }
+        });
 
         // Read Aloud Controls
         binding.btnPlayPause.setOnClickListener(v -> checkPermissionAndStartService());
@@ -129,7 +137,9 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
             }
             return false;
         });
+
         binding.readerText.setOnClickListener(v -> onTextTapped(downX, downY));
+
         binding.guide.setOnBandTapListener((x, y) -> onTextTapped(
                 x - binding.readerText.getLeft(),
                 y + binding.readerScroll.getScrollY() - binding.readerText.getTop()));
@@ -141,7 +151,6 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
         Intent intent = new Intent(requireContext(), ReaderForegroundService.class);
         requireContext().bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
     }
-
     private void checkPermissionAndStartService() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.POST_NOTIFICATIONS)

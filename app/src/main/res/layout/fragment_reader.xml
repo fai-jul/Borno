@@ -44,6 +44,16 @@
             android:contentDescription="@string/reader_settings_title"
             android:minWidth="56dp"
             android:text="Aa" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAssistant"
+            style="@style/Ds.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/ds_space_sm"
+            android:contentDescription="@string/assistant_open_cd"
+            android:minWidth="56dp"
+            android:text="✨" />
     </LinearLayout>
 
     <TextView

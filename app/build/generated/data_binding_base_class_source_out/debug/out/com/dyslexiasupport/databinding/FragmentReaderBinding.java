@@ -24,6 +24,9 @@ public final class FragmentReaderBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final MaterialButton btnAssistant;
+
+  @NonNull
   public final MaterialButton btnBack;
 
   @NonNull
@@ -65,7 +68,8 @@ public final class FragmentReaderBinding implements ViewBinding {
   @NonNull
   public final TextView tapHint;
 
-  private FragmentReaderBinding(@NonNull LinearLayout rootView, @NonNull MaterialButton btnBack,
+  private FragmentReaderBinding(@NonNull LinearLayout rootView,
+      @NonNull MaterialButton btnAssistant, @NonNull MaterialButton btnBack,
       @NonNull MaterialButton btnNextSentence, @NonNull MaterialButton btnPlayPause,
       @NonNull MaterialButton btnPrevSentence, @NonNull MaterialButton btnSettings,
       @NonNull MaterialButton btnSpeed, @NonNull MaterialButton btnStop,
@@ -73,6 +77,7 @@ public final class FragmentReaderBinding implements ViewBinding {
       @NonNull LinearLayout readerRoot, @NonNull ScrollView readerScroll,
       @NonNull TextView readerText, @NonNull TextView readerTitle, @NonNull TextView tapHint) {
     this.rootView = rootView;
+    this.btnAssistant = btnAssistant;
     this.btnBack = btnBack;
     this.btnNextSentence = btnNextSentence;
     this.btnPlayPause = btnPlayPause;
@@ -116,6 +121,12 @@ public final class FragmentReaderBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnAssistant;
+      MaterialButton btnAssistant = ViewBindings.findChildViewById(rootView, id);
+      if (btnAssistant == null) {
+        break missingId;
+      }
+
       id = R.id.btnBack;
       MaterialButton btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
@@ -196,9 +207,9 @@ public final class FragmentReaderBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentReaderBinding((LinearLayout) rootView, btnBack, btnNextSentence,
-          btnPlayPause, btnPrevSentence, btnSettings, btnSpeed, btnStop, guide, readAloudBar,
-          readerRoot, readerScroll, readerText, readerTitle, tapHint);
+      return new FragmentReaderBinding((LinearLayout) rootView, btnAssistant, btnBack,
+          btnNextSentence, btnPlayPause, btnPrevSentence, btnSettings, btnSpeed, btnStop, guide,
+          readAloudBar, readerRoot, readerScroll, readerText, readerTitle, tapHint);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
