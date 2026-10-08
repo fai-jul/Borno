@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.ColorInt;
 import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.WindowCompat;
@@ -26,6 +27,8 @@ import com.dyslexiasupport.ui.profile.ProfileFragment;
 
 /** App shell: one fragment container + bottom navigation. */
 public class MainActivity extends BaseActivity implements TabHost {
+
+    public static final String EXTRA_OPEN_TAB = "open_tab";
 
     private ActivityMainBinding binding;
 
@@ -79,6 +82,23 @@ public class MainActivity extends BaseActivity implements TabHost {
                 }
             }
         });
+
+        openRequestedTab(getIntent());
+    }
+
+    @Override
+    protected void onNewIntent(@NonNull Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        openRequestedTab(intent);
+    }
+
+    private void openRequestedTab(Intent intent) {
+        int tab = intent.getIntExtra(EXTRA_OPEN_TAB, 0);
+        if (tab != 0 && binding != null) {
+            intent.removeExtra(EXTRA_OPEN_TAB);
+            binding.bottomNav.setSelectedItemId(tab);
+        }
     }
 
     @Override
@@ -109,9 +129,9 @@ public class MainActivity extends BaseActivity implements TabHost {
         } else if (id == R.id.nav_read) {
             fragment = new LibraryFragment();
         } else if (id == R.id.nav_practice) {
-            fragment = ComingSoonFragment.newInstance(R.string.nav_practice, "\uD83C\uDFAF");
+            fragment = new com.dyslexiasupport.ui.practice.PracticeFragment();
         } else if (id == R.id.nav_progress) {
-            fragment = ComingSoonFragment.newInstance(R.string.nav_progress, "\uD83D\uDCCA");
+            fragment = new com.dyslexiasupport.ui.progress.ProgressFragment();
         } else if (id == R.id.nav_profile) {
             fragment = new ProfileFragment();
         } else {

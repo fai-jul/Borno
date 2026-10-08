@@ -12,9 +12,26 @@
     <string name="card_words_sub">তোমার জমানো শব্দ</string>
     <string name="card_scan_title">স্ক্যান</string>
     <string name="card_scan_sub">পাতা থেকে লেখা পড়ো</string>
+    <string name="card_ask_title">জিজ্ঞেস করো</string>
+    <string name="card_ask_sub">সহজ ব্যাখ্যা ও উত্তর পাও</string>
+    <string name="card_voice_title">কথা বলো</string>
+    <string name="card_voice_sub">মুখে বলো ও শোনো</string>
+    <string name="card_write_title">লেখো</string>
+    <string name="card_write_sub">টাইপ করো ও বানান মেলাও</string>
 
     <string name="action_share">অ্যাপ শেয়ার করো</string>
     <string name="action_back">ফিরে যাও</string>
     <string name="share_text">পড়ার এই সহায়ক অ্যাপটি ব্যবহার করে দেখো!</string>
     <string name="coming_soon">শীঘ্রই আসছে</string>
+
+    <!-- System Components & Notifications -->
+    <string name="notification_channel_name">দৈনিক পড়ার অনুস্মারক</string>
+    <string name="notification_channel_desc">প্রতিদিন পড়া ও অনুশীলন করার নোটিফিকেশন পাঠায়</string>
+    <string name="reminder_title">আজকের পড়া তৈরি! 📖</string>
+    <string name="reminder_text">আজকে ৫ মিনিট হলেও পড়ে তোমার পড়া ঝালিয়ে নাও।</string>
+
+    <string name="widget_title">দিনের শব্দ</string>
+    <string name="widget_refresh">নতুন শব্দ</string>
+    <string name="perm_read_vocab_label">শব্দভাণ্ডার পড়ার অনুমতি</string>
+    <string name="perm_read_vocab_desc">নিরাপদে জমানো শব্দমালা পড়ার অনুমতি দেয়।</string>
 </resources>

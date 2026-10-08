@@ -38,4 +38,16 @@ public interface WordDao {
 
     @Query("SELECT COUNT(*) FROM words")
     int getWordCount();
+
+    @Query("SELECT * FROM words ORDER BY id DESC")
+    List<WordEntity> getAllWordsSync();
+
+    @Query("SELECT * FROM words WHERE id = :id LIMIT 1")
+    WordEntity getWordByIdSync(long id);
+
+    @Query("SELECT * FROM words ORDER BY RANDOM() LIMIT 1")
+    WordEntity getRandomWordSync();
+
+    @Query("DELETE FROM words WHERE id = :id")
+    int deleteByIdSync(long id);
 }

@@ -84,6 +84,45 @@
                 app:featureTitle="@string/card_scan_title" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <com.dyslexiasupport.ui.widget.FeatureCardView
+                android:id="@+id/cardVoice"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/ds_space_xs"
+                android:layout_weight="1"
+                app:featureAccent="@color/ds_leaf"
+                app:featureEmoji="🎤"
+                app:featureSubtitle="@string/card_voice_sub"
+                app:featureTitle="@string/card_voice_title" />
+
+            <com.dyslexiasupport.ui.widget.FeatureCardView
+                android:id="@+id/cardWrite"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/ds_space_xs"
+                android:layout_weight="1"
+                app:featureAccent="@color/ds_mango"
+                app:featureEmoji="✏️"
+                app:featureSubtitle="@string/card_write_sub"
+                app:featureTitle="@string/card_write_title" />
+        </LinearLayout>
+
+        <com.dyslexiasupport.ui.widget.FeatureCardView
+            android:id="@+id/cardAsk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/ds_space_xs"
+            app:featureAccent="@color/ds_sky"
+            app:featureEmoji="✨"
+            app:featureSubtitle="@string/card_ask_sub"
+            app:featureTitle="@string/card_ask_title" />
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"

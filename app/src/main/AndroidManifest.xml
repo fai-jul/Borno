@@ -2,22 +2,34 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools">
 
+        <uses-permission android:name="android.permission.RECORD_AUDIO" />
         <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
         <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
         <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
         <uses-permission android:name="android.permission.CAMERA" />
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+        <!-- Custom Permission protecting Vocabulary ContentProvider -->
+        <permission
+            android:name="com.dyslexiasupport.READ_VOCABULARY"
+            android:protectionLevel="dangerous"
+            android:label="@string/perm_read_vocab_label"
+            android:description="@string/perm_read_vocab_desc" />
+        <uses-permission android:name="com.dyslexiasupport.READ_VOCABULARY" />
+
         <uses-feature android:name="android.hardware.camera.any" android:required="false" />
         <!-- Lets the app see installed text-to-speech engines (needed on Android 11+) -->
         <queries>
             <intent>
                 <action android:name="android.intent.action.TTS_SERVICE" />
             </intent>
-        </queries>
 
-        <uses-permission android:name="android.permission.CAMERA" />
-        <uses-permission android:name="android.permission.INTERNET" />
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-        <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+            <intent>
+                <action android:name="android.speech.RecognitionService" />
+            </intent>
+        </queries>
 
         <application
             android:name=".DyslexiaApp"
@@ -72,11 +84,64 @@
                 android:exported="false"
                 android:windowSoftInputMode="adjustResize" />
 
+            <activity android:name=".ui.voice.VoiceActivity" android:exported="false" />
+            <activity android:name=".ui.write.WriteActivity" android:exported="false"
+                android:windowSoftInputMode="adjustResize" />
+            <activity android:name=".ui.practice.GameActivity" android:exported="false" />
+
             <service
                 android:name=".ui.reader.ReaderForegroundService"
                 android:exported="false"
                 android:foregroundServiceType="mediaPlayback" />
 
+
+            <!-- FileProvider for sharing exported PDF reports -->
+            <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="${applicationId}.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+                <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths" />
+            </provider>
+
+            <!-- Permission-protected ContentProvider for Vocabulary -->
+            <provider
+                android:name=".system.VocabularyContentProvider"
+                android:authorities="com.dyslexiasupport.vocabularyprovider"
+                android:exported="true"
+                android:readPermission="com.dyslexiasupport.READ_VOCABULARY"
+                android:writePermission="com.dyslexiasupport.READ_VOCABULARY" />
+
+            <!-- Daily Reading Reminder BroadcastReceiver -->
+            <receiver
+                android:name=".system.DailyReminderReceiver"
+                android:exported="false" />
+
+            <!-- Boot Receiver for rescheduling daily alarms -->
+            <receiver
+                android:name=".system.BootReceiver"
+                android:exported="true">
+                <intent-filter>
+                    <action android:name="android.intent.action.BOOT_COMPLETED" />
+                    <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                </intent-filter>
+            </receiver>
+
+            <!-- Word of the Day AppWidgetProvider -->
+            <receiver
+                android:name=".system.WordWidgetProvider"
+                android:exported="true"
+                android:label="@string/widget_title">
+                <intent-filter>
+                    <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                    <action android:name="com.dyslexiasupport.ACTION_REFRESH_WIDGET" />
+                </intent-filter>
+                <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/widget_word_info" />
+            </receiver>
 
             <!-- Lets the in-app language choice persist on Android 12 and below -->
             <service

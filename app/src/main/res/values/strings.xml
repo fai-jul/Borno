@@ -13,6 +13,12 @@
     <string name="card_words_sub">Words you saved</string>
     <string name="card_scan_title">Scan</string>
     <string name="card_scan_sub">Read text from a page</string>
+    <string name="card_ask_title">Ask Assistant</string>
+    <string name="card_ask_sub">Get answers and explanations</string>
+    <string name="card_voice_title">Talk</string>
+    <string name="card_voice_sub">Speak and listen</string>
+    <string name="card_write_title">Write</string>
+    <string name="card_write_sub">Type and check spelling</string>
 
     <!-- Common -->
     <string name="action_share">Share app</string>
@@ -64,4 +70,15 @@
     <string name="lang_english">English</string>
     <string name="lang_bangla">বাংলা</string>
     <string name="action_logout">Log out</string>
+
+    <!-- System Components & Notifications -->
+    <string name="notification_channel_name">Daily Reading Reminder</string>
+    <string name="notification_channel_desc">Notifies you every day to read and practice</string>
+    <string name="reminder_title">Ready to read today? 📖</string>
+    <string name="reminder_text">Take 5 minutes to practice your reading powers today.</string>
+
+    <string name="widget_title">Word of the Day</string>
+    <string name="widget_refresh">Refresh Word</string>
+    <string name="perm_read_vocab_label">Read Vocabulary Words</string>
+    <string name="perm_read_vocab_desc">Allows other apps to access saved vocabulary words securely.</string>
 </resources>

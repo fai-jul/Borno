@@ -54,6 +54,22 @@ public class HomeFragment extends Fragment {
                         com.dyslexiasupport.ui.scan.ScanActivity.class
                 )));
 
+        binding.cardVoice.setOnClickListener(v ->
+                startActivity(new Intent(
+                        requireContext(),
+                        com.dyslexiasupport.ui.voice.VoiceActivity.class
+                )));
+
+        binding.cardWrite.setOnClickListener(v ->
+                startActivity(new Intent(
+                        requireContext(),
+                        com.dyslexiasupport.ui.write.WriteActivity.class
+                )));
+
+        binding.cardAsk.setOnClickListener(v ->
+                com.dyslexiasupport.ui.assistant.AssistantActivity.launch(
+                        requireContext(), "", null));
+
         binding.btnShare.setOnClickListener(v -> shareApp());
     }
     private TabHost tabs() {

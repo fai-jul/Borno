@@ -25,6 +25,9 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final MaterialButton btnShare;
 
   @NonNull
+  public final FeatureCardView cardAsk;
+
+  @NonNull
   public final FeatureCardView cardPractice;
 
   @NonNull
@@ -34,21 +37,31 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final FeatureCardView cardScan;
 
   @NonNull
+  public final FeatureCardView cardVoice;
+
+  @NonNull
   public final FeatureCardView cardWords;
+
+  @NonNull
+  public final FeatureCardView cardWrite;
 
   @NonNull
   public final TextView greeting;
 
   private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnShare,
-      @NonNull FeatureCardView cardPractice, @NonNull FeatureCardView cardRead,
-      @NonNull FeatureCardView cardScan, @NonNull FeatureCardView cardWords,
-      @NonNull TextView greeting) {
+      @NonNull FeatureCardView cardAsk, @NonNull FeatureCardView cardPractice,
+      @NonNull FeatureCardView cardRead, @NonNull FeatureCardView cardScan,
+      @NonNull FeatureCardView cardVoice, @NonNull FeatureCardView cardWords,
+      @NonNull FeatureCardView cardWrite, @NonNull TextView greeting) {
     this.rootView = rootView;
     this.btnShare = btnShare;
+    this.cardAsk = cardAsk;
     this.cardPractice = cardPractice;
     this.cardRead = cardRead;
     this.cardScan = cardScan;
+    this.cardVoice = cardVoice;
     this.cardWords = cardWords;
+    this.cardWrite = cardWrite;
     this.greeting = greeting;
   }
 
@@ -85,6 +98,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cardAsk;
+      FeatureCardView cardAsk = ViewBindings.findChildViewById(rootView, id);
+      if (cardAsk == null) {
+        break missingId;
+      }
+
       id = R.id.cardPractice;
       FeatureCardView cardPractice = ViewBindings.findChildViewById(rootView, id);
       if (cardPractice == null) {
@@ -103,9 +122,21 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cardVoice;
+      FeatureCardView cardVoice = ViewBindings.findChildViewById(rootView, id);
+      if (cardVoice == null) {
+        break missingId;
+      }
+
       id = R.id.cardWords;
       FeatureCardView cardWords = ViewBindings.findChildViewById(rootView, id);
       if (cardWords == null) {
+        break missingId;
+      }
+
+      id = R.id.cardWrite;
+      FeatureCardView cardWrite = ViewBindings.findChildViewById(rootView, id);
+      if (cardWrite == null) {
         break missingId;
       }
 
@@ -115,8 +146,8 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ScrollView) rootView, btnShare, cardPractice, cardRead,
-          cardScan, cardWords, greeting);
+      return new FragmentHomeBinding((ScrollView) rootView, btnShare, cardAsk, cardPractice,
+          cardRead, cardScan, cardVoice, cardWords, cardWrite, greeting);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
