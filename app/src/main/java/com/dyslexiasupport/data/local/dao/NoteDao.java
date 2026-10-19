@@ -29,4 +29,7 @@ public interface NoteDao {
 
     @Query("SELECT * FROM notes ORDER BY updatedAt DESC")
     LiveData<List<NoteEntity>> getAllNotes();
+
+    @Query("SELECT * FROM notes ORDER BY updatedAt DESC")
+    List<NoteEntity> getAllNotesSync();
 }

@@ -78,6 +78,17 @@
     <string name="library_minutes">%1$d মিনিট</string>
     <string name="library_subtitle">কী পড়বে, বেছে নাও</string>
     <string name="library_swipe_hint">ডানে টানলে সংরক্ষণ, বাঁয়ে টানলে পড়া হয়েছে</string>
+    <string name="link_code_button">শিক্ষার্থী যুক্ত করো</string>
+    <string name="link_code_copied">লিংক কোড কপি করা হয়েছে!</string>
+    <string name="link_code_copy">কোড কপি করো</string>
+    <string name="link_code_enter_hint">শিক্ষার্থীর লিংক কোড বসাও</string>
+    <string name="link_code_error_invalid">ভুল লিংক কোড। যাচাই করে আবার চেষ্টা করো।</string>
+    <string name="link_code_linked_count">যুক্ত থাকা শিক্ষার্থী: %1$d</string>
+    <string name="link_code_section_title">অভিভাবক ও শিক্ষকের সংযোগ</string>
+    <string name="link_code_success">শিক্ষার্থী অ্যাকাউন্ট যুক্ত হয়েছে! 🎉</string>
+    <string name="link_code_your_code">তোমার লিংক কোড:</string>
+    <string name="low_end_desc">অ্যানিমেশন ও মেমরি ব্যবহার কমিয়ে সাধারণ ফোনে দ্রুত কাজ করে।</string>
+    <string name="low_end_title">লো-এন্ড ডিভাইস মোড</string>
     <string name="mascot_cheer">তুমি দারুণ খেলছ! চালিয়ে যাও!</string>
     <string name="mascot_encourage">ভুল হওয়া স্বাভাবিক, ভুল থেকেই আমরা শিখি!</string>
     <string name="mascot_perfect">সবগুলো সঠিক! তুমি একজন সুপারস্টার! ⭐⭐⭐</string>
@@ -154,6 +165,8 @@
     <string name="setting_letter_hint">বাংলার জন্য কম রাখাই ভালো</string>
     <string name="setting_letter_spacing">অক্ষরের ফাঁক</string>
     <string name="setting_line_spacing">লাইনের ফাঁক</string>
+    <string name="setting_preview_sample">পাখিটি গাছে বসে মিষ্টি গান গায়। Easy reading, your way.</string>
+    <string name="setting_preview_title">সরাসরি প্রিভিউ</string>
     <string name="setting_syllables">অক্ষরের অংশে রং দাও</string>
     <string name="setting_syllables_hint">শুধু বাংলা শব্দের জন্য</string>
     <string name="setting_text_size">লেখার আকার</string>
@@ -163,6 +176,10 @@
     <string name="swipe_save">⭐  সংরক্ষণ</string>
     <string name="swipe_unread">না-পড়া করো</string>
     <string name="swipe_unsave">সংরক্ষণ সরাও</string>
+    <string name="sync_now_btn">এখনই সিঙ্ক করো</string>
+    <string name="sync_status_synced">ক্লাউডে সিঙ্ক হয়েছে ☁️</string>
+    <string name="sync_status_syncing">ফায়ারবেসে তথ্য সিঙ্ক হচ্ছে…</string>
+    <string name="sync_status_title">ক্লাউড ব্যাকআপ ও সিঙ্ক</string>
     <string name="task_ask">প্রশ্ন</string>
     <string name="task_examples">🧩 উদাহরণ দাও</string>
     <string name="task_explain">💡 বুঝিয়ে বলো</string>

@@ -81,4 +81,24 @@
     <string name="widget_refresh">Refresh Word</string>
     <string name="perm_read_vocab_label">Read Vocabulary Words</string>
     <string name="perm_read_vocab_desc">Allows other apps to access saved vocabulary words securely.</string>
+
+    <!-- Parent / Teacher Link Code & Cloud Sync -->
+    <string name="link_code_section_title">Parent / Teacher Connection</string>
+    <string name="link_code_your_code">Your Link Code:</string>
+    <string name="link_code_copy">Copy Code</string>
+    <string name="link_code_copied">Link code copied to clipboard!</string>
+    <string name="link_code_enter_hint">Enter Learner\'s Link Code</string>
+    <string name="link_code_button">Link Student Account</string>
+    <string name="link_code_success">Student account linked successfully! 🎉</string>
+    <string name="link_code_error_invalid">Invalid link code. Check and try again.</string>
+    <string name="link_code_linked_count">Linked Students: %1$d</string>
+
+    <string name="sync_status_title">Cloud Backup &amp; Sync</string>
+    <string name="sync_status_synced">Synced with Cloud ☁️</string>
+    <string name="sync_status_syncing">Syncing data with Firebase…</string>
+    <string name="sync_now_btn">Sync Now</string>
+
+    <!-- Low-End Device Mode -->
+    <string name="low_end_title">Low-End Device Mode</string>
+    <string name="low_end_desc">Reduces heavy animations and memory usage for smooth performance on entry-level phones.</string>
 </resources>

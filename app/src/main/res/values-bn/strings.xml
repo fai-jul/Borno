@@ -34,4 +34,24 @@
     <string name="widget_refresh">নতুন শব্দ</string>
     <string name="perm_read_vocab_label">শব্দভাণ্ডার পড়ার অনুমতি</string>
     <string name="perm_read_vocab_desc">নিরাপদে জমানো শব্দমালা পড়ার অনুমতি দেয়।</string>
+
+    <!-- Parent / Teacher Link Code & Cloud Sync -->
+    <string name="link_code_section_title">অভিভাবক ও শিক্ষকের সংযোগ</string>
+    <string name="link_code_your_code">তোমার লিংক কোড:</string>
+    <string name="link_code_copy">কোড কপি করো</string>
+    <string name="link_code_copied">লিংক কোড কপি করা হয়েছে!</string>
+    <string name="link_code_enter_hint">শিক্ষার্থীর লিংক কোড বসাও</string>
+    <string name="link_code_button">শিক্ষার্থী যুক্ত করো</string>
+    <string name="link_code_success">শিক্ষার্থী অ্যাকাউন্ট যুক্ত হয়েছে! 🎉</string>
+    <string name="link_code_error_invalid">ভুল লিংক কোড। যাচাই করে আবার চেষ্টা করো।</string>
+    <string name="link_code_linked_count">যুক্ত থাকা শিক্ষার্থী: %1$d</string>
+
+    <string name="sync_status_title">ক্লাউড ব্যাকআপ ও সিঙ্ক</string>
+    <string name="sync_status_synced">ক্লাউডে সিঙ্ক হয়েছে ☁️</string>
+    <string name="sync_status_syncing">ফায়ারবেসে তথ্য সিঙ্ক হচ্ছে…</string>
+    <string name="sync_now_btn">এখনই সিঙ্ক করো</string>
+
+    <!-- Low-End Device Mode -->
+    <string name="low_end_title">লো-এন্ড ডিভাইস মোড</string>
+    <string name="low_end_desc">অ্যানিমেশন ও মেমরি ব্যবহার কমিয়ে সাধারণ ফোনে দ্রুত কাজ করে।</string>
 </resources>

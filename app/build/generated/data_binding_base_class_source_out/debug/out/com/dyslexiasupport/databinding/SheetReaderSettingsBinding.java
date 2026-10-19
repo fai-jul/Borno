@@ -12,6 +12,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.dyslexiasupport.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.materialswitch.MaterialSwitch;
@@ -38,6 +39,12 @@ public final class SheetReaderSettingsBinding implements ViewBinding {
 
   @NonNull
   public final ChipGroup guideGroup;
+
+  @NonNull
+  public final MaterialCardView sampleCard;
+
+  @NonNull
+  public final TextView sampleText;
 
   @NonNull
   public final Slider sliderGuide;
@@ -77,17 +84,21 @@ public final class SheetReaderSettingsBinding implements ViewBinding {
 
   private SheetReaderSettingsBinding(@NonNull NestedScrollView rootView,
       @NonNull MaterialButton btnReset, @NonNull Chip chipGuideFocus, @NonNull Chip chipGuideOff,
-      @NonNull Chip chipGuideRuler, @NonNull ChipGroup guideGroup, @NonNull Slider sliderGuide,
-      @NonNull Slider sliderLetter, @NonNull Slider sliderLine, @NonNull Slider sliderSize,
-      @NonNull Slider sliderWord, @NonNull MaterialSwitch switchSyllables,
-      @NonNull ChipGroup themeRow, @NonNull TextView valueGuide, @NonNull TextView valueLetter,
-      @NonNull TextView valueLine, @NonNull TextView valueSize, @NonNull TextView valueWord) {
+      @NonNull Chip chipGuideRuler, @NonNull ChipGroup guideGroup,
+      @NonNull MaterialCardView sampleCard, @NonNull TextView sampleText,
+      @NonNull Slider sliderGuide, @NonNull Slider sliderLetter, @NonNull Slider sliderLine,
+      @NonNull Slider sliderSize, @NonNull Slider sliderWord,
+      @NonNull MaterialSwitch switchSyllables, @NonNull ChipGroup themeRow,
+      @NonNull TextView valueGuide, @NonNull TextView valueLetter, @NonNull TextView valueLine,
+      @NonNull TextView valueSize, @NonNull TextView valueWord) {
     this.rootView = rootView;
     this.btnReset = btnReset;
     this.chipGuideFocus = chipGuideFocus;
     this.chipGuideOff = chipGuideOff;
     this.chipGuideRuler = chipGuideRuler;
     this.guideGroup = guideGroup;
+    this.sampleCard = sampleCard;
+    this.sampleText = sampleText;
     this.sliderGuide = sliderGuide;
     this.sliderLetter = sliderLetter;
     this.sliderLine = sliderLine;
@@ -156,6 +167,18 @@ public final class SheetReaderSettingsBinding implements ViewBinding {
       id = R.id.guideGroup;
       ChipGroup guideGroup = ViewBindings.findChildViewById(rootView, id);
       if (guideGroup == null) {
+        break missingId;
+      }
+
+      id = R.id.sampleCard;
+      MaterialCardView sampleCard = ViewBindings.findChildViewById(rootView, id);
+      if (sampleCard == null) {
+        break missingId;
+      }
+
+      id = R.id.sampleText;
+      TextView sampleText = ViewBindings.findChildViewById(rootView, id);
+      if (sampleText == null) {
         break missingId;
       }
 
@@ -232,9 +255,9 @@ public final class SheetReaderSettingsBinding implements ViewBinding {
       }
 
       return new SheetReaderSettingsBinding((NestedScrollView) rootView, btnReset, chipGuideFocus,
-          chipGuideOff, chipGuideRuler, guideGroup, sliderGuide, sliderLetter, sliderLine,
-          sliderSize, sliderWord, switchSyllables, themeRow, valueGuide, valueLetter, valueLine,
-          valueSize, valueWord);
+          chipGuideOff, chipGuideRuler, guideGroup, sampleCard, sampleText, sliderGuide,
+          sliderLetter, sliderLine, sliderSize, sliderWord, switchSyllables, themeRow, valueGuide,
+          valueLetter, valueLine, valueSize, valueWord);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

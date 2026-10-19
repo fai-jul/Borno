@@ -14,4 +14,6 @@
     <string name="theme_sky">Sky</string>
     <string name="theme_peach">Peach</string>
     <string name="theme_night">Night</string>
+    <string name="setting_preview_title">Live Preview</string>
+    <string name="setting_preview_sample">পাখিটি গাছে বসে মিষ্টি গান গায়। Easy reading, your way.</string>
 </resources>

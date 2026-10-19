@@ -65,6 +65,7 @@ public class MainActivity extends BaseActivity implements TabHost {
                 getSupportFragmentManager().popBackStack());
 
         if (savedInstanceState == null) {
+            showTab(R.id.nav_home);
             binding.bottomNav.setSelectedItemId(R.id.nav_home);
         }
 
@@ -97,6 +98,7 @@ public class MainActivity extends BaseActivity implements TabHost {
         int tab = intent.getIntExtra(EXTRA_OPEN_TAB, 0);
         if (tab != 0 && binding != null) {
             intent.removeExtra(EXTRA_OPEN_TAB);
+            showTab(tab);
             binding.bottomNav.setSelectedItemId(tab);
         }
     }

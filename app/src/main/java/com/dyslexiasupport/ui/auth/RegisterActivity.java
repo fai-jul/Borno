@@ -75,6 +75,18 @@ public class RegisterActivity extends BaseActivity {
         AuthResult result = auth.register(name, email, password, selectedRole(), selectedAvatar());
         if (result.isSuccess()) {
             session.signIn(result.user);
+            try {
+                com.google.firebase.auth.FirebaseAuth.getInstance()
+                        .createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful() && task.getResult() != null && task.getResult().getUser() != null) {
+                                String uid = task.getResult().getUser().getUid();
+                                session.setFirebaseUid(uid);
+                                com.dyslexiasupport.data.firebase.LinkCodeManager.ensureUserLinkCode(RegisterActivity.this, result.user);
+                                com.dyslexiasupport.data.firebase.CloudSyncManager.syncAll(RegisterActivity.this, success -> {});
+                            }
+                        });
+            } catch (Exception ignored) {}
             MainActivity.launchFresh(this);
         } else {
             binding.layoutEmail.setError(getString(result.errorRes));

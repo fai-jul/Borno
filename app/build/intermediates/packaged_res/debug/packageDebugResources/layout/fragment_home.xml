@@ -35,7 +35,7 @@
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardRead"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/ds_space_xs"
                 android:layout_weight="1"
                 app:featureAccent="@color/ds_primary"
@@ -46,7 +46,7 @@
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardPractice"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/ds_space_xs"
                 android:layout_weight="1"
                 app:featureAccent="@color/ds_mango"
@@ -64,7 +64,7 @@
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardWords"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/ds_space_xs"
                 android:layout_weight="1"
                 app:featureAccent="@color/ds_plum"
@@ -75,7 +75,7 @@
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardScan"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/ds_space_xs"
                 android:layout_weight="1"
                 app:featureAccent="@color/ds_coral"
@@ -93,7 +93,7 @@
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardVoice"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/ds_space_xs"
                 android:layout_weight="1"
                 app:featureAccent="@color/ds_leaf"
@@ -104,7 +104,7 @@
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardWrite"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/ds_space_xs"
                 android:layout_weight="1"
                 app:featureAccent="@color/ds_mango"
@@ -134,6 +134,7 @@
             style="@style/Ds.TonalButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_md"
             android:text="@string/action_share" />
     </LinearLayout>
 </ScrollView>

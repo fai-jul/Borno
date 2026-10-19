@@ -158,6 +158,48 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
     });
   }
 
+  @Override
+  public List<ReadingSessionEntity> getAllSessionsSync() {
+    final String _sql = "SELECT * FROM reading_sessions ORDER BY timestamp DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfTextId = CursorUtil.getColumnIndexOrThrow(_cursor, "textId");
+      final int _cursorIndexOfTextTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "textTitle");
+      final int _cursorIndexOfDurationSeconds = CursorUtil.getColumnIndexOrThrow(_cursor, "durationSeconds");
+      final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
+      final List<ReadingSessionEntity> _result = new ArrayList<ReadingSessionEntity>(_cursor.getCount());
+      while (_cursor.moveToNext()) {
+        final ReadingSessionEntity _item;
+        final String _tmpTextId;
+        if (_cursor.isNull(_cursorIndexOfTextId)) {
+          _tmpTextId = null;
+        } else {
+          _tmpTextId = _cursor.getString(_cursorIndexOfTextId);
+        }
+        final String _tmpTextTitle;
+        if (_cursor.isNull(_cursorIndexOfTextTitle)) {
+          _tmpTextTitle = null;
+        } else {
+          _tmpTextTitle = _cursor.getString(_cursorIndexOfTextTitle);
+        }
+        final long _tmpDurationSeconds;
+        _tmpDurationSeconds = _cursor.getLong(_cursorIndexOfDurationSeconds);
+        final long _tmpTimestamp;
+        _tmpTimestamp = _cursor.getLong(_cursorIndexOfTimestamp);
+        _item = new ReadingSessionEntity(_tmpTextId,_tmpTextTitle,_tmpDurationSeconds,_tmpTimestamp);
+        _item.id = _cursor.getLong(_cursorIndexOfId);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
   @NonNull
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();

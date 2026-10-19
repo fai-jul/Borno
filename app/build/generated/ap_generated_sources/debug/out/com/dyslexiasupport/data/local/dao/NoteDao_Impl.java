@@ -202,6 +202,48 @@ public final class NoteDao_Impl implements NoteDao {
     });
   }
 
+  @Override
+  public List<NoteEntity> getAllNotesSync() {
+    final String _sql = "SELECT * FROM notes ORDER BY updatedAt DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
+      final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
+      final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+      final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updatedAt");
+      final List<NoteEntity> _result = new ArrayList<NoteEntity>(_cursor.getCount());
+      while (_cursor.moveToNext()) {
+        final NoteEntity _item;
+        final String _tmpTitle;
+        if (_cursor.isNull(_cursorIndexOfTitle)) {
+          _tmpTitle = null;
+        } else {
+          _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
+        }
+        final String _tmpContent;
+        if (_cursor.isNull(_cursorIndexOfContent)) {
+          _tmpContent = null;
+        } else {
+          _tmpContent = _cursor.getString(_cursorIndexOfContent);
+        }
+        final long _tmpCreatedAt;
+        _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
+        final long _tmpUpdatedAt;
+        _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
+        _item = new NoteEntity(_tmpTitle,_tmpContent,_tmpCreatedAt,_tmpUpdatedAt);
+        _item.id = _cursor.getLong(_cursorIndexOfId);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
   @NonNull
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();

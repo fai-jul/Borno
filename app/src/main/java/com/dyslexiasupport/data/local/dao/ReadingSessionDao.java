@@ -21,4 +21,7 @@ public interface ReadingSessionDao {
 
     @Query("SELECT SUM(durationSeconds) FROM reading_sessions")
     LiveData<Long> getTotalReadingTimeSeconds();
+
+    @Query("SELECT * FROM reading_sessions ORDER BY timestamp DESC")
+    List<ReadingSessionEntity> getAllSessionsSync();
 }

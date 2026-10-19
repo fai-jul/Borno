@@ -15,6 +15,9 @@ public class SessionManager {
     private static final String KEY_EMAIL = "email";
     private static final String KEY_ROLE = "role";
     private static final String KEY_AVATAR = "avatar";
+    private static final String KEY_LINK_CODE = "link_code";
+    private static final String KEY_FIREBASE_UID = "firebase_uid";
+    private static final String KEY_LINKED_COUNT = "linked_count";
 
     private final SharedPreferences prefs;
 
@@ -72,5 +75,29 @@ public class SessionManager {
 
     public boolean isGuest() {
         return prefs.getBoolean(KEY_IS_GUEST, false);
+    }
+
+    public String getLinkCode() {
+        return prefs.getString(KEY_LINK_CODE, "");
+    }
+
+    public void setLinkCode(String code) {
+        prefs.edit().putString(KEY_LINK_CODE, code).apply();
+    }
+
+    public String getFirebaseUid() {
+        return prefs.getString(KEY_FIREBASE_UID, "");
+    }
+
+    public void setFirebaseUid(String uid) {
+        prefs.edit().putString(KEY_FIREBASE_UID, uid).apply();
+    }
+
+    public int getLinkedCount() {
+        return prefs.getInt(KEY_LINKED_COUNT, 0);
+    }
+
+    public void setLinkedCount(int count) {
+        prefs.edit().putInt(KEY_LINKED_COUNT, count).apply();
     }
 }

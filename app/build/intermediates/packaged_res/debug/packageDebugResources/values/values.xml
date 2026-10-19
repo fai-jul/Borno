@@ -116,6 +116,11 @@
     <string name="game_speed_sub">Recognize words shown quickly</string>
     <string name="game_speed_title">Speed Flash</string>
     <string name="game_wrong">Not quite, but good try! 💪</string>
+    <string name="gcm_defaultSenderId" translatable="false">390211112974</string>
+    <string name="google_api_key" translatable="false">AIzaSyDcafltDNQ94qOqD4nzRhxYm2jSc1wZUbc</string>
+    <string name="google_app_id" translatable="false">1:390211112974:android:b85031acd8b0ba68cd2c5f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDcafltDNQ94qOqD4nzRhxYm2jSc1wZUbc</string>
+    <string name="google_storage_bucket" translatable="false">borno-1240f.firebasestorage.app</string>
     <string name="guest_name">Friend</string>
     <string name="guide_cd">Reading guide. Drag to move.</string>
     <string name="guide_focus">Focus</string>
@@ -142,9 +147,20 @@
     <string name="library_minutes">%1$d min</string>
     <string name="library_subtitle">Choose something to read</string>
     <string name="library_swipe_hint">Swipe right to save, left to mark as read</string>
+    <string name="link_code_button">Link Student Account</string>
+    <string name="link_code_copied">Link code copied to clipboard!</string>
+    <string name="link_code_copy">Copy Code</string>
+    <string name="link_code_enter_hint">Enter Learner\'s Link Code</string>
+    <string name="link_code_error_invalid">Invalid link code. Check and try again.</string>
+    <string name="link_code_linked_count">Linked Students: %1$d</string>
+    <string name="link_code_section_title">Parent / Teacher Connection</string>
+    <string name="link_code_success">Student account linked successfully! 🎉</string>
+    <string name="link_code_your_code">Your Link Code:</string>
     <string name="login_no_account">New here? Create an account</string>
     <string name="login_subtitle">Log in to continue</string>
     <string name="login_title">Welcome back</string>
+    <string name="low_end_desc">Reduces heavy animations and memory usage for smooth performance on entry-level phones.</string>
+    <string name="low_end_title">Low-End Device Mode</string>
     <string name="mascot_cheer">You are doing fantastic! Keep going!</string>
     <string name="mascot_encourage">Don’t worry, mistakes help us learn!</string>
     <string name="mascot_perfect">Perfect score! You are a superstar! ⭐⭐⭐</string>
@@ -193,6 +209,7 @@
     <string name="progress_stat_words">Saved Words</string>
     <string name="progress_subtitle">See how your reading powers are growing every day!</string>
     <string name="progress_title">Your Progress</string>
+    <string name="project_id" translatable="false">borno-1240f</string>
     <string name="reader_settings_title">Reading settings</string>
     <string name="reader_tap_hint">Tap any word to hear it and see its parts</string>
     <string name="register_have_account">Already have an account? Log in</string>
@@ -237,6 +254,8 @@
     <string name="setting_letter_hint">Keep this low for Bangla</string>
     <string name="setting_letter_spacing">Letter spacing</string>
     <string name="setting_line_spacing">Line spacing</string>
+    <string name="setting_preview_sample">পাখিটি গাছে বসে মিষ্টি গান গায়। Easy reading, your way.</string>
+    <string name="setting_preview_title">Live Preview</string>
     <string name="setting_syllables">Colour the syllables</string>
     <string name="setting_syllables_hint">Bangla words only</string>
     <string name="setting_text_size">Text size</string>
@@ -246,6 +265,10 @@
     <string name="swipe_save">⭐  Save</string>
     <string name="swipe_unread">Mark unread</string>
     <string name="swipe_unsave">Unsave</string>
+    <string name="sync_now_btn">Sync Now</string>
+    <string name="sync_status_synced">Synced with Cloud ☁️</string>
+    <string name="sync_status_syncing">Syncing data with Firebase…</string>
+    <string name="sync_status_title">Cloud Backup &amp; Sync</string>
     <string name="task_ask">Question</string>
     <string name="task_examples">🧩 Examples</string>
     <string name="task_explain">💡 Explain</string>

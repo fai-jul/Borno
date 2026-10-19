@@ -1,5 +1,9 @@
 R_DEF: Internal format may change without notice
 local
+anim bounce
+anim fade_in
+anim pulse
+anim shake
 attr? featureAccent
 attr? featureEmoji
 attr? featureSubtitle
@@ -19,6 +23,7 @@ color ds_primary_container
 color ds_sand
 color ds_sky
 color ds_surface
+color ic_launcher_background
 color nav_item
 color reader_accent_light
 color reader_accent_night
@@ -47,7 +52,9 @@ dimen ds_touch_min
 drawable bg_emoji_badge
 drawable bg_mic_halo
 drawable bg_note
+drawable ic_launcher_foreground
 drawable ic_logo
+drawable ic_mascot
 drawable ic_nav_home
 drawable ic_nav_practice
 drawable ic_nav_profile
@@ -78,6 +85,7 @@ id btnCapture
 id btnCheck
 id btnClose
 id btnCopy
+id btnCopyCode
 id btnCreate
 id btnExportPdf
 id btnFavorite
@@ -86,6 +94,7 @@ id btnGuest
 id btnHaveAccount
 id btnHear
 id btnInstallVoice
+id btnLinkStudent
 id btnListen
 id btnLogin
 id btnLogout
@@ -109,6 +118,7 @@ id btnShare
 id btnSpeak
 id btnSpeed
 id btnStop
+id btnSyncNow
 id btnUse
 id btnWeakArea
 id btnWeekly
@@ -116,6 +126,7 @@ id btnWidgetRefresh
 id cardAsk
 id cardBuilder
 id cardConfusable
+id cardLinkCode
 id cardMemory
 id cardOdd
 id cardPractice
@@ -169,6 +180,7 @@ id correctedGroup
 id correctedText
 id cropView
 id editDefinition
+id editLinkCode
 id editSearch
 id editSyllables
 id editWord
@@ -193,6 +205,7 @@ id input
 id inputBody
 id inputEmail
 id inputLayout
+id inputLayoutLinkCode
 id inputName
 id inputPassword
 id inputText
@@ -205,7 +218,9 @@ id joinedList
 id joinedSection
 id langGroup
 id layoutEmail
+id layoutLearnerCode
 id layoutName
+id layoutParentLink
 id layoutPassword
 id levelGroup
 id list
@@ -252,12 +267,15 @@ id role
 id roleGroup
 id root
 id rootView
+id sampleCard
+id sampleText
 id sliderGuide
 id sliderLetter
 id sliderLine
 id sliderSize
 id sliderWord
 id status
+id switchLowEnd
 id switchSyllables
 id syllableText
 id tapHint
@@ -268,6 +286,8 @@ id textEmpty
 id textGamesPlayed
 id textHint
 id textLearnerName
+id textLinkCode
+id textLinkedCount
 id textProgress
 id textPrompt
 id textReadingTime
@@ -275,6 +295,7 @@ id textRole
 id textSavedWords
 id textScore
 id textSyllables
+id textSyncStatus
 id textTotalGames
 id textTotalStars
 id textWord
@@ -323,6 +344,8 @@ layout sheet_word
 layout view_feature_card
 layout widget_word_of_the_day
 menu bottom_nav
+mipmap ic_launcher
+mipmap ic_launcher_round
 string action_back
 string action_create_account
 string action_guest
@@ -402,6 +425,11 @@ string game_score_label
 string game_speed_sub
 string game_speed_title
 string game_wrong
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string guest_name
 string guide_cd
 string guide_focus
@@ -428,9 +456,20 @@ string library_meta
 string library_minutes
 string library_subtitle
 string library_swipe_hint
+string link_code_button
+string link_code_copied
+string link_code_copy
+string link_code_enter_hint
+string link_code_error_invalid
+string link_code_linked_count
+string link_code_section_title
+string link_code_success
+string link_code_your_code
 string login_no_account
 string login_subtitle
 string login_title
+string low_end_desc
+string low_end_title
 string mascot_cheer
 string mascot_encourage
 string mascot_perfect
@@ -479,6 +518,7 @@ string progress_stat_time
 string progress_stat_words
 string progress_subtitle
 string progress_title
+string project_id
 string reader_settings_title
 string reader_tap_hint
 string register_have_account
@@ -523,6 +563,8 @@ string setting_background
 string setting_letter_hint
 string setting_letter_spacing
 string setting_line_spacing
+string setting_preview_sample
+string setting_preview_title
 string setting_syllables
 string setting_syllables_hint
 string setting_text_size
@@ -532,6 +574,10 @@ string swipe_read
 string swipe_save
 string swipe_unread
 string swipe_unsave
+string sync_now_btn
+string sync_status_synced
+string sync_status_syncing
+string sync_status_title
 string task_ask
 string task_examples
 string task_explain

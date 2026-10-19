@@ -18,4 +18,7 @@ public interface ExerciseResultDao {
 
     @Query("SELECT * FROM exercise_results ORDER BY timestamp DESC")
     LiveData<List<ExerciseResultEntity>> getAllResults();
+
+    @Query("SELECT * FROM exercise_results ORDER BY timestamp DESC")
+    List<ExerciseResultEntity> getAllResultsSync();
 }

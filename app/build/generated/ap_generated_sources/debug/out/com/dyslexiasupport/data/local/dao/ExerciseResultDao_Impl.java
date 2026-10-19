@@ -114,6 +114,44 @@ public final class ExerciseResultDao_Impl implements ExerciseResultDao {
     });
   }
 
+  @Override
+  public List<ExerciseResultEntity> getAllResultsSync() {
+    final String _sql = "SELECT * FROM exercise_results ORDER BY timestamp DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfExerciseType = CursorUtil.getColumnIndexOrThrow(_cursor, "exerciseType");
+      final int _cursorIndexOfScore = CursorUtil.getColumnIndexOrThrow(_cursor, "score");
+      final int _cursorIndexOfTotalQuestions = CursorUtil.getColumnIndexOrThrow(_cursor, "totalQuestions");
+      final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
+      final List<ExerciseResultEntity> _result = new ArrayList<ExerciseResultEntity>(_cursor.getCount());
+      while (_cursor.moveToNext()) {
+        final ExerciseResultEntity _item;
+        final String _tmpExerciseType;
+        if (_cursor.isNull(_cursorIndexOfExerciseType)) {
+          _tmpExerciseType = null;
+        } else {
+          _tmpExerciseType = _cursor.getString(_cursorIndexOfExerciseType);
+        }
+        final int _tmpScore;
+        _tmpScore = _cursor.getInt(_cursorIndexOfScore);
+        final int _tmpTotalQuestions;
+        _tmpTotalQuestions = _cursor.getInt(_cursorIndexOfTotalQuestions);
+        final long _tmpTimestamp;
+        _tmpTimestamp = _cursor.getLong(_cursorIndexOfTimestamp);
+        _item = new ExerciseResultEntity(_tmpExerciseType,_tmpScore,_tmpTotalQuestions,_tmpTimestamp);
+        _item.id = _cursor.getLong(_cursorIndexOfId);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
   @NonNull
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();

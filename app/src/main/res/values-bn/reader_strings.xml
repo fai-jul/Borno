@@ -14,4 +14,6 @@
     <string name="theme_sky">আকাশি</string>
     <string name="theme_peach">পিচ</string>
     <string name="theme_night">রাত</string>
+    <string name="setting_preview_title">সরাসরি প্রিভিউ</string>
+    <string name="setting_preview_sample">পাখিটি গাছে বসে মিষ্টি গান গায়। Easy reading, your way.</string>
 </resources>

@@ -141,13 +141,21 @@ public class ReaderSettingsSheet extends BottomSheetDialogFragment {
 
     private void showLabelsAndSwatches(ReaderSettings s) {
         Locale l = Locale.getDefault();
-        binding.valueSize.setText(String.format(l, "%d", s.fontSizeSp));
+        binding.valueSize.setText(String.format(l, "%d sp", s.fontSizeSp));
         binding.valueLine.setText(String.format(l, "%.1f×", s.lineSpacing));
-        binding.valueWord.setText(String.format(l, "%d", s.wordSpacingDp));
-        binding.valueLetter.setText(String.format(l, "%.2f", s.letterSpacingEm));
+        binding.valueWord.setText(String.format(l, "%d dp", s.wordSpacingDp));
+        binding.valueLetter.setText(String.format(l, "%.2f em", s.letterSpacingEm));
         binding.valueGuide.setText(String.format(l, "%d", s.guideLines));
         binding.sliderGuide.setEnabled(s.guideMode != ReadingGuideMode.OFF);
         refreshSwatches(s.theme);
+        updateLivePreview(s);
+    }
+
+    private void updateLivePreview(ReaderSettings s) {
+        if (binding == null || getContext() == null) return;
+        int bg = ContextCompat.getColor(requireContext(), s.theme.bgRes);
+        binding.sampleCard.setCardBackgroundColor(bg);
+        ReaderTextRenderer.apply(binding.sampleText, getString(R.string.setting_preview_sample), s);
     }
 
     private void buildSwatches() {
