@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="action_back">ফিরে যাও</string>
+    <string name="action_google_login">গুগল দিয়ে লগইন করো</string>
     <string name="action_reset">রিসেট করো</string>
     <string name="action_share">অ্যাপ শেয়ার করো</string>
     <string name="action_undo">ফিরিয়ে নাও</string>
@@ -43,6 +44,7 @@
     <string name="chip_levels_all">সব স্তর</string>
     <string name="chip_saved">⭐ সংরক্ষিত</string>
     <string name="coming_soon">শীঘ্রই আসছে</string>
+    <string name="default_web_client_id">46634ad64663-dyslexia46634ad6app.apps.googleusercontent.com</string>
     <string name="game_back_to_practice">অনুশীলনে ফিরে যাও</string>
     <string name="game_builder_sub">শব্দাংশ জুড়ে সম্পূর্ণ শব্দ তৈরি করো</string>
     <string name="game_builder_title">শব্দ গঠন</string>
@@ -87,6 +89,11 @@
     <string name="link_code_section_title">অভিভাবক ও শিক্ষকের সংযোগ</string>
     <string name="link_code_success">শিক্ষার্থী অ্যাকাউন্ট যুক্ত হয়েছে! 🎉</string>
     <string name="link_code_your_code">তোমার লিংক কোড:</string>
+    <string name="login_forgot_password">পাসওয়ার্ড ভুলে গেছ?</string>
+    <string name="login_google_failed">গুগল সাইন-ইন কাজ করেনি। আবার চেষ্টা করো।</string>
+    <string name="login_reset_desc">পাসওয়ার্ড রিসেট লিংক পেতে তোমার অ্যাকাউন্টের ইমেইল বসাও।</string>
+    <string name="login_reset_email_sent">পাসওয়ার্ড রিসেট লিংক ইমেইলে পাঠানো হয়েছে!</string>
+    <string name="login_reset_title">পাসওয়ার্ড পরিবর্তন</string>
     <string name="low_end_desc">অ্যানিমেশন ও মেমরি ব্যবহার কমিয়ে সাধারণ ফোনে দ্রুত কাজ করে।</string>
     <string name="low_end_title">লো-এন্ড ডিভাইস মোড</string>
     <string name="mascot_cheer">তুমি দারুণ খেলছ! চালিয়ে যাও!</string>

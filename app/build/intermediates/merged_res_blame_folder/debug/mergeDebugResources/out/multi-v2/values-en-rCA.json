@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.dyslexiasupport.app-mergeDebugResources-57:/values-en-rCA/values-en-rCA.xml",
+            "outputFile": "com.dyslexiasupport.app-mergeDebugResources-54:/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
                     "source": "/Users/faijul/.gradle/caches/8.13/transforms/b9c848ccf49d19d2b3d7e63466a4eba2/transformed/credentials-1.2.0-rc01/res/values-en-rCA/values-en-rCA.xml",

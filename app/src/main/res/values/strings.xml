@@ -40,6 +40,13 @@
     <string name="login_subtitle">Log in to continue</string>
     <string name="action_login">Log in</string>
     <string name="action_guest">Continue as guest</string>
+    <string name="action_google_login">Sign in with Google</string>
+    <string name="default_web_client_id">46634ad64663-dyslexia46634ad6app.apps.googleusercontent.com</string>
+    <string name="login_forgot_password">Forgot password?</string>
+    <string name="login_reset_email_sent">Password reset link sent to your email!</string>
+    <string name="login_reset_title">Reset Password</string>
+    <string name="login_reset_desc">Enter your account email to receive a password reset link.</string>
+    <string name="login_google_failed">Google Sign-In failed. Please try again.</string>
     <string name="login_no_account">New here? Create an account</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>

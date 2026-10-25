@@ -89,7 +89,9 @@ id btnCopyCode
 id btnCreate
 id btnExportPdf
 id btnFavorite
+id btnForgotPassword
 id btnGallery
+id btnGoogleLogin
 id btnGuest
 id btnHaveAccount
 id btnHear
@@ -348,6 +350,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 string action_back
 string action_create_account
+string action_google_login
 string action_guest
 string action_login
 string action_logout
@@ -398,6 +401,7 @@ string chip_sample_bn
 string chip_sample_en
 string chip_saved
 string coming_soon
+string default_web_client_id
 string error_email_invalid
 string error_email_taken
 string error_generic
@@ -465,7 +469,12 @@ string link_code_linked_count
 string link_code_section_title
 string link_code_success
 string link_code_your_code
+string login_forgot_password
+string login_google_failed
 string login_no_account
+string login_reset_desc
+string login_reset_email_sent
+string login_reset_title
 string login_subtitle
 string login_title
 string low_end_desc

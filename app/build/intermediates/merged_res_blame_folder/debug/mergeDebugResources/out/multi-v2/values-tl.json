@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.dyslexiasupport.app-mergeDebugResources-57:/values-tl/values-tl.xml",
+            "outputFile": "com.dyslexiasupport.app-mergeDebugResources-54:/values-tl/values-tl.xml",
             "map": [
                 {
                     "source": "/Users/faijul/.gradle/caches/8.13/transforms/33ba894f2ef6953e3a6b7374f0673a7d/transformed/material-1.12.0/res/values-tl/values-tl.xml",
@@ -23,23 +23,6 @@
                     }
                 },
                 {
-                    "source": "/Users/faijul/.gradle/caches/8.13/transforms/b9a0c41320f65f5bfef7181444235c40/transformed/play-services-basement-18.9.0/res/values-tl/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "218",
-                        "endColumns": "140",
-                        "endOffsets": "358"
-                    },
-                    "to": {
-                        "startLines": "58",
-                        "startColumns": "4",
-                        "startOffsets": "5852",
-                        "endColumns": "144",
-                        "endOffsets": "5992"
-                    }
-                },
-                {
                     "source": "/Users/faijul/.gradle/caches/8.13/transforms/a02c8800682842be2f671811c87b2286/transformed/core-1.13.0/res/values-tl/values-tl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -54,6 +37,23 @@
                         "startOffsets": "3733,3830,3932,4033,4130,4237,4345,13128",
                         "endColumns": "96,101,100,96,106,107,121,100",
                         "endOffsets": "3825,3927,4028,4125,4232,4340,4462,13224"
+                    }
+                },
+                {
+                    "source": "/Users/faijul/.gradle/caches/8.13/transforms/545e6f123669340c0683ba0fc41f91d2/transformed/play-services-basement-18.4.0/res/values-tl/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "140",
+                        "endOffsets": "335"
+                    },
+                    "to": {
+                        "startLines": "58",
+                        "startColumns": "4",
+                        "startOffsets": "5852",
+                        "endColumns": "144",
+                        "endOffsets": "5992"
                     }
                 },
                 {
@@ -91,13 +91,13 @@
                     }
                 },
                 {
-                    "source": "/Users/faijul/.gradle/caches/8.13/transforms/b68343632f8ce33d21fa2e17425119f9/transformed/play-services-base-18.9.0/res/values-tl/values.xml",
+                    "source": "/Users/faijul/.gradle/caches/8.13/transforms/ecefae1a97d74f7e28dd0dfb496e27d9/transformed/play-services-base-18.5.0/res/values-tl/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "216,319,491,625,730,884,1016,1134,1243,1418,1521,1695,1829,1987,2162,2226,2288",
+                        "startOffsets": "193,296,468,602,707,861,993,1111,1220,1395,1498,1672,1806,1964,2139,2203,2265",
                         "endColumns": "102,171,133,104,153,131,117,108,174,102,173,133,157,174,63,61,76",
-                        "endOffsets": "318,490,624,729,883,1015,1133,1242,1417,1520,1694,1828,1986,2161,2225,2287,2364"
+                        "endOffsets": "295,467,601,706,860,992,1110,1219,1394,1497,1671,1805,1963,2138,2202,2264,2341"
                     },
                     "to": {
                         "startLines": "50,51,52,53,54,55,56,57,59,60,61,62,63,64,65,66,67",

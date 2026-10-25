@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.dyslexiasupport.app-mergeDebugResources-57:/values-si/values-si.xml",
+            "outputFile": "com.dyslexiasupport.app-mergeDebugResources-54:/values-si/values-si.xml",
             "map": [
                 {
                     "source": "/Users/faijul/.gradle/caches/8.13/transforms/b9c848ccf49d19d2b3d7e63466a4eba2/transformed/credentials-1.2.0-rc01/res/values-si/values-si.xml",
@@ -38,13 +38,13 @@
                     }
                 },
                 {
-                    "source": "/Users/faijul/.gradle/caches/8.13/transforms/b68343632f8ce33d21fa2e17425119f9/transformed/play-services-base-18.9.0/res/values-si/values.xml",
+                    "source": "/Users/faijul/.gradle/caches/8.13/transforms/ecefae1a97d74f7e28dd0dfb496e27d9/transformed/play-services-base-18.5.0/res/values-si/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "216,320,470,590,699,837,957,1069,1163,1310,1421,1573,1700,1840,1997,2066,2123",
+                        "startOffsets": "193,297,447,567,676,814,934,1046,1140,1287,1398,1550,1677,1817,1974,2043,2100",
                         "endColumns": "103,149,119,108,137,119,111,93,146,110,151,126,139,156,68,56,75",
-                        "endOffsets": "319,469,589,698,836,956,1068,1162,1309,1420,1572,1699,1839,1996,2065,2122,2198"
+                        "endOffsets": "296,446,566,675,813,933,1045,1139,1286,1397,1549,1676,1816,1973,2042,2099,2175"
                     },
                     "to": {
                         "startLines": "50,51,52,53,54,55,56,57,59,60,61,62,63,64,65,66,67",
@@ -55,13 +55,13 @@
                     }
                 },
                 {
-                    "source": "/Users/faijul/.gradle/caches/8.13/transforms/b9a0c41320f65f5bfef7181444235c40/transformed/play-services-basement-18.9.0/res/values-si/values.xml",
+                    "source": "/Users/faijul/.gradle/caches/8.13/transforms/545e6f123669340c0683ba0fc41f91d2/transformed/play-services-basement-18.4.0/res/values-si/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
-                        "startOffsets": "218",
+                        "startOffsets": "195",
                         "endColumns": "134",
-                        "endOffsets": "352"
+                        "endOffsets": "329"
                     },
                     "to": {
                         "startLines": "58",

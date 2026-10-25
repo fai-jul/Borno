@@ -23,6 +23,13 @@
     <string name="action_back">ফিরে যাও</string>
     <string name="share_text">পড়ার এই সহায়ক অ্যাপটি ব্যবহার করে দেখো!</string>
     <string name="coming_soon">শীঘ্রই আসছে</string>
+    <string name="action_google_login">গুগল দিয়ে লগইন করো</string>
+    <string name="default_web_client_id">46634ad64663-dyslexia46634ad6app.apps.googleusercontent.com</string>
+    <string name="login_forgot_password">পাসওয়ার্ড ভুলে গেছ?</string>
+    <string name="login_reset_email_sent">পাসওয়ার্ড রিসেট লিংক ইমেইলে পাঠানো হয়েছে!</string>
+    <string name="login_reset_title">পাসওয়ার্ড পরিবর্তন</string>
+    <string name="login_reset_desc">পাসওয়ার্ড রিসেট লিংক পেতে তোমার অ্যাকাউন্টের ইমেইল বসাও।</string>
+    <string name="login_google_failed">গুগল সাইন-ইন কাজ করেনি। আবার চেষ্টা করো।</string>
 
     <!-- System Components & Notifications -->
     <string name="notification_channel_name">দৈনিক পড়ার অনুস্মারক</string>

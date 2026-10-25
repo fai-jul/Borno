@@ -3368,7 +3368,9 @@ id btnCopyCode
 id btnCreate
 id btnExportPdf
 id btnFavorite
+id btnForgotPassword
 id btnGallery
+id btnGoogleLogin
 id btnGuest
 id btnHaveAccount
 id btnHear
@@ -4281,6 +4283,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_back
 string action_create_account
+string action_google_login
 string action_guest
 string action_login
 string action_logout
@@ -4371,6 +4374,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
+string default_web_client_id
 string error_a11y_label
 string error_email_invalid
 string error_email_taken
@@ -4449,7 +4453,12 @@ string link_code_linked_count
 string link_code_section_title
 string link_code_success
 string link_code_your_code
+string login_forgot_password
+string login_google_failed
 string login_no_account
+string login_reset_desc
+string login_reset_email_sent
+string login_reset_title
 string login_subtitle
 string login_title
 string low_end_desc
@@ -6052,5 +6061,6 @@ styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
 xml file_paths
+xml ga_ad_services_config
 xml image_share_filepaths
 xml widget_word_info
