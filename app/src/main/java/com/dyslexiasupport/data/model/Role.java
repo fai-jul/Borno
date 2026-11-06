@@ -6,7 +6,6 @@ import com.dyslexiasupport.R;
 
 public enum Role {
     CHILD(R.string.role_child),
-    LEARNER(R.string.role_learner),
     PARENT(R.string.role_parent),
     TEACHER(R.string.role_teacher);
 

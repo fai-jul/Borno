@@ -21,6 +21,8 @@ public class NoteEntity {
 
     public long createdAt;
     public long updatedAt;
+    @NonNull
+    public String ownerId = "shared";
 
     public NoteEntity(@NonNull String title, @NonNull String content, long createdAt, long updatedAt) {
         this.title = title;

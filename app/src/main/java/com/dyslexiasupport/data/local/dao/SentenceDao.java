@@ -23,9 +23,9 @@ public interface SentenceDao {
     @Delete
     void delete(SentenceEntity sentence);
 
-    @Query("SELECT * FROM sentences ORDER BY id DESC")
-    LiveData<List<SentenceEntity>> getAllSentences();
+    @Query("SELECT * FROM sentences WHERE ownerId = :ownerId OR ownerId = 'shared' ORDER BY id DESC")
+    LiveData<List<SentenceEntity>> getAllSentences(String ownerId);
 
-    @Query("SELECT COUNT(*) FROM sentences")
-    int getSentenceCount();
+    @Query("SELECT COUNT(*) FROM sentences WHERE ownerId = :ownerId OR ownerId = 'shared'")
+    int getSentenceCount(String ownerId);
 }

@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -108,8 +109,11 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
         binding.btnBack.setOnClickListener(v ->
                 requireActivity().getOnBackPressedDispatcher().onBackPressed());
 
-        binding.btnSettings.setOnClickListener(v ->
-                new ReaderSettingsSheet().show(getChildFragmentManager(), "reader_settings"));
+        binding.btnSettings.setOnClickListener(v -> {
+            if (getParentFragmentManager().findFragmentByTag("reader_settings") == null) {
+                new ReaderSettingsSheet().show(getParentFragmentManager(), "reader_settings");
+            }
+        });
 
         binding.btnAssistant.setOnClickListener(v -> {
             if (currentReadingText != null) {
@@ -140,9 +144,16 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
 
         binding.readerText.setOnClickListener(v -> onTextTapped(downX, downY));
 
-        binding.guide.setOnBandTapListener((x, y) -> onTextTapped(
-                x - binding.readerText.getLeft(),
-                y + binding.readerScroll.getScrollY() - binding.readerText.getTop()));
+        binding.guide.setOnBandTapListener((x, y) -> {
+            if (binding == null) return;
+            int[] guideLoc = new int[2];
+            int[] textLoc = new int[2];
+            binding.guide.getLocationOnScreen(guideLoc);
+            binding.readerText.getLocationOnScreen(textLoc);
+            float textX = x + guideLoc[0] - textLoc[0];
+            float textY = y + guideLoc[1] - textLoc[1];
+            onTextTapped(textX, textY);
+        });
 
         vm.getSettings().observe(getViewLifecycleOwner(), s -> render());
         library.getAll().observe(getViewLifecycleOwner(), list -> render());
@@ -152,6 +163,14 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
         requireContext().bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
     }
     private void checkPermissionAndStartService() {
+        if (isBound && readerService != null) {
+            if (readerService.isPlaying()) {
+                readerService.pause();
+            } else {
+                readerService.play();
+            }
+            return;
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.POST_NOTIFICATIONS)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -175,13 +194,6 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
             requireContext().startService(serviceIntent);
         }
 
-        if (isBound && readerService != null) {
-            if (readerService.isPlaying()) {
-                readerService.pause();
-            } else {
-                readerService.play();
-            }
-        }
     }
 
     private void stopReadAloud() {
@@ -206,51 +218,91 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
 
     @Override
     public void onStateChanged(boolean isPlaying, int sentenceIndex, float speedRate) {
-        if (binding == null) return;
-        binding.btnPlayPause.setText(isPlaying ? "⏸  Pause" : "▶  Read Aloud");
-        binding.btnSpeed.setText(String.format(java.util.Locale.US, "%.2fx", speedRate));
+        runOnUiThread(() -> {
+            if (binding == null) return;
+            binding.btnPlayPause.setText(isPlaying ? "⏸  Pause" : "▶  Read Aloud");
+            binding.btnSpeed.setText(String.format(java.util.Locale.US, "%.2fx", speedRate));
+        });
     }
 
     @Override
     public void onSentenceHighlighted(int sentenceIndex, int startOffset, int endOffset) {
-        if (binding == null) return;
-        CharSequence text = binding.readerText.getText();
-        if (!(text instanceof Spannable)) return;
-        Spannable sp = (Spannable) text;
+        runOnUiThread(() -> {
+            if (binding == null) return;
+            CharSequence text = binding.readerText.getText();
+            if (!(text instanceof Spannable)) return;
+            Spannable sp = (Spannable) text;
 
-        clearSentenceHighlights();
+            clearSentenceHighlights();
 
-        if (startOffset >= 0 && endOffset <= text.length() && startOffset < endOffset) {
-            int highlightColor = ContextCompat.getColor(requireContext(), R.color.ds_primary_container);
-            sentenceHighlightSpan = new BackgroundColorSpan(ColorUtils.setAlphaComponent(highlightColor, 0x99));
-            sp.setSpan(sentenceHighlightSpan, startOffset, endOffset, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            if (startOffset >= 0 && endOffset <= text.length() && startOffset < endOffset) {
+                int highlightColor = ContextCompat.getColor(requireContext(), R.color.ds_primary_container);
+                sentenceHighlightSpan = new BackgroundColorSpan(ColorUtils.setAlphaComponent(highlightColor, 0x99));
+                sp.setSpan(sentenceHighlightSpan, startOffset, endOffset, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-            // Scroll to highlight position
-            Layout layout = binding.readerText.getLayout();
-            if (layout != null) {
-                int line = layout.getLineForOffset(startOffset);
-                int y = layout.getLineTop(line);
-                binding.readerScroll.smoothScrollTo(0, y);
+                Layout layout = binding.readerText.getLayout();
+                if (layout != null) {
+                    int line = layout.getLineForOffset(startOffset);
+                    int y = layout.getLineTop(line);
+                    binding.readerScroll.smoothScrollTo(0, y);
+                }
             }
-        }
+        });
     }
 
     @Override
     public void onWordHighlighted(int wordStartOffset, int wordEndOffset) {
-        if (binding == null) return;
-        CharSequence text = binding.readerText.getText();
-        if (!(text instanceof Spannable)) return;
-        Spannable sp = (Spannable) text;
+        runOnUiThread(() -> {
+            if (binding == null) return;
+            CharSequence text = binding.readerText.getText();
+            if (!(text instanceof Spannable)) return;
+            Spannable sp = (Spannable) text;
 
-        if (spokenWordHighlightSpan != null) {
-            sp.removeSpan(spokenWordHighlightSpan);
-        }
+            if (spokenWordHighlightSpan != null) {
+                sp.removeSpan(spokenWordHighlightSpan);
+            }
 
-        if (wordStartOffset >= 0 && wordEndOffset <= text.length() && wordStartOffset < wordEndOffset) {
-            int mangoColor = ContextCompat.getColor(requireContext(), R.color.ds_mango);
-            spokenWordHighlightSpan = new BackgroundColorSpan(ColorUtils.setAlphaComponent(mangoColor, 0xCC));
-            sp.setSpan(spokenWordHighlightSpan, wordStartOffset, wordEndOffset, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            if (wordStartOffset >= 0 && wordEndOffset <= text.length() && wordStartOffset < wordEndOffset) {
+                int mangoColor = ContextCompat.getColor(requireContext(), R.color.ds_mango);
+                spokenWordHighlightSpan = new BackgroundColorSpan(ColorUtils.setAlphaComponent(mangoColor, 0xCC));
+                sp.setSpan(spokenWordHighlightSpan, wordStartOffset, wordEndOffset, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            }
+        });
+    }
+
+    @Override
+    public void onReadingFinished() {
+        runOnUiThread(() -> {
+            if (binding == null || currentReadingText == null || !isAdded()) return;
+            java.util.List<ComprehensionQuestion> questions =
+                    ComprehensionQuestion.fromText(currentReadingText.body);
+            showQuestion(questions, 0, new int[]{0});
+        });
+    }
+
+    private void runOnUiThread(@NonNull Runnable action) {
+        if (isAdded()) {
+            requireActivity().runOnUiThread(action);
         }
+    }
+
+    private void showQuestion(java.util.List<ComprehensionQuestion> questions, int index, int[] score) {
+        if (index >= questions.size()) {
+            Toast.makeText(requireContext(),
+                    getString(R.string.comprehension_result, score[0], questions.size()),
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
+        ComprehensionQuestion q = questions.get(index);
+        new MaterialAlertDialogBuilder(requireContext())
+                .setTitle(R.string.comprehension_title)
+                .setMessage(q.prompt)
+                .setSingleChoiceItems(q.answers, -1, (dialog, which) -> {
+                    if (which == q.correctIndex) score[0]++;
+                    dialog.dismiss();
+                    showQuestion(questions, index + 1, score);
+                })
+                .show();
     }
 
     private void clearSentenceHighlights() {
@@ -291,6 +343,9 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
         }
         highlightWord(bounds[0], bounds[1]);
         String word = text.subSequence(bounds[0], bounds[1]).toString();
+        if (isBound && readerService != null) {
+            readerService.repeatWord(word);
+        }
         WordSheet.newInstance(word).show(getChildFragmentManager(), "word");
     }
 
@@ -336,6 +391,15 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
             return;
         }
         currentReadingText = text;
+        library.markAsRead(text.id);
+
+        java.util.List<ReadingText> allTexts = library.getAll().getValue();
+        int total = (allTexts != null && !allTexts.isEmpty()) ? allTexts.size() : 1;
+        int readCount = Math.min(library.getReadCount(), total);
+        binding.readerProgress.setMax(total);
+        binding.readerProgress.setProgress(readCount);
+        binding.readerProgressText.setText(String.format(java.util.Locale.US, "%d/%d", readCount, total));
+
         binding.readerTitle.setText(text.title);
         wordHighlight = null;
         ReaderTextRenderer.apply(binding.readerText, text.body, s);
@@ -346,7 +410,10 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
 
         float density = getResources().getDisplayMetrics().density;
         float bandPx = s.guideLines * binding.readerText.getLineHeight() + 8f * density;
-        binding.guide.configure(s.guideMode, bandPx, ColorUtils.setAlphaComponent(bg, 0xE6));
+        int scrimColor = s.theme.dark
+                ? ColorUtils.setAlphaComponent(ContextCompat.getColor(requireContext(), R.color.ds_cream), 0x99)
+                : ColorUtils.setAlphaComponent(ContextCompat.getColor(requireContext(), R.color.ds_ink), 0x77);
+        binding.guide.configure(s.guideMode, bandPx, scrimColor);
     }
 
     @Override

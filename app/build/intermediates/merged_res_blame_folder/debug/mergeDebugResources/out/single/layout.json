@@ -44,8 +44,16 @@
         "source": "com.dyslexiasupport.app-main-58:/layout/fragment_practice.xml"
     },
     {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-55:/layout/activity_email_verification.xml",
+        "source": "com.dyslexiasupport.app-main-58:/layout/activity_email_verification.xml"
+    },
+    {
         "merged": "com.dyslexiasupport.app-mergeDebugResources-55:/layout/item_vocabulary_word.xml",
         "source": "com.dyslexiasupport.app-main-58:/layout/item_vocabulary_word.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-55:/layout/activity_parent_dashboard.xml",
+        "source": "com.dyslexiasupport.app-main-58:/layout/activity_parent_dashboard.xml"
     },
     {
         "merged": "com.dyslexiasupport.app-mergeDebugResources-55:/layout/fragment_profile.xml",
@@ -70,6 +78,10 @@
     {
         "merged": "com.dyslexiasupport.app-mergeDebugResources-55:/layout/fragment_progress.xml",
         "source": "com.dyslexiasupport.app-main-58:/layout/fragment_progress.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-55:/layout/dialog_import_text.xml",
+        "source": "com.dyslexiasupport.app-main-58:/layout/dialog_import_text.xml"
     },
     {
         "merged": "com.dyslexiasupport.app-mergeDebugResources-55:/layout/activity_main.xml",

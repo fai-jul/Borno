@@ -22,6 +22,8 @@ public class DocumentEntity {
     public String lang;
 
     public long createdAt;
+    @NonNull
+    public String ownerId = "shared";
 
     public DocumentEntity(@NonNull String title, @NonNull String body,
                           @NonNull String lang, long createdAt) {

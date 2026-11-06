@@ -12,8 +12,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 
 import com.dyslexiasupport.R;
-import com.dyslexiasupport.data.auth.AuthResult;
-import com.dyslexiasupport.data.auth.LocalAuthRepository;
 import com.dyslexiasupport.data.firebase.CloudSyncManager;
 import com.dyslexiasupport.data.firebase.LinkCodeManager;
 import com.dyslexiasupport.data.local.SessionManager;
@@ -33,13 +31,14 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.FirebaseAuthException;
 
 public class LoginActivity extends BaseActivity {
 
     private ActivityLoginBinding binding;
-    private LocalAuthRepository auth;
     private SessionManager session;
     private GoogleSignInClient googleSignInClient;
+    private boolean submitting;
 
     private final ActivityResultLauncher<Intent> googleSignInLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
@@ -55,6 +54,8 @@ public class LoginActivity extends BaseActivity {
                     } catch (Exception e) {
                         Toast.makeText(this, R.string.login_google_failed, Toast.LENGTH_SHORT).show();
                     }
+                } else {
+                    setSubmitting(false);
                 }
             });
 
@@ -73,7 +74,6 @@ public class LoginActivity extends BaseActivity {
         setContentView(binding.getRoot());
         applySystemBarInsets(binding.getRoot());
 
-        auth = new LocalAuthRepository(this);
         session = new SessionManager(this);
 
         setupGoogleSignIn();
@@ -89,12 +89,9 @@ public class LoginActivity extends BaseActivity {
             }
             return false;
         });
-        binding.btnGuest.setOnClickListener(v -> {
-            session.signInAsGuest(getString(R.string.guest_name));
-            MainActivity.launchFresh(this);
-        });
         binding.btnCreate.setOnClickListener(v ->
                 startActivity(new Intent(this, RegisterActivity.class)));
+        binding.btnBack.setOnClickListener(v -> finish());
     }
 
     private void setupGoogleSignIn() {
@@ -107,7 +104,8 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void attemptGoogleLogin() {
-        if (googleSignInClient != null) {
+        if (!submitting && googleSignInClient != null) {
+            setSubmitting(true);
             googleSignInLauncher.launch(googleSignInClient.getSignInIntent());
         }
     }
@@ -120,7 +118,7 @@ public class LoginActivity extends BaseActivity {
                         FirebaseUser fbUser = FirebaseAuth.getInstance().getCurrentUser();
                         String name = account.getDisplayName() != null ? account.getDisplayName() : "Friend";
                         String email = account.getEmail() != null ? account.getEmail() : "";
-                        User user = new User(name, email, Role.LEARNER, "👤", false);
+                        User user = new User(name, email, Role.CHILD, "👤", false);
 
                         session.signIn(user);
                         session.setFirebaseUid(fbUser.getUid());
@@ -130,6 +128,7 @@ public class LoginActivity extends BaseActivity {
 
                         MainActivity.launchFresh(LoginActivity.this);
                     } else {
+                        setSubmitting(false);
                         Toast.makeText(this, R.string.login_google_failed, Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -155,6 +154,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void attemptLogin() {
+        if (submitting) return;
         binding.layoutEmail.setError(null);
         binding.layoutPassword.setError(null);
 
@@ -170,24 +170,55 @@ public class LoginActivity extends BaseActivity {
             return;
         }
 
-        AuthResult result = auth.login(email, password);
-        if (result.isSuccess()) {
-            session.signIn(result.user);
-            try {
-                FirebaseAuth.getInstance()
-                        .signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(task -> {
-                            if (task.isSuccessful() && task.getResult() != null && task.getResult().getUser() != null) {
-                                String uid = task.getResult().getUser().getUid();
-                                session.setFirebaseUid(uid);
-                                LinkCodeManager.ensureUserLinkCode(LoginActivity.this, result.user);
-                                CloudSyncManager.syncAll(LoginActivity.this, success -> {});
-                            }
-                        });
-            } catch (Exception ignored) {}
-            MainActivity.launchFresh(this);
-        } else {
-            binding.layoutPassword.setError(getString(result.errorRes));
+        setSubmitting(true);
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult() != null
+                            && task.getResult().getUser() != null) {
+                        FirebaseUser firebaseUser = task.getResult().getUser();
+                        User user = new User(firebaseUser.getDisplayName() != null
+                                ? firebaseUser.getDisplayName() : getString(R.string.guest_name),
+                                email, Role.CHILD, "👤", false);
+                        if (!firebaseUser.isEmailVerified()) {
+                            setSubmitting(false);
+                            startActivity(new Intent(this, EmailVerificationActivity.class)
+                                    .putExtra(EmailVerificationActivity.EXTRA_EMAIL, email)
+                                    .putExtra(EmailVerificationActivity.EXTRA_NAME, user.getName())
+                                    .putExtra(EmailVerificationActivity.EXTRA_ROLE, user.getRole().name())
+                                    .putExtra(EmailVerificationActivity.EXTRA_AVATAR, user.getAvatar()));
+                            return;
+                        }
+                        session.signIn(user);
+                        session.setFirebaseUid(firebaseUser.getUid());
+                        LinkCodeManager.ensureUserLinkCode(this, user);
+                        CloudSyncManager.syncAll(this, success -> {});
+                        MainActivity.launchFresh(this);
+                    } else {
+                        setSubmitting(false);
+                        binding.layoutPassword.setError(firebaseError(task.getException()));
+                    }
+                });
+    }
+
+    private void setSubmitting(boolean value) {
+        submitting = value;
+        binding.btnLogin.setEnabled(!value);
+        binding.btnGoogleLogin.setEnabled(!value);
+        binding.btnCreate.setEnabled(!value);
+        binding.btnForgotPassword.setEnabled(!value);
+    }
+
+    private String firebaseError(Exception error) {
+        if (error instanceof FirebaseAuthException) {
+            String code = ((FirebaseAuthException) error).getErrorCode();
+            if ("ERROR_USER_NOT_FOUND".equals(code) || "ERROR_WRONG_PASSWORD".equals(code)
+                    || "ERROR_INVALID_CREDENTIAL".equals(code)) {
+                return getString(R.string.error_login_failed);
+            }
+            if ("ERROR_TOO_MANY_REQUESTS".equals(code)) {
+                return getString(R.string.error_auth_too_many_requests);
+            }
         }
+        return getString(R.string.error_generic);
     }
 }

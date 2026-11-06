@@ -53,17 +53,17 @@ public final class AppDatabase_Impl extends AppDatabase {
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(2) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(3) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS `words` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word` TEXT NOT NULL, `definition` TEXT, `language` TEXT, `syllables` TEXT, `isSaved` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `sentences` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sentence` TEXT NOT NULL, `translation` TEXT, `language` TEXT, `createdAt` INTEGER NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `notes` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `content` TEXT NOT NULL, `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `reading_sessions` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `textId` TEXT NOT NULL, `textTitle` TEXT, `durationSeconds` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `exercise_results` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `exerciseType` TEXT NOT NULL, `score` INTEGER NOT NULL, `totalQuestions` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `documents` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `body` TEXT NOT NULL, `lang` TEXT NOT NULL, `createdAt` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `words` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word` TEXT NOT NULL, `definition` TEXT, `language` TEXT, `syllables` TEXT, `isSaved` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `ownerId` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `sentences` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sentence` TEXT NOT NULL, `translation` TEXT, `language` TEXT, `createdAt` INTEGER NOT NULL, `ownerId` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `notes` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `content` TEXT NOT NULL, `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, `ownerId` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `reading_sessions` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `textId` TEXT NOT NULL, `textTitle` TEXT, `durationSeconds` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `ownerId` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `exercise_results` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `exerciseType` TEXT NOT NULL, `score` INTEGER NOT NULL, `totalQuestions` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `ownerId` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `documents` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `body` TEXT NOT NULL, `lang` TEXT NOT NULL, `createdAt` INTEGER NOT NULL, `ownerId` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '488abd8c8c9050aabacf79705db52333')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f7c4ac68925f0a7abd074315c9f36b1e')");
       }
 
       @Override
@@ -117,7 +117,7 @@ public final class AppDatabase_Impl extends AppDatabase {
       @NonNull
       public RoomOpenHelper.ValidationResult onValidateSchema(
           @NonNull final SupportSQLiteDatabase db) {
-        final HashMap<String, TableInfo.Column> _columnsWords = new HashMap<String, TableInfo.Column>(7);
+        final HashMap<String, TableInfo.Column> _columnsWords = new HashMap<String, TableInfo.Column>(8);
         _columnsWords.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsWords.put("word", new TableInfo.Column("word", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsWords.put("definition", new TableInfo.Column("definition", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -125,6 +125,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         _columnsWords.put("syllables", new TableInfo.Column("syllables", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsWords.put("isSaved", new TableInfo.Column("isSaved", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsWords.put("createdAt", new TableInfo.Column("createdAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsWords.put("ownerId", new TableInfo.Column("ownerId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysWords = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesWords = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoWords = new TableInfo("words", _columnsWords, _foreignKeysWords, _indicesWords);
@@ -134,12 +135,13 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoWords + "\n"
                   + " Found:\n" + _existingWords);
         }
-        final HashMap<String, TableInfo.Column> _columnsSentences = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsSentences = new HashMap<String, TableInfo.Column>(6);
         _columnsSentences.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSentences.put("sentence", new TableInfo.Column("sentence", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSentences.put("translation", new TableInfo.Column("translation", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSentences.put("language", new TableInfo.Column("language", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSentences.put("createdAt", new TableInfo.Column("createdAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSentences.put("ownerId", new TableInfo.Column("ownerId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysSentences = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesSentences = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoSentences = new TableInfo("sentences", _columnsSentences, _foreignKeysSentences, _indicesSentences);
@@ -149,12 +151,13 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoSentences + "\n"
                   + " Found:\n" + _existingSentences);
         }
-        final HashMap<String, TableInfo.Column> _columnsNotes = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsNotes = new HashMap<String, TableInfo.Column>(6);
         _columnsNotes.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsNotes.put("title", new TableInfo.Column("title", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsNotes.put("content", new TableInfo.Column("content", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsNotes.put("createdAt", new TableInfo.Column("createdAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsNotes.put("updatedAt", new TableInfo.Column("updatedAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotes.put("ownerId", new TableInfo.Column("ownerId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysNotes = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesNotes = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoNotes = new TableInfo("notes", _columnsNotes, _foreignKeysNotes, _indicesNotes);
@@ -164,12 +167,13 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoNotes + "\n"
                   + " Found:\n" + _existingNotes);
         }
-        final HashMap<String, TableInfo.Column> _columnsReadingSessions = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsReadingSessions = new HashMap<String, TableInfo.Column>(6);
         _columnsReadingSessions.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsReadingSessions.put("textId", new TableInfo.Column("textId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsReadingSessions.put("textTitle", new TableInfo.Column("textTitle", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsReadingSessions.put("durationSeconds", new TableInfo.Column("durationSeconds", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsReadingSessions.put("timestamp", new TableInfo.Column("timestamp", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsReadingSessions.put("ownerId", new TableInfo.Column("ownerId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysReadingSessions = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesReadingSessions = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoReadingSessions = new TableInfo("reading_sessions", _columnsReadingSessions, _foreignKeysReadingSessions, _indicesReadingSessions);
@@ -179,12 +183,13 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoReadingSessions + "\n"
                   + " Found:\n" + _existingReadingSessions);
         }
-        final HashMap<String, TableInfo.Column> _columnsExerciseResults = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsExerciseResults = new HashMap<String, TableInfo.Column>(6);
         _columnsExerciseResults.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsExerciseResults.put("exerciseType", new TableInfo.Column("exerciseType", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsExerciseResults.put("score", new TableInfo.Column("score", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsExerciseResults.put("totalQuestions", new TableInfo.Column("totalQuestions", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsExerciseResults.put("timestamp", new TableInfo.Column("timestamp", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsExerciseResults.put("ownerId", new TableInfo.Column("ownerId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysExerciseResults = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesExerciseResults = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoExerciseResults = new TableInfo("exercise_results", _columnsExerciseResults, _foreignKeysExerciseResults, _indicesExerciseResults);
@@ -194,12 +199,13 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoExerciseResults + "\n"
                   + " Found:\n" + _existingExerciseResults);
         }
-        final HashMap<String, TableInfo.Column> _columnsDocuments = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsDocuments = new HashMap<String, TableInfo.Column>(6);
         _columnsDocuments.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsDocuments.put("title", new TableInfo.Column("title", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsDocuments.put("body", new TableInfo.Column("body", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsDocuments.put("lang", new TableInfo.Column("lang", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsDocuments.put("createdAt", new TableInfo.Column("createdAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsDocuments.put("ownerId", new TableInfo.Column("ownerId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysDocuments = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesDocuments = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoDocuments = new TableInfo("documents", _columnsDocuments, _foreignKeysDocuments, _indicesDocuments);
@@ -211,7 +217,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "488abd8c8c9050aabacf79705db52333", "d84a43d2ecf99a41f9dc60d7b4a17b56");
+    }, "f7c4ac68925f0a7abd074315c9f36b1e", "83a206e6b0703b42ad77401efd0140d0");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

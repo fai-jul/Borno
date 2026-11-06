@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ds_cream"
     android:orientation="vertical">
 
     <TextView
@@ -76,6 +77,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/ds_space_sm"
                 android:text="@string/chip_saved" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipNctb"
+                style="@style/Ds.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ds_space_sm"
+                android:text="@string/chip_nctb_class5" />
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -125,6 +134,16 @@
                 android:text="@string/chip_level_3" />
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnImportPdf"
+        style="@style/Ds.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ds_space_xl"
+        android:layout_marginTop="@dimen/ds_space_xs"
+        android:layout_marginEnd="@dimen/ds_space_xl"
+        android:text="@string/btn_import_pdf" />
 
     <TextView
         style="@style/Ds.Text.Caption"

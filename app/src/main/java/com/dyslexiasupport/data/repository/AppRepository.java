@@ -18,6 +18,7 @@ import com.dyslexiasupport.data.local.entity.NoteEntity;
 import com.dyslexiasupport.data.local.entity.ReadingSessionEntity;
 import com.dyslexiasupport.data.local.entity.SentenceEntity;
 import com.dyslexiasupport.data.local.entity.WordEntity;
+import com.dyslexiasupport.data.local.SessionManager;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -35,6 +36,7 @@ public class AppRepository {
     private final ExerciseResultDao exerciseResultDao;
     private final DocumentDao documentDao;
     private final ExecutorService executor;
+    private final String ownerId;
 
     public AppRepository(@NonNull Context context) {
         AppDatabase db = AppDatabase.getInstance(context);
@@ -45,27 +47,34 @@ public class AppRepository {
         this.exerciseResultDao = db.exerciseResultDao();
         this.documentDao = db.documentDao();
         this.executor = Executors.newFixedThreadPool(4);
+        this.ownerId = new SessionManager(context).getOwnerId();
     }
 
     // --- Words ---
     public LiveData<List<WordEntity>> getAllWords() {
-        return wordDao.getAllWords();
+        return wordDao.getAllWords(ownerId);
     }
 
     public LiveData<List<WordEntity>> getSavedWords() {
-        return wordDao.getSavedWords();
+        return wordDao.getSavedWords(ownerId);
     }
 
     public LiveData<List<WordEntity>> searchWords(String query) {
-        return wordDao.searchWords(query);
+        return wordDao.searchWords(query, ownerId);
     }
 
     public void insertWord(WordEntity word) {
-        executor.execute(() -> wordDao.insert(word));
+        executor.execute(() -> {
+            word.ownerId = ownerId;
+            wordDao.insert(word);
+        });
     }
 
     public void updateWord(WordEntity word) {
-        executor.execute(() -> wordDao.update(word));
+        executor.execute(() -> {
+            word.ownerId = ownerId;
+            wordDao.update(word);
+        });
     }
 
     public void deleteWord(WordEntity word) {
@@ -81,11 +90,14 @@ public class AppRepository {
 
     // --- Sentences ---
     public LiveData<List<SentenceEntity>> getAllSentences() {
-        return sentenceDao.getAllSentences();
+        return sentenceDao.getAllSentences(ownerId);
     }
 
     public void insertSentence(SentenceEntity sentence) {
-        executor.execute(() -> sentenceDao.insert(sentence));
+        executor.execute(() -> {
+            sentence.ownerId = ownerId;
+            sentenceDao.insert(sentence);
+        });
     }
 
     public void deleteSentence(SentenceEntity sentence) {
@@ -94,15 +106,21 @@ public class AppRepository {
 
     // --- Notes ---
     public LiveData<List<NoteEntity>> getAllNotes() {
-        return noteDao.getAllNotes();
+        return noteDao.getAllNotes(ownerId);
     }
 
     public void insertNote(NoteEntity note) {
-        executor.execute(() -> noteDao.insert(note));
+        executor.execute(() -> {
+            note.ownerId = ownerId;
+            noteDao.insert(note);
+        });
     }
 
     public void updateNote(NoteEntity note) {
-        executor.execute(() -> noteDao.update(note));
+        executor.execute(() -> {
+            note.ownerId = ownerId;
+            noteDao.update(note);
+        });
     }
 
     public void deleteNote(NoteEntity note) {
@@ -111,36 +129,45 @@ public class AppRepository {
 
     // --- Reading Sessions ---
     public LiveData<List<ReadingSessionEntity>> getAllReadingSessions() {
-        return readingSessionDao.getAllSessions();
+        return readingSessionDao.getAllSessions(ownerId);
     }
 
     public LiveData<Long> getTotalReadingTimeSeconds() {
-        return readingSessionDao.getTotalReadingTimeSeconds();
+        return readingSessionDao.getTotalReadingTimeSeconds(ownerId);
     }
 
     public void insertReadingSession(ReadingSessionEntity session) {
-        executor.execute(() -> readingSessionDao.insert(session));
+        executor.execute(() -> {
+            session.ownerId = ownerId;
+            readingSessionDao.insert(session);
+        });
     }
 
     // --- Exercise Results ---
     public LiveData<List<ExerciseResultEntity>> getAllExerciseResults() {
-        return exerciseResultDao.getAllResults();
+        return exerciseResultDao.getAllResults(ownerId);
     }
 
     public void insertExerciseResult(ExerciseResultEntity result) {
-        executor.execute(() -> exerciseResultDao.insert(result));
+        executor.execute(() -> {
+            result.ownerId = ownerId;
+            exerciseResultDao.insert(result);
+        });
     }
 
     // --- Documents (scanned texts) ---
     public LiveData<List<DocumentEntity>> getAllDocuments() {
-        return documentDao.getAllDocuments();
+        return documentDao.getAllDocuments(ownerId);
     }
 
     public void insertDocument(DocumentEntity document) {
-        executor.execute(() -> documentDao.insert(document));
+        executor.execute(() -> {
+            document.ownerId = ownerId;
+            documentDao.insert(document);
+        });
     }
 
     public void deleteDocumentById(long id) {
-        executor.execute(() -> documentDao.deleteById(id));
+        executor.execute(() -> documentDao.deleteById(id, ownerId));
     }
 }

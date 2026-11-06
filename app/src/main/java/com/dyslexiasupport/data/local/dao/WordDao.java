@@ -27,27 +27,27 @@ public interface WordDao {
     @Delete
     void delete(WordEntity word);
 
-    @Query("SELECT * FROM words ORDER BY id DESC")
-    LiveData<List<WordEntity>> getAllWords();
+    @Query("SELECT * FROM words WHERE ownerId = :ownerId OR ownerId = 'shared' ORDER BY id DESC")
+    LiveData<List<WordEntity>> getAllWords(String ownerId);
 
-    @Query("SELECT * FROM words WHERE isSaved = 1 ORDER BY id DESC")
-    LiveData<List<WordEntity>> getSavedWords();
+    @Query("SELECT * FROM words WHERE isSaved = 1 AND (ownerId = :ownerId OR ownerId = 'shared') ORDER BY id DESC")
+    LiveData<List<WordEntity>> getSavedWords(String ownerId);
 
-    @Query("SELECT * FROM words WHERE word LIKE '%' || :query || '%' OR definition LIKE '%' || :query || '%' ORDER BY id DESC")
-    LiveData<List<WordEntity>> searchWords(String query);
+    @Query("SELECT * FROM words WHERE (ownerId = :ownerId OR ownerId = 'shared') AND (word LIKE '%' || :query || '%' OR definition LIKE '%' || :query || '%') ORDER BY id DESC")
+    LiveData<List<WordEntity>> searchWords(String query, String ownerId);
 
-    @Query("SELECT COUNT(*) FROM words")
-    int getWordCount();
+    @Query("SELECT COUNT(*) FROM words WHERE ownerId = :ownerId OR ownerId = 'shared'")
+    int getWordCount(String ownerId);
 
-    @Query("SELECT * FROM words ORDER BY id DESC")
-    List<WordEntity> getAllWordsSync();
+    @Query("SELECT * FROM words WHERE ownerId = :ownerId ORDER BY id DESC")
+    List<WordEntity> getAllWordsSync(String ownerId);
 
-    @Query("SELECT * FROM words WHERE id = :id LIMIT 1")
-    WordEntity getWordByIdSync(long id);
+    @Query("SELECT * FROM words WHERE id = :id AND (ownerId = :ownerId OR ownerId = 'shared') LIMIT 1")
+    WordEntity getWordByIdSync(long id, String ownerId);
 
-    @Query("SELECT * FROM words ORDER BY RANDOM() LIMIT 1")
-    WordEntity getRandomWordSync();
+    @Query("SELECT * FROM words WHERE ownerId = :ownerId OR ownerId = 'shared' ORDER BY RANDOM() LIMIT 1")
+    WordEntity getRandomWordSync(String ownerId);
 
-    @Query("DELETE FROM words WHERE id = :id")
-    int deleteByIdSync(long id);
+    @Query("DELETE FROM words WHERE id = :id AND ownerId = :ownerId")
+    int deleteByIdSync(long id, String ownerId);
 }

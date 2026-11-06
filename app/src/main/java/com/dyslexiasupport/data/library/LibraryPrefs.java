@@ -62,4 +62,14 @@ public class LibraryPrefs {
         prefs.edit().putStringSet(KEY_READ, set).apply();
         return nowRead;
     }
+
+    public boolean markAsRead(@NonNull String id) {
+        Set<String> set = getRead();
+        if (!set.contains(id)) {
+            set.add(id);
+            prefs.edit().putStringSet(KEY_READ, set).apply();
+            return true;
+        }
+        return false;
+    }
 }

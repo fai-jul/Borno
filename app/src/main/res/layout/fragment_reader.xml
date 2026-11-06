@@ -12,17 +12,14 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="@dimen/ds_space_lg"
-        android:paddingTop="@dimen/ds_space_md"
+        android:paddingTop="@dimen/ds_space_lg"
         android:paddingEnd="@dimen/ds_space_lg">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBack"
-            style="@style/Ds.TonalButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Ds.BackButton"
             android:contentDescription="@string/action_back"
-            android:minWidth="56dp"
-            android:text="←" />
+            android:text="" />
 
         <TextView
             android:id="@+id/readerTitle"
@@ -38,22 +35,78 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSettings"
-            style="@style/Ds.TonalButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="@dimen/ds_space_sm"
             android:contentDescription="@string/reader_settings_title"
-            android:minWidth="56dp"
-            android:text="Aa" />
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:padding="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:text="Aa"
+            android:textColor="@color/ds_on_primary_container"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/ds_primary_container"
+            app:cornerRadius="24dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAssistant"
-            style="@style/Ds.TonalButton"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/assistant_open_cd"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:padding="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:text="✨"
+            android:textColor="@color/ds_on_primary_container"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/ds_primary_container"
+            app:cornerRadius="24dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/ds_space_xl"
+        android:paddingTop="@dimen/ds_space_sm"
+        android:paddingEnd="@dimen/ds_space_xl">
+
+        <ProgressBar
+            android:id="@+id/readerProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="7dp"
+            android:layout_weight="1"
+            android:max="5"
+            android:progress="3"
+            android:progressTint="@color/ds_primary"
+            android:progressBackgroundTint="@color/ds_sand" />
+
+        <TextView
+            android:id="@+id/readerProgressText"
+            style="@style/Ds.Text.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/ds_space_sm"
-            android:contentDescription="@string/assistant_open_cd"
-            android:minWidth="56dp"
-            android:text="✨" />
+            android:layout_marginStart="@dimen/ds_space_md"
+            android:text="@string/reader_progress_placeholder"
+            android:textColor="@color/ds_primary"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <TextView
@@ -72,25 +125,37 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <ScrollView
-            android:id="@+id/readerScroll"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToPadding="false">
+            android:layout_margin="@dimen/ds_space_lg"
+            app:cardBackgroundColor="@color/ds_surface"
+            app:cardCornerRadius="@dimen/ds_radius_lg"
+            app:cardElevation="1dp"
+            app:strokeColor="@color/ds_sand"
+            app:strokeWidth="1dp">
 
-            <TextView
-                android:id="@+id/readerText"
-                style="@style/Ds.Text"
+            <ScrollView
+                android:id="@+id/readerScroll"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:includeFontPadding="true"
-                android:padding="@dimen/ds_space_xl" />
-        </ScrollView>
+                android:layout_height="match_parent"
+                android:clipToPadding="false">
+
+                <TextView
+                    android:id="@+id/readerText"
+                    style="@style/Ds.Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="true"
+                    android:padding="@dimen/ds_space_xl" />
+            </ScrollView>
+        </com.google.android.material.card.MaterialCardView>
 
         <com.dyslexiasupport.ui.reader.ReadingGuideView
             android:id="@+id/guide"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:elevation="10dp"
             android:contentDescription="@string/guide_cd"
             android:visibility="gone" />
     </FrameLayout>
@@ -120,10 +185,17 @@
                 style="@style/Ds.TonalButton"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:contentDescription="Previous Sentence"
+                android:background="@drawable/bg_reader_nav_circle"
+                android:contentDescription="@string/reader_previous_sentence"
+                app:icon="@drawable/ic_chevron_left"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 android:padding="0dp"
-                android:text="⏮"
-                android:textSize="18sp" />
+                android:text="" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnPlayPause"
@@ -144,8 +216,13 @@
                 android:layout_height="48dp"
                 android:contentDescription="Stop"
                 android:padding="0dp"
-                android:text="⏹"
-                android:textSize="18sp" />
+                app:icon="@drawable/ic_stop"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNextSentence"
@@ -153,10 +230,17 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="@dimen/ds_space_xs"
-                android:contentDescription="Next Sentence"
+                android:background="@drawable/bg_reader_nav_circle"
+                android:contentDescription="@string/reader_next_sentence"
+                app:icon="@drawable/ic_chevron_right"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 android:padding="0dp"
-                android:text="⏭"
-                android:textSize="18sp" />
+                android:text="" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSpeed"

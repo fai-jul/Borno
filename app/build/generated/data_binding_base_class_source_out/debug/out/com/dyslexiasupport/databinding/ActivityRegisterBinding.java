@@ -27,6 +27,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final ChipGroup avatarGroup;
 
   @NonNull
+  public final MaterialButton btnBack;
+
+  @NonNull
   public final MaterialButton btnHaveAccount;
 
   @NonNull
@@ -52,9 +55,6 @@ public final class ActivityRegisterBinding implements ViewBinding {
 
   @NonNull
   public final Chip chipRoleChild;
-
-  @NonNull
-  public final Chip chipRoleLearner;
 
   @NonNull
   public final Chip chipRoleParent;
@@ -84,16 +84,17 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final ChipGroup roleGroup;
 
   private ActivityRegisterBinding(@NonNull ScrollView rootView, @NonNull ChipGroup avatarGroup,
-      @NonNull MaterialButton btnHaveAccount, @NonNull MaterialButton btnRegister,
-      @NonNull Chip chipAv1, @NonNull Chip chipAv2, @NonNull Chip chipAv3, @NonNull Chip chipAv4,
-      @NonNull Chip chipAv5, @NonNull Chip chipAv6, @NonNull Chip chipRoleChild,
-      @NonNull Chip chipRoleLearner, @NonNull Chip chipRoleParent, @NonNull Chip chipRoleTeacher,
+      @NonNull MaterialButton btnBack, @NonNull MaterialButton btnHaveAccount,
+      @NonNull MaterialButton btnRegister, @NonNull Chip chipAv1, @NonNull Chip chipAv2,
+      @NonNull Chip chipAv3, @NonNull Chip chipAv4, @NonNull Chip chipAv5, @NonNull Chip chipAv6,
+      @NonNull Chip chipRoleChild, @NonNull Chip chipRoleParent, @NonNull Chip chipRoleTeacher,
       @NonNull TextInputEditText inputEmail, @NonNull TextInputEditText inputName,
       @NonNull TextInputEditText inputPassword, @NonNull TextInputLayout layoutEmail,
       @NonNull TextInputLayout layoutName, @NonNull TextInputLayout layoutPassword,
       @NonNull ChipGroup roleGroup) {
     this.rootView = rootView;
     this.avatarGroup = avatarGroup;
+    this.btnBack = btnBack;
     this.btnHaveAccount = btnHaveAccount;
     this.btnRegister = btnRegister;
     this.chipAv1 = chipAv1;
@@ -103,7 +104,6 @@ public final class ActivityRegisterBinding implements ViewBinding {
     this.chipAv5 = chipAv5;
     this.chipAv6 = chipAv6;
     this.chipRoleChild = chipRoleChild;
-    this.chipRoleLearner = chipRoleLearner;
     this.chipRoleParent = chipRoleParent;
     this.chipRoleTeacher = chipRoleTeacher;
     this.inputEmail = inputEmail;
@@ -145,6 +145,12 @@ public final class ActivityRegisterBinding implements ViewBinding {
       id = R.id.avatarGroup;
       ChipGroup avatarGroup = ViewBindings.findChildViewById(rootView, id);
       if (avatarGroup == null) {
+        break missingId;
+      }
+
+      id = R.id.btnBack;
+      MaterialButton btnBack = ViewBindings.findChildViewById(rootView, id);
+      if (btnBack == null) {
         break missingId;
       }
 
@@ -202,12 +208,6 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.chipRoleLearner;
-      Chip chipRoleLearner = ViewBindings.findChildViewById(rootView, id);
-      if (chipRoleLearner == null) {
-        break missingId;
-      }
-
       id = R.id.chipRoleParent;
       Chip chipRoleParent = ViewBindings.findChildViewById(rootView, id);
       if (chipRoleParent == null) {
@@ -262,9 +262,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRegisterBinding((ScrollView) rootView, avatarGroup, btnHaveAccount,
-          btnRegister, chipAv1, chipAv2, chipAv3, chipAv4, chipAv5, chipAv6, chipRoleChild,
-          chipRoleLearner, chipRoleParent, chipRoleTeacher, inputEmail, inputName, inputPassword,
+      return new ActivityRegisterBinding((ScrollView) rootView, avatarGroup, btnBack,
+          btnHaveAccount, btnRegister, chipAv1, chipAv2, chipAv3, chipAv4, chipAv5, chipAv6,
+          chipRoleChild, chipRoleParent, chipRoleTeacher, inputEmail, inputName, inputPassword,
           layoutEmail, layoutName, layoutPassword, roleGroup);
     }
     String missingId = rootView.getResources().getResourceName(id);

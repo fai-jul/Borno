@@ -31,14 +31,11 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnClose"
-            style="@style/Ds.TonalButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Ds.BackButton"
             android:layout_gravity="top|start"
             android:layout_margin="@dimen/ds_space_md"
             android:contentDescription="@string/scan_close_cd"
-            android:minWidth="56dp"
-            android:text="✕" />
+            android:text="" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnGallery"

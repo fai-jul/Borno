@@ -26,7 +26,7 @@ public final class ImagePrep {
     /** Longest side we keep for the picture the user crops (memory-friendly). */
     public static final int MAX_SIDE = 2400;
     /** Very small crops are enlarged to at least this, so letters have enough pixels. */
-    private static final int MIN_OCR_SIDE = 1200;
+    private static final int MIN_OCR_SIDE = 1600;
 
     private ImagePrep() {
     }
@@ -106,7 +106,9 @@ public final class ImagePrep {
 
         ColorMatrix matrix = new ColorMatrix();
         matrix.setSaturation(0f);
-        float contrast = 1.35f;
+        // A moderate contrast lift improves paper/background separation without
+        // erasing thin strokes and Bengali vowel marks.
+        float contrast = 1.28f;
         float shift = (-0.5f * contrast + 0.5f) * 255f;
         matrix.postConcat(new ColorMatrix(new float[]{
                 contrast, 0, 0, 0, shift,
@@ -118,6 +120,26 @@ public final class ImagePrep {
         Paint paint = new Paint(Paint.FILTER_BITMAP_FLAG);
         paint.setColorFilter(new ColorMatrixColorFilter(matrix));
         new Canvas(out).drawBitmap(sized, 0f, 0f, paint);
+        return out;
+    }
+
+    /** A high-contrast variant for camera pages with shadows or grey paper. */
+    public static Bitmap forOcrThreshold(@NonNull Bitmap cropped) {
+        Bitmap enhanced = forOcr(cropped);
+        Bitmap out = Bitmap.createBitmap(enhanced.getWidth(), enhanced.getHeight(),
+                Bitmap.Config.ARGB_8888);
+        int[] pixels = new int[enhanced.getWidth() * enhanced.getHeight()];
+        enhanced.getPixels(pixels, 0, enhanced.getWidth(), 0, 0,
+                enhanced.getWidth(), enhanced.getHeight());
+        for (int i = 0; i < pixels.length; i++) {
+            int gray = (int) (0.299f * android.graphics.Color.red(pixels[i])
+                    + 0.587f * android.graphics.Color.green(pixels[i])
+                    + 0.114f * android.graphics.Color.blue(pixels[i]));
+            int value = gray < 185 ? 0 : 255;
+            pixels[i] = android.graphics.Color.rgb(value, value, value);
+        }
+        out.setPixels(pixels, 0, enhanced.getWidth(), 0, 0,
+                enhanced.getWidth(), enhanced.getHeight());
         return out;
     }
 

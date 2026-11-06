@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ds_cream"
+    android:background="@color/ds_auth_background"
     android:fillViewport="true">
 
     <LinearLayout
@@ -12,15 +12,21 @@
         android:orientation="vertical"
         android:padding="@dimen/ds_space_xl">
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            style="@style/Ds.BackButton"
+            android:contentDescription="@string/action_back"
+            android:text="" />
+
         <TextView
-            style="@style/Ds.Text.Display"
+            style="@style/Ds.AuthTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_lg"
             android:text="@string/register_title" />
 
         <TextView
-            style="@style/Ds.Text.Body"
+            style="@style/Ds.AuthSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_sm"
@@ -109,13 +115,6 @@
                 android:text="@string/role_child" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chipRoleLearner"
-                style="@style/Ds.Chip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/role_learner" />
-
-            <com.google.android.material.chip.Chip
                 android:id="@+id/chipRoleParent"
                 style="@style/Ds.Chip"
                 android:layout_width="wrap_content"
@@ -136,7 +135,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_xl"
-            android:hint="@string/hint_name">
+            android:hint="@string/hint_name"
+            app:startIconDrawable="@drawable/ic_person_outline">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputName"
@@ -153,7 +153,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_md"
-            android:hint="@string/hint_email">
+            android:hint="@string/hint_email"
+            app:startIconDrawable="@drawable/ic_mail_outline">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputEmail"
@@ -171,6 +172,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_md"
             android:hint="@string/hint_password"
+            app:startIconDrawable="@drawable/ic_lock_outline"
             app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -184,6 +186,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRegister"
+            style="@style/Ds.AuthPrimaryButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_xl"
@@ -191,7 +194,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnHaveAccount"
-            style="@style/Ds.TextButton"
+            style="@style/Ds.AuthTextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

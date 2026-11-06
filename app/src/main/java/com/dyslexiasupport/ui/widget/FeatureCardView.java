@@ -1,6 +1,7 @@
 package com.dyslexiasupport.ui.widget;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -36,7 +37,6 @@ public class FeatureCardView extends MaterialCardView {
 
         setRadius(getResources().getDimension(R.dimen.ds_radius_lg));
         setCardElevation(0f);
-        setStrokeWidth(0);
         setClickable(true);
         setFocusable(true);
 
@@ -46,6 +46,13 @@ public class FeatureCardView extends MaterialCardView {
             setTitle(a.getString(R.styleable.FeatureCardView_featureTitle));
             setSubtitle(a.getString(R.styleable.FeatureCardView_featureSubtitle));
             setEmoji(a.getString(R.styleable.FeatureCardView_featureEmoji));
+            int image = a.getResourceId(R.styleable.FeatureCardView_featureImage, 0);
+            if (image != 0) {
+                binding.featureEmoji.setVisibility(INVISIBLE);
+                binding.featureIconContainer.setBackground(null);
+                binding.featureImage.setImageResource(image);
+                binding.featureImage.setVisibility(VISIBLE);
+            }
             setAccentColor(a.getColor(R.styleable.FeatureCardView_featureAccent, defaultAccent));
         } finally {
             a.recycle();
@@ -54,6 +61,7 @@ public class FeatureCardView extends MaterialCardView {
 
     public void setTitle(@Nullable CharSequence title) {
         binding.featureTitle.setText(title);
+        setContentDescription(title);
     }
 
     public void setSubtitle(@Nullable CharSequence subtitle) {
@@ -67,6 +75,13 @@ public class FeatureCardView extends MaterialCardView {
     /** Card background becomes a soft pastel of the accent. */
     public void setAccentColor(@ColorInt int accent) {
         int surface = ContextCompat.getColor(getContext(), R.color.ds_surface);
-        setCardBackgroundColor(ColorUtils.blendARGB(accent, surface, 0.78f));
+        setCardBackgroundColor(ColorUtils.blendARGB(accent, surface, 0.18f));
+        setStrokeColor(ColorUtils.setAlphaComponent(accent, 20));
+        setStrokeWidth(0);
+        setRippleColor(ColorStateList.valueOf(ColorUtils.setAlphaComponent(accent, 36)));
+        binding.featureArrow.setBackgroundTintList(
+                ColorStateList.valueOf(ColorUtils.blendARGB(accent, surface, 0.45f)));
+        binding.featureEmoji.setBackgroundTintList(
+                ColorStateList.valueOf(ColorUtils.blendARGB(accent, surface, 0.45f)));
     }
 }

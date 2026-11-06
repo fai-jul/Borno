@@ -1,8 +1,32 @@
 <resources>
     <string name="app_name">সহজ পড়া</string>
+    <string name="action_next">পরবর্তী</string>
+    <string name="action_toggle_theme">লাইট ও ডার্ক মোড বদলাও</string>
+    <string name="profile_theme_title">দেখার ধরন</string>
+    <string name="profile_theme_subtitle">অ্যাপের জন্য আরামদায়ক থিম বেছে নাও।</string>
+    <string name="profile_theme_dark">ডার্ক</string>
 
     <string name="home_greeting">হ্যালো! পড়তে প্রস্তুত?</string>
-    <string name="home_subtitle">শুরু করতে একটি বেছে নাও</string>
+    <string name="home_greeting_name">হাই, %1$s! 👋</string>
+    <string name="home_menu">মেনু খুলুন</string>
+    <string name="home_subtitle">চলো আজ নতুন কিছু শিখি!</string>
+    <string name="home_toolkit_label">তোমার পড়ার সরঞ্জাম</string>
+    <string name="home_plan_label">আজকের পড়ার পরিকল্পনা</string>
+    <string name="home_plan_title_read">ছোট একটি পড়া দিয়ে শুরু করো</string>
+    <string name="home_plan_title_practice">পড়ার দক্ষতা বাড়াও</string>
+    <string name="home_plan_title_words">একটি নতুন শব্দ অনুশীলন করো</string>
+    <string name="home_plan_title_complete">আজকের পরিকল্পনা শেষ</string>
+    <string name="home_plan_sub_read">নিজের গতিতে কয়েক মিনিট পড়ো।</string>
+    <string name="home_plan_sub_practice">পড়ার পরে একটি অনুশীলন করো।</string>
+    <string name="home_plan_sub_words">আজকের পড়া থেকে একটি দরকারি শব্দ বাঁচাও।</string>
+    <string name="home_plan_sub_complete">দারুণ কাজ। আগামীকালও এই ছন্দ রাখো।</string>
+    <string name="home_plan_steps">আজ %1$dটি ধাপ শেষ</string>
+    <string name="home_plan_step_read">পড়া %1$s</string>
+    <string name="home_plan_step_practice">অনুশীলন %1$s</string>
+    <string name="home_plan_step_words">শব্দ %1$s</string>
+    <string name="home_plan_done">শেষ</string>
+    <string name="home_plan_next">এখন শুরু করো</string>
+    <string name="home_plan_continue">পড়া চালিয়ে যাও</string>
 
     <string name="card_read_title">পড়ো</string>
     <string name="card_read_sub">তোমার মতো করে সহজ পড়া</string>
@@ -18,6 +42,14 @@
     <string name="card_voice_sub">মুখে বলো ও শোনো</string>
     <string name="card_write_title">লেখো</string>
     <string name="card_write_sub">টাইপ করো ও বানান মেলাও</string>
+    <string name="badge_first_lesson">প্রথম পাঠ</string>
+    <string name="badge_streak">৫ দিনের ধারাবাহিকতা</string>
+    <string name="badge_math_star">গণিত তারকা</string>
+    <string name="badge_curious_mind">কৌতূহলী মন</string>
+    <string name="badge_bookworm">বইপোকা</string>
+    <string name="badge_focus">মনোযোগী পাঠক</string>
+    <string name="badge_rising_star">উদীয়মান তারকা</string>
+    <string name="badge_goal_keeper">লক্ষ্য রক্ষক</string>
 
     <string name="action_share">অ্যাপ শেয়ার করো</string>
     <string name="action_back">ফিরে যাও</string>
@@ -30,6 +62,7 @@
     <string name="login_reset_title">পাসওয়ার্ড পরিবর্তন</string>
     <string name="login_reset_desc">পাসওয়ার্ড রিসেট লিংক পেতে তোমার অ্যাকাউন্টের ইমেইল বসাও।</string>
     <string name="login_google_failed">গুগল সাইন-ইন কাজ করেনি। আবার চেষ্টা করো।</string>
+    <string name="error_auth_too_many_requests">অনেকবার চেষ্টা হয়েছে। একটু পরে আবার চেষ্টা করো।</string>
 
     <!-- System Components & Notifications -->
     <string name="notification_channel_name">দৈনিক পড়ার অনুস্মারক</string>
@@ -61,4 +94,11 @@
     <!-- Low-End Device Mode -->
     <string name="low_end_title">লো-এন্ড ডিভাইস মোড</string>
     <string name="low_end_desc">অ্যানিমেশন ও মেমরি ব্যবহার কমিয়ে সাধারণ ফোনে দ্রুত কাজ করে।</string>
+
+    <!-- Role Based Dashboard Extensions -->
+    <string name="role_parent_dashboard">অভিভাবক ড্যাশবোর্ড</string>
+    <string name="role_teacher_dashboard">শিক্ষক ক্লাসরুম হাব</string>
+    <string name="btn_view_child_progress">📊 সন্তানের অগ্রগতি দেখো</string>
+    <string name="btn_class_report_pdf">📄 শ্রেণির রিপোর্ট পিডিএফ</string>
+    <string name="btn_assign_nctb">📖 পাঠ নির্ধারণ করো</string>
 </resources>

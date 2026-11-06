@@ -18,6 +18,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.dyslexiasupport.R;
 import com.dyslexiasupport.data.local.SessionManager;
+import com.dyslexiasupport.data.model.Role;
+import com.dyslexiasupport.data.firebase.AssignedTextManager;
 import com.dyslexiasupport.databinding.ActivityMainBinding;
 import com.dyslexiasupport.ui.auth.LoginActivity;
 import com.dyslexiasupport.ui.common.BaseActivity;
@@ -52,6 +54,8 @@ public class MainActivity extends BaseActivity implements TabHost {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        AssignedTextManager.refresh(this);
+        configureRoleNavigation(new SessionManager(this).getRole());
         // Bottom nav pads itself for the gesture/nav bar.
         applySystemBarInsets(binding.getRoot(), false);
 
@@ -85,6 +89,16 @@ public class MainActivity extends BaseActivity implements TabHost {
         });
 
         openRequestedTab(getIntent());
+    }
+
+    private void configureRoleNavigation(Role role) {
+        android.view.Menu menu = binding.bottomNav.getMenu();
+        boolean readingOnly = new SessionManager(this).isReadingOnly();
+        menu.findItem(R.id.nav_home).setVisible(true);
+        menu.findItem(R.id.nav_read).setVisible(role != Role.PARENT);
+        menu.findItem(R.id.nav_practice).setVisible(role == Role.CHILD && !readingOnly);
+        menu.findItem(R.id.nav_progress).setVisible(true);
+        menu.findItem(R.id.nav_profile).setVisible(true);
     }
 
     @Override

@@ -4,7 +4,6 @@ package com.dyslexiasupport.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -29,7 +28,10 @@ public final class ActivityVocabularyBinding implements ViewBinding {
   public final MaterialButton btnAddWord;
 
   @NonNull
-  public final ImageButton btnBack;
+  public final MaterialButton btnBack;
+
+  @NonNull
+  public final MaterialButton btnFlashcards;
 
   @NonNull
   public final Chip chipAll;
@@ -56,13 +58,15 @@ public final class ActivityVocabularyBinding implements ViewBinding {
   public final TextView textEmpty;
 
   private ActivityVocabularyBinding(@NonNull LinearLayout rootView,
-      @NonNull MaterialButton btnAddWord, @NonNull ImageButton btnBack, @NonNull Chip chipAll,
-      @NonNull Chip chipBangla, @NonNull Chip chipEnglish, @NonNull Chip chipSaved,
-      @NonNull TextInputEditText editSearch, @NonNull ChipGroup filterChipGroup,
-      @NonNull RecyclerView recyclerWords, @NonNull TextView textEmpty) {
+      @NonNull MaterialButton btnAddWord, @NonNull MaterialButton btnBack,
+      @NonNull MaterialButton btnFlashcards, @NonNull Chip chipAll, @NonNull Chip chipBangla,
+      @NonNull Chip chipEnglish, @NonNull Chip chipSaved, @NonNull TextInputEditText editSearch,
+      @NonNull ChipGroup filterChipGroup, @NonNull RecyclerView recyclerWords,
+      @NonNull TextView textEmpty) {
     this.rootView = rootView;
     this.btnAddWord = btnAddWord;
     this.btnBack = btnBack;
+    this.btnFlashcards = btnFlashcards;
     this.chipAll = chipAll;
     this.chipBangla = chipBangla;
     this.chipEnglish = chipEnglish;
@@ -107,8 +111,14 @@ public final class ActivityVocabularyBinding implements ViewBinding {
       }
 
       id = R.id.btnBack;
-      ImageButton btnBack = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
+        break missingId;
+      }
+
+      id = R.id.btnFlashcards;
+      MaterialButton btnFlashcards = ViewBindings.findChildViewById(rootView, id);
+      if (btnFlashcards == null) {
         break missingId;
       }
 
@@ -160,9 +170,9 @@ public final class ActivityVocabularyBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityVocabularyBinding((LinearLayout) rootView, btnAddWord, btnBack, chipAll,
-          chipBangla, chipEnglish, chipSaved, editSearch, filterChipGroup, recyclerWords,
-          textEmpty);
+      return new ActivityVocabularyBinding((LinearLayout) rootView, btnAddWord, btnBack,
+          btnFlashcards, chipAll, chipBangla, chipEnglish, chipSaved, editSearch, filterChipGroup,
+          recyclerWords, textEmpty);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

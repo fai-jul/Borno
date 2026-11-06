@@ -16,12 +16,12 @@ public interface ReadingSessionDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     long insert(ReadingSessionEntity session);
 
-    @Query("SELECT * FROM reading_sessions ORDER BY timestamp DESC")
-    LiveData<List<ReadingSessionEntity>> getAllSessions();
+    @Query("SELECT * FROM reading_sessions WHERE ownerId = :ownerId ORDER BY timestamp DESC")
+    LiveData<List<ReadingSessionEntity>> getAllSessions(String ownerId);
 
-    @Query("SELECT SUM(durationSeconds) FROM reading_sessions")
-    LiveData<Long> getTotalReadingTimeSeconds();
+    @Query("SELECT SUM(durationSeconds) FROM reading_sessions WHERE ownerId = :ownerId")
+    LiveData<Long> getTotalReadingTimeSeconds(String ownerId);
 
-    @Query("SELECT * FROM reading_sessions ORDER BY timestamp DESC")
-    List<ReadingSessionEntity> getAllSessionsSync();
+    @Query("SELECT * FROM reading_sessions WHERE ownerId = :ownerId ORDER BY timestamp DESC")
+    List<ReadingSessionEntity> getAllSessionsSync(String ownerId);
 }

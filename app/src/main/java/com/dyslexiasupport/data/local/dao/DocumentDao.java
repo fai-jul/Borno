@@ -15,9 +15,9 @@ public interface DocumentDao {
     @Insert
     long insert(DocumentEntity document);
 
-    @Query("SELECT * FROM documents ORDER BY createdAt DESC")
-    LiveData<List<DocumentEntity>> getAllDocuments();
+    @Query("SELECT * FROM documents WHERE ownerId = :ownerId ORDER BY createdAt DESC")
+    LiveData<List<DocumentEntity>> getAllDocuments(String ownerId);
 
-    @Query("DELETE FROM documents WHERE id = :id")
-    void deleteById(long id);
+    @Query("DELETE FROM documents WHERE id = :id AND ownerId = :ownerId")
+    void deleteById(long id, String ownerId);
 }

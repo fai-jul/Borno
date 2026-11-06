@@ -51,6 +51,7 @@ public class LibraryViewModel extends AndroidViewModel {
     private int langFilter = LANG_ALL;
     private int levelFilter = 0; // 0 = any level
     private boolean onlySaved = false;
+    private boolean onlyNctb = false;
 
     public LibraryViewModel(@NonNull Application application) {
         super(application);
@@ -110,6 +111,10 @@ public class LibraryViewModel extends AndroidViewModel {
         return onlySaved;
     }
 
+    public boolean isOnlyNctb() {
+        return onlyNctb;
+    }
+
     public void setLangFilter(int lang) {
         langFilter = lang;
         refresh();
@@ -125,6 +130,11 @@ public class LibraryViewModel extends AndroidViewModel {
         refresh();
     }
 
+    public void setOnlyNctb(boolean nctb) {
+        onlyNctb = nctb;
+        refresh();
+    }
+
     /** @return true if the text is now saved */
     public boolean toggleFavourite(@NonNull String id) {
         boolean now = prefs.toggleFavourite(id);
@@ -137,6 +147,23 @@ public class LibraryViewModel extends AndroidViewModel {
         boolean now = prefs.toggleRead(id);
         refresh();
         return now;
+    }
+
+    public boolean markAsRead(@NonNull String id) {
+        boolean changed = prefs.markAsRead(id);
+        if (changed) {
+            refresh();
+        }
+        return changed;
+    }
+
+    public int getReadCount() {
+        return prefs.getRead().size();
+    }
+
+    public int getTotalCount() {
+        List<ReadingText> list = all.getValue();
+        return list != null ? list.size() : 0;
     }
 
     /** Scanned documents first (newest first), then the bundled texts. */
@@ -165,6 +192,7 @@ public class LibraryViewModel extends AndroidViewModel {
             if (langFilter == LANG_BN && !t.isBangla()) continue;
             if (langFilter == LANG_EN && t.isBangla()) continue;
             if (levelFilter != 0 && t.level != levelFilter) continue;
+            if (onlyNctb && !t.isNctb()) continue;
             boolean fav = favourites.contains(t.id);
             if (onlySaved && !fav) continue;
             out.add(new LibraryItem(t, fav, read.contains(t.id)));

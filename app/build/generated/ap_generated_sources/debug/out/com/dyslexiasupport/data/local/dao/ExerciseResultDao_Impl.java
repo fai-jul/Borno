@@ -35,7 +35,7 @@ public final class ExerciseResultDao_Impl implements ExerciseResultDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `exercise_results` (`id`,`exerciseType`,`score`,`totalQuestions`,`timestamp`) VALUES (nullif(?, 0),?,?,?,?)";
+        return "INSERT OR REPLACE INTO `exercise_results` (`id`,`exerciseType`,`score`,`totalQuestions`,`timestamp`,`ownerId`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -50,6 +50,11 @@ public final class ExerciseResultDao_Impl implements ExerciseResultDao {
         statement.bindLong(3, entity.score);
         statement.bindLong(4, entity.totalQuestions);
         statement.bindLong(5, entity.timestamp);
+        if (entity.ownerId == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindString(6, entity.ownerId);
+        }
       }
     };
   }
@@ -68,9 +73,15 @@ public final class ExerciseResultDao_Impl implements ExerciseResultDao {
   }
 
   @Override
-  public LiveData<List<ExerciseResultEntity>> getAllResults() {
-    final String _sql = "SELECT * FROM exercise_results ORDER BY timestamp DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public LiveData<List<ExerciseResultEntity>> getAllResults(final String ownerId) {
+    final String _sql = "SELECT * FROM exercise_results WHERE ownerId = ? ORDER BY timestamp DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     return __db.getInvalidationTracker().createLiveData(new String[] {"exercise_results"}, false, new Callable<List<ExerciseResultEntity>>() {
       @Override
       @Nullable
@@ -82,6 +93,7 @@ public final class ExerciseResultDao_Impl implements ExerciseResultDao {
           final int _cursorIndexOfScore = CursorUtil.getColumnIndexOrThrow(_cursor, "score");
           final int _cursorIndexOfTotalQuestions = CursorUtil.getColumnIndexOrThrow(_cursor, "totalQuestions");
           final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
+          final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
           final List<ExerciseResultEntity> _result = new ArrayList<ExerciseResultEntity>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final ExerciseResultEntity _item;
@@ -99,6 +111,11 @@ public final class ExerciseResultDao_Impl implements ExerciseResultDao {
             _tmpTimestamp = _cursor.getLong(_cursorIndexOfTimestamp);
             _item = new ExerciseResultEntity(_tmpExerciseType,_tmpScore,_tmpTotalQuestions,_tmpTimestamp);
             _item.id = _cursor.getLong(_cursorIndexOfId);
+            if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+              _item.ownerId = null;
+            } else {
+              _item.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+            }
             _result.add(_item);
           }
           return _result;
@@ -115,9 +132,15 @@ public final class ExerciseResultDao_Impl implements ExerciseResultDao {
   }
 
   @Override
-  public List<ExerciseResultEntity> getAllResultsSync() {
-    final String _sql = "SELECT * FROM exercise_results ORDER BY timestamp DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public List<ExerciseResultEntity> getAllResultsSync(final String ownerId) {
+    final String _sql = "SELECT * FROM exercise_results WHERE ownerId = ? ORDER BY timestamp DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
@@ -126,6 +149,7 @@ public final class ExerciseResultDao_Impl implements ExerciseResultDao {
       final int _cursorIndexOfScore = CursorUtil.getColumnIndexOrThrow(_cursor, "score");
       final int _cursorIndexOfTotalQuestions = CursorUtil.getColumnIndexOrThrow(_cursor, "totalQuestions");
       final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
+      final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
       final List<ExerciseResultEntity> _result = new ArrayList<ExerciseResultEntity>(_cursor.getCount());
       while (_cursor.moveToNext()) {
         final ExerciseResultEntity _item;
@@ -143,6 +167,11 @@ public final class ExerciseResultDao_Impl implements ExerciseResultDao {
         _tmpTimestamp = _cursor.getLong(_cursorIndexOfTimestamp);
         _item = new ExerciseResultEntity(_tmpExerciseType,_tmpScore,_tmpTotalQuestions,_tmpTimestamp);
         _item.id = _cursor.getLong(_cursorIndexOfId);
+        if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+          _item.ownerId = null;
+        } else {
+          _item.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+        }
         _result.add(_item);
       }
       return _result;

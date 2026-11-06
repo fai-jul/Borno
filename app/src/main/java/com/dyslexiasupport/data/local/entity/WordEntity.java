@@ -21,6 +21,8 @@ public class WordEntity {
     public String syllables;
     public boolean isSaved;
     public long createdAt;
+    @NonNull
+    public String ownerId = "shared";
 
     public WordEntity(@NonNull String word, String definition, String language, String syllables, boolean isSaved, long createdAt) {
         this.word = word;

@@ -20,7 +20,9 @@ public class LauncherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         boolean signedIn = new SessionManager(this).isSignedIn();
-        Class<?> next = signedIn ? MainActivity.class : LoginActivity.class;
+        Class<?> next = signedIn
+                ? MainActivity.class
+                : LoginActivity.class;
         startActivity(new Intent(this, next));
         finish();
     }

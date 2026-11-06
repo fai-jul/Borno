@@ -22,10 +22,16 @@ public final class ActivityLoginBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final MaterialButton btnBack;
+
+  @NonNull
   public final MaterialButton btnCreate;
 
   @NonNull
-  public final MaterialButton btnGuest;
+  public final MaterialButton btnForgotPassword;
+
+  @NonNull
+  public final MaterialButton btnGoogleLogin;
 
   @NonNull
   public final MaterialButton btnLogin;
@@ -42,13 +48,16 @@ public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
   public final TextInputLayout layoutPassword;
 
-  private ActivityLoginBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnCreate,
-      @NonNull MaterialButton btnGuest, @NonNull MaterialButton btnLogin,
+  private ActivityLoginBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnBack,
+      @NonNull MaterialButton btnCreate, @NonNull MaterialButton btnForgotPassword,
+      @NonNull MaterialButton btnGoogleLogin, @NonNull MaterialButton btnLogin,
       @NonNull TextInputEditText inputEmail, @NonNull TextInputEditText inputPassword,
       @NonNull TextInputLayout layoutEmail, @NonNull TextInputLayout layoutPassword) {
     this.rootView = rootView;
+    this.btnBack = btnBack;
     this.btnCreate = btnCreate;
-    this.btnGuest = btnGuest;
+    this.btnForgotPassword = btnForgotPassword;
+    this.btnGoogleLogin = btnGoogleLogin;
     this.btnLogin = btnLogin;
     this.inputEmail = inputEmail;
     this.inputPassword = inputPassword;
@@ -83,15 +92,27 @@ public final class ActivityLoginBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnBack;
+      MaterialButton btnBack = ViewBindings.findChildViewById(rootView, id);
+      if (btnBack == null) {
+        break missingId;
+      }
+
       id = R.id.btnCreate;
       MaterialButton btnCreate = ViewBindings.findChildViewById(rootView, id);
       if (btnCreate == null) {
         break missingId;
       }
 
-      id = R.id.btnGuest;
-      MaterialButton btnGuest = ViewBindings.findChildViewById(rootView, id);
-      if (btnGuest == null) {
+      id = R.id.btnForgotPassword;
+      MaterialButton btnForgotPassword = ViewBindings.findChildViewById(rootView, id);
+      if (btnForgotPassword == null) {
+        break missingId;
+      }
+
+      id = R.id.btnGoogleLogin;
+      MaterialButton btnGoogleLogin = ViewBindings.findChildViewById(rootView, id);
+      if (btnGoogleLogin == null) {
         break missingId;
       }
 
@@ -125,8 +146,8 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ScrollView) rootView, btnCreate, btnGuest, btnLogin,
-          inputEmail, inputPassword, layoutEmail, layoutPassword);
+      return new ActivityLoginBinding((ScrollView) rootView, btnBack, btnCreate, btnForgotPassword,
+          btnGoogleLogin, btnLogin, inputEmail, inputPassword, layoutEmail, layoutPassword);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

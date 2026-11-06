@@ -90,7 +90,88 @@ public class LibraryRepository {
                 "en"
         ));
 
-        // Load custom user scanned texts
+        // --- Bangladesh NCTB Curriculum Class 5 Books ---
+        list.add(new ReadingText(
+                "nctb_bn_51",
+                "এই দেশ এই মানুষ (আমার বাংলা বই - ৫ম শ্রেণি)",
+                "সার্থক জনম আমার জন্মেছি এই দেশে। আমরা বাংলাদেশে বাস করি। আমাদের এই দেশে কত বৈচিত্র্য! পাহাড়, নদী, সমতলভূমি, কত না রূপ। আমরা সবাই মিলেমিশে বাস করি। এটিই আমাদের প্রিয় মাতৃভূমি বাংলাদেশ।",
+                "🇧🇩",
+                1,
+                "bn",
+                "nctb"
+        ));
+
+        list.add(new ReadingText(
+                "nctb_bn_52",
+                "সংকল্প - কাজী নজরুল ইসলাম (আমার বাংলা বই - ৫ম শ্রেণি)",
+                "থাকব নাকো বদ্ধ ঘরে, দেখব এবার জগৎটাকে। কেমন করে ঘুরছে মানুষ যুগান্তরের ঘূর্ণিপাকে। দেশ হতে দেশান্তরে ছুটছে তারা কোন নেশায়, কিসের আশায় করছে তারা বরণ মরণ-যন্ত্রণাকে।",
+                "📖",
+                2,
+                "bn",
+                "nctb"
+        ));
+
+        list.add(new ReadingText(
+                "nctb_bn_53",
+                "সুন্দরবনের প্রাণী (আমার বাংলা বই - ৫ম শ্রেণি)",
+                "বাংলাদেশের দক্ষিণে সুন্দরবন। এটি পৃথিবীর বৃহত্তম ম্যানগ্রোভ বন। এখানে রয়্যাল বেঙ্গল টাইগার, হরিণ, বানর ও নানা প্রজাতির পাখি বাস করে। সুন্দরবনের প্রাকৃতিক সৌন্দর্য অতুলনীয়।",
+                "🐅",
+                2,
+                "bn",
+                "nctb"
+        ));
+
+        list.add(new ReadingText(
+                "nctb_bn_54",
+                "হাতি আর শিয়ালের গল্প (আমার বাংলা বই - ৫ম শ্রেণি)",
+                "এক বনে বাস করত এক মস্ত বড় হাতি। হাতিটার খুব অহংকার ছিল। সে বনের পশুপাখিদের খুব জ্বালাতন করত। বুদ্ধিমান শিয়াল হাতিকে নদী পার করে নিয়ে গেল কাদা পানিতে। হাতি কাদায় আটকে গেল আর বনের পশুপাখিরা রক্ষা পেল।",
+                "🐘",
+                3,
+                "bn",
+                "nctb"
+        ));
+
+        list.add(new ReadingText(
+                "nctb_en_51",
+                "Hello! (English For Today - Class 5)",
+                "Sima: Hello! May I introduce myself? I'm Sima. Jessica: Hi! I'm Jessica. Sima: Where are you going, Jessica? Jessica: I'm going to Chittagong. I'm on holiday with my father.",
+                "👋",
+                1,
+                "en",
+                "nctb"
+        ));
+
+        list.add(new ReadingText(
+                "nctb_en_52",
+                "See You! (English For Today - Class 5)",
+                "Andy: Hello Tamim, how is your grandmother? Tamim: Hi Andy! She's fine, thanks. Andy: Are you going to the book fair? Tamim: Yes, I am going with my cousin. Would you like to come with us?",
+                "🙋‍♂️",
+                1,
+                "en",
+                "nctb"
+        ));
+
+        list.add(new ReadingText(
+                "nctb_en_53",
+                "Saikat's Family (English For Today - Class 5)",
+                "Saikat Islam lives with his parents in a flat in Bogra. His father Mr. Rasidul Islam is a banker. But in his free time, Mr. Islam writes stories and listens to music. Saikat's mother is Mrs. Monwara Islam. She is a housewife. She loves sewing in her free time.",
+                "👨‍👩‍👦",
+                2,
+                "en",
+                "nctb"
+        ));
+
+        list.add(new ReadingText(
+                "nctb_en_54",
+                "Where is the Library? (English For Today - Class 5)",
+                "Student: Excuse me, is there a library near here? Teacher: Yes, the library is next to the science building, across from the auditorium. You can read many wonderful books there.",
+                "🏫",
+                2,
+                "en",
+                "nctb"
+        ));
+
+        // Load custom user scanned & imported texts
         list.addAll(0, loadCustomTexts());
 
         return list;
@@ -118,7 +199,8 @@ public class LibraryRepository {
                         obj.getString("body"),
                         obj.optString("emoji", "📄"),
                         obj.optInt("level", 1),
-                        obj.optString("lang", "bn")
+                        obj.optString("lang", "bn"),
+                        obj.optString("category", "custom")
                 ));
             }
         } catch (Exception e) {
@@ -138,6 +220,7 @@ public class LibraryRepository {
                 obj.put("emoji", t.emoji);
                 obj.put("level", t.level);
                 obj.put("lang", t.lang);
+                obj.put("category", t.category);
                 array.put(obj);
             }
             prefs.edit().putString(KEY_CUSTOM_TEXTS, array.toString()).apply();

@@ -4,6 +4,9 @@ package com.dyslexiasupport.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -13,6 +16,7 @@ import androidx.viewbinding.ViewBindings;
 import com.dyslexiasupport.R;
 import com.dyslexiasupport.ui.widget.FeatureCardView;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,7 +26,37 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
-  public final MaterialButton btnShare;
+  public final LinearLayout badgeBookworm;
+
+  @NonNull
+  public final LinearLayout badgeCuriousMind;
+
+  @NonNull
+  public final LinearLayout badgeFirstLesson;
+
+  @NonNull
+  public final LinearLayout badgeFocus;
+
+  @NonNull
+  public final LinearLayout badgeGoalKeeper;
+
+  @NonNull
+  public final LinearLayout badgeMathStar;
+
+  @NonNull
+  public final LinearLayout badgeRisingStar;
+
+  @NonNull
+  public final LinearLayout badgeStreak;
+
+  @NonNull
+  public final TextView badgesSeeAll;
+
+  @NonNull
+  public final ImageButton btnHomeMenu;
+
+  @NonNull
+  public final MaterialButton btnPlanAction;
 
   @NonNull
   public final FeatureCardView cardAsk;
@@ -46,15 +80,110 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final FeatureCardView cardWrite;
 
   @NonNull
+  public final TextView continueLearningEmoji;
+
+  @NonNull
+  public final TextView continueLearningSeeAll;
+
+  @NonNull
+  public final TextView continueLearningTitle;
+
+  @NonNull
   public final TextView greeting;
 
-  private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnShare,
+  @NonNull
+  public final MaterialCardView planCard;
+
+  @NonNull
+  public final ProgressBar planProgress;
+
+  @NonNull
+  public final TextView planSteps;
+
+  @NonNull
+  public final TextView planSubtitle;
+
+  @NonNull
+  public final TextView planTitle;
+
+  @NonNull
+  public final LinearLayout streakFri;
+
+  @NonNull
+  public final TextView streakFriDot;
+
+  @NonNull
+  public final LinearLayout streakMon;
+
+  @NonNull
+  public final TextView streakMonDot;
+
+  @NonNull
+  public final LinearLayout streakSat;
+
+  @NonNull
+  public final TextView streakSatDot;
+
+  @NonNull
+  public final LinearLayout streakSun;
+
+  @NonNull
+  public final TextView streakSunDot;
+
+  @NonNull
+  public final LinearLayout streakThu;
+
+  @NonNull
+  public final TextView streakThuDot;
+
+  @NonNull
+  public final TextView streakTitle;
+
+  @NonNull
+  public final LinearLayout streakTue;
+
+  @NonNull
+  public final TextView streakTueDot;
+
+  @NonNull
+  public final LinearLayout streakWed;
+
+  @NonNull
+  public final TextView streakWedDot;
+
+  private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull LinearLayout badgeBookworm,
+      @NonNull LinearLayout badgeCuriousMind, @NonNull LinearLayout badgeFirstLesson,
+      @NonNull LinearLayout badgeFocus, @NonNull LinearLayout badgeGoalKeeper,
+      @NonNull LinearLayout badgeMathStar, @NonNull LinearLayout badgeRisingStar,
+      @NonNull LinearLayout badgeStreak, @NonNull TextView badgesSeeAll,
+      @NonNull ImageButton btnHomeMenu, @NonNull MaterialButton btnPlanAction,
       @NonNull FeatureCardView cardAsk, @NonNull FeatureCardView cardPractice,
       @NonNull FeatureCardView cardRead, @NonNull FeatureCardView cardScan,
       @NonNull FeatureCardView cardVoice, @NonNull FeatureCardView cardWords,
-      @NonNull FeatureCardView cardWrite, @NonNull TextView greeting) {
+      @NonNull FeatureCardView cardWrite, @NonNull TextView continueLearningEmoji,
+      @NonNull TextView continueLearningSeeAll, @NonNull TextView continueLearningTitle,
+      @NonNull TextView greeting, @NonNull MaterialCardView planCard,
+      @NonNull ProgressBar planProgress, @NonNull TextView planSteps,
+      @NonNull TextView planSubtitle, @NonNull TextView planTitle, @NonNull LinearLayout streakFri,
+      @NonNull TextView streakFriDot, @NonNull LinearLayout streakMon,
+      @NonNull TextView streakMonDot, @NonNull LinearLayout streakSat,
+      @NonNull TextView streakSatDot, @NonNull LinearLayout streakSun,
+      @NonNull TextView streakSunDot, @NonNull LinearLayout streakThu,
+      @NonNull TextView streakThuDot, @NonNull TextView streakTitle,
+      @NonNull LinearLayout streakTue, @NonNull TextView streakTueDot,
+      @NonNull LinearLayout streakWed, @NonNull TextView streakWedDot) {
     this.rootView = rootView;
-    this.btnShare = btnShare;
+    this.badgeBookworm = badgeBookworm;
+    this.badgeCuriousMind = badgeCuriousMind;
+    this.badgeFirstLesson = badgeFirstLesson;
+    this.badgeFocus = badgeFocus;
+    this.badgeGoalKeeper = badgeGoalKeeper;
+    this.badgeMathStar = badgeMathStar;
+    this.badgeRisingStar = badgeRisingStar;
+    this.badgeStreak = badgeStreak;
+    this.badgesSeeAll = badgesSeeAll;
+    this.btnHomeMenu = btnHomeMenu;
+    this.btnPlanAction = btnPlanAction;
     this.cardAsk = cardAsk;
     this.cardPractice = cardPractice;
     this.cardRead = cardRead;
@@ -62,7 +191,30 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.cardVoice = cardVoice;
     this.cardWords = cardWords;
     this.cardWrite = cardWrite;
+    this.continueLearningEmoji = continueLearningEmoji;
+    this.continueLearningSeeAll = continueLearningSeeAll;
+    this.continueLearningTitle = continueLearningTitle;
     this.greeting = greeting;
+    this.planCard = planCard;
+    this.planProgress = planProgress;
+    this.planSteps = planSteps;
+    this.planSubtitle = planSubtitle;
+    this.planTitle = planTitle;
+    this.streakFri = streakFri;
+    this.streakFriDot = streakFriDot;
+    this.streakMon = streakMon;
+    this.streakMonDot = streakMonDot;
+    this.streakSat = streakSat;
+    this.streakSatDot = streakSatDot;
+    this.streakSun = streakSun;
+    this.streakSunDot = streakSunDot;
+    this.streakThu = streakThu;
+    this.streakThuDot = streakThuDot;
+    this.streakTitle = streakTitle;
+    this.streakTue = streakTue;
+    this.streakTueDot = streakTueDot;
+    this.streakWed = streakWed;
+    this.streakWedDot = streakWedDot;
   }
 
   @Override
@@ -92,9 +244,69 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnShare;
-      MaterialButton btnShare = ViewBindings.findChildViewById(rootView, id);
-      if (btnShare == null) {
+      id = R.id.badgeBookworm;
+      LinearLayout badgeBookworm = ViewBindings.findChildViewById(rootView, id);
+      if (badgeBookworm == null) {
+        break missingId;
+      }
+
+      id = R.id.badgeCuriousMind;
+      LinearLayout badgeCuriousMind = ViewBindings.findChildViewById(rootView, id);
+      if (badgeCuriousMind == null) {
+        break missingId;
+      }
+
+      id = R.id.badgeFirstLesson;
+      LinearLayout badgeFirstLesson = ViewBindings.findChildViewById(rootView, id);
+      if (badgeFirstLesson == null) {
+        break missingId;
+      }
+
+      id = R.id.badgeFocus;
+      LinearLayout badgeFocus = ViewBindings.findChildViewById(rootView, id);
+      if (badgeFocus == null) {
+        break missingId;
+      }
+
+      id = R.id.badgeGoalKeeper;
+      LinearLayout badgeGoalKeeper = ViewBindings.findChildViewById(rootView, id);
+      if (badgeGoalKeeper == null) {
+        break missingId;
+      }
+
+      id = R.id.badgeMathStar;
+      LinearLayout badgeMathStar = ViewBindings.findChildViewById(rootView, id);
+      if (badgeMathStar == null) {
+        break missingId;
+      }
+
+      id = R.id.badgeRisingStar;
+      LinearLayout badgeRisingStar = ViewBindings.findChildViewById(rootView, id);
+      if (badgeRisingStar == null) {
+        break missingId;
+      }
+
+      id = R.id.badgeStreak;
+      LinearLayout badgeStreak = ViewBindings.findChildViewById(rootView, id);
+      if (badgeStreak == null) {
+        break missingId;
+      }
+
+      id = R.id.badgesSeeAll;
+      TextView badgesSeeAll = ViewBindings.findChildViewById(rootView, id);
+      if (badgesSeeAll == null) {
+        break missingId;
+      }
+
+      id = R.id.btnHomeMenu;
+      ImageButton btnHomeMenu = ViewBindings.findChildViewById(rootView, id);
+      if (btnHomeMenu == null) {
+        break missingId;
+      }
+
+      id = R.id.btnPlanAction;
+      MaterialButton btnPlanAction = ViewBindings.findChildViewById(rootView, id);
+      if (btnPlanAction == null) {
         break missingId;
       }
 
@@ -140,14 +352,158 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.continueLearningEmoji;
+      TextView continueLearningEmoji = ViewBindings.findChildViewById(rootView, id);
+      if (continueLearningEmoji == null) {
+        break missingId;
+      }
+
+      id = R.id.continueLearningSeeAll;
+      TextView continueLearningSeeAll = ViewBindings.findChildViewById(rootView, id);
+      if (continueLearningSeeAll == null) {
+        break missingId;
+      }
+
+      id = R.id.continueLearningTitle;
+      TextView continueLearningTitle = ViewBindings.findChildViewById(rootView, id);
+      if (continueLearningTitle == null) {
+        break missingId;
+      }
+
       id = R.id.greeting;
       TextView greeting = ViewBindings.findChildViewById(rootView, id);
       if (greeting == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ScrollView) rootView, btnShare, cardAsk, cardPractice,
-          cardRead, cardScan, cardVoice, cardWords, cardWrite, greeting);
+      id = R.id.planCard;
+      MaterialCardView planCard = ViewBindings.findChildViewById(rootView, id);
+      if (planCard == null) {
+        break missingId;
+      }
+
+      id = R.id.planProgress;
+      ProgressBar planProgress = ViewBindings.findChildViewById(rootView, id);
+      if (planProgress == null) {
+        break missingId;
+      }
+
+      id = R.id.planSteps;
+      TextView planSteps = ViewBindings.findChildViewById(rootView, id);
+      if (planSteps == null) {
+        break missingId;
+      }
+
+      id = R.id.planSubtitle;
+      TextView planSubtitle = ViewBindings.findChildViewById(rootView, id);
+      if (planSubtitle == null) {
+        break missingId;
+      }
+
+      id = R.id.planTitle;
+      TextView planTitle = ViewBindings.findChildViewById(rootView, id);
+      if (planTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.streakFri;
+      LinearLayout streakFri = ViewBindings.findChildViewById(rootView, id);
+      if (streakFri == null) {
+        break missingId;
+      }
+
+      id = R.id.streakFriDot;
+      TextView streakFriDot = ViewBindings.findChildViewById(rootView, id);
+      if (streakFriDot == null) {
+        break missingId;
+      }
+
+      id = R.id.streakMon;
+      LinearLayout streakMon = ViewBindings.findChildViewById(rootView, id);
+      if (streakMon == null) {
+        break missingId;
+      }
+
+      id = R.id.streakMonDot;
+      TextView streakMonDot = ViewBindings.findChildViewById(rootView, id);
+      if (streakMonDot == null) {
+        break missingId;
+      }
+
+      id = R.id.streakSat;
+      LinearLayout streakSat = ViewBindings.findChildViewById(rootView, id);
+      if (streakSat == null) {
+        break missingId;
+      }
+
+      id = R.id.streakSatDot;
+      TextView streakSatDot = ViewBindings.findChildViewById(rootView, id);
+      if (streakSatDot == null) {
+        break missingId;
+      }
+
+      id = R.id.streakSun;
+      LinearLayout streakSun = ViewBindings.findChildViewById(rootView, id);
+      if (streakSun == null) {
+        break missingId;
+      }
+
+      id = R.id.streakSunDot;
+      TextView streakSunDot = ViewBindings.findChildViewById(rootView, id);
+      if (streakSunDot == null) {
+        break missingId;
+      }
+
+      id = R.id.streakThu;
+      LinearLayout streakThu = ViewBindings.findChildViewById(rootView, id);
+      if (streakThu == null) {
+        break missingId;
+      }
+
+      id = R.id.streakThuDot;
+      TextView streakThuDot = ViewBindings.findChildViewById(rootView, id);
+      if (streakThuDot == null) {
+        break missingId;
+      }
+
+      id = R.id.streakTitle;
+      TextView streakTitle = ViewBindings.findChildViewById(rootView, id);
+      if (streakTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.streakTue;
+      LinearLayout streakTue = ViewBindings.findChildViewById(rootView, id);
+      if (streakTue == null) {
+        break missingId;
+      }
+
+      id = R.id.streakTueDot;
+      TextView streakTueDot = ViewBindings.findChildViewById(rootView, id);
+      if (streakTueDot == null) {
+        break missingId;
+      }
+
+      id = R.id.streakWed;
+      LinearLayout streakWed = ViewBindings.findChildViewById(rootView, id);
+      if (streakWed == null) {
+        break missingId;
+      }
+
+      id = R.id.streakWedDot;
+      TextView streakWedDot = ViewBindings.findChildViewById(rootView, id);
+      if (streakWedDot == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((ScrollView) rootView, badgeBookworm, badgeCuriousMind,
+          badgeFirstLesson, badgeFocus, badgeGoalKeeper, badgeMathStar, badgeRisingStar,
+          badgeStreak, badgesSeeAll, btnHomeMenu, btnPlanAction, cardAsk, cardPractice, cardRead,
+          cardScan, cardVoice, cardWords, cardWrite, continueLearningEmoji, continueLearningSeeAll,
+          continueLearningTitle, greeting, planCard, planProgress, planSteps, planSubtitle,
+          planTitle, streakFri, streakFriDot, streakMon, streakMonDot, streakSat, streakSatDot,
+          streakSun, streakSunDot, streakThu, streakThuDot, streakTitle, streakTue, streakTueDot,
+          streakWed, streakWedDot);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

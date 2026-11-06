@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ds_cream"
     android:orientation="vertical">
 
     <!-- Header Toolbar -->
@@ -15,14 +16,11 @@
         android:paddingTop="@dimen/ds_space_md"
         android:paddingBottom="@dimen/ds_space_sm">
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBack"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            style="@style/Ds.BackButton"
             android:contentDescription="@string/action_back"
-            android:src="@android:drawable/ic_menu_revert"
-            app:tint="@color/ds_ink" />
+            android:text="" />
 
         <TextView
             style="@style/Ds.Text.Title"
@@ -40,6 +38,15 @@
             android:layout_height="40dp"
             android:paddingHorizontal="16dp"
             android:text="+  Add"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFlashcards"
+            style="@style/Ds.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/ds_space_xs"
+            android:text="Cards"
             android:textSize="14sp" />
     </LinearLayout>
 

@@ -36,12 +36,75 @@ public class OcrEngine {
             if (!api.init(base.getAbsolutePath(), LANGUAGES)) {
                 throw new IOException("Tesseract could not start");
             }
-            api.setPageSegMode(TessBaseAPI.PageSegMode.PSM_AUTO);
-            api.setImage(bitmap);
-            String raw = api.getUTF8Text();
-            return cleanUp(raw == null ? "" : raw);
+            api.setVariable("preserve_interword_spaces", "1");
+            // Camera/gallery images do not carry a reliable DPI. Supplying the
+            // physical resolution avoids poor line segmentation on small crops.
+            api.setVariable("user_defined_dpi", "300");
+
+            Bitmap enhanced = ImagePrep.forOcr(bitmap);
+            Bitmap threshold = ImagePrep.forOcrThreshold(bitmap);
+            RecognitionResult best = bestForBitmap(api, bitmap);
+            RecognitionResult enhancedResult = bestForBitmap(api, enhanced);
+            RecognitionResult thresholdResult = bestForBitmap(api, threshold);
+            best = chooseBest(best, enhancedResult, thresholdResult);
+            return OcrTextCleaner.clean(best.text);
         } finally {
             api.recycle();
+        }
+    }
+
+    private RecognitionResult bestForBitmap(TessBaseAPI api, Bitmap bitmap) {
+        RecognitionResult block = recognizeWithMode(
+                api, bitmap, TessBaseAPI.PageSegMode.PSM_SINGLE_BLOCK);
+        RecognitionResult auto = recognizeWithMode(
+                api, bitmap, TessBaseAPI.PageSegMode.PSM_AUTO);
+        RecognitionResult sparse = recognizeWithMode(
+                api, bitmap, TessBaseAPI.PageSegMode.PSM_SPARSE_TEXT);
+        return chooseBest(block, auto, sparse);
+    }
+
+    private RecognitionResult recognizeWithMode(
+            TessBaseAPI api, Bitmap bitmap, int pageSegMode) {
+        api.setPageSegMode(pageSegMode);
+        api.setImage(bitmap);
+        String text = api.getUTF8Text();
+        int confidence = api.meanConfidence();
+        return new RecognitionResult(text == null ? "" : text, confidence);
+    }
+
+    private RecognitionResult chooseBest(RecognitionResult... results) {
+        RecognitionResult best = results[0];
+        int longestText = 0;
+        for (RecognitionResult result : results) {
+            if (!result.text.trim().isEmpty()) {
+                longestText = Math.max(longestText, result.text.trim().length());
+            }
+        }
+
+        for (RecognitionResult result : results) {
+            int length = result.text.trim().length();
+            if (length == 0) {
+                continue;
+            }
+            // Prefer a fuller result, but allow confidence to win when two
+            // variants contain roughly the same amount of text.
+            int bestLength = best.text.trim().length();
+            boolean fuller = length > bestLength * 1.12f;
+            boolean similarlyFull = length >= bestLength * 0.85f;
+            if (fuller || (similarlyFull && result.confidence > best.confidence + 3)) {
+                best = result;
+            }
+        }
+        return best;
+    }
+
+    private static final class RecognitionResult {
+        final String text;
+        final int confidence;
+
+        RecognitionResult(String text, int confidence) {
+            this.text = text;
+            this.confidence = confidence;
         }
     }
 
@@ -79,11 +142,6 @@ public class OcrEngine {
      * Join the lines of a paragraph, keep blank lines as paragraph breaks.
      */
     static String cleanUp(String raw) {
-        String t = raw.replace("\r", "");
-        t = t.replaceAll("(?<!\\n)\\n(?!\\n)", " ");
-        t = t.replaceAll("[ \\t]+", " ");
-        t = t.replaceAll(" ?\\n ?", "\n");
-        t = t.replaceAll("\\n{3,}", "\n\n");
-        return t.trim();
+        return OcrTextCleaner.clean(raw);
     }
 }

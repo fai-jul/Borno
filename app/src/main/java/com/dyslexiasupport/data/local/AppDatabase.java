@@ -28,7 +28,7 @@ import java.util.concurrent.Executors;
 
 /**
  * Main Room database instance.
- * Version 2 adds the "documents" table (scanned texts). The migration keeps all existing data.
+ * Version 3 scopes user-created records with a stable owner key.
  */
 @Database(entities = {
         WordEntity.class,
@@ -37,7 +37,7 @@ import java.util.concurrent.Executors;
         ReadingSessionEntity.class,
         ExerciseResultEntity.class,
         DocumentEntity.class
-}, version = 2, exportSchema = false)
+}, version = 3, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DATABASE_NAME = "dyslexia_database";
@@ -63,6 +63,17 @@ public abstract class AppDatabase extends RoomDatabase {
         }
     };
 
+    static final Migration MIGRATION_2_3 = new Migration(2, 3) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase db) {
+            for (String table : new String[]{"words", "sentences", "notes",
+                    "reading_sessions", "exercise_results", "documents"}) {
+                db.execSQL("ALTER TABLE `" + table
+                        + "` ADD COLUMN `ownerId` TEXT NOT NULL DEFAULT 'shared'");
+            }
+        }
+    };
+
     public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (AppDatabase.class) {
@@ -72,7 +83,7 @@ public abstract class AppDatabase extends RoomDatabase {
                                     AppDatabase.class,
                                     DATABASE_NAME
                             )
-                            .addMigrations(MIGRATION_1_2)
+                            .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
                             .addCallback(new Callback() {
                                 @Override
                                 public void onCreate(@NonNull SupportSQLiteDatabase db) {

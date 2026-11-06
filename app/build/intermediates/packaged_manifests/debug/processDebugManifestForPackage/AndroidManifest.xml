@@ -60,10 +60,11 @@
         android:debuggable="true"
         android:extractNativeLibs="false"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_app_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_app_icon"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.DyslexiaSupport" >
 
         <!-- The only entry point. Splash theme; postSplashScreenTheme switches to the app theme. -->
@@ -83,6 +84,10 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.dyslexiasupport.ui.auth.RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.dyslexiasupport.ui.auth.EmailVerificationActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -111,6 +116,12 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.dyslexiasupport.ui.practice.GameActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.dyslexiasupport.ui.onboarding.AssessmentActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.dyslexiasupport.ui.profile.ParentDashboardActivity"
             android:exported="false" />
 
         <service

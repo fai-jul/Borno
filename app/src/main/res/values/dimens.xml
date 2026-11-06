@@ -12,6 +12,7 @@
     <dimen name="ds_radius_sm">12dp</dimen>
     <dimen name="ds_radius_md">20dp</dimen>
     <dimen name="ds_radius_lg">28dp</dimen>
+    <dimen name="ds_radius_xl">32dp</dimen>
 
     <!-- Touch target -->
     <dimen name="ds_touch_min">48dp</dimen>

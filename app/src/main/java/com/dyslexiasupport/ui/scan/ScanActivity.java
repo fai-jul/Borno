@@ -31,6 +31,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.dyslexiasupport.R;
 import com.dyslexiasupport.databinding.ActivityScanBinding;
 import com.dyslexiasupport.ui.common.BaseActivity;
+import com.dyslexiasupport.ocr.OcrTextCleaner;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.common.util.concurrent.ListenableFuture;
 
@@ -163,7 +164,8 @@ public class ScanActivity extends BaseActivity {
                 binding.inputTitle.setText(vm.editedTitle);
             }
             if (!binding.inputBody.getText().toString().equals(vm.editedBody)) {
-                binding.inputBody.setText(vm.editedBody);
+                binding.inputBody.setText(OcrTextCleaner.highlightUncertainWords(
+                        vm.editedBody, ContextCompat.getColor(this, R.color.ds_mango)));
             }
         }
     }
@@ -207,7 +209,8 @@ public class ScanActivity extends BaseActivity {
         Preview preview = new Preview.Builder().build();
         preview.setSurfaceProvider(binding.previewView.getSurfaceProvider());
         imageCapture = new ImageCapture.Builder()
-                .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
+                .setCaptureMode(ImageCapture.CAPTURE_MODE_MAXIMIZE_QUALITY)
+                .setJpegQuality(95)
                 .build();
         try {
             cameraProvider.unbindAll();

@@ -40,7 +40,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `notes` (`id`,`title`,`content`,`createdAt`,`updatedAt`) VALUES (nullif(?, 0),?,?,?,?)";
+        return "INSERT OR REPLACE INTO `notes` (`id`,`title`,`content`,`createdAt`,`updatedAt`,`ownerId`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -59,6 +59,11 @@ public final class NoteDao_Impl implements NoteDao {
         }
         statement.bindLong(4, entity.createdAt);
         statement.bindLong(5, entity.updatedAt);
+        if (entity.ownerId == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindString(6, entity.ownerId);
+        }
       }
     };
     this.__deletionAdapterOfNoteEntity = new EntityDeletionOrUpdateAdapter<NoteEntity>(__db) {
@@ -78,7 +83,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `notes` SET `id` = ?,`title` = ?,`content` = ?,`createdAt` = ?,`updatedAt` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `notes` SET `id` = ?,`title` = ?,`content` = ?,`createdAt` = ?,`updatedAt` = ?,`ownerId` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -97,7 +102,12 @@ public final class NoteDao_Impl implements NoteDao {
         }
         statement.bindLong(4, entity.createdAt);
         statement.bindLong(5, entity.updatedAt);
-        statement.bindLong(6, entity.id);
+        if (entity.ownerId == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindString(6, entity.ownerId);
+        }
+        statement.bindLong(7, entity.id);
       }
     };
   }
@@ -152,9 +162,15 @@ public final class NoteDao_Impl implements NoteDao {
   }
 
   @Override
-  public LiveData<List<NoteEntity>> getAllNotes() {
-    final String _sql = "SELECT * FROM notes ORDER BY updatedAt DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public LiveData<List<NoteEntity>> getAllNotes(final String ownerId) {
+    final String _sql = "SELECT * FROM notes WHERE ownerId = ? ORDER BY updatedAt DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     return __db.getInvalidationTracker().createLiveData(new String[] {"notes"}, false, new Callable<List<NoteEntity>>() {
       @Override
       @Nullable
@@ -166,6 +182,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
           final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updatedAt");
+          final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
           final List<NoteEntity> _result = new ArrayList<NoteEntity>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final NoteEntity _item;
@@ -187,6 +204,11 @@ public final class NoteDao_Impl implements NoteDao {
             _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
             _item = new NoteEntity(_tmpTitle,_tmpContent,_tmpCreatedAt,_tmpUpdatedAt);
             _item.id = _cursor.getLong(_cursorIndexOfId);
+            if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+              _item.ownerId = null;
+            } else {
+              _item.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+            }
             _result.add(_item);
           }
           return _result;
@@ -203,9 +225,15 @@ public final class NoteDao_Impl implements NoteDao {
   }
 
   @Override
-  public List<NoteEntity> getAllNotesSync() {
-    final String _sql = "SELECT * FROM notes ORDER BY updatedAt DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public List<NoteEntity> getAllNotesSync(final String ownerId) {
+    final String _sql = "SELECT * FROM notes WHERE ownerId = ? ORDER BY updatedAt DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
@@ -214,6 +242,7 @@ public final class NoteDao_Impl implements NoteDao {
       final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
       final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
       final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updatedAt");
+      final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
       final List<NoteEntity> _result = new ArrayList<NoteEntity>(_cursor.getCount());
       while (_cursor.moveToNext()) {
         final NoteEntity _item;
@@ -235,6 +264,11 @@ public final class NoteDao_Impl implements NoteDao {
         _tmpUpdatedAt = _cursor.getLong(_cursorIndexOfUpdatedAt);
         _item = new NoteEntity(_tmpTitle,_tmpContent,_tmpCreatedAt,_tmpUpdatedAt);
         _item.id = _cursor.getLong(_cursorIndexOfId);
+        if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+          _item.ownerId = null;
+        } else {
+          _item.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+        }
         _result.add(_item);
       }
       return _result;

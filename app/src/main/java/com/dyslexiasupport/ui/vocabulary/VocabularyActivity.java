@@ -50,6 +50,7 @@ public class VocabularyActivity extends BaseActivity implements VocabularyAdapte
 
         binding.btnBack.setOnClickListener(v -> finish());
         binding.btnAddWord.setOnClickListener(v -> showAddWordDialog());
+        binding.btnFlashcards.setOnClickListener(v -> showFlashcards());
 
         setupTTS();
         setupList();
@@ -135,6 +136,7 @@ public class VocabularyActivity extends BaseActivity implements VocabularyAdapte
                         Toast.makeText(this, "Word cannot be empty", Toast.LENGTH_SHORT).show();
                         return;
                     }
+
                     String defStr = editDefinition.getText().toString().trim();
                     String sylStr = editSyllables.getText().toString().trim();
                     String langStr = radioLang.getCheckedRadioButtonId() == R.id.radioBn ? "bn" : "en";
@@ -144,6 +146,56 @@ public class VocabularyActivity extends BaseActivity implements VocabularyAdapte
                 })
                 .setNegativeButton("Cancel", null)
                 .show();
+    }
+
+    private void showFlashcards() {
+        if (allWords.isEmpty()) {
+            Toast.makeText(this, R.string.vocabulary_empty, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        final int[] index = {0};
+        android.widget.LinearLayout card = new android.widget.LinearLayout(this);
+        card.setOrientation(android.widget.LinearLayout.VERTICAL);
+        int pad = (int) (24 * getResources().getDisplayMetrics().density);
+        card.setPadding(pad, pad, pad, pad);
+        android.widget.TextView picture = new android.widget.TextView(this);
+        picture.setTextSize(48);
+        picture.setGravity(android.view.Gravity.CENTER);
+        android.widget.TextView word = new android.widget.TextView(this);
+        word.setTextSize(28);
+        word.setGravity(android.view.Gravity.CENTER);
+        android.widget.TextView meaning = new android.widget.TextView(this);
+        meaning.setTextSize(18);
+        meaning.setGravity(android.view.Gravity.CENTER);
+        android.widget.TextView example = new android.widget.TextView(this);
+        example.setTextSize(16);
+        example.setGravity(android.view.Gravity.CENTER);
+        card.addView(picture);
+        card.addView(word);
+        card.addView(meaning);
+        card.addView(example);
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.vocabulary_flashcards)
+                .setView(card)
+                .setPositiveButton(R.string.vocabulary_next, null)
+                .setNegativeButton(R.string.action_back, null)
+                .create();
+        dialog.setOnShowListener(d -> {
+            android.widget.Button next = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+            Runnable render = () -> {
+                WordEntity item = allWords.get(index[0] % allWords.size());
+                picture.setText("bn".equalsIgnoreCase(item.language) ? "📚" : "🔤");
+                word.setText(item.word);
+                meaning.setText(item.definition == null ? "" : item.definition);
+                example.setText(getString(R.string.vocabulary_example, item.word));
+            };
+            render.run();
+            next.setOnClickListener(v -> {
+                index[0]++;
+                render.run();
+            });
+        });
+        dialog.show();
     }
 
     private void setupTTS() {

@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Neutrals: warm, never pure white/black (calmer for dyslexic readers) -->
-    <color name="ds_cream">#FBF6EC</color>
-    <color name="ds_surface">#FFFDF8</color>
-    <color name="ds_sand">#F1E8D6</color>
-    <color name="ds_ink">#2B2A33</color>
-    <color name="ds_ink_soft">#66636F</color>
+    <color name="ds_cream">#FBF9FF</color>
+    <color name="ds_surface">#FFFFFF</color>
+    <color name="ds_sand">#EEEAF8</color>
+    <color name="ds_ink">#211B38</color>
+    <color name="ds_ink_soft">#6E687C</color>
 
     <!-- Brand -->
-    <color name="ds_primary">#187B7B</color>
-    <color name="ds_primary_container">#CFEDEA</color>
-    <color name="ds_on_primary_container">#0B3B3B</color>
+    <color name="ds_primary">#6546D7</color>
+    <color name="ds_primary_container">#E8E0FF</color>
+    <color name="ds_on_primary_container">#32206E</color>
 
     <!-- Section accents (cards, charts, exercises) -->
-    <color name="ds_mango">#F4A62A</color>
-    <color name="ds_coral">#EF6F5E</color>
-    <color name="ds_leaf">#4FAE5C</color>
-    <color name="ds_sky">#4DB3E6</color>
-    <color name="ds_plum">#7A5BC7</color>
+    <color name="ds_mango">#FFD76A</color>
+    <color name="ds_streak_orange">#F28C28</color>
+    <color name="ds_coral">#FF9D9A</color>
+    <color name="ds_leaf">#70D8B1</color>
+    <color name="ds_sky">#9ADCF4</color>
+    <color name="ds_back_button">#E8F7FF</color>
+    <color name="ds_plum">#B59BFF</color>
+    <color name="ds_auth_background">#F3F6FC</color>
+    <color name="ds_auth_primary">#4D8DD8</color>
+    <color name="ds_auth_border">#C5CBD5</color>
 </resources>

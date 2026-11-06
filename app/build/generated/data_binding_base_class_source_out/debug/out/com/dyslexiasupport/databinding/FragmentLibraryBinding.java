@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.dyslexiasupport.R;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import java.lang.NullPointerException;
@@ -21,6 +22,9 @@ import java.lang.String;
 public final class FragmentLibraryBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
+
+  @NonNull
+  public final MaterialButton btnImportPdf;
 
   @NonNull
   public final Chip chipLangAll;
@@ -44,6 +48,9 @@ public final class FragmentLibraryBinding implements ViewBinding {
   public final Chip chipLevelAll;
 
   @NonNull
+  public final Chip chipNctb;
+
+  @NonNull
   public final Chip chipSaved;
 
   @NonNull
@@ -61,12 +68,14 @@ public final class FragmentLibraryBinding implements ViewBinding {
   @NonNull
   public final RecyclerView list;
 
-  private FragmentLibraryBinding(@NonNull LinearLayout rootView, @NonNull Chip chipLangAll,
-      @NonNull Chip chipLangBn, @NonNull Chip chipLangEn, @NonNull Chip chipLevel1,
-      @NonNull Chip chipLevel2, @NonNull Chip chipLevel3, @NonNull Chip chipLevelAll,
+  private FragmentLibraryBinding(@NonNull LinearLayout rootView,
+      @NonNull MaterialButton btnImportPdf, @NonNull Chip chipLangAll, @NonNull Chip chipLangBn,
+      @NonNull Chip chipLangEn, @NonNull Chip chipLevel1, @NonNull Chip chipLevel2,
+      @NonNull Chip chipLevel3, @NonNull Chip chipLevelAll, @NonNull Chip chipNctb,
       @NonNull Chip chipSaved, @NonNull TextView emptyText, @NonNull LinearLayout emptyView,
       @NonNull ChipGroup langGroup, @NonNull ChipGroup levelGroup, @NonNull RecyclerView list) {
     this.rootView = rootView;
+    this.btnImportPdf = btnImportPdf;
     this.chipLangAll = chipLangAll;
     this.chipLangBn = chipLangBn;
     this.chipLangEn = chipLangEn;
@@ -74,6 +83,7 @@ public final class FragmentLibraryBinding implements ViewBinding {
     this.chipLevel2 = chipLevel2;
     this.chipLevel3 = chipLevel3;
     this.chipLevelAll = chipLevelAll;
+    this.chipNctb = chipNctb;
     this.chipSaved = chipSaved;
     this.emptyText = emptyText;
     this.emptyView = emptyView;
@@ -109,6 +119,12 @@ public final class FragmentLibraryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnImportPdf;
+      MaterialButton btnImportPdf = ViewBindings.findChildViewById(rootView, id);
+      if (btnImportPdf == null) {
+        break missingId;
+      }
+
       id = R.id.chipLangAll;
       Chip chipLangAll = ViewBindings.findChildViewById(rootView, id);
       if (chipLangAll == null) {
@@ -151,6 +167,12 @@ public final class FragmentLibraryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.chipNctb;
+      Chip chipNctb = ViewBindings.findChildViewById(rootView, id);
+      if (chipNctb == null) {
+        break missingId;
+      }
+
       id = R.id.chipSaved;
       Chip chipSaved = ViewBindings.findChildViewById(rootView, id);
       if (chipSaved == null) {
@@ -187,9 +209,9 @@ public final class FragmentLibraryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentLibraryBinding((LinearLayout) rootView, chipLangAll, chipLangBn,
-          chipLangEn, chipLevel1, chipLevel2, chipLevel3, chipLevelAll, chipSaved, emptyText,
-          emptyView, langGroup, levelGroup, list);
+      return new FragmentLibraryBinding((LinearLayout) rootView, btnImportPdf, chipLangAll,
+          chipLangBn, chipLangEn, chipLevel1, chipLevel2, chipLevel3, chipLevelAll, chipNctb,
+          chipSaved, emptyText, emptyView, langGroup, levelGroup, list);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

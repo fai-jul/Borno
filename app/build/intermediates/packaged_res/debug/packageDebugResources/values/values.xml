@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ds_coral">#EF6F5E</color>
-    <color name="ds_cream">#FBF6EC</color>
-    <color name="ds_ink">#2B2A33</color>
-    <color name="ds_ink_soft">#66636F</color>
-    <color name="ds_leaf">#4FAE5C</color>
-    <color name="ds_mango">#F4A62A</color>
-    <color name="ds_on_primary_container">#0B3B3B</color>
-    <color name="ds_plum">#7A5BC7</color>
-    <color name="ds_primary">#187B7B</color>
-    <color name="ds_primary_container">#CFEDEA</color>
-    <color name="ds_sand">#F1E8D6</color>
-    <color name="ds_sky">#4DB3E6</color>
-    <color name="ds_surface">#FFFDF8</color>
+    <array name="com_google_android_gms_fonts_certs">
+        <item>@array/com_google_android_gms_fonts_certs_dev</item>
+        <item>@array/com_google_android_gms_fonts_certs_prod</item>
+    </array>
+    <string-array name="com_google_android_gms_fonts_certs_dev">
+        <item>
+            MIIEQzCCAyugAwIBAgIJAN2B+BN3EneLMA0GCSqGSIb3DQEBBQUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHR29vZ2xlMRcwFQYDVQQLEw5BbmRyb2lkIERldmVsb3AxEDAOBgNVBAMTB0dvb2dsZTEhMB8GCSqGSIb3DQEJARYTYW5kcm9pZEBnb29nbGUuY29t
+        </item>
+    </string-array>
+    <string-array name="com_google_android_gms_fonts_certs_prod">
+        <item>
+            MIIEQzCCAyugAwIBAgIJAIZ2BE12dM3CMA0GCSqGSIb3DQEBBQUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHR29vZ2xlMRcwFQYDVQQLEw5BbmRyb2lkIERldmVsb3AxEDAOBgNVBAMTB0dvb2dsZTEhMB8GCSqGSIb3DQEJARYTYW5kcm9pZEBnb29nbGUuY29t
+        </item>
+    </string-array>
+    <color name="ds_auth_background">#F3F6FC</color>
+    <color name="ds_auth_border">#C5CBD5</color>
+    <color name="ds_auth_primary">#4D8DD8</color>
+    <color name="ds_back_button">#E8F7FF</color>
+    <color name="ds_coral">#FF9D9A</color>
+    <color name="ds_cream">#FBF9FF</color>
+    <color name="ds_ink">#211B38</color>
+    <color name="ds_ink_soft">#6E687C</color>
+    <color name="ds_leaf">#70D8B1</color>
+    <color name="ds_mango">#FFD76A</color>
+    <color name="ds_on_primary_container">#32206E</color>
+    <color name="ds_plum">#B59BFF</color>
+    <color name="ds_primary">#6546D7</color>
+    <color name="ds_primary_container">#E8E0FF</color>
+    <color name="ds_sand">#EEEAF8</color>
+    <color name="ds_sky">#9ADCF4</color>
+    <color name="ds_streak_orange">#F28C28</color>
+    <color name="ds_surface">#FFFFFF</color>
     <color name="reader_accent_light">#2457C5</color>
     <color name="reader_accent_night">#FFC857</color>
     <color name="reader_cream_bg">#FBF6EC</color>
@@ -30,6 +49,7 @@
     <dimen name="ds_radius_lg">28dp</dimen>
     <dimen name="ds_radius_md">20dp</dimen>
     <dimen name="ds_radius_sm">12dp</dimen>
+    <dimen name="ds_radius_xl">32dp</dimen>
     <dimen name="ds_space_lg">16dp</dimen>
     <dimen name="ds_space_md">12dp</dimen>
     <dimen name="ds_space_sm">8dp</dimen>
@@ -38,23 +58,47 @@
     <dimen name="ds_space_xxl">32dp</dimen>
     <dimen name="ds_touch_min">48dp</dimen>
     <string name="action_back">Go back</string>
-    <string name="action_create_account">Create account</string>
+    <string name="action_create_account">Sign Up</string>
     <string name="action_google_login">Sign in with Google</string>
-    <string name="action_guest">Continue as guest</string>
-    <string name="action_login">Log in</string>
+    <string name="action_import_save">Save to Library</string>
+    <string name="action_login">Log In</string>
     <string name="action_logout">Log out</string>
+    <string name="action_next">Next</string>
     <string name="action_reset">Reset</string>
     <string name="action_share">Share app</string>
+    <string name="action_toggle_theme">Toggle light and dark mode</string>
     <string name="action_undo">Undo</string>
     <string name="ai_error_busy">The helper is busy. Wait a moment and try again.</string>
+    <string name="ai_error_chat_unavailable">Chat is not enabled on the assistant server yet.</string>
     <string name="ai_error_empty_input">Type or paste some text first</string>
+    <string name="ai_error_history">Could not load chat history. Try again later.</string>
     <string name="ai_error_not_configured">The helper is not set up yet. Check the server address and key in AiConfig.</string>
     <string name="ai_error_offline">No internet. Connect and try again.</string>
     <string name="ai_error_server">The helper had a problem. Please try again.</string>
     <string name="ai_error_timeout">That took too long. Try a shorter text.</string>
     <string name="ai_error_too_long">That text is too long. Try a shorter part.</string>
-    <string name="app_name">Dyslexia Support</string>
+    <string name="app_name">Borno</string>
+    <string name="assessment_accuracy">How accurate did your reading feel today?</string>
+    <string name="assessment_confusion">Which letters or symbols feel easy to confuse?</string>
+    <string name="assessment_continue">Continue</string>
+    <string name="assessment_decoding">Try reading a new word aloud. When you are ready, continue.</string>
+    <string name="assessment_reading">Read the short passage at your comfortable pace. Tap continue when finished.</string>
+    <string name="assessment_start_reading">Start reading</string>
+    <string name="assessment_title">A quick reading check</string>
     <string name="assistant_answer_in">Answer in</string>
+    <string name="assistant_chat_buddy_label">Reading Buddy</string>
+    <string name="assistant_chat_delete">Delete</string>
+    <string name="assistant_chat_history">History</string>
+    <string name="assistant_chat_input_hint">Write a message to your Reading Buddy</string>
+    <string name="assistant_chat_new">New chat</string>
+    <string name="assistant_chat_no_history">No saved chats yet.</string>
+    <string name="assistant_chat_send">Send message</string>
+    <string name="assistant_chat_smart_focus">Smart focus: %1$s</string>
+    <string name="assistant_chat_smart_hint">Smart focus will appear here after your first question.</string>
+    <string name="assistant_chat_start">💬 Chat with Reading Buddy</string>
+    <string name="assistant_chat_thinking">Reading Buddy is thinking…</string>
+    <string name="assistant_chat_title">Reading Buddy</string>
+    <string name="assistant_chat_user_label">You</string>
     <string name="assistant_copied">Copied</string>
     <string name="assistant_copy">Copy</string>
     <string name="assistant_empty_hint">Pick what you need help with</string>
@@ -67,6 +111,20 @@
     <string name="assistant_title">Ask</string>
     <string name="assistant_truncated">Only the first part of the text will be used</string>
     <string name="assistant_what_help">What do you need?</string>
+    <string name="badge_bookworm">Bookworm</string>
+    <string name="badge_curious_mind">Curious Mind</string>
+    <string name="badge_earned">✓ %1$s</string>
+    <string name="badge_first_lesson">First Lesson</string>
+    <string name="badge_focus">Focused Reader</string>
+    <string name="badge_goal_keeper">Goal Keeper</string>
+    <string name="badge_locked">🔒 %1$s</string>
+    <string name="badge_math_star">Math Star</string>
+    <string name="badge_rising_star">Rising Star</string>
+    <string name="badge_streak">5 Day Streak</string>
+    <string name="btn_assign_nctb">📖 Assign NCTB Lesson</string>
+    <string name="btn_class_report_pdf">📄 Generate Class Report PDF</string>
+    <string name="btn_import_pdf">📄 Import PDF / Book</string>
+    <string name="btn_view_child_progress">📊 View Child Progress</string>
     <string name="card_ask_sub">Get answers and explanations</string>
     <string name="card_ask_title">Ask Assistant</string>
     <string name="card_practice_sub">Fun letter and word games</string>
@@ -81,16 +139,24 @@
     <string name="card_words_title">My Words</string>
     <string name="card_write_sub">Type and check spelling</string>
     <string name="card_write_title">Write</string>
+    <string name="chart_type_bar">Bar</string>
+    <string name="chart_type_line">Line</string>
+    <string name="chart_type_pie">Pie</string>
     <string name="chip_all">All</string>
     <string name="chip_level_1" translatable="false">★</string>
     <string name="chip_level_2" translatable="false">★★</string>
     <string name="chip_level_3" translatable="false">★★★</string>
     <string name="chip_levels_all">All levels</string>
+    <string name="chip_nctb_class5">📚 Class 5 NCTB</string>
     <string name="chip_sample_bn" translatable="false">বাংলা</string>
     <string name="chip_sample_en" translatable="false">English</string>
     <string name="chip_saved">⭐ Saved</string>
     <string name="coming_soon">Coming soon</string>
+    <string name="comprehension_result">You got %1$d of %2$d questions right. Keep going!</string>
+    <string name="comprehension_title">Quick reading check</string>
     <string name="default_web_client_id">46634ad64663-dyslexia46634ad6app.apps.googleusercontent.com</string>
+    <string name="dialog_import_title">Import NCTB Lesson / PDF</string>
+    <string name="error_auth_too_many_requests">Too many attempts. Please wait and try again.</string>
     <string name="error_email_invalid">Enter a valid email</string>
     <string name="error_email_taken">This email is already registered</string>
     <string name="error_generic">Something went wrong. Please try again.</string>
@@ -102,6 +168,7 @@
     <string name="game_builder_title">Word Builder</string>
     <string name="game_confusable_sub">Master tricky letters like b/d and ব/ক</string>
     <string name="game_confusable_title">Confusable Letters</string>
+    <string name="game_continue">Continue</string>
     <string name="game_correct">Awesome! That is correct! 🎉</string>
     <string name="game_memory_sub">Match pairs of letters and words</string>
     <string name="game_memory_title">Memory Match</string>
@@ -131,12 +198,49 @@
     <string name="guide_off">Off</string>
     <string name="guide_ruler">Ruler</string>
     <string name="guide_title">Reading guide</string>
-    <string name="hint_email">Email</string>
-    <string name="hint_name">Your name</string>
-    <string name="hint_password">Password</string>
+    <string name="hint_body">Paste or type lesson text here</string>
+    <string name="hint_email">Enter your email</string>
+    <string name="hint_name">Enter your name</string>
+    <string name="hint_password">Enter your password</string>
+    <string name="hint_title">Lesson Title</string>
+    <string name="home_badges">Badges</string>
+    <string name="home_continue_learning">Continue learning</string>
+    <string name="home_continue_story">Animals Around Us</string>
+    <string name="home_continue_topic_meta">%1$s · %2$s</string>
+    <string name="home_day_streak">day streak</string>
     <string name="home_greeting">Hello! Ready to read?</string>
-    <string name="home_greeting_name">Hello, %1$s!</string>
-    <string name="home_subtitle">Pick something to start</string>
+    <string name="home_greeting_name">Hi, %1$s! 👋</string>
+    <string name="home_menu">Open menu</string>
+    <string name="home_menu_dashboard">Learner dashboard</string>
+    <string name="home_menu_logout_confirm">Are you sure you want to log out?</string>
+    <string name="home_menu_profile">Profile and settings</string>
+    <string name="home_menu_progress">Progress</string>
+    <string name="home_notifications">Notifications</string>
+    <string name="home_plan_continue">Continue reading</string>
+    <string name="home_plan_done">Done</string>
+    <string name="home_plan_label">Your reading plan</string>
+    <string name="home_plan_next">Start now</string>
+    <string name="home_plan_percent">%1$d%%</string>
+    <string name="home_plan_step_practice">Practice %1$s</string>
+    <string name="home_plan_step_read">Read %1$s</string>
+    <string name="home_plan_step_words">Words %1$s</string>
+    <string name="home_plan_steps">%1$d of 4 activities complete</string>
+    <string name="home_plan_sub_complete">Nice work. Keep the rhythm going tomorrow.</string>
+    <string name="home_plan_sub_practice">Confusable letters</string>
+    <string name="home_plan_sub_read">The Clever Rabbit</string>
+    <string name="home_plan_sub_words">Save a useful word from today\'s reading.</string>
+    <string name="home_plan_title_complete">Your plan is complete</string>
+    <string name="home_plan_title_practice">Practice recommendation</string>
+    <string name="home_plan_title_read">Continue reading</string>
+    <string name="home_plan_title_words">Review one new word</string>
+    <string name="home_see_all">See all</string>
+    <string name="home_streak_encouragement">You\'re on fire! 🔥 Keep going!</string>
+    <string name="home_streak_star">Streak milestone star</string>
+    <string name="home_streak_start">Start your learning streak! 🔥</string>
+    <string name="home_streak_title">You\'re on a 5 day streak! 🔥</string>
+    <string name="home_streak_title_dynamic">You\'re on a %1$d day streak! 🔥</string>
+    <string name="home_subtitle">Let\'s learn something new today!</string>
+    <string name="home_toolkit_label">Quick tools</string>
     <string name="label_avatar">Pick your buddy</string>
     <string name="label_role">I am a…</string>
     <string name="lang_bangla">বাংলা</string>
@@ -146,7 +250,9 @@
     <string name="library_empty">No texts match these filters</string>
     <string name="library_empty_saved">Nothing saved yet. Swipe a text to the right to save it.</string>
     <string name="library_meta" translatable="false">%1$s · %2$s · %3$s</string>
+    <string name="library_min_sec">%1$d min %2$d sec</string>
     <string name="library_minutes">%1$d min</string>
+    <string name="library_seconds">%1$d sec</string>
     <string name="library_subtitle">Choose something to read</string>
     <string name="library_swipe_hint">Swipe right to save, left to mark as read</string>
     <string name="link_code_button">Link Student Account</string>
@@ -160,29 +266,53 @@
     <string name="link_code_your_code">Your Link Code:</string>
     <string name="login_forgot_password">Forgot password?</string>
     <string name="login_google_failed">Google Sign-In failed. Please try again.</string>
-    <string name="login_no_account">New here? Create an account</string>
+    <string name="login_no_account">Don\'t have an account? Sign up</string>
     <string name="login_reset_desc">Enter your account email to receive a password reset link.</string>
     <string name="login_reset_email_sent">Password reset link sent to your email!</string>
     <string name="login_reset_title">Reset Password</string>
-    <string name="login_subtitle">Log in to continue</string>
-    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Welcome back! Please enter your details.</string>
+    <string name="login_title">Log in ✨</string>
     <string name="low_end_desc">Reduces heavy animations and memory usage for smooth performance on entry-level phones.</string>
     <string name="low_end_title">Low-End Device Mode</string>
     <string name="mascot_cheer">You are doing fantastic! Keep going!</string>
     <string name="mascot_encourage">Don’t worry, mistakes help us learn!</string>
     <string name="mascot_perfect">Perfect score! You are a superstar! ⭐⭐⭐</string>
     <string name="mascot_welcome">Hi! I am Ollie 🦉. Pick a game and let us play!</string>
+    <string name="msg_imported_success">NCTB Lesson added to Library!</string>
+    <string name="msg_pdf_import_failed">Could not read text from PDF. Try another file.</string>
+    <string name="msg_pdf_imported_success">PDF imported successfully! Added to Library.</string>
     <string name="msg_read">Marked as read</string>
     <string name="msg_saved">Saved</string>
     <string name="msg_unread">Marked as unread</string>
     <string name="msg_unsaved">Removed from saved</string>
+    <string name="nav_explore">Explore</string>
     <string name="nav_home">Home</string>
     <string name="nav_practice">Practice</string>
     <string name="nav_profile">Me</string>
     <string name="nav_progress">Progress</string>
     <string name="nav_read">Read</string>
+    <string name="nav_rewards">Rewards</string>
+    <string name="nctb_assigned">NCTB lesson assigned to all linked students</string>
     <string name="notification_channel_desc">Notifies you every day to read and practice</string>
     <string name="notification_channel_name">Daily Reading Reminder</string>
+    <string name="parent_dashboard_empty">No linked learners yet.</string>
+    <string name="parent_dashboard_learner">%1$s</string>
+    <string name="parent_dashboard_load_error">Could not load this learner right now.</string>
+    <string name="parent_dashboard_metrics">Reading time · Exercise accuracy · Words learned · Recent struggles</string>
+    <string name="parent_dashboard_metrics_values">%1$d min reading · %2$d%% accuracy · %3$d words learned · Struggle: %4$s</string>
+    <string name="parent_dashboard_no_struggle">none yet</string>
+    <string name="parent_dashboard_practice">practice</string>
+    <string name="parent_dashboard_sign_in">Sign in to view linked learners.</string>
+    <string name="parent_dashboard_subtitle">Weekly reading, practice, vocabulary, and recent struggles.</string>
+    <string name="parent_dashboard_title">Learner dashboard</string>
+    <string name="parent_last_active">Last active: %1$s</string>
+    <string name="parent_last_active_unknown">Last active: not synced yet</string>
+    <string name="parent_mark_reviewed">Reviewed</string>
+    <string name="parent_qr_title">Link code for %1$s</string>
+    <string name="parent_recommendation_general">Encourage a short reading session today.</string>
+    <string name="parent_recommendation_weak">Try a short %1$s practice round together.</string>
+    <string name="parent_share_pdf">PDF</string>
+    <string name="parent_show_qr">QR</string>
     <string name="pdf_date_label">Report Date:</string>
     <string name="pdf_learner_label">Learner:</string>
     <string name="pdf_report_title">Dyslexia Support - Learner Progress Report</string>
@@ -197,8 +327,20 @@
     <string name="practice_stats_stars">Stars Earned</string>
     <string name="practice_subtitle">Play games to build your reading powers!</string>
     <string name="practice_title">Fun &amp; Practice</string>
+    <string name="profile_assessment">Take onboarding reading check</string>
+    <string name="profile_assistant_disabled">The reading assistant is disabled by the parent.</string>
+    <string name="profile_assistant_enabled">Enable Bangla reading assistant</string>
+    <string name="profile_controls_title">Home practice controls</string>
+    <string name="profile_daily_goal_hint">Daily goal</string>
+    <string name="profile_goal_exercises">Exercises</string>
+    <string name="profile_goal_minutes">Minutes</string>
+    <string name="profile_goal_saved">Daily practice goal saved</string>
     <string name="profile_guest_note">You are using a guest account. Create an account to keep your progress safe.</string>
     <string name="profile_language">Language</string>
+    <string name="profile_reading_only">Reading-only mode</string>
+    <string name="profile_theme_dark">Dark</string>
+    <string name="profile_theme_subtitle">Choose a comfortable theme for the app.</string>
+    <string name="profile_theme_title">Appearance</string>
     <string name="progress_chart_legend_accuracy">Accuracy (%)</string>
     <string name="progress_chart_legend_time">Reading (min)</string>
     <string name="progress_chart_monthly">Monthly</string>
@@ -217,17 +359,21 @@
     <string name="progress_subtitle">See how your reading powers are growing every day!</string>
     <string name="progress_title">Your Progress</string>
     <string name="project_id" translatable="false">borno-1240f</string>
+    <string name="reader_next_sentence">Next sentence</string>
+    <string name="reader_previous_sentence">Previous sentence</string>
+    <string name="reader_progress_placeholder">3/5</string>
     <string name="reader_settings_title">Reading settings</string>
     <string name="reader_tap_hint">Tap any word to hear it and see its parts</string>
     <string name="register_have_account">Already have an account? Log in</string>
-    <string name="register_subtitle">It takes less than a minute</string>
-    <string name="register_title">Create your account</string>
+    <string name="register_subtitle">Welcome! Please enter your details.</string>
+    <string name="register_title">Create an account ✨</string>
     <string name="reminder_text">Take 5 minutes to practice your reading powers today.</string>
     <string name="reminder_title">Ready to read today? 📖</string>
     <string name="role_child">Young learner</string>
-    <string name="role_learner">Teen or adult learner</string>
     <string name="role_parent">Parent</string>
+    <string name="role_parent_dashboard">Parent Dashboard</string>
     <string name="role_teacher">Teacher</string>
+    <string name="role_teacher_dashboard">Teacher Classroom Hub</string>
     <string name="sample_story_bn" translatable="false">একদিন সকালে ছোট্ট পাখিটি গাছের ডালে বসে গান গাইছিল। নিচে নদীর পাশে একটি খরগোশ ঘাস খাচ্ছিল। পাখিটি বলল, “এসো বন্ধু, আমরা একসাথে খেলি।” খরগোশ হেসে বলল, “চলো, আজ আমরা নদীর ধারে যাই।” দুই বন্ধু সারাদিন মজা করে খেলল। সন্ধ্যায় সূর্য ডুবে গেল, আর তারা বাড়ি ফিরে এল।</string>
     <string name="sample_story_en" translatable="false">One sunny morning, a little bird sat on a branch and sang a song. Down by the river, a rabbit was eating grass. “Come, my friend, let’s play together,” said the bird. The rabbit smiled and said, “Yes, let’s go to the river.” The two friends played all day. When the sun went down, they went home happy.</string>
     <string name="scan_add_page">➕ Add page</string>
@@ -277,11 +423,13 @@
     <string name="sync_status_syncing">Syncing data with Firebase…</string>
     <string name="sync_status_title">Cloud Backup &amp; Sync</string>
     <string name="task_ask">Question</string>
+    <string name="task_chat">Chat</string>
     <string name="task_examples">🧩 Examples</string>
     <string name="task_explain">💡 Explain</string>
     <string name="task_meaning">🔎 Word meaning</string>
     <string name="task_simplify">✨ Say it simply</string>
     <string name="task_summarize">📝 Summarise</string>
+    <string name="teacher_dashboard_subtitle">Class activity, accuracy, weak areas, and student link QR codes.</string>
     <string name="theme_cream">Cream</string>
     <string name="theme_mint">Mint</string>
     <string name="theme_night">Night</string>
@@ -294,6 +442,18 @@
     <string name="tip_no_end">Your writing has no mark at the end. Add ।  .  or ?  (%1$s)</string>
     <string name="tip_repeated">The same word twice. Is that on purpose? %1$s</string>
     <string name="tip_space_before">No space before , . ? ! or ।  (%1$s)</string>
+    <string name="verification_check_button">I verified my email</string>
+    <string name="verification_check_hint">Open the email and tap the verification link.</string>
+    <string name="verification_failed">We could not verify your email yet.</string>
+    <string name="verification_required">Please verify your email before logging in.</string>
+    <string name="verification_resend">Resend verification email</string>
+    <string name="verification_sent">Verification email sent.</string>
+    <string name="verification_subtitle">We sent a verification link to %1$s</string>
+    <string name="verification_title">Check your email ✨</string>
+    <string name="vocabulary_empty">Add a word before starting cards.</string>
+    <string name="vocabulary_example">I can read the word “%1$s”.</string>
+    <string name="vocabulary_flashcards">Word cards</string>
+    <string name="vocabulary_next">Next card</string>
     <string name="voice_error_busy">Voice is busy. Try again in a moment.</string>
     <string name="voice_error_generic">Voice did not work. Please try again.</string>
     <string name="voice_error_language">This language is not ready for voice on this phone.</string>
@@ -333,9 +493,91 @@
     <string name="write_tips_title">Quick tips</string>
     <string name="write_title">Write</string>
     <string name="write_use">Use this text</string>
+    <style name="BadgeIcon">
+        <item name="android:layout_width">54dp</item>
+        <item name="android:layout_height">54dp</item>
+        <item name="android:background">@drawable/bg_badge_tile</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+    <style name="BadgeLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/ds_ink_soft</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+    <style name="BadgeTile">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
     <style name="Ds"/>
+    <style name="Ds.AuthIconButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:textSize">38sp</item>
+        <item name="android:textColor">@color/ds_ink</item>
+        <item name="android:fontFamily">sans</item>
+    </style>
+    <style name="Ds.AuthLabel" parent="Ds.Text">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ds_ink</item>
+    </style>
+    <style name="Ds.AuthPrimaryButton" parent="Widget.Material3.Button">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="backgroundTint">@color/ds_auth_primary</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+    <style name="Ds.AuthSubtitle" parent="Ds.Text.Body">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/ds_ink_soft</item>
+    </style>
+    <style name="Ds.AuthTextButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/ds_auth_primary</item>
+    </style>
+    <style name="Ds.AuthTitle" parent="Ds.Text.Display">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/ds_ink</item>
+    </style>
+    <style name="Ds.BackButton" parent="Widget.Material3.Button">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:text"> </item>
+        <item name="background">@drawable/bg_back_button</item>
+        <item name="backgroundTint">@color/ds_back_button</item>
+        <item name="icon">@drawable/ic_back_chevron</item>
+        <item name="iconTint">@color/ds_ink_soft</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="rippleColor">@color/ds_sand</item>
+    </style>
     <style name="Ds.BottomNav" parent="Widget.Material3.BottomNavigationView">
         <item name="backgroundTint">@color/ds_surface</item>
+        <item name="elevation">12dp</item>
+        <item name="itemIconSize">28dp</item>
+        <item name="itemPaddingTop">10dp</item>
+        <item name="itemPaddingBottom">10dp</item>
         <item name="itemTextAppearanceActive">@style/Ds.NavLabel</item>
         <item name="itemTextAppearanceInactive">@style/Ds.NavLabel</item>
         <item name="itemActiveIndicatorStyle">@style/Ds.NavIndicator</item>
@@ -344,22 +586,25 @@
         <item name="labelVisibilityMode">labeled</item>
     </style>
     <style name="Ds.Button" parent="Widget.Material3.Button">
-        <item name="android:minHeight">56dp</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
-        <item name="cornerRadius">28dp</item>
+        <item name="cornerRadius">16dp</item>
     </style>
     <style name="Ds.Chip" parent="Widget.Material3.Chip.Filter">
-        <item name="android:textSize">16sp</item>
-        <item name="chipMinHeight">48dp</item>
-        <item name="chipCornerRadius">24dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="chipMinHeight">40dp</item>
+        <item name="chipCornerRadius">12dp</item>
         <item name="chipBackgroundColor">@color/chip_bg</item>
         <item name="chipStrokeColor">@color/chip_stroke</item>
-        <item name="chipStrokeWidth">1.5dp</item>
+        <item name="chipStrokeWidth">1dp</item>
         <item name="android:textColor">@color/ds_ink</item>
     </style>
     <style name="Ds.Chip.Avatar">
@@ -370,90 +615,171 @@
         <item name="chipStartPadding">6dp</item>
         <item name="chipEndPadding">6dp</item>
     </style>
+    <style name="Ds.CompactButton" parent="Ds.Button">
+        <item name="android:minHeight">44dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
     <style name="Ds.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@color/ds_primary_container</item>
+        <item name="android:color">@android:color/transparent</item>
     </style>
     <style name="Ds.NavLabel" parent="TextAppearance.Material3.LabelMedium">
-        <item name="android:textSize">13sp</item>
-        <item name="android:fontFamily">@font/hind_siliguri</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="Ds.OutlinedButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">44dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">12dp</item>
     </style>
     <style name="Ds.Text">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textColor">@color/ds_ink</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="Ds.Text.Bangla">
         <item name="android:fontFamily">@font/hind_siliguri</item>
         <item name="android:textColor">@color/ds_ink</item>
         <item name="android:includeFontPadding">false</item>
     </style>
     <style name="Ds.Text.Body">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/ds_ink_soft</item>
-        <item name="android:lineSpacingMultiplier">1.2</item>
-    </style>
-    <style name="Ds.Text.Caption">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/ds_ink_soft</item>
-        <item name="android:lineSpacingMultiplier">1.15</item>
+        <item name="android:lineSpacingMultiplier">1.35</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+    <style name="Ds.Text.Caption">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/ds_ink_soft</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
     </style>
     <style name="Ds.Text.Display">
-        <item name="android:textSize">34sp</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:lineSpacingMultiplier">1.1</item>
+        <item name="android:lineSpacingMultiplier">1.08</item>
     </style>
     <style name="Ds.Text.Title">
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">19sp</item>
         <item name="android:textStyle">bold</item>
     </style>
     <style name="Ds.TextButton" parent="Widget.Material3.Button.TextButton">
-        <item name="android:minHeight">48dp</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:letterSpacing">0</item>
     </style>
     <style name="Ds.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="boxCornerRadiusTopStart">16dp</item>
-        <item name="boxCornerRadiusTopEnd">16dp</item>
-        <item name="boxCornerRadiusBottomStart">16dp</item>
-        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
         <item name="boxBackgroundColor">@color/ds_surface</item>
         <item name="boxStrokeColor">@color/ds_primary</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
         <item name="hintTextColor">@color/ds_primary</item>
     </style>
     <style name="Ds.TonalButton" parent="Widget.Material3.Button.TonalButton">
-        <item name="android:minHeight">56dp</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
-        <item name="cornerRadius">28dp</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+    <style name="Ds.WindowAnimation">
+        <item name="android:windowEnterAnimation">@anim/activity_enter</item>
+        <item name="android:windowExitAnimation">@anim/activity_exit</item>
+        <item name="android:windowShowAnimation">@anim/activity_enter</item>
+        <item name="android:windowHideAnimation">@anim/activity_exit</item>
+    </style>
+    <style name="OnboardingDot">
+        <item name="android:layout_width">9dp</item>
+        <item name="android:layout_height">9dp</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:background">@drawable/bg_streak_empty</item>
+    </style>
+    <style name="OnboardingDot.Active" parent="OnboardingDot">
+        <item name="android:layout_width">10dp</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:background">@drawable/bg_streak_done</item>
+    </style>
+    <style name="StreakDay">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="StreakDot">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:background">@drawable/bg_streak_done</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/ds_surface</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="StreakDotEmpty" parent="StreakDot">
+        <item name="android:background">@drawable/bg_streak_empty</item>
+        <item name="android:textColor">@color/ds_ink_soft</item>
+    </style>
+    <style name="StreakLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:textColor">@color/ds_ink</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
     <style name="Theme.DyslexiaSupport" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/ds_primary</item>
         <item name="colorOnPrimary">@color/ds_surface</item>
         <item name="colorPrimaryContainer">@color/ds_primary_container</item>
         <item name="colorOnPrimaryContainer">@color/ds_on_primary_container</item>
-        <item name="colorSecondary">@color/ds_mango</item>
+        <item name="colorSecondary">@color/ds_primary</item>
         <item name="colorOnSecondary">@color/ds_ink</item>
-        <item name="colorSecondaryContainer">@color/ds_sand</item>
+        <item name="colorSecondaryContainer">@color/ds_primary_container</item>
         <item name="colorOnSecondaryContainer">@color/ds_ink</item>
         <item name="colorSurface">@color/ds_surface</item>
         <item name="colorOnSurface">@color/ds_ink</item>
         <item name="colorOnSurfaceVariant">@color/ds_ink_soft</item>
         <item name="android:colorBackground">@color/ds_cream</item>
         <item name="android:windowBackground">@color/ds_cream</item>
-        <item name="android:fontFamily">@font/hind_siliguri</item>
-        <item name="fontFamily">@font/hind_siliguri</item>
+        <item name="android:navigationBarColor">@color/ds_surface</item>
+        <item name="android:statusBarColor">@color/ds_cream</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
         <item name="materialButtonStyle">@style/Ds.Button</item>
+        <item name="android:windowAnimationStyle">@style/Ds.WindowAnimation</item>
     </style>
     <style name="Theme.DyslexiaSupport.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/ds_cream</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_app_icon</item>
         <item name="postSplashScreenTheme">@style/Theme.DyslexiaSupport</item>
     </style>
     <declare-styleable name="FeatureCardView">
         <attr format="string" name="featureTitle"/>
         <attr format="string" name="featureSubtitle"/>
         <attr format="string" name="featureEmoji"/>
+        <attr format="reference" name="featureImage"/>
         <attr format="color" name="featureAccent"/>
     </declare-styleable>
 </resources>

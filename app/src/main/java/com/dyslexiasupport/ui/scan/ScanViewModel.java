@@ -113,7 +113,10 @@ public class ScanViewModel extends AndroidViewModel {
         working.setValue(true);
         io.execute(() -> {
             try {
-                String text = ocr.recognize(ImagePrep.forOcr(cropped));
+                // Keep the camera crop unmodified here. OcrEngine evaluates the
+                // original and enhanced variants, which protects Bengali marks
+                // while still improving low-contrast English text.
+                String text = ocr.recognize(cropped);
                 main.post(() -> ocrDone(text));
             } catch (Exception e) {
                 Log.e(TAG, "ocr failed", e);

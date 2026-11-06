@@ -19,6 +19,8 @@ public class SentenceEntity {
     public String translation;
     public String language; // "bn" or "en"
     public long createdAt;
+    @NonNull
+    public String ownerId = "shared";
 
     public SentenceEntity(@NonNull String sentence, String translation, String language, long createdAt) {
         this.sentence = sentence;

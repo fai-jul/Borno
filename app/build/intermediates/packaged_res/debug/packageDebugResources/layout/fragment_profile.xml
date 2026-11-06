@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ds_cream"
     android:fillViewport="true">
 
     <LinearLayout
@@ -63,7 +65,7 @@
             android:layout_marginTop="@dimen/ds_space_sm"
             app:selectionRequired="true"
             app:singleSelection="true"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+            >
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipEnglish"
@@ -80,6 +82,132 @@
                 android:text="@string/lang_bangla" />
         </com.google.android.material.chip.ChipGroup>
 
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_xl"
+            app:cardBackgroundColor="@color/ds_surface"
+            app:cardCornerRadius="@dimen/ds_radius_lg"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/ds_sand"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="@dimen/ds_space_lg">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Ds.Text.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_theme_title" />
+
+                    <TextView
+                        style="@style/Ds.Text.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ds_space_xs"
+                        android:text="@string/profile_theme_subtitle" />
+                </LinearLayout>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/action_toggle_theme"
+                    android:text="@string/profile_theme_dark" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAssessment"
+            style="@style/Ds.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_lg"
+            android:text="@string/profile_assessment" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPracticeControls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_lg"
+            app:cardBackgroundColor="@color/ds_surface"
+            app:cardCornerRadius="@dimen/ds_radius_lg"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/ds_sand"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/ds_space_lg">
+
+                <TextView
+                    style="@style/Ds.Text.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile_controls_title" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLayoutDailyGoal"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ds_space_sm"
+                    android:hint="@string/profile_daily_goal_hint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editDailyGoal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/dailyGoalModeGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ds_space_xs"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipGoalMinutes"
+                        style="@style/Ds.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_goal_minutes" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipGoalExercises"
+                        style="@style/Ds.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_goal_exercises" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchAssistant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile_assistant_enabled" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchReadingOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile_reading_only" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
         <!-- Parent / Teacher Link Code Section -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardLinkCode"
@@ -91,7 +219,7 @@
             app:cardElevation="2dp"
             app:strokeColor="@color/ds_sand"
             app:strokeWidth="1dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -169,6 +297,40 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/ds_space_xs"
                         android:textColor="@color/ds_primary" />
+
+                    <!-- Role-Specific Action Buttons for Parent/Teacher -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnViewChildProgress"
+                        style="@style/Ds.TonalButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ds_space_md"
+                        android:text="@string/btn_view_child_progress"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutTeacherActions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ds_space_md"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnClassReportPdf"
+                            style="@style/Ds.TonalButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn_class_report_pdf" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAssignNctb"
+                            style="@style/Ds.TonalButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ds_space_sm"
+                            android:text="@string/btn_assign_nctb" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -274,6 +436,14 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:minHeight="@dimen/ds_space_xl" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShare"
+            style="@style/Ds.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ds_space_sm"
+            android:text="@string/action_share" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogout"

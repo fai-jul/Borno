@@ -3,37 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ds_cream"
+    android:background="@color/ds_auth_background"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="@dimen/ds_space_xl">
 
-        <ImageView
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_marginTop="@dimen/ds_space_xl"
-            android:importantForAccessibility="no"
-            android:src="@drawable/ic_logo" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            style="@style/Ds.BackButton"
+            android:contentDescription="@string/action_back"
+            android:text="" />
 
         <TextView
-            style="@style/Ds.Text.Display"
+            style="@style/Ds.AuthTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/ds_space_xl"
-            android:gravity="center"
+            android:layout_marginTop="@dimen/ds_space_lg"
             android:text="@string/login_title" />
 
         <TextView
-            style="@style/Ds.Text.Body"
+            style="@style/Ds.AuthSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_sm"
-            android:gravity="center"
             android:text="@string/login_subtitle" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -42,7 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_xl"
-            android:hint="@string/hint_email">
+            android:hint="@string/hint_email"
+            app:startIconDrawable="@drawable/ic_mail_outline">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputEmail"
@@ -60,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_md"
             android:hint="@string/hint_password"
+            app:startIconDrawable="@drawable/ic_lock_outline"
             app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -81,6 +79,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogin"
+            style="@style/Ds.AuthPrimaryButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_md"
@@ -95,16 +94,8 @@
             android:text="@string/action_google_login" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnGuest"
-            style="@style/Ds.TonalButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/ds_space_md"
-            android:text="@string/action_guest" />
-
-        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCreate"
-            style="@style/Ds.TextButton"
+            style="@style/Ds.AuthTextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_sm"

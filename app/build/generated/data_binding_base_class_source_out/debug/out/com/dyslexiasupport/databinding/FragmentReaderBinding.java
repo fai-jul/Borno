@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -54,6 +55,12 @@ public final class FragmentReaderBinding implements ViewBinding {
   public final MaterialCardView readAloudBar;
 
   @NonNull
+  public final ProgressBar readerProgress;
+
+  @NonNull
+  public final TextView readerProgressText;
+
+  @NonNull
   public final LinearLayout readerRoot;
 
   @NonNull
@@ -74,6 +81,7 @@ public final class FragmentReaderBinding implements ViewBinding {
       @NonNull MaterialButton btnPrevSentence, @NonNull MaterialButton btnSettings,
       @NonNull MaterialButton btnSpeed, @NonNull MaterialButton btnStop,
       @NonNull ReadingGuideView guide, @NonNull MaterialCardView readAloudBar,
+      @NonNull ProgressBar readerProgress, @NonNull TextView readerProgressText,
       @NonNull LinearLayout readerRoot, @NonNull ScrollView readerScroll,
       @NonNull TextView readerText, @NonNull TextView readerTitle, @NonNull TextView tapHint) {
     this.rootView = rootView;
@@ -87,6 +95,8 @@ public final class FragmentReaderBinding implements ViewBinding {
     this.btnStop = btnStop;
     this.guide = guide;
     this.readAloudBar = readAloudBar;
+    this.readerProgress = readerProgress;
+    this.readerProgressText = readerProgressText;
     this.readerRoot = readerRoot;
     this.readerScroll = readerScroll;
     this.readerText = readerText;
@@ -181,6 +191,18 @@ public final class FragmentReaderBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.readerProgress;
+      ProgressBar readerProgress = ViewBindings.findChildViewById(rootView, id);
+      if (readerProgress == null) {
+        break missingId;
+      }
+
+      id = R.id.readerProgressText;
+      TextView readerProgressText = ViewBindings.findChildViewById(rootView, id);
+      if (readerProgressText == null) {
+        break missingId;
+      }
+
       LinearLayout readerRoot = (LinearLayout) rootView;
 
       id = R.id.readerScroll;
@@ -209,7 +231,8 @@ public final class FragmentReaderBinding implements ViewBinding {
 
       return new FragmentReaderBinding((LinearLayout) rootView, btnAssistant, btnBack,
           btnNextSentence, btnPlayPause, btnPrevSentence, btnSettings, btnSpeed, btnStop, guide,
-          readAloudBar, readerRoot, readerScroll, readerText, readerTitle, tapHint);
+          readAloudBar, readerProgress, readerProgressText, readerRoot, readerScroll, readerText,
+          readerTitle, tapHint);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

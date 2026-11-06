@@ -5,7 +5,9 @@
     <string name="chip_all">সব</string>
     <string name="chip_saved">⭐ সংরক্ষিত</string>
     <string name="chip_levels_all">সব স্তর</string>
+    <string name="library_seconds">%1$d সেকেন্ড</string>
     <string name="library_minutes">%1$d মিনিট</string>
+    <string name="library_min_sec">%1$d মিনিট %2$d সেকেন্ড</string>
     <string name="library_empty">এই ফিল্টারে কোনো লেখা নেই</string>
     <string name="library_empty_saved">এখনো কিছু সংরক্ষণ করোনি। কোনো লেখা ডানে টেনে সংরক্ষণ করো।</string>
     <string name="swipe_save">⭐  সংরক্ষণ</string>
@@ -17,4 +19,15 @@
     <string name="msg_read">পড়া হয়েছে হিসেবে চিহ্নিত</string>
     <string name="msg_unread">না-পড়া হিসেবে চিহ্নিত</string>
     <string name="action_undo">ফিরিয়ে নাও</string>
+
+    <!-- NCTB Class 5 & Import PDF -->
+    <string name="chip_nctb_class5">📚 ৫ম শ্রেণি বোর্ড বই</string>
+    <string name="btn_import_pdf">📄 পিডিএফ ইম্পোর্ট করো</string>
+    <string name="dialog_import_title">পাঠ ইম্পোর্ট করো</string>
+    <string name="hint_title">পাঠের শিরোনাম</string>
+    <string name="hint_body">পাঠের বিষয়বস্তু এখানে লেখো</string>
+    <string name="action_import_save">লাইব্রেরিতে যোগ করো</string>
+    <string name="msg_imported_success">পাঠ লাইব্রেরিতে যোগ হয়েছে!</string>
+    <string name="msg_pdf_imported_success">পিডিএফ লাইব্রেরিতে সফলভাবে যোগ হয়েছে!</string>
+    <string name="msg_pdf_import_failed">পিডিএফ পড়তে সমস্যা হয়েছে। অন্য ফাইল চেষ্টা করো।</string>
 </resources>

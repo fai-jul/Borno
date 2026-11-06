@@ -38,7 +38,7 @@ public final class DocumentDao_Impl implements DocumentDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `documents` (`id`,`title`,`body`,`lang`,`createdAt`) VALUES (nullif(?, 0),?,?,?,?)";
+        return "INSERT OR ABORT INTO `documents` (`id`,`title`,`body`,`lang`,`createdAt`,`ownerId`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -61,13 +61,18 @@ public final class DocumentDao_Impl implements DocumentDao {
           statement.bindString(4, entity.lang);
         }
         statement.bindLong(5, entity.createdAt);
+        if (entity.ownerId == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindString(6, entity.ownerId);
+        }
       }
     };
     this.__preparedStmtOfDeleteById = new SharedSQLiteStatement(__db) {
       @Override
       @NonNull
       public String createQuery() {
-        final String _query = "DELETE FROM documents WHERE id = ?";
+        final String _query = "DELETE FROM documents WHERE id = ? AND ownerId = ?";
         return _query;
       }
     };
@@ -87,11 +92,17 @@ public final class DocumentDao_Impl implements DocumentDao {
   }
 
   @Override
-  public void deleteById(final long id) {
+  public void deleteById(final long id, final String ownerId) {
     __db.assertNotSuspendingTransaction();
     final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteById.acquire();
     int _argIndex = 1;
     _stmt.bindLong(_argIndex, id);
+    _argIndex = 2;
+    if (ownerId == null) {
+      _stmt.bindNull(_argIndex);
+    } else {
+      _stmt.bindString(_argIndex, ownerId);
+    }
     try {
       __db.beginTransaction();
       try {
@@ -106,9 +117,15 @@ public final class DocumentDao_Impl implements DocumentDao {
   }
 
   @Override
-  public LiveData<List<DocumentEntity>> getAllDocuments() {
-    final String _sql = "SELECT * FROM documents ORDER BY createdAt DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public LiveData<List<DocumentEntity>> getAllDocuments(final String ownerId) {
+    final String _sql = "SELECT * FROM documents WHERE ownerId = ? ORDER BY createdAt DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     return __db.getInvalidationTracker().createLiveData(new String[] {"documents"}, false, new Callable<List<DocumentEntity>>() {
       @Override
       @Nullable
@@ -120,6 +137,7 @@ public final class DocumentDao_Impl implements DocumentDao {
           final int _cursorIndexOfBody = CursorUtil.getColumnIndexOrThrow(_cursor, "body");
           final int _cursorIndexOfLang = CursorUtil.getColumnIndexOrThrow(_cursor, "lang");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+          final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
           final List<DocumentEntity> _result = new ArrayList<DocumentEntity>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final DocumentEntity _item;
@@ -145,6 +163,11 @@ public final class DocumentDao_Impl implements DocumentDao {
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             _item = new DocumentEntity(_tmpTitle,_tmpBody,_tmpLang,_tmpCreatedAt);
             _item.id = _cursor.getLong(_cursorIndexOfId);
+            if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+              _item.ownerId = null;
+            } else {
+              _item.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+            }
             _result.add(_item);
           }
           return _result;

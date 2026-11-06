@@ -94,8 +94,8 @@ public class LibraryAdapter extends ListAdapter<LibraryItem, LibraryAdapter.Item
             b.itemEmoji.setBackground(badge);
 
             String lang = c.getString(t.isBangla() ? R.string.lang_bn_label : R.string.lang_en_label);
-            String minutes = c.getString(R.string.library_minutes, t.minutes());
-            b.itemMeta.setText(c.getString(R.string.library_meta, lang, stars(t.level), minutes));
+            String durationStr = t.timeFormatted(c);
+            b.itemMeta.setText(c.getString(R.string.library_meta, lang, stars(t.level), durationStr));
 
             // Both flags can be on, so build the badge text from scratch each time.
             StringBuilder flags = new StringBuilder();

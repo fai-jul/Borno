@@ -19,6 +19,8 @@ public class ReadingSessionEntity {
     public String textTitle;
     public long durationSeconds;
     public long timestamp;
+    @NonNull
+    public String ownerId = "shared";
 
     public ReadingSessionEntity(@NonNull String textId, String textTitle, long durationSeconds, long timestamp) {
         this.textId = textId;

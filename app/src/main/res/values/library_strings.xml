@@ -11,7 +11,9 @@
     <string name="lang_bn_label" translatable="false">বাংলা</string>
     <string name="lang_en_label" translatable="false">English</string>
     <string name="library_meta" translatable="false">%1$s · %2$s · %3$s</string>
+    <string name="library_seconds">%1$d sec</string>
     <string name="library_minutes">%1$d min</string>
+    <string name="library_min_sec">%1$d min %2$d sec</string>
     <string name="library_empty">No texts match these filters</string>
     <string name="library_empty_saved">Nothing saved yet. Swipe a text to the right to save it.</string>
     <string name="swipe_save">⭐  Save</string>
@@ -23,4 +25,15 @@
     <string name="msg_read">Marked as read</string>
     <string name="msg_unread">Marked as unread</string>
     <string name="action_undo">Undo</string>
+
+    <!-- NCTB Class 5 & Import PDF -->
+    <string name="chip_nctb_class5">📚 Class 5 NCTB</string>
+    <string name="btn_import_pdf">📄 Import PDF / Book</string>
+    <string name="dialog_import_title">Import NCTB Lesson / PDF</string>
+    <string name="hint_title">Lesson Title</string>
+    <string name="hint_body">Paste or type lesson text here</string>
+    <string name="action_import_save">Save to Library</string>
+    <string name="msg_imported_success">NCTB Lesson added to Library!</string>
+    <string name="msg_pdf_imported_success">PDF imported successfully! Added to Library.</string>
+    <string name="msg_pdf_import_failed">Could not read text from PDF. Try another file.</string>
 </resources>

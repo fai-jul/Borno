@@ -36,7 +36,7 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `reading_sessions` (`id`,`textId`,`textTitle`,`durationSeconds`,`timestamp`) VALUES (nullif(?, 0),?,?,?,?)";
+        return "INSERT OR REPLACE INTO `reading_sessions` (`id`,`textId`,`textTitle`,`durationSeconds`,`timestamp`,`ownerId`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -55,6 +55,11 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
         }
         statement.bindLong(4, entity.durationSeconds);
         statement.bindLong(5, entity.timestamp);
+        if (entity.ownerId == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindString(6, entity.ownerId);
+        }
       }
     };
   }
@@ -73,9 +78,15 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
   }
 
   @Override
-  public LiveData<List<ReadingSessionEntity>> getAllSessions() {
-    final String _sql = "SELECT * FROM reading_sessions ORDER BY timestamp DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public LiveData<List<ReadingSessionEntity>> getAllSessions(final String ownerId) {
+    final String _sql = "SELECT * FROM reading_sessions WHERE ownerId = ? ORDER BY timestamp DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     return __db.getInvalidationTracker().createLiveData(new String[] {"reading_sessions"}, false, new Callable<List<ReadingSessionEntity>>() {
       @Override
       @Nullable
@@ -87,6 +98,7 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
           final int _cursorIndexOfTextTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "textTitle");
           final int _cursorIndexOfDurationSeconds = CursorUtil.getColumnIndexOrThrow(_cursor, "durationSeconds");
           final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
+          final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
           final List<ReadingSessionEntity> _result = new ArrayList<ReadingSessionEntity>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final ReadingSessionEntity _item;
@@ -108,6 +120,11 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
             _tmpTimestamp = _cursor.getLong(_cursorIndexOfTimestamp);
             _item = new ReadingSessionEntity(_tmpTextId,_tmpTextTitle,_tmpDurationSeconds,_tmpTimestamp);
             _item.id = _cursor.getLong(_cursorIndexOfId);
+            if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+              _item.ownerId = null;
+            } else {
+              _item.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+            }
             _result.add(_item);
           }
           return _result;
@@ -124,9 +141,15 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
   }
 
   @Override
-  public LiveData<Long> getTotalReadingTimeSeconds() {
-    final String _sql = "SELECT SUM(durationSeconds) FROM reading_sessions";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public LiveData<Long> getTotalReadingTimeSeconds(final String ownerId) {
+    final String _sql = "SELECT SUM(durationSeconds) FROM reading_sessions WHERE ownerId = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     return __db.getInvalidationTracker().createLiveData(new String[] {"reading_sessions"}, false, new Callable<Long>() {
       @Override
       @Nullable
@@ -159,9 +182,15 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
   }
 
   @Override
-  public List<ReadingSessionEntity> getAllSessionsSync() {
-    final String _sql = "SELECT * FROM reading_sessions ORDER BY timestamp DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public List<ReadingSessionEntity> getAllSessionsSync(final String ownerId) {
+    final String _sql = "SELECT * FROM reading_sessions WHERE ownerId = ? ORDER BY timestamp DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
@@ -170,6 +199,7 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
       final int _cursorIndexOfTextTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "textTitle");
       final int _cursorIndexOfDurationSeconds = CursorUtil.getColumnIndexOrThrow(_cursor, "durationSeconds");
       final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
+      final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
       final List<ReadingSessionEntity> _result = new ArrayList<ReadingSessionEntity>(_cursor.getCount());
       while (_cursor.moveToNext()) {
         final ReadingSessionEntity _item;
@@ -191,6 +221,11 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
         _tmpTimestamp = _cursor.getLong(_cursorIndexOfTimestamp);
         _item = new ReadingSessionEntity(_tmpTextId,_tmpTextTitle,_tmpDurationSeconds,_tmpTimestamp);
         _item.id = _cursor.getLong(_cursorIndexOfId);
+        if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+          _item.ownerId = null;
+        } else {
+          _item.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+        }
         _result.add(_item);
       }
       return _result;

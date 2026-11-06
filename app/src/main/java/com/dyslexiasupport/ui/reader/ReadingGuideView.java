@@ -63,11 +63,16 @@ public class ReadingGuideView extends View {
         density = context.getResources().getDisplayMetrics().density;
         touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
 
-        int mango = ContextCompat.getColor(context, R.color.ds_mango);
+        int accent = ContextCompat.getColor(context, R.color.ds_streak_orange);
         int primary = ContextCompat.getColor(context, R.color.ds_primary);
-        bandPaint.setColor(ColorUtils.setAlphaComponent(mango, 0x59));
-        edgePaint.setColor(ColorUtils.setAlphaComponent(mango, 0xE6));
-        handlePaint.setColor(ColorUtils.setAlphaComponent(primary, 0xE6));
+        int ink = ContextCompat.getColor(context, R.color.ds_ink);
+
+        bandPaint.setColor(ColorUtils.setAlphaComponent(accent, 0x47));
+        edgePaint.setColor(ColorUtils.setAlphaComponent(accent, 0xFF));
+        handlePaint.setColor(ColorUtils.setAlphaComponent(primary, 0xFF));
+        scrimPaint.setColor(ColorUtils.setAlphaComponent(ink, 0x77));
+
+        setElevation(10f * density);
         setVisibility(GONE);
     }
 
@@ -82,21 +87,34 @@ public class ReadingGuideView extends View {
     public void configure(ReadingGuideMode newMode, float bandHeightPx, @ColorInt int scrimColor) {
         mode = newMode;
         bandHeight = bandHeightPx;
-        scrimPaint.setColor(scrimColor);
+        if (scrimColor != 0) {
+            scrimPaint.setColor(scrimColor);
+        }
         // GONE lets every touch pass straight through to the text when the guide is off.
         setVisibility(mode == ReadingGuideMode.OFF ? GONE : VISIBLE);
-        bandTop = clampTop(bandTop < 0 ? getHeight() * 0.3f : bandTop);
+        if (getHeight() > 0) {
+            float initialTop = (bandTop < 0) ? getHeight() * 0.3f : bandTop;
+            bandTop = clampTop(initialTop);
+        }
         invalidate();
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        bandTop = clampTop(bandTop < 0 ? h * 0.3f : bandTop);
+        if (h > 0) {
+            float initialTop = (bandTop < 0) ? h * 0.3f : bandTop;
+            bandTop = clampTop(initialTop);
+            invalidate();
+        }
     }
 
     private float clampTop(float top) {
-        float max = Math.max(0f, getHeight() - bandHeight);
+        int h = getHeight();
+        if (h <= 0) {
+            return top;
+        }
+        float max = Math.max(0f, h - bandHeight);
         return Math.max(0f, Math.min(max, top));
     }
 
@@ -107,23 +125,25 @@ public class ReadingGuideView extends View {
         }
         float w = getWidth();
         float h = getHeight();
-        float top = clampTop(bandTop);
+        if (h <= 0) {
+            return;
+        }
+        float top = clampTop(bandTop < 0 ? h * 0.3f : bandTop);
         float bottom = top + bandHeight;
-        float edge = 2f * density;
+        float edge = 3f * density;
 
         if (mode == ReadingGuideMode.FOCUS) {
             canvas.drawRect(0f, 0f, w, top, scrimPaint);
             canvas.drawRect(0f, bottom, w, h, scrimPaint);
-        } else {
-            canvas.drawRect(0f, top, w, bottom, bandPaint);
         }
+        canvas.drawRect(0f, top, w, bottom, bandPaint);
         canvas.drawRect(0f, top, w, top + edge, edgePaint);
         canvas.drawRect(0f, bottom - edge, w, bottom, edgePaint);
 
         // Grip so people discover that the band can be dragged.
-        float gripW = 6f * density;
-        float gripH = Math.min(28f * density, bandHeight * 0.6f);
-        float cx = w - 14f * density;
+        float gripW = 7f * density;
+        float gripH = Math.min(32f * density, bandHeight * 0.7f);
+        float cx = w - 16f * density;
         float cy = top + bandHeight / 2f;
         handleRect.set(cx - gripW / 2f, cy - gripH / 2f, cx + gripW / 2f, cy + gripH / 2f);
         canvas.drawRoundRect(handleRect, gripW, gripW, handlePaint);
@@ -136,7 +156,7 @@ public class ReadingGuideView extends View {
             return false;
         }
         float slop = 12f * density; // easier for small fingers
-        float top = clampTop(bandTop);
+        float top = clampTop(bandTop < 0 ? getHeight() * 0.3f : bandTop);
         switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
                 if (event.getY() >= top - slop && event.getY() <= top + bandHeight + slop) {
@@ -169,7 +189,7 @@ public class ReadingGuideView extends View {
                 pressing = false;
                 dragging = false;
                 if (wasTap && tapListener != null) {
-                    tapListener.onBandTap(event.getX(), event.getY());
+                    tapListener.onBandTap(downX, downY);
                 }
                 return true;
             case MotionEvent.ACTION_CANCEL:

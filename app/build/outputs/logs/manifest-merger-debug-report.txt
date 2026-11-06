@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:99:13-107:24
+INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:106:13-114:24
 	android:grantUriPermissions
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:103:17-51
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:110:17-51
 	android:authorities
 		INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:101:17-68
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:108:17-68
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:102:17-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:109:17-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:100:17-66
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:107:17-66
 manifest
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-156:12
-INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-156:12
-INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-156:12
-INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-156:12
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-163:12
+INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-163:12
+INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-163:12
+INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-163:12
 MERGED from [androidx.databinding:viewbinding:8.13.2] /Users/faijul/.gradle/caches/8.13/transforms/8959da5b9066113734d067b84a82c164/transformed/viewbinding-8.13.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.camera:camera-video:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/2cee7b213c1b6f6d3e6c7731427e0ae4/transformed/camera-video-1.4.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.camera:camera-view:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/1b03fd9c3e172f736766518971f0a898/transformed/camera-view-1.4.1/AndroidManifest.xml:2:1-7:12
@@ -27,73 +27,71 @@ MERGED from [com.google.android.material:material:1.12.0] /Users/faijul/.gradle/
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8341d1896baa7177433fdcfe390d2c33/transformed/constraintlayout-2.2.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/faijul/.gradle/caches/8.13/transforms/ac1ee96fc6a5d172d7d31ec6f9a50973/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.7.0] /Users/faijul/.gradle/caches/8.13/transforms/51bcec5f9a62899c9e79924b2c27a621/transformed/appcompat-1.7.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:17:1-72:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/dce4e8dad2d50f4e707ebd554af88b58/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:2:1-26:12
-MERGED from [com.google.firebase:firebase-analytics:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/f13d600a876e318836c1af1917aa10c6/transformed/firebase-analytics-24.0.0/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:17:1-46:12
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:17:1-39:12
-MERGED from [com.google.android.gms:play-services-measurement-sdk:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/4dd492bb30fe0e8a1c0e79c5c56f8d5a/transformed/play-services-measurement-sdk-24.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:17:1-75:12
 MERGED from [androidx.credentials:credentials:1.2.0-rc01] /Users/faijul/.gradle/caches/8.13/transforms/b9c848ccf49d19d2b3d7e63466a4eba2/transformed/credentials-1.2.0-rc01/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/faijul/.gradle/caches/8.13/transforms/5d25d006905622a42548e3e00888be92/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:17:1-44:12
-MERGED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:17:1-40:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/dce4e8dad2d50f4e707ebd554af88b58/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /Users/faijul/.gradle/caches/8.13/transforms/6a0a0584be42aaca241b0b0e41643e63/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] /Users/faijul/.gradle/caches/8.13/transforms/353cf2823a57db833822f16620dffdfc/transformed/recaptcha-18.6.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] /Users/faijul/.gradle/caches/8.13/transforms/67899b687c81dbf3f8f427d372cbb994/transformed/play-services-auth-base-18.0.10/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-analytics:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/ba212518fa1182a9f2157a91a61ba74e/transformed/firebase-analytics-22.1.2/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:17:1-46:12
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:17:1-43:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/5308ee6e5a435f2cf031cdaa318a0b70/transformed/play-services-measurement-sdk-22.1.2/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Users/faijul/.gradle/caches/8.13/transforms/4c7668c42c728ef465898361a4f6c3f4/transformed/recaptcha-18.5.1/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.play:integrity:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/95e53525f02d2b3c264f976f1402a38d/transformed/integrity-1.3.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/12625e17df3c4c56e5619e06da175eae/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:2:1-24:12
-MERGED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:15:1-41:12
-MERGED from [com.google.firebase:firebase-appcheck-interop:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/3e6de31da7dde79a0a4199804e3595a6/transformed/firebase-appcheck-interop-18.0.0/AndroidManifest.xml:15:1-23:12
-MERGED from [com.google.firebase:firebase-database-collection:19.0.0] /Users/faijul/.gradle/caches/8.13/transforms/6d4fc374ef032b7efaa154451c4127c9/transformed/firebase-database-collection-19.0.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d6a5a9103bee32f67bdf8b2175ffbc0/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] /Users/faijul/.gradle/caches/8.13/transforms/28aec2c89c6e47572ba2d9aac3f0e252/transformed/firebase-appcheck-interop-17.1.0/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:17:1-32:12
 MERGED from [com.google.android.gms:play-services-fido:20.1.0] /Users/faijul/.gradle/caches/8.13/transforms/1afe5cd026644e8df613890d0b27c1f8/transformed/play-services-fido-20.1.0/AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Users/faijul/.gradle/caches/8.13/transforms/c55f47a93a2ffa2cd6269d48abd973f6/transformed/play-services-auth-base-18.0.4/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-base:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b68343632f8ce33d21fa2e17425119f9/transformed/play-services-base-18.9.0/AndroidManifest.xml:16:1-24:12
-MERGED from [androidx.transition:transition:1.5.0] /Users/faijul/.gradle/caches/8.13/transforms/aeb051a5e0e04106fbd56ac1d57247d1/transformed/transition-1.5.0/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d085233c90353fb0d526b4cf0c457d48/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/faijul/.gradle/caches/8.13/transforms/4a84ed5f37e97eb9979ec4e0077905cd/transformed/play-services-stats-17.0.2/AndroidManifest.xml:2:1-9:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/95d7c9c2ee765dc04a2a3f42d127b796/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d3cc74d048b4cb9e15018f687dabbc65/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/3c2931945689c049e0302b87307b0c67/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/201de76b8d31d1efb2504d98e1e4ef9f/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/faijul/.gradle/caches/8.13/transforms/3d800b7f9aca41f7c79719a09245884e/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media:media:1.7.0] /Users/faijul/.gradle/caches/8.13/transforms/9022f49864ca3d660b2a4376dcd4908d/transformed/media-1.7.0/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.1.0-beta11] /Users/faijul/.gradle/caches/8.13/transforms/5bbe6b77cef6cffc2bff1ff89038fd7a/transformed/ads-adservices-java-1.1.0-beta11/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /Users/faijul/.gradle/caches/8.13/transforms/dcfba414fa2c2095673994cfa4d9541c/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Users/faijul/.gradle/caches/8.13/transforms/c496c56cd4288efd4138fd5acf57675e/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/faijul/.gradle/caches/8.13/transforms/1c677d159995315d528eb4eff54728f9/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.core:core-ktx:1.13.0] /Users/faijul/.gradle/caches/8.13/transforms/6c319ac7c327d46cf796ce5a1c2c08fc/transformed/core-ktx-1.13.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/faijul/.gradle/caches/8.13/transforms/459896acb625ec185012b07f57e433c4/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/f11d3b0abf99ef86483577d3fff0ed8e/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.5.0] /Users/faijul/.gradle/caches/8.13/transforms/aeb051a5e0e04106fbd56ac1d57247d1/transformed/transition-1.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d085233c90353fb0d526b4cf0c457d48/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/9800f44ee3f7055bd2ff164ff0a73bcf/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/c46fea26b1d8b47a19faf5086cb54c0b/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/116caf8f3e50ecb44b7717f5d32b75a2/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/faijul/.gradle/caches/8.13/transforms/4a84ed5f37e97eb9979ec4e0077905cd/transformed/play-services-stats-17.0.2/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/95d7c9c2ee765dc04a2a3f42d127b796/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/5efff696ba1a3168d48717d3935b3cbc/transformed/loader-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.browser:browser:1.4.0] /Users/faijul/.gradle/caches/8.13/transforms/1260f087e54cbb962fe7c70c07148f88/transformed/browser-1.4.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/22af4fc91524ce18d79969472c5a1fa4/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/0a799f1a1b467317589690470de4a43f/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/faijul/.gradle/caches/8.13/transforms/7c1eeaa6ab1451876afd62afad810318/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/faijul/.gradle/caches/8.13/transforms/ecefae1a97d74f7e28dd0dfb496e27d9/transformed/play-services-base-18.5.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.core:core:1.13.0] /Users/faijul/.gradle/caches/8.13/transforms/a02c8800682842be2f671811c87b2286/transformed/core-1.13.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/240c80de3bff30529e0122b23186d699/transformed/lifecycle-runtime-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/fd8f895b7cd7c920bef0dd1a95d9b436/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/80111f7bfe6844d60b386c2b33fe8471/transformed/lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/a38327a3c74c5560fb9c6275f2e25394/transformed/lifecycle-viewmodel-savedstate-2.8.7/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/10438b81f99409a08be9706f2e4db81c/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/5242d27611fb415f94b1ea9a89a97ea9/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/64eed6bdd02673bbe7f31351dab371bc/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:2:1-5:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/e1fb4696e4297e8208ddaad04739924b/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/5242d27611fb415f94b1ea9a89a97ea9/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.datastore:datastore-core-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/93dc2a009e77d94399e7a1dbe4eda56e/transformed/datastore-core-release/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.datastore:datastore-preferences-core-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/186f9b5366097f5d4da59a8e17060e67/transformed/datastore-preferences-core-release/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.datastore:datastore-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/e1a58339cbe54ba9b571339216c6d6e1/transformed/datastore-release/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.datastore:datastore-preferences-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/d844182a47efea1b95470d0e86c2f121/transformed/datastore-preferences-release/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.firebase:firebase-installations-interop:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/253477dcbb50775ebc52efe7d29670f5/transformed/firebase-installations-interop-18.0.0/AndroidManifest.xml:15:1-19:12
-MERGED from [com.google.android.gms:play-services-tasks:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/1d42f3c6809619029991c378e727fc36/transformed/play-services-tasks-18.4.0/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /Users/faijul/.gradle/caches/8.13/transforms/7b88568dfa01c37057769d4544fbae23/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:15:1-19:12
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/faijul/.gradle/caches/8.13/transforms/61c8422acc33f6b0578601b9571fc477/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d104d1c95bd6df9604ea2e822b57908/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:17:1-27:12
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:17:1-30:12
-MERGED from [com.google.android.gms:play-services-measurement-base:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/3f902b57603b4f1a6dc9cbd9b5a36857/transformed/play-services-measurement-base-24.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:17:1-30:12
+MERGED from [com.google.android.gms:play-services-measurement-base:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/8bc00f467ab42d507a18fd1c8a2a6a3f/transformed/play-services-measurement-base-22.1.2/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/faijul/.gradle/caches/8.13/transforms/86131b2e6e72f410e532cce8124c61fe/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:17:1-25:12
-MERGED from [com.google.android.gms:play-services-basement:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b9a0c41320f65f5bfef7181444235c40/transformed/play-services-basement-18.9.0/AndroidManifest.xml:16:1-26:12
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/545e6f123669340c0683ba0fc41f91d2/transformed/play-services-basement-18.4.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.fragment:fragment:1.8.5] /Users/faijul/.gradle/caches/8.13/transforms/33f6a8bd837b73828e7485782fa2fea7/transformed/fragment-1.8.5/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.activity:activity:1.9.3] /Users/faijul/.gradle/caches/8.13/transforms/3f831ea537af903f869cd1fa8bca2d37/transformed/activity-1.9.3/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-splashscreen:1.0.1] /Users/faijul/.gradle/caches/8.13/transforms/0cda90bb79e0a3c8f19f827745f47e71/transformed/core-splashscreen-1.0.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/faijul/.gradle/caches/8.13/transforms/95ff45e24010a39540050baf48498d67/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
-MERGED from [io.grpc:grpc-android:1.84.0] /Users/faijul/.gradle/caches/8.13/transforms/3d2fc0a9dd54015246faa5c92fc8f051/transformed/grpc-android-1.84.0/AndroidManifest.xml:2:1-9:12
+MERGED from [io.grpc:grpc-android:1.62.2] /Users/faijul/.gradle/caches/8.13/transforms/10367e32ed381217a7089110af97ce4f/transformed/grpc-android-1.62.2/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/faijul/.gradle/caches/8.13/transforms/a15982e9b192cbe3e575450d343bc94f/transformed/profileinstaller-1.4.0/AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.tracing:tracing-ktx:1.2.0] /Users/faijul/.gradle/caches/8.13/transforms/323fc0b2b1f74a83d12358c1cb8be09a/transformed/tracing-ktx-1.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/faijul/.gradle/caches/8.13/transforms/4b0ac0eed75b6c76f559587bf11867a3/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
@@ -105,13 +103,13 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/faijul/.gradle/caches
 MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/faijul/.gradle/caches/8.13/transforms/8eddb154c826330b8f514bed89467fce/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/faijul/.gradle/caches/8.13/transforms/f0295c2257989256c1ad1e1dc8dadffe/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9f9935777fa3b4669886fa9dbeea5c05/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.firebase:firebase-components:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/92123c08ed0be907aca3d5edabfc476f/transformed/firebase-components-20.0.0/AndroidManifest.xml:15:1-20:12
+MERGED from [com.google.firebase:firebase-components:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/0f07f4b5bf330f809cf34ac2969f5b06/transformed/firebase-components-18.0.0/AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/a213d603009215c7451375d699ed9170/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/a1a63182577a064dc1ba346077ae7f84/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9bd53a0d0bb09d15aaea7ff770e0e75a/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/0a1217f1991a17e2002583e2c8f9a576/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/d1d7952e643b51d9d74bb9ff5f2fc5e9/transformed/googleid-1.1.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.firebase:protolite-well-known-types:19.0.0] /Users/faijul/.gradle/caches/8.13/transforms/27dd10fc9849f87d5c31d0b280245c3f/transformed/protolite-well-known-types-19.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/0a1217f1991a17e2002583e2c8f9a576/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/809685a2e77c41c84e567b23731607c0/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.play:core-common:2.0.3] /Users/faijul/.gradle/caches/8.13/transforms/f5aae7020d7267855e658033f88ad920/transformed/core-common-2.0.3/AndroidManifest.xml:2:1-21:12
 	package
 		INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml
@@ -145,44 +143,48 @@ ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:9:9
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:9:26-66
 uses-permission#android.permission.INTERNET
 ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:10:9-71
-MERGED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:11:5-67
-MERGED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:11:5-67
-MERGED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:22:5-67
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:22:5-67
-MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] /Users/faijul/.gradle/caches/8.13/transforms/353cf2823a57db833822f16620dffdfc/transformed/recaptcha-18.6.1/AndroidManifest.xml:7:5-67
-MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] /Users/faijul/.gradle/caches/8.13/transforms/353cf2823a57db833822f16620dffdfc/transformed/recaptcha-18.6.1/AndroidManifest.xml:7:5-67
-MERGED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:8:5-67
-MERGED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:8:5-67
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Users/faijul/.gradle/caches/8.13/transforms/4c7668c42c728ef465898361a4f6c3f4/transformed/recaptcha-18.5.1/AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Users/faijul/.gradle/caches/8.13/transforms/4c7668c42c728ef465898361a4f6c3f4/transformed/recaptcha-18.5.1/AndroidManifest.xml:7:5-67
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:23:5-67
 	android:name
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:10:26-68
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:11:9-83
-MERGED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:10:5-79
-MERGED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:10:5-79
-MERGED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] /Users/faijul/.gradle/caches/8.13/transforms/353cf2823a57db833822f16620dffdfc/transformed/recaptcha-18.6.1/AndroidManifest.xml:8:5-79
-MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] /Users/faijul/.gradle/caches/8.13/transforms/353cf2823a57db833822f16620dffdfc/transformed/recaptcha-18.6.1/AndroidManifest.xml:8:5-79
-MERGED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:7:5-79
-MERGED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:7:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:24:5-79
-MERGED from [io.grpc:grpc-android:1.84.0] /Users/faijul/.gradle/caches/8.13/transforms/3d2fc0a9dd54015246faa5c92fc8f051/transformed/grpc-android-1.84.0/AndroidManifest.xml:7:5-79
-MERGED from [io.grpc:grpc-android:1.84.0] /Users/faijul/.gradle/caches/8.13/transforms/3d2fc0a9dd54015246faa5c92fc8f051/transformed/grpc-android-1.84.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Users/faijul/.gradle/caches/8.13/transforms/4c7668c42c728ef465898361a4f6c3f4/transformed/recaptcha-18.5.1/AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Users/faijul/.gradle/caches/8.13/transforms/4c7668c42c728ef465898361a4f6c3f4/transformed/recaptcha-18.5.1/AndroidManifest.xml:8:5-79
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:24:5-79
+MERGED from [io.grpc:grpc-android:1.62.2] /Users/faijul/.gradle/caches/8.13/transforms/10367e32ed381217a7089110af97ce4f/transformed/grpc-android-1.62.2/AndroidManifest.xml:7:5-79
+MERGED from [io.grpc:grpc-android:1.62.2] /Users/faijul/.gradle/caches/8.13/transforms/10367e32ed381217a7089110af97ce4f/transformed/grpc-android-1.62.2/AndroidManifest.xml:7:5-79
 	android:name
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:11:26-80
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
@@ -224,8 +226,8 @@ ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:30:
 	android:name
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:30:25-73
 application
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:34:9-155:23
-INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:34:9-155:23
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:34:9-162:23
+INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:34:9-162:23
 MERGED from [androidx.camera:camera-camera2:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/368764dd764e2ad320230de44f2a5e9c/transformed/camera-camera2-1.4.1/AndroidManifest.xml:23:5-34:19
 MERGED from [androidx.camera:camera-camera2:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/368764dd764e2ad320230de44f2a5e9c/transformed/camera-camera2-1.4.1/AndroidManifest.xml:23:5-34:19
 MERGED from [androidx.camera:camera-core:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/10e5a1fb5c1c61dcd53a6cd9ab3bdb96/transformed/camera-core-1.4.1/AndroidManifest.xml:23:5-34:19
@@ -234,58 +236,62 @@ MERGED from [com.google.android.material:material:1.12.0] /Users/faijul/.gradle/
 MERGED from [com.google.android.material:material:1.12.0] /Users/faijul/.gradle/caches/8.13/transforms/33ba894f2ef6953e3a6b7374f0673a7d/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8341d1896baa7177433fdcfe390d2c33/transformed/constraintlayout-2.2.0/AndroidManifest.xml:7:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8341d1896baa7177433fdcfe390d2c33/transformed/constraintlayout-2.2.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:25:5-70:19
-MERGED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:25:5-70:19
-MERGED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:13:5-24:19
-MERGED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:13:5-24:19
-MERGED from [com.google.firebase:firebase-analytics:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/f13d600a876e318836c1af1917aa10c6/transformed/firebase-analytics-24.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-analytics:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/f13d600a876e318836c1af1917aa10c6/transformed/firebase-analytics-24.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:28:5-44:19
-MERGED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:28:5-44:19
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:29:5-37:19
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:29:5-37:19
-MERGED from [com.google.android.gms:play-services-measurement-sdk:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/4dd492bb30fe0e8a1c0e79c5c56f8d5a/transformed/play-services-measurement-sdk-24.0.0/AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.android.gms:play-services-measurement-sdk:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/4dd492bb30fe0e8a1c0e79c5c56f8d5a/transformed/play-services-measurement-sdk-24.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:28:5-73:19
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/faijul/.gradle/caches/8.13/transforms/5d25d006905622a42548e3e00888be92/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:23:5-42:19
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/faijul/.gradle/caches/8.13/transforms/5d25d006905622a42548e3e00888be92/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:23:5-42:19
-MERGED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:22:5-38:19
-MERGED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:25:5-36:19
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:25:5-36:19
+MERGED from [com.google.firebase:firebase-analytics:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/ba212518fa1182a9f2157a91a61ba74e/transformed/firebase-analytics-22.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/ba212518fa1182a9f2157a91a61ba74e/transformed/firebase-analytics-22.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:29:5-41:19
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:29:5-41:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/5308ee6e5a435f2cf031cdaa318a0b70/transformed/play-services-measurement-sdk-22.1.2/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/5308ee6e5a435f2cf031cdaa318a0b70/transformed/play-services-measurement-sdk-22.1.2/AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.play:integrity:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/95e53525f02d2b3c264f976f1402a38d/transformed/integrity-1.3.0/AndroidManifest.xml:5:5-6:19
 MERGED from [com.google.android.play:integrity:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/95e53525f02d2b3c264f976f1402a38d/transformed/integrity-1.3.0/AndroidManifest.xml:5:5-6:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/12625e17df3c4c56e5619e06da175eae/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/12625e17df3c4c56e5619e06da175eae/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:11:5-22:19
-MERGED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:11:5-22:19
-MERGED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:22:5-39:19
-MERGED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:22:5-39:19
-MERGED from [com.google.firebase:firebase-appcheck-interop:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/3e6de31da7dde79a0a4199804e3595a6/transformed/firebase-appcheck-interop-18.0.0/AndroidManifest.xml:21:5-20
-MERGED from [com.google.firebase:firebase-appcheck-interop:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/3e6de31da7dde79a0a4199804e3595a6/transformed/firebase-appcheck-interop-18.0.0/AndroidManifest.xml:21:5-20
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:29:5-30:19
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d6a5a9103bee32f67bdf8b2175ffbc0/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d6a5a9103bee32f67bdf8b2175ffbc0/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] /Users/faijul/.gradle/caches/8.13/transforms/28aec2c89c6e47572ba2d9aac3f0e252/transformed/firebase-appcheck-interop-17.1.0/AndroidManifest.xml:21:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] /Users/faijul/.gradle/caches/8.13/transforms/28aec2c89c6e47572ba2d9aac3f0e252/transformed/firebase-appcheck-interop-17.1.0/AndroidManifest.xml:21:5-20
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:29:5-30:19
 MERGED from [com.google.android.gms:play-services-fido:20.1.0] /Users/faijul/.gradle/caches/8.13/transforms/1afe5cd026644e8df613890d0b27c1f8/transformed/play-services-fido-20.1.0/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-fido:20.1.0] /Users/faijul/.gradle/caches/8.13/transforms/1afe5cd026644e8df613890d0b27c1f8/transformed/play-services-fido-20.1.0/AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.android.gms:play-services-base:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b68343632f8ce33d21fa2e17425119f9/transformed/play-services-base-18.9.0/AndroidManifest.xml:19:5-23:19
-MERGED from [com.google.android.gms:play-services-base:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b68343632f8ce33d21fa2e17425119f9/transformed/play-services-base-18.9.0/AndroidManifest.xml:19:5-23:19
-MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/faijul/.gradle/caches/8.13/transforms/4a84ed5f37e97eb9979ec4e0077905cd/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/faijul/.gradle/caches/8.13/transforms/4a84ed5f37e97eb9979ec4e0077905cd/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/201de76b8d31d1efb2504d98e1e4ef9f/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/201de76b8d31d1efb2504d98e1e4ef9f/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /Users/faijul/.gradle/caches/8.13/transforms/dcfba414fa2c2095673994cfa4d9541c/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:22:5-26:19
-MERGED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /Users/faijul/.gradle/caches/8.13/transforms/dcfba414fa2c2095673994cfa4d9541c/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/faijul/.gradle/caches/8.13/transforms/1c677d159995315d528eb4eff54728f9/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/faijul/.gradle/caches/8.13/transforms/1c677d159995315d528eb4eff54728f9/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/faijul/.gradle/caches/8.13/transforms/4a84ed5f37e97eb9979ec4e0077905cd/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/faijul/.gradle/caches/8.13/transforms/4a84ed5f37e97eb9979ec4e0077905cd/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/faijul/.gradle/caches/8.13/transforms/ecefae1a97d74f7e28dd0dfb496e27d9/transformed/play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/faijul/.gradle/caches/8.13/transforms/ecefae1a97d74f7e28dd0dfb496e27d9/transformed/play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
 MERGED from [androidx.core:core:1.13.0] /Users/faijul/.gradle/caches/8.13/transforms/a02c8800682842be2f671811c87b2286/transformed/core-1.13.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.13.0] /Users/faijul/.gradle/caches/8.13/transforms/a02c8800682842be2f671811c87b2286/transformed/core-1.13.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/fd8f895b7cd7c920bef0dd1a95d9b436/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/fd8f895b7cd7c920bef0dd1a95d9b436/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:23:5-33:19
-MERGED from [com.google.android.gms:play-services-tasks:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/1d42f3c6809619029991c378e727fc36/transformed/play-services-tasks-18.4.0/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/1d42f3c6809619029991c378e727fc36/transformed/play-services-tasks-18.4.0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/faijul/.gradle/caches/8.13/transforms/61c8422acc33f6b0578601b9571fc477/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/faijul/.gradle/caches/8.13/transforms/61c8422acc33f6b0578601b9571fc477/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d104d1c95bd6df9604ea2e822b57908/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d104d1c95bd6df9604ea2e822b57908/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
-MERGED from [com.google.android.gms:play-services-measurement-base:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/3f902b57603b4f1a6dc9cbd9b5a36857/transformed/play-services-measurement-base-24.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-measurement-base:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/3f902b57603b4f1a6dc9cbd9b5a36857/transformed/play-services-measurement-base-24.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/8bc00f467ab42d507a18fd1c8a2a6a3f/transformed/play-services-measurement-base-22.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/8bc00f467ab42d507a18fd1c8a2a6a3f/transformed/play-services-measurement-base-22.1.2/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/faijul/.gradle/caches/8.13/transforms/86131b2e6e72f410e532cce8124c61fe/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/faijul/.gradle/caches/8.13/transforms/86131b2e6e72f410e532cce8124c61fe/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.android.gms:play-services-basement:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b9a0c41320f65f5bfef7181444235c40/transformed/play-services-basement-18.9.0/AndroidManifest.xml:20:5-24:19
-MERGED from [com.google.android.gms:play-services-basement:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b9a0c41320f65f5bfef7181444235c40/transformed/play-services-basement-18.9.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/545e6f123669340c0683ba0fc41f91d2/transformed/play-services-basement-18.4.0/AndroidManifest.xml:5:5-7:19
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/545e6f123669340c0683ba0fc41f91d2/transformed/play-services-basement-18.4.0/AndroidManifest.xml:5:5-7:19
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/faijul/.gradle/caches/8.13/transforms/95ff45e24010a39540050baf48498d67/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/faijul/.gradle/caches/8.13/transforms/95ff45e24010a39540050baf48498d67/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/faijul/.gradle/caches/8.13/transforms/a15982e9b192cbe3e575450d343bc94f/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
@@ -307,11 +313,11 @@ MERGED from [com.google.android.play:core-common:2.0.3] /Users/faijul/.gradle/ca
 	android:fullBackupContent
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:38:13-58
 	android:roundIcon
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:41:13-58
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:41:13-54
 	tools:targetApi
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:44:13-33
 	android:icon
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:39:13-47
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:39:13-49
 	android:allowBackup
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:36:13-40
 	android:theme
@@ -354,146 +360,166 @@ ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:62:
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:64:17-41
 	android:name
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:63:17-57
-activity#com.dyslexiasupport.ui.home.MainActivity
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:67:13-69:44
+activity#com.dyslexiasupport.ui.auth.EmailVerificationActivity
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:67:13-70:62
+	android:windowSoftInputMode
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:70:17-59
 	android:exported
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:69:17-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:68:17-53
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:68:17-66
+activity#com.dyslexiasupport.ui.home.MainActivity
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:72:13-74:44
+	android:exported
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:74:17-41
+	android:name
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:73:17-53
 activity#com.dyslexiasupport.ui.common.PlaceholderActivity
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:71:13-73:44
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:76:13-78:44
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:73:17-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:78:17-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:72:17-62
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:77:17-62
 activity#com.dyslexiasupport.ui.vocabulary.VocabularyActivity
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:75:13-78:62
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:80:13-83:62
 	android:windowSoftInputMode
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:78:17-59
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:83:17-59
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:77:17-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:82:17-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:76:17-65
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:81:17-65
 activity#com.dyslexiasupport.ui.scan.ScanActivity
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:80:13-81:81
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:85:13-86:81
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:81:54-78
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:86:54-78
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:81:17-53
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:86:17-53
 activity#com.dyslexiasupport.ui.assistant.AssistantActivity
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:83:13-85:62
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:88:13-90:62
 	android:windowSoftInputMode
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:85:17-59
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:90:17-59
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:84:17-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:89:17-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:83:23-69
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:88:23-69
 activity#com.dyslexiasupport.ui.voice.VoiceActivity
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:87:13-89
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:92:13-89
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:87:62-86
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:92:62-86
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:87:23-61
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:92:23-61
 activity#com.dyslexiasupport.ui.write.WriteActivity
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:88:13-89:62
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:93:13-94:62
 	android:windowSoftInputMode
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:89:17-59
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:94:17-59
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:88:62-86
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:93:62-86
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:88:23-61
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:93:23-61
 activity#com.dyslexiasupport.ui.practice.GameActivity
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:90:13-91
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:95:13-91
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:90:64-88
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:95:64-88
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:90:23-63
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:95:23-63
+activity#com.dyslexiasupport.ui.onboarding.AssessmentActivity
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:96:13-99
+	android:exported
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:96:72-96
+	android:name
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:96:23-71
+activity#com.dyslexiasupport.ui.profile.ParentDashboardActivity
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:97:13-101
+	android:exported
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:97:74-98
+	android:name
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:97:23-73
 service#com.dyslexiasupport.ui.reader.ReaderForegroundService
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:92:13-95:65
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:99:13-102:65
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:94:17-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:101:17-41
 	android:foregroundServiceType
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:95:17-62
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:102:17-62
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:93:17-66
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:100:17-66
 provider#com.dyslexiasupport.system.VocabularyContentProvider
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:110:13-115:81
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:117:13-122:81
 	android:readPermission
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:114:17-77
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:121:17-77
 	android:authorities
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:112:17-77
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:119:17-77
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:113:17-40
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:120:17-40
 	android:writePermission
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:115:17-78
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:122:17-78
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:111:17-65
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:118:17-65
 receiver#com.dyslexiasupport.system.DailyReminderReceiver
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:118:13-120:44
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:125:13-127:44
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:120:17-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:127:17-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:119:17-61
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:126:17-61
 receiver#com.dyslexiasupport.system.BootReceiver
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:123:13-130:24
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:130:13-137:24
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:125:17-40
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:132:17-40
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:124:17-52
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:131:17-52
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:126:17-129:33
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:133:17-136:33
 action#android.intent.action.BOOT_COMPLETED
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:127:21-83
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:134:21-83
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:127:29-80
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:134:29-80
 action#android.intent.action.MY_PACKAGE_REPLACED
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:128:21-88
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:135:21-88
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:128:29-85
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:135:29-85
 receiver#com.dyslexiasupport.system.WordWidgetProvider
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:133:13-144:24
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:140:13-151:24
 	android:label
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:136:17-53
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:143:17-53
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:135:17-40
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:142:17-40
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:134:17-58
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:141:17-58
 intent-filter#action:name:android.appwidget.action.APPWIDGET_UPDATE+action:name:com.dyslexiasupport.ACTION_REFRESH_WIDGET
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:137:17-140:33
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:144:17-147:33
 action#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:138:21-88
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:145:21-88
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:138:29-85
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:145:29-85
 action#com.dyslexiasupport.ACTION_REFRESH_WIDGET
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:139:21-88
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:146:21-88
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:139:29-85
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:146:29-85
 meta-data#android.appwidget.provider
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:141:17-143:64
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:148:17-150:64
 	android:resource
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:143:21-61
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:150:21-61
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:142:21-62
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:149:21-62
 service#androidx.appcompat.app.AppLocalesMetadataHolderService
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:147:13-154:23
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:154:13-161:23
 	android:enabled
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:149:17-40
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:156:17-40
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:150:17-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:157:17-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:148:17-86
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:155:17-86
 meta-data#autoStoreLocales
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:151:17-153:44
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:158:17-160:44
 	android:value
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:153:21-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:160:21-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:152:21-52
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:159:21-52
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:104:17-106:58
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:111:17-113:58
 	android:resource
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:106:21-55
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:113:21-55
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:105:21-71
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:112:21-71
 uses-sdk
 INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml
@@ -522,60 +548,50 @@ MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/faijul/.gradle
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/faijul/.gradle/caches/8.13/transforms/ac1ee96fc6a5d172d7d31ec6f9a50973/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat:1.7.0] /Users/faijul/.gradle/caches/8.13/transforms/51bcec5f9a62899c9e79924b2c27a621/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat:1.7.0] /Users/faijul/.gradle/caches/8.13/transforms/51bcec5f9a62899c9e79924b2c27a621/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/dce4e8dad2d50f4e707ebd554af88b58/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/dce4e8dad2d50f4e707ebd554af88b58/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-analytics:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/f13d600a876e318836c1af1917aa10c6/transformed/firebase-analytics-24.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-analytics:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/f13d600a876e318836c1af1917aa10c6/transformed/firebase-analytics-24.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-sdk:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/4dd492bb30fe0e8a1c0e79c5c56f8d5a/transformed/play-services-measurement-sdk-24.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-sdk:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/4dd492bb30fe0e8a1c0e79c5c56f8d5a/transformed/play-services-measurement-sdk-24.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:21:5-23:151
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:21:5-23:151
 MERGED from [androidx.credentials:credentials:1.2.0-rc01] /Users/faijul/.gradle/caches/8.13/transforms/b9c848ccf49d19d2b3d7e63466a4eba2/transformed/credentials-1.2.0-rc01/AndroidManifest.xml:5:5-44
 MERGED from [androidx.credentials:credentials:1.2.0-rc01] /Users/faijul/.gradle/caches/8.13/transforms/b9c848ccf49d19d2b3d7e63466a4eba2/transformed/credentials-1.2.0-rc01/AndroidManifest.xml:5:5-44
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/faijul/.gradle/caches/8.13/transforms/5d25d006905622a42548e3e00888be92/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:21:5-44
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/faijul/.gradle/caches/8.13/transforms/5d25d006905622a42548e3e00888be92/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:21:5-44
-MERGED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/dce4e8dad2d50f4e707ebd554af88b58/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/dce4e8dad2d50f4e707ebd554af88b58/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:18:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /Users/faijul/.gradle/caches/8.13/transforms/6a0a0584be42aaca241b0b0e41643e63/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /Users/faijul/.gradle/caches/8.13/transforms/6a0a0584be42aaca241b0b0e41643e63/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] /Users/faijul/.gradle/caches/8.13/transforms/353cf2823a57db833822f16620dffdfc/transformed/recaptcha-18.6.1/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] /Users/faijul/.gradle/caches/8.13/transforms/353cf2823a57db833822f16620dffdfc/transformed/recaptcha-18.6.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] /Users/faijul/.gradle/caches/8.13/transforms/67899b687c81dbf3f8f427d372cbb994/transformed/play-services-auth-base-18.0.10/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] /Users/faijul/.gradle/caches/8.13/transforms/67899b687c81dbf3f8f427d372cbb994/transformed/play-services-auth-base-18.0.10/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/ba212518fa1182a9f2157a91a61ba74e/transformed/firebase-analytics-22.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/ba212518fa1182a9f2157a91a61ba74e/transformed/firebase-analytics-22.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/5308ee6e5a435f2cf031cdaa318a0b70/transformed/play-services-measurement-sdk-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/5308ee6e5a435f2cf031cdaa318a0b70/transformed/play-services-measurement-sdk-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Users/faijul/.gradle/caches/8.13/transforms/4c7668c42c728ef465898361a4f6c3f4/transformed/recaptcha-18.5.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Users/faijul/.gradle/caches/8.13/transforms/4c7668c42c728ef465898361a4f6c3f4/transformed/recaptcha-18.5.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.play:integrity:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/95e53525f02d2b3c264f976f1402a38d/transformed/integrity-1.3.0/AndroidManifest.xml:4:5-44
 MERGED from [com.google.android.play:integrity:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/95e53525f02d2b3c264f976f1402a38d/transformed/integrity-1.3.0/AndroidManifest.xml:4:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/12625e17df3c4c56e5619e06da175eae/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/12625e17df3c4c56e5619e06da175eae/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:19:5-44
-MERGED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:19:5-44
-MERGED from [com.google.firebase:firebase-appcheck-interop:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/3e6de31da7dde79a0a4199804e3595a6/transformed/firebase-appcheck-interop-18.0.0/AndroidManifest.xml:18:5-44
-MERGED from [com.google.firebase:firebase-appcheck-interop:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/3e6de31da7dde79a0a4199804e3595a6/transformed/firebase-appcheck-interop-18.0.0/AndroidManifest.xml:18:5-44
-MERGED from [com.google.firebase:firebase-database-collection:19.0.0] /Users/faijul/.gradle/caches/8.13/transforms/6d4fc374ef032b7efaa154451c4127c9/transformed/firebase-database-collection-19.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-database-collection:19.0.0] /Users/faijul/.gradle/caches/8.13/transforms/6d4fc374ef032b7efaa154451c4127c9/transformed/firebase-database-collection-19.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d6a5a9103bee32f67bdf8b2175ffbc0/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d6a5a9103bee32f67bdf8b2175ffbc0/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] /Users/faijul/.gradle/caches/8.13/transforms/28aec2c89c6e47572ba2d9aac3f0e252/transformed/firebase-appcheck-interop-17.1.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] /Users/faijul/.gradle/caches/8.13/transforms/28aec2c89c6e47572ba2d9aac3f0e252/transformed/firebase-appcheck-interop-17.1.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-fido:20.1.0] /Users/faijul/.gradle/caches/8.13/transforms/1afe5cd026644e8df613890d0b27c1f8/transformed/play-services-fido-20.1.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-fido:20.1.0] /Users/faijul/.gradle/caches/8.13/transforms/1afe5cd026644e8df613890d0b27c1f8/transformed/play-services-fido-20.1.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Users/faijul/.gradle/caches/8.13/transforms/c55f47a93a2ffa2cd6269d48abd973f6/transformed/play-services-auth-base-18.0.4/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Users/faijul/.gradle/caches/8.13/transforms/c55f47a93a2ffa2cd6269d48abd973f6/transformed/play-services-auth-base-18.0.4/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b68343632f8ce33d21fa2e17425119f9/transformed/play-services-base-18.9.0/AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-base:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b68343632f8ce33d21fa2e17425119f9/transformed/play-services-base-18.9.0/AndroidManifest.xml:18:5-43
-MERGED from [androidx.transition:transition:1.5.0] /Users/faijul/.gradle/caches/8.13/transforms/aeb051a5e0e04106fbd56ac1d57247d1/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.transition:transition:1.5.0] /Users/faijul/.gradle/caches/8.13/transforms/aeb051a5e0e04106fbd56ac1d57247d1/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d085233c90353fb0d526b4cf0c457d48/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d085233c90353fb0d526b4cf0c457d48/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/faijul/.gradle/caches/8.13/transforms/4a84ed5f37e97eb9979ec4e0077905cd/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/faijul/.gradle/caches/8.13/transforms/4a84ed5f37e97eb9979ec4e0077905cd/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/95d7c9c2ee765dc04a2a3f42d127b796/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/95d7c9c2ee765dc04a2a3f42d127b796/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d3cc74d048b4cb9e15018f687dabbc65/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d3cc74d048b4cb9e15018f687dabbc65/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/3c2931945689c049e0302b87307b0c67/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/3c2931945689c049e0302b87307b0c67/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/201de76b8d31d1efb2504d98e1e4ef9f/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
@@ -584,28 +600,42 @@ MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/faijul/.gradle/caches/
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/faijul/.gradle/caches/8.13/transforms/3d800b7f9aca41f7c79719a09245884e/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.7.0] /Users/faijul/.gradle/caches/8.13/transforms/9022f49864ca3d660b2a4376dcd4908d/transformed/media-1.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.media:media:1.7.0] /Users/faijul/.gradle/caches/8.13/transforms/9022f49864ca3d660b2a4376dcd4908d/transformed/media-1.7.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.1.0-beta11] /Users/faijul/.gradle/caches/8.13/transforms/5bbe6b77cef6cffc2bff1ff89038fd7a/transformed/ads-adservices-java-1.1.0-beta11/AndroidManifest.xml:5:5-44
-MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.1.0-beta11] /Users/faijul/.gradle/caches/8.13/transforms/5bbe6b77cef6cffc2bff1ff89038fd7a/transformed/ads-adservices-java-1.1.0-beta11/AndroidManifest.xml:5:5-44
-MERGED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /Users/faijul/.gradle/caches/8.13/transforms/dcfba414fa2c2095673994cfa4d9541c/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:20:5-44
-MERGED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /Users/faijul/.gradle/caches/8.13/transforms/dcfba414fa2c2095673994cfa4d9541c/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:20:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Users/faijul/.gradle/caches/8.13/transforms/c496c56cd4288efd4138fd5acf57675e/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Users/faijul/.gradle/caches/8.13/transforms/c496c56cd4288efd4138fd5acf57675e/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/faijul/.gradle/caches/8.13/transforms/1c677d159995315d528eb4eff54728f9/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:20:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/faijul/.gradle/caches/8.13/transforms/1c677d159995315d528eb4eff54728f9/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core-ktx:1.13.0] /Users/faijul/.gradle/caches/8.13/transforms/6c319ac7c327d46cf796ce5a1c2c08fc/transformed/core-ktx-1.13.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.13.0] /Users/faijul/.gradle/caches/8.13/transforms/6c319ac7c327d46cf796ce5a1c2c08fc/transformed/core-ktx-1.13.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/faijul/.gradle/caches/8.13/transforms/459896acb625ec185012b07f57e433c4/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/faijul/.gradle/caches/8.13/transforms/459896acb625ec185012b07f57e433c4/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/f11d3b0abf99ef86483577d3fff0ed8e/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/f11d3b0abf99ef86483577d3fff0ed8e/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.5.0] /Users/faijul/.gradle/caches/8.13/transforms/aeb051a5e0e04106fbd56ac1d57247d1/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.5.0] /Users/faijul/.gradle/caches/8.13/transforms/aeb051a5e0e04106fbd56ac1d57247d1/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d085233c90353fb0d526b4cf0c457d48/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d085233c90353fb0d526b4cf0c457d48/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/9800f44ee3f7055bd2ff164ff0a73bcf/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/9800f44ee3f7055bd2ff164ff0a73bcf/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/c46fea26b1d8b47a19faf5086cb54c0b/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/c46fea26b1d8b47a19faf5086cb54c0b/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/116caf8f3e50ecb44b7717f5d32b75a2/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/116caf8f3e50ecb44b7717f5d32b75a2/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/faijul/.gradle/caches/8.13/transforms/4a84ed5f37e97eb9979ec4e0077905cd/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/faijul/.gradle/caches/8.13/transforms/4a84ed5f37e97eb9979ec4e0077905cd/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/95d7c9c2ee765dc04a2a3f42d127b796/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/95d7c9c2ee765dc04a2a3f42d127b796/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/5efff696ba1a3168d48717d3935b3cbc/transformed/loader-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/5efff696ba1a3168d48717d3935b3cbc/transformed/loader-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.browser:browser:1.4.0] /Users/faijul/.gradle/caches/8.13/transforms/1260f087e54cbb962fe7c70c07148f88/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.browser:browser:1.4.0] /Users/faijul/.gradle/caches/8.13/transforms/1260f087e54cbb962fe7c70c07148f88/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/22af4fc91524ce18d79969472c5a1fa4/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/22af4fc91524ce18d79969472c5a1fa4/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/0a799f1a1b467317589690470de4a43f/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/0a799f1a1b467317589690470de4a43f/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/faijul/.gradle/caches/8.13/transforms/7c1eeaa6ab1451876afd62afad810318/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/faijul/.gradle/caches/8.13/transforms/7c1eeaa6ab1451876afd62afad810318/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/faijul/.gradle/caches/8.13/transforms/ecefae1a97d74f7e28dd0dfb496e27d9/transformed/play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/faijul/.gradle/caches/8.13/transforms/ecefae1a97d74f7e28dd0dfb496e27d9/transformed/play-services-base-18.5.0/AndroidManifest.xml:3:5-44
 MERGED from [androidx.core:core:1.13.0] /Users/faijul/.gradle/caches/8.13/transforms/a02c8800682842be2f671811c87b2286/transformed/core-1.13.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.13.0] /Users/faijul/.gradle/caches/8.13/transforms/a02c8800682842be2f671811c87b2286/transformed/core-1.13.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/240c80de3bff30529e0122b23186d699/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
@@ -618,34 +648,26 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /Users/fai
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/a38327a3c74c5560fb9c6275f2e25394/transformed/lifecycle-viewmodel-savedstate-2.8.7/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/10438b81f99409a08be9706f2e4db81c/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/10438b81f99409a08be9706f2e4db81c/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/5242d27611fb415f94b1ea9a89a97ea9/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/5242d27611fb415f94b1ea9a89a97ea9/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/64eed6bdd02673bbe7f31351dab371bc/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:4:5-43
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/64eed6bdd02673bbe7f31351dab371bc/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:4:5-43
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/e1fb4696e4297e8208ddaad04739924b/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/e1fb4696e4297e8208ddaad04739924b/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/5242d27611fb415f94b1ea9a89a97ea9/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/5242d27611fb415f94b1ea9a89a97ea9/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:20:5-44
-MERGED from [androidx.datastore:datastore-core-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/93dc2a009e77d94399e7a1dbe4eda56e/transformed/datastore-core-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.datastore:datastore-core-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/93dc2a009e77d94399e7a1dbe4eda56e/transformed/datastore-core-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.datastore:datastore-preferences-core-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/186f9b5366097f5d4da59a8e17060e67/transformed/datastore-preferences-core-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.datastore:datastore-preferences-core-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/186f9b5366097f5d4da59a8e17060e67/transformed/datastore-preferences-core-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.datastore:datastore-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/e1a58339cbe54ba9b571339216c6d6e1/transformed/datastore-release/AndroidManifest.xml:20:5-44
-MERGED from [androidx.datastore:datastore-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/e1a58339cbe54ba9b571339216c6d6e1/transformed/datastore-release/AndroidManifest.xml:20:5-44
-MERGED from [androidx.datastore:datastore-preferences-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/d844182a47efea1b95470d0e86c2f121/transformed/datastore-preferences-release/AndroidManifest.xml:20:5-44
-MERGED from [androidx.datastore:datastore-preferences-android:1.1.7] /Users/faijul/.gradle/caches/8.13/transforms/d844182a47efea1b95470d0e86c2f121/transformed/datastore-preferences-release/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-installations-interop:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/253477dcbb50775ebc52efe7d29670f5/transformed/firebase-installations-interop-18.0.0/AndroidManifest.xml:17:5-44
-MERGED from [com.google.firebase:firebase-installations-interop:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/253477dcbb50775ebc52efe7d29670f5/transformed/firebase-installations-interop-18.0.0/AndroidManifest.xml:17:5-44
-MERGED from [com.google.android.gms:play-services-tasks:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/1d42f3c6809619029991c378e727fc36/transformed/play-services-tasks-18.4.0/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/1d42f3c6809619029991c378e727fc36/transformed/play-services-tasks-18.4.0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /Users/faijul/.gradle/caches/8.13/transforms/7b88568dfa01c37057769d4544fbae23/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:17:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /Users/faijul/.gradle/caches/8.13/transforms/7b88568dfa01c37057769d4544fbae23/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:17:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/faijul/.gradle/caches/8.13/transforms/61c8422acc33f6b0578601b9571fc477/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/faijul/.gradle/caches/8.13/transforms/61c8422acc33f6b0578601b9571fc477/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d104d1c95bd6df9604ea2e822b57908/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d104d1c95bd6df9604ea2e822b57908/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-base:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/3f902b57603b4f1a6dc9cbd9b5a36857/transformed/play-services-measurement-base-24.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-measurement-base:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/3f902b57603b4f1a6dc9cbd9b5a36857/transformed/play-services-measurement-base-24.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/8bc00f467ab42d507a18fd1c8a2a6a3f/transformed/play-services-measurement-base-22.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/8bc00f467ab42d507a18fd1c8a2a6a3f/transformed/play-services-measurement-base-22.1.2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/faijul/.gradle/caches/8.13/transforms/86131b2e6e72f410e532cce8124c61fe/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/faijul/.gradle/caches/8.13/transforms/86131b2e6e72f410e532cce8124c61fe/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b9a0c41320f65f5bfef7181444235c40/transformed/play-services-basement-18.9.0/AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-basement:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b9a0c41320f65f5bfef7181444235c40/transformed/play-services-basement-18.9.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/545e6f123669340c0683ba0fc41f91d2/transformed/play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/545e6f123669340c0683ba0fc41f91d2/transformed/play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
 MERGED from [androidx.fragment:fragment:1.8.5] /Users/faijul/.gradle/caches/8.13/transforms/33f6a8bd837b73828e7485782fa2fea7/transformed/fragment-1.8.5/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.8.5] /Users/faijul/.gradle/caches/8.13/transforms/33f6a8bd837b73828e7485782fa2fea7/transformed/fragment-1.8.5/AndroidManifest.xml:5:5-44
 MERGED from [androidx.activity:activity:1.9.3] /Users/faijul/.gradle/caches/8.13/transforms/3f831ea537af903f869cd1fa8bca2d37/transformed/activity-1.9.3/AndroidManifest.xml:20:5-44
@@ -654,8 +676,8 @@ MERGED from [androidx.core:core-splashscreen:1.0.1] /Users/faijul/.gradle/caches
 MERGED from [androidx.core:core-splashscreen:1.0.1] /Users/faijul/.gradle/caches/8.13/transforms/0cda90bb79e0a3c8f19f827745f47e71/transformed/core-splashscreen-1.0.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/faijul/.gradle/caches/8.13/transforms/95ff45e24010a39540050baf48498d67/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/faijul/.gradle/caches/8.13/transforms/95ff45e24010a39540050baf48498d67/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
-MERGED from [io.grpc:grpc-android:1.84.0] /Users/faijul/.gradle/caches/8.13/transforms/3d2fc0a9dd54015246faa5c92fc8f051/transformed/grpc-android-1.84.0/AndroidManifest.xml:5:5-44
-MERGED from [io.grpc:grpc-android:1.84.0] /Users/faijul/.gradle/caches/8.13/transforms/3d2fc0a9dd54015246faa5c92fc8f051/transformed/grpc-android-1.84.0/AndroidManifest.xml:5:5-44
+MERGED from [io.grpc:grpc-android:1.62.2] /Users/faijul/.gradle/caches/8.13/transforms/10367e32ed381217a7089110af97ce4f/transformed/grpc-android-1.62.2/AndroidManifest.xml:5:5-44
+MERGED from [io.grpc:grpc-android:1.62.2] /Users/faijul/.gradle/caches/8.13/transforms/10367e32ed381217a7089110af97ce4f/transformed/grpc-android-1.62.2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/faijul/.gradle/caches/8.13/transforms/a15982e9b192cbe3e575450d343bc94f/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/faijul/.gradle/caches/8.13/transforms/a15982e9b192cbe3e575450d343bc94f/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.tracing:tracing-ktx:1.2.0] /Users/faijul/.gradle/caches/8.13/transforms/323fc0b2b1f74a83d12358c1cb8be09a/transformed/tracing-ktx-1.2.0/AndroidManifest.xml:20:5-44
@@ -678,22 +700,24 @@ MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/faijul/.gradle/caches/8.13/tra
 MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/faijul/.gradle/caches/8.13/transforms/f0295c2257989256c1ad1e1dc8dadffe/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9f9935777fa3b4669886fa9dbeea5c05/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9f9935777fa3b4669886fa9dbeea5c05/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-components:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/92123c08ed0be907aca3d5edabfc476f/transformed/firebase-components-20.0.0/AndroidManifest.xml:18:5-44
-MERGED from [com.google.firebase:firebase-components:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/92123c08ed0be907aca3d5edabfc476f/transformed/firebase-components-20.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/0f07f4b5bf330f809cf34ac2969f5b06/transformed/firebase-components-18.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/0f07f4b5bf330f809cf34ac2969f5b06/transformed/firebase-components-18.0.0/AndroidManifest.xml:18:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/a213d603009215c7451375d699ed9170/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/a213d603009215c7451375d699ed9170/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/a1a63182577a064dc1ba346077ae7f84/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/a1a63182577a064dc1ba346077ae7f84/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9bd53a0d0bb09d15aaea7ff770e0e75a/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9bd53a0d0bb09d15aaea7ff770e0e75a/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/0a1217f1991a17e2002583e2c8f9a576/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/0a1217f1991a17e2002583e2c8f9a576/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/d1d7952e643b51d9d74bb9ff5f2fc5e9/transformed/googleid-1.1.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] /Users/faijul/.gradle/caches/8.13/transforms/d1d7952e643b51d9d74bb9ff5f2fc5e9/transformed/googleid-1.1.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:protolite-well-known-types:19.0.0] /Users/faijul/.gradle/caches/8.13/transforms/27dd10fc9849f87d5c31d0b280245c3f/transformed/protolite-well-known-types-19.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:protolite-well-known-types:19.0.0] /Users/faijul/.gradle/caches/8.13/transforms/27dd10fc9849f87d5c31d0b280245c3f/transformed/protolite-well-known-types-19.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/0a1217f1991a17e2002583e2c8f9a576/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/0a1217f1991a17e2002583e2c8f9a576/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/809685a2e77c41c84e567b23731607c0/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/809685a2e77c41c84e567b23731607c0/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.play:core-common:2.0.3] /Users/faijul/.gradle/caches/8.13/transforms/f5aae7020d7267855e658033f88ad920/transformed/core-common-2.0.3/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.play:core-common:2.0.3] /Users/faijul/.gradle/caches/8.13/transforms/f5aae7020d7267855e658033f88ad920/transformed/core-common-2.0.3/AndroidManifest.xml:7:5-9:41
+	tools:overrideLibrary
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:23:9-148
 	android:targetSdkVersion
 		INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
@@ -719,159 +743,81 @@ ADDED from [androidx.camera:camera-camera2:1.4.1] /Users/faijul/.gradle/caches/8
 	android:name
 		ADDED from [androidx.camera:camera-camera2:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/368764dd764e2ad320230de44f2a5e9c/transformed/camera-camera2-1.4.1/AndroidManifest.xml:31:17-103
 activity#com.google.firebase.auth.internal.GenericIdpActivity
-ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:26:9-43:20
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:29:9-46:20
 	android:excludeFromRecents
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:28:13-46
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:31:13-46
 	android:launchMode
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:30:13-44
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:33:13-44
 	android:exported
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:29:13-36
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:32:13-36
 	android:theme
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:31:13-72
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:34:13-72
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:27:13-80
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:30:13-80
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
-ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:32:13-42:29
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:35:13-45:29
 action#android.intent.action.VIEW
-ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:33:17-69
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:33:25-66
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
 category#android.intent.category.DEFAULT
-ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:35:17-76
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:35:27-73
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
 category#android.intent.category.BROWSABLE
-ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:36:17-78
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:36:27-75
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
 data
-ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:38:17-41:51
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
 	android:path
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:40:21-37
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
 	android:host
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:39:21-49
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
 	android:scheme
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:41:21-48
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
 activity#com.google.firebase.auth.internal.RecaptchaActivity
-ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:44:9-61:20
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:47:9-64:20
 	android:excludeFromRecents
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:46:13-46
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:49:13-46
 	android:launchMode
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:48:13-44
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:51:13-44
 	android:exported
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:47:13-36
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:50:13-36
 	android:theme
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:49:13-72
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:52:13-72
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:45:13-79
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:48:13-79
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
-ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:50:13-60:29
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:53:13-63:29
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:63:9-69:19
-MERGED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:14:9-23:19
-MERGED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:14:9-23:19
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:30:9-36:19
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:30:9-36:19
-MERGED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:12:9-21:19
-MERGED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:12:9-21:19
-MERGED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:30:9-38:19
-MERGED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:30:9-38:19
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:66:9-72:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:26:9-35:19
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:26:9-35:19
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:34:9-40:19
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:34:9-40:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d6a5a9103bee32f67bdf8b2175ffbc0/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d6a5a9103bee32f67bdf8b2175ffbc0/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:30:9-38:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:65:13-37
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:68:13-37
 	tools:targetApi
-		ADDED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:34:13-32
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:34:13-32
 	android:directBootAware
-		ADDED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:32:13-43
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:64:13-84
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:67:13-84
 meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
-ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:66:13-68:85
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:69:13-71:85
 	android:value
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:68:17-82
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:71:17-82
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:25.0.0] /Users/faijul/.gradle/caches/8.13/transforms/df73429531d4f4fea4197b7d4e6d3650/transformed/firebase-auth-25.0.0/AndroidManifest.xml:67:17-109
-meta-data#com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar
-ADDED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:17:13-19:85
-	android:value
-		ADDED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:19:17-82
-	android:name
-		ADDED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:18:17-122
-meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
-ADDED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:20:13-22:85
-	android:value
-		ADDED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:22:17-82
-	android:name
-		ADDED from [com.google.firebase:firebase-firestore:27.0.0] /Users/faijul/.gradle/caches/8.13/transforms/372b45f25fb56f746e6316d26a4d93e4/transformed/firebase-firestore-27.0.0/AndroidManifest.xml:21:17-111
-uses-permission#android.permission.WAKE_LOCK
-ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:24:5-68
-MERGED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:24:5-68
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:25:5-68
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:25:22-65
-uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
-ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:26:5-110
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:26:5-110
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:26:5-110
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:26:22-107
-receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:29:9-33:20
-	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:31:13-35
-	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:32:13-37
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:30:13-85
-service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:35:9-38:40
-	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:37:13-35
-	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:38:13-37
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:36:13-84
-service#com.google.android.gms.measurement.AppMeasurementJobService
-ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:39:9-43:72
-	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:41:13-35
-	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:42:13-37
-	android:permission
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:43:13-69
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/9883d83ffd4e0c08e45bfa182dcb5dfd/transformed/play-services-measurement-24.0.0/AndroidManifest.xml:40:13-87
-uses-permission#com.google.android.gms.permission.AD_ID
-ADDED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:25:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:27:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/41544fbe3390bfa9ea81bd9d92a6ce1e/transformed/play-services-measurement-impl-24.0.0/AndroidManifest.xml:27:5-79
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d104d1c95bd6df9604ea2e822b57908/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d104d1c95bd6df9604ea2e822b57908/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:26:5-79
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:25:22-76
-uses-permission#android.permission.ACCESS_ADSERVICES_ATTRIBUTION
-ADDED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:26:5-88
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:27:5-88
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:27:5-88
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:26:22-85
-uses-permission#android.permission.ACCESS_ADSERVICES_AD_ID
-ADDED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:27:5-82
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:28:5-82
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/28c287972704ec2d38cd5f77b059500c/transformed/play-services-measurement-sdk-api-24.0.0/AndroidManifest.xml:28:5-82
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:27:22-79
-meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
-ADDED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:33:13-35:85
-	android:value
-		ADDED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:35:17-82
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:24.0.0] /Users/faijul/.gradle/caches/8.13/transforms/e18b34ef714025459ce9b1db2fb3da24/transformed/play-services-measurement-api-24.0.0/AndroidManifest.xml:34:17-139
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Users/faijul/.gradle/caches/8.13/transforms/7b25036540f07fd215cc6e0fbb22ff3b/transformed/firebase-auth-23.1.0/AndroidManifest.xml:70:17-109
 service#androidx.credentials.playservices.CredentialProviderMetadataHolder
 ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/faijul/.gradle/caches/8.13/transforms/5d25d006905622a42548e3e00888be92/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
 	android:enabled
@@ -903,67 +849,165 @@ ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Use
 	android:name
 		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/faijul/.gradle/caches/8.13/transforms/5d25d006905622a42548e3e00888be92/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+ADDED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:25:13-46
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:26:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:27:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:24:13-93
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+ADDED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:33:9-37:51
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:35:13-36
 	android:visibleToInstantApps
-		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:37:13-48
 	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:36:13-107
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Users/faijul/.gradle/caches/8.13/transforms/c0c9e7fa6652994b0697e9341b6fa854/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] /Users/faijul/.gradle/caches/8.13/transforms/8e4d2b59f6981a5431a8c21705b75f8b/transformed/play-services-auth-21.2.0/AndroidManifest.xml:34:13-89
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar
+ADDED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:17:13-19:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:19:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:18:17-122
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:25.1.1] /Users/faijul/.gradle/caches/8.13/transforms/d5f9b8cc6aa5ef7c420453ed7bd7167d/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:21:17-111
+meta-data#com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar
+ADDED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:29:13-31:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:31:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:30:17-120
+meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
+ADDED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5a68c8601d0c184bf420308a544add55/transformed/firebase-database-21.0.0/AndroidManifest.xml:33:17-109
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:25:22-65
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:30:13-85
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:35:9-38:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:36:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:39:9-43:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:41:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:42:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:43:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/7b7bff9ff52b2887e3901f6c624bf9ad/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:40:13-87
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/85fb1244cf6329484a553447b0dde096/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d104d1c95bd6df9604ea2e822b57908/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d104d1c95bd6df9604ea2e822b57908/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:25:22-76
+uses-permission#android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:26:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:27:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:27:5-88
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:26:22-85
+uses-permission#android.permission.ACCESS_ADSERVICES_AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:27:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:28:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/eb7ed1bff94c257537e94a99531dfca1/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:28:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:27:22-79
+property#android.adservices.AD_SERVICES_CONFIG
+ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:30:9-32:61
+	android:resource
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:32:13-58
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:31:13-65
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:37:13-39:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:39:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Users/faijul/.gradle/caches/8.13/transforms/337ed0df12990d1b097f42f46e5b20ce/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:38:17-139
 uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
-ADDED from [com.google.android.recaptcha:recaptcha:18.6.1] /Users/faijul/.gradle/caches/8.13/transforms/353cf2823a57db833822f16620dffdfc/transformed/recaptcha-18.6.1/AndroidManifest.xml:9:5-98
+ADDED from [com.google.android.recaptcha:recaptcha:18.5.1] /Users/faijul/.gradle/caches/8.13/transforms/4c7668c42c728ef465898361a4f6c3f4/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:5-98
 	android:name
-		ADDED from [com.google.android.recaptcha:recaptcha:18.6.1] /Users/faijul/.gradle/caches/8.13/transforms/353cf2823a57db833822f16620dffdfc/transformed/recaptcha-18.6.1/AndroidManifest.xml:9:22-95
+		ADDED from [com.google.android.recaptcha:recaptcha:18.5.1] /Users/faijul/.gradle/caches/8.13/transforms/4c7668c42c728ef465898361a4f6c3f4/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:22-95
 meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar
-ADDED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:15:13-17:85
+ADDED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
 	android:value
-		ADDED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:17:17-82
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
 	android:name
-		ADDED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:16:17-130
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
 meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
-ADDED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:18:13-20:85
+ADDED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
 	android:value
-		ADDED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:20:17-82
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
 	android:name
-		ADDED from [com.google.firebase:firebase-installations:20.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5d7d9d3f265ceb90e8fd7c524b95a5c3/transformed/firebase-installations-20.0.0/AndroidManifest.xml:19:17-127
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] /Users/faijul/.gradle/caches/8.13/transforms/5ff32b4ba6cf4ba1eaa58cc25fa52890/transformed/firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
+meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d6a5a9103bee32f67bdf8b2175ffbc0/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d6a5a9103bee32f67bdf8b2175ffbc0/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/2d6a5a9103bee32f67bdf8b2175ffbc0/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:23:9-28:39
+ADDED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:25:13-72
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:27:13-37
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
 	android:directBootAware
-		ADDED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:26:13-43
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:28:13-36
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
 	android:name
-		ADDED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:24:13-77
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
 meta-data#com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar
-ADDED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:35:13-37:85
+ADDED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
 	android:value
-		ADDED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:37:17-82
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
 	android:name
-		ADDED from [com.google.firebase:firebase-common:23.0.0] /Users/faijul/.gradle/caches/8.13/transforms/d4421d72ef26b3e34cd6f32d148bf035/transformed/firebase-common-23.0.0/AndroidManifest.xml:36:17-109
-activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b68343632f8ce33d21fa2e17425119f9/transformed/play-services-base-18.9.0/AndroidManifest.xml:20:9-22:45
-	android:exported
-		ADDED from [com.google.android.gms:play-services-base:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b68343632f8ce33d21fa2e17425119f9/transformed/play-services-base-18.9.0/AndroidManifest.xml:22:19-43
-	android:theme
-		ADDED from [com.google.android.gms:play-services-base:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b68343632f8ce33d21fa2e17425119f9/transformed/play-services-base-18.9.0/AndroidManifest.xml:21:19-78
-	android:name
-		ADDED from [com.google.android.gms:play-services-base:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b68343632f8ce33d21fa2e17425119f9/transformed/play-services-base-18.9.0/AndroidManifest.xml:20:19-85
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Users/faijul/.gradle/caches/8.13/transforms/88af4e00c8433ecbf1266d1e142e7819/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/201de76b8d31d1efb2504d98e1e4ef9f/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/fd8f895b7cd7c920bef0dd1a95d9b436/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:24:9-32:20
@@ -987,11 +1031,19 @@ ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/faijul/.gradle/caches/8.13/tran
 	android:name
 		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/faijul/.gradle/caches/8.13/transforms/201de76b8d31d1efb2504d98e1e4ef9f/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
 uses-library#android.ext.adservices
-ADDED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /Users/faijul/.gradle/caches/8.13/transforms/dcfba414fa2c2095673994cfa4d9541c/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:23:9-25:40
+ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/faijul/.gradle/caches/8.13/transforms/1c677d159995315d528eb4eff54728f9/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
 	android:required
-		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /Users/faijul/.gradle/caches/8.13/transforms/dcfba414fa2c2095673994cfa4d9541c/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:25:13-37
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/faijul/.gradle/caches/8.13/transforms/1c677d159995315d528eb4eff54728f9/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
 	android:name
-		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /Users/faijul/.gradle/caches/8.13/transforms/dcfba414fa2c2095673994cfa4d9541c/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:24:13-50
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/faijul/.gradle/caches/8.13/transforms/1c677d159995315d528eb4eff54728f9/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/faijul/.gradle/caches/8.13/transforms/ecefae1a97d74f7e28dd0dfb496e27d9/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/faijul/.gradle/caches/8.13/transforms/ecefae1a97d74f7e28dd0dfb496e27d9/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/faijul/.gradle/caches/8.13/transforms/ecefae1a97d74f7e28dd0dfb496e27d9/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/faijul/.gradle/caches/8.13/transforms/ecefae1a97d74f7e28dd0dfb496e27d9/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
 permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.0] /Users/faijul/.gradle/caches/8.13/transforms/a02c8800682842be2f671811c87b2286/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
@@ -1019,11 +1071,11 @@ ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/faijul/.gradle/ca
 	android:name
 		ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/faijul/.gradle/caches/8.13/transforms/fd8f895b7cd7c920bef0dd1a95d9b436/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b9a0c41320f65f5bfef7181444235c40/transformed/play-services-basement-18.9.0/AndroidManifest.xml:21:9-23:69
+ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/545e6f123669340c0683ba0fc41f91d2/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b9a0c41320f65f5bfef7181444235c40/transformed/play-services-basement-18.9.0/AndroidManifest.xml:23:13-66
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/545e6f123669340c0683ba0fc41f91d2/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:18.9.0] /Users/faijul/.gradle/caches/8.13/transforms/b9a0c41320f65f5bfef7181444235c40/transformed/play-services-basement-18.9.0/AndroidManifest.xml:22:13-58
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Users/faijul/.gradle/caches/8.13/transforms/545e6f123669340c0683ba0fc41f91d2/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
 service#androidx.room.MultiInstanceInvalidationService
 ADDED from [androidx.room:room-runtime:2.6.1] /Users/faijul/.gradle/caches/8.13/transforms/95ff45e24010a39540050baf48498d67/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
 	android:exported

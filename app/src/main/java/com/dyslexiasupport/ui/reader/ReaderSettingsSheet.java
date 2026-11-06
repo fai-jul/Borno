@@ -106,16 +106,22 @@ public class ReaderSettingsSheet extends BottomSheetDialogFragment {
     @Override
     public void onStart() {
         super.onStart();
-        // Open fully; the content is taller than the default half-height peek.
-        if (getDialog() instanceof BottomSheetDialog) {
-            BottomSheetBehavior<?> behavior = ((BottomSheetDialog) getDialog()).getBehavior();
-            behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-            behavior.setSkipCollapsed(true);
+        // Defer expansion until the sheet has completed its first layout pass.
+        // Expanding synchronously here can cause a relayout flicker and a lifecycle
+        // crash when the sheet is opened while the reader is being resumed.
+        if (getDialog() instanceof BottomSheetDialog && getView() != null) {
+            getView().post(() -> {
+                if (!isAdded() || !(getDialog() instanceof BottomSheetDialog)) return;
+                BottomSheetBehavior<?> behavior = ((BottomSheetDialog) getDialog()).getBehavior();
+                behavior.setSkipCollapsed(true);
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            });
         }
     }
 
     private ReaderSettings current() {
-        return vm.getSettings().getValue().copy();
+        ReaderSettings settings = vm.getSettings().getValue();
+        return settings == null ? ReaderSettings.defaults() : settings.copy();
     }
 
     private void commit(ReaderSettings n) {

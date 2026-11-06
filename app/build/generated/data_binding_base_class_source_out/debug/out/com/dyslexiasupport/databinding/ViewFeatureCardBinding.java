@@ -4,6 +4,8 @@ package com.dyslexiasupport.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -20,7 +22,16 @@ public final class ViewFeatureCardBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ImageView featureArrow;
+
+  @NonNull
   public final TextView featureEmoji;
+
+  @NonNull
+  public final FrameLayout featureIconContainer;
+
+  @NonNull
+  public final ImageView featureImage;
 
   @NonNull
   public final TextView featureSubtitle;
@@ -28,10 +39,15 @@ public final class ViewFeatureCardBinding implements ViewBinding {
   @NonNull
   public final TextView featureTitle;
 
-  private ViewFeatureCardBinding(@NonNull LinearLayout rootView, @NonNull TextView featureEmoji,
-      @NonNull TextView featureSubtitle, @NonNull TextView featureTitle) {
+  private ViewFeatureCardBinding(@NonNull LinearLayout rootView, @NonNull ImageView featureArrow,
+      @NonNull TextView featureEmoji, @NonNull FrameLayout featureIconContainer,
+      @NonNull ImageView featureImage, @NonNull TextView featureSubtitle,
+      @NonNull TextView featureTitle) {
     this.rootView = rootView;
+    this.featureArrow = featureArrow;
     this.featureEmoji = featureEmoji;
+    this.featureIconContainer = featureIconContainer;
+    this.featureImage = featureImage;
     this.featureSubtitle = featureSubtitle;
     this.featureTitle = featureTitle;
   }
@@ -63,9 +79,27 @@ public final class ViewFeatureCardBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.featureArrow;
+      ImageView featureArrow = ViewBindings.findChildViewById(rootView, id);
+      if (featureArrow == null) {
+        break missingId;
+      }
+
       id = R.id.featureEmoji;
       TextView featureEmoji = ViewBindings.findChildViewById(rootView, id);
       if (featureEmoji == null) {
+        break missingId;
+      }
+
+      id = R.id.featureIconContainer;
+      FrameLayout featureIconContainer = ViewBindings.findChildViewById(rootView, id);
+      if (featureIconContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.featureImage;
+      ImageView featureImage = ViewBindings.findChildViewById(rootView, id);
+      if (featureImage == null) {
         break missingId;
       }
 
@@ -81,8 +115,8 @@ public final class ViewFeatureCardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ViewFeatureCardBinding((LinearLayout) rootView, featureEmoji, featureSubtitle,
-          featureTitle);
+      return new ViewFeatureCardBinding((LinearLayout) rootView, featureArrow, featureEmoji,
+          featureIconContainer, featureImage, featureSubtitle, featureTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

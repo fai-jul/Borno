@@ -1,16 +1,72 @@
 <resources>
-    <string name="app_name">Dyslexia Support</string>
-
+    <string name="app_name">Borno</string>
+    <string name="action_next">Next</string>
+    <string name="action_toggle_theme">Toggle light and dark mode</string>
+    <string name="profile_theme_title">Appearance</string>
+    <string name="profile_theme_subtitle">Choose a comfortable theme for the app.</string>
+    <string name="profile_theme_dark">Dark</string>
     <!-- Home -->
     <string name="home_greeting">Hello! Ready to read?</string>
-    <string name="home_greeting_name">Hello, %1$s!</string>
-    <string name="home_subtitle">Pick something to start</string>
+    <string name="home_greeting_name">Hi, %1$s! 👋</string>
+    <string name="home_subtitle">Let\'s learn something new today!</string>
+    <string name="home_notifications">Notifications</string>
+    <string name="home_menu">Open menu</string>
+    <string name="home_menu_progress">Progress</string>
+    <string name="home_menu_profile">Profile and settings</string>
+    <string name="home_menu_dashboard">Learner dashboard</string>
+    <string name="home_menu_logout_confirm">Are you sure you want to log out?</string>
+    <string name="home_streak_title">You\'re on a 5 day streak! 🔥</string>
+    <string name="home_streak_title_dynamic">You\'re on a %1$d day streak! 🔥</string>
+    <string name="home_streak_start">Start your learning streak! 🔥</string>
+    <string name="home_day_streak">day streak</string>
+    <string name="home_streak_encouragement">You\'re on fire! 🔥 Keep going!</string>
+    <string name="home_streak_star">Streak milestone star</string>
+    <string name="reader_previous_sentence">Previous sentence</string>
+    <string name="reader_next_sentence">Next sentence</string>
+    <string name="home_plan_percent">%1$d%%</string>
+    <string name="home_continue_learning">Continue learning</string>
+    <string name="home_continue_story">Animals Around Us</string>
+    <string name="home_badges">Badges</string>
+    <string name="home_see_all">See all</string>
+    <string name="badge_first_lesson">First Lesson</string>
+    <string name="badge_streak">5 Day Streak</string>
+    <string name="badge_math_star">Math Star</string>
+    <string name="badge_curious_mind">Curious Mind</string>
+    <string name="badge_bookworm">Bookworm</string>
+    <string name="badge_focus">Focused Reader</string>
+    <string name="badge_rising_star">Rising Star</string>
+    <string name="badge_goal_keeper">Goal Keeper</string>
+    <string name="badge_earned">✓ %1$s</string>
+    <string name="badge_locked">🔒 %1$s</string>
+    <string name="reader_progress_placeholder">3/5</string>
+    <string name="home_toolkit_label">Quick tools</string>
+    <string name="home_plan_label">Your reading plan</string>
+    <string name="home_plan_title_read">Continue reading</string>
+    <string name="home_plan_title_practice">Practice recommendation</string>
+    <string name="home_plan_title_words">Review one new word</string>
+    <string name="home_plan_title_complete">Your plan is complete</string>
+    <string name="home_plan_sub_read">The Clever Rabbit</string>
+    <string name="home_plan_sub_practice">Confusable letters</string>
+    <string name="home_plan_sub_words">Save a useful word from today\'s reading.</string>
+    <string name="home_plan_sub_complete">Nice work. Keep the rhythm going tomorrow.</string>
+    <string name="home_plan_steps">%1$d of 4 activities complete</string>
+    <string name="home_plan_step_read">Read %1$s</string>
+    <string name="home_plan_step_practice">Practice %1$s</string>
+    <string name="home_plan_step_words">Words %1$s</string>
+    <string name="home_plan_done">Done</string>
+    <string name="home_plan_next">Start now</string>
+    <string name="home_plan_continue">Continue reading</string>
+    <string name="home_continue_topic_meta">%1$s · %2$s</string>
     <string name="card_read_title">Read</string>
     <string name="card_read_sub">Easy reading, your way</string>
     <string name="card_practice_title">Practice</string>
     <string name="card_practice_sub">Fun letter and word games</string>
     <string name="card_words_title">My Words</string>
     <string name="card_words_sub">Words you saved</string>
+    <string name="vocabulary_flashcards">Word cards</string>
+    <string name="vocabulary_next">Next card</string>
+    <string name="vocabulary_example">I can read the word “%1$s”.</string>
+    <string name="vocabulary_empty">Add a word before starting cards.</string>
     <string name="card_scan_title">Scan</string>
     <string name="card_scan_sub">Read text from a page</string>
     <string name="card_ask_title">Ask Assistant</string>
@@ -31,15 +87,16 @@
     <!-- Navigation -->
     <string name="nav_home">Home</string>
     <string name="nav_read">Read</string>
+    <string name="nav_explore">Explore</string>
     <string name="nav_practice">Practice</string>
     <string name="nav_progress">Progress</string>
+    <string name="nav_rewards">Rewards</string>
     <string name="nav_profile">Me</string>
 
     <!-- Login -->
-    <string name="login_title">Welcome back</string>
-    <string name="login_subtitle">Log in to continue</string>
-    <string name="action_login">Log in</string>
-    <string name="action_guest">Continue as guest</string>
+    <string name="login_title">Log in ✨</string>
+    <string name="login_subtitle">Welcome back! Please enter your details.</string>
+    <string name="action_login">Log In</string>
     <string name="action_google_login">Sign in with Google</string>
     <string name="default_web_client_id">46634ad64663-dyslexia46634ad6app.apps.googleusercontent.com</string>
     <string name="login_forgot_password">Forgot password?</string>
@@ -47,20 +104,19 @@
     <string name="login_reset_title">Reset Password</string>
     <string name="login_reset_desc">Enter your account email to receive a password reset link.</string>
     <string name="login_google_failed">Google Sign-In failed. Please try again.</string>
-    <string name="login_no_account">New here? Create an account</string>
-    <string name="hint_email">Email</string>
-    <string name="hint_password">Password</string>
-    <string name="hint_name">Your name</string>
+    <string name="login_no_account">Don\'t have an account? Sign up</string>
+    <string name="hint_email">Enter your email</string>
+    <string name="hint_password">Enter your password</string>
+    <string name="hint_name">Enter your name</string>
 
     <!-- Register -->
-    <string name="register_title">Create your account</string>
-    <string name="register_subtitle">It takes less than a minute</string>
-    <string name="action_create_account">Create account</string>
+    <string name="register_title">Create an account ✨</string>
+    <string name="register_subtitle">Welcome! Please enter your details.</string>
+    <string name="action_create_account">Sign Up</string>
     <string name="register_have_account">Already have an account? Log in</string>
     <string name="label_avatar">Pick your buddy</string>
     <string name="label_role">I am a…</string>
     <string name="role_child">Young learner</string>
-    <string name="role_learner">Teen or adult learner</string>
     <string name="role_parent">Parent</string>
     <string name="role_teacher">Teacher</string>
 
@@ -70,6 +126,15 @@
     <string name="error_password_short">At least 6 characters</string>
     <string name="error_email_taken">This email is already registered</string>
     <string name="error_login_failed">Email or password is wrong</string>
+    <string name="error_auth_too_many_requests">Too many attempts. Please wait and try again.</string>
+    <string name="verification_title">Check your email ✨</string>
+    <string name="verification_subtitle">We sent a verification link to %1$s</string>
+    <string name="verification_check_hint">Open the email and tap the verification link.</string>
+    <string name="verification_check_button">I verified my email</string>
+    <string name="verification_resend">Resend verification email</string>
+    <string name="verification_sent">Verification email sent.</string>
+    <string name="verification_required">Please verify your email before logging in.</string>
+    <string name="verification_failed">We could not verify your email yet.</string>
 
     <!-- Profile -->
     <string name="profile_language">Language</string>
@@ -108,4 +173,49 @@
     <!-- Low-End Device Mode -->
     <string name="low_end_title">Low-End Device Mode</string>
     <string name="low_end_desc">Reduces heavy animations and memory usage for smooth performance on entry-level phones.</string>
+
+    <!-- Role Based Dashboard Extensions -->
+    <string name="role_parent_dashboard">Parent Dashboard</string>
+    <string name="role_teacher_dashboard">Teacher Classroom Hub</string>
+    <string name="btn_view_child_progress">📊 View Child Progress</string>
+    <string name="btn_class_report_pdf">📄 Generate Class Report PDF</string>
+    <string name="btn_assign_nctb">📖 Assign NCTB Lesson</string>
+    <string name="profile_assessment">Take onboarding reading check</string>
+    <string name="profile_controls_title">Home practice controls</string>
+    <string name="profile_daily_goal_hint">Daily goal</string>
+    <string name="profile_goal_minutes">Minutes</string>
+    <string name="profile_goal_exercises">Exercises</string>
+    <string name="profile_assistant_enabled">Enable Bangla reading assistant</string>
+    <string name="profile_reading_only">Reading-only mode</string>
+    <string name="profile_goal_saved">Daily practice goal saved</string>
+    <string name="profile_assistant_disabled">The reading assistant is disabled by the parent.</string>
+    <string name="assessment_title">A quick reading check</string>
+    <string name="assessment_confusion">Which letters or symbols feel easy to confuse?</string>
+    <string name="assessment_decoding">Try reading a new word aloud. When you are ready, continue.</string>
+    <string name="assessment_reading">Read the short passage at your comfortable pace. Tap continue when finished.</string>
+    <string name="assessment_accuracy">How accurate did your reading feel today?</string>
+    <string name="assessment_start_reading">Start reading</string>
+    <string name="assessment_continue">Continue</string>
+    <string name="comprehension_title">Quick reading check</string>
+    <string name="comprehension_result">You got %1$d of %2$d questions right. Keep going!</string>
+    <string name="parent_dashboard_title">Learner dashboard</string>
+    <string name="parent_dashboard_subtitle">Weekly reading, practice, vocabulary, and recent struggles.</string>
+    <string name="parent_dashboard_empty">No linked learners yet.</string>
+    <string name="parent_dashboard_sign_in">Sign in to view linked learners.</string>
+    <string name="parent_dashboard_load_error">Could not load this learner right now.</string>
+    <string name="parent_dashboard_learner">%1$s</string>
+    <string name="parent_dashboard_metrics">Reading time · Exercise accuracy · Words learned · Recent struggles</string>
+    <string name="parent_dashboard_metrics_values">%1$d min reading · %2$d%% accuracy · %3$d words learned · Struggle: %4$s</string>
+    <string name="parent_dashboard_no_struggle">none yet</string>
+    <string name="parent_dashboard_practice">practice</string>
+    <string name="nctb_assigned">NCTB lesson assigned to all linked students</string>
+    <string name="parent_last_active">Last active: %1$s</string>
+    <string name="parent_last_active_unknown">Last active: not synced yet</string>
+    <string name="parent_share_pdf">PDF</string>
+    <string name="parent_show_qr">QR</string>
+    <string name="parent_mark_reviewed">Reviewed</string>
+    <string name="parent_qr_title">Link code for %1$s</string>
+    <string name="parent_recommendation_general">Encourage a short reading session today.</string>
+    <string name="parent_recommendation_weak">Try a short %1$s practice round together.</string>
+    <string name="teacher_dashboard_subtitle">Class activity, accuracy, weak areas, and student link QR codes.</string>
 </resources>

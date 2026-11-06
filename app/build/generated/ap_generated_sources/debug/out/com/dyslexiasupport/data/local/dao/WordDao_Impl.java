@@ -43,7 +43,7 @@ public final class WordDao_Impl implements WordDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `words` (`id`,`word`,`definition`,`language`,`syllables`,`isSaved`,`createdAt`) VALUES (nullif(?, 0),?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `words` (`id`,`word`,`definition`,`language`,`syllables`,`isSaved`,`createdAt`,`ownerId`) VALUES (nullif(?, 0),?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -73,6 +73,11 @@ public final class WordDao_Impl implements WordDao {
         final int _tmp = entity.isSaved ? 1 : 0;
         statement.bindLong(6, _tmp);
         statement.bindLong(7, entity.createdAt);
+        if (entity.ownerId == null) {
+          statement.bindNull(8);
+        } else {
+          statement.bindString(8, entity.ownerId);
+        }
       }
     };
     this.__deletionAdapterOfWordEntity = new EntityDeletionOrUpdateAdapter<WordEntity>(__db) {
@@ -92,7 +97,7 @@ public final class WordDao_Impl implements WordDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `words` SET `id` = ?,`word` = ?,`definition` = ?,`language` = ?,`syllables` = ?,`isSaved` = ?,`createdAt` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `words` SET `id` = ?,`word` = ?,`definition` = ?,`language` = ?,`syllables` = ?,`isSaved` = ?,`createdAt` = ?,`ownerId` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -122,14 +127,19 @@ public final class WordDao_Impl implements WordDao {
         final int _tmp = entity.isSaved ? 1 : 0;
         statement.bindLong(6, _tmp);
         statement.bindLong(7, entity.createdAt);
-        statement.bindLong(8, entity.id);
+        if (entity.ownerId == null) {
+          statement.bindNull(8);
+        } else {
+          statement.bindString(8, entity.ownerId);
+        }
+        statement.bindLong(9, entity.id);
       }
     };
     this.__preparedStmtOfDeleteByIdSync = new SharedSQLiteStatement(__db) {
       @Override
       @NonNull
       public String createQuery() {
-        final String _query = "DELETE FROM words WHERE id = ?";
+        final String _query = "DELETE FROM words WHERE id = ? AND ownerId = ?";
         return _query;
       }
     };
@@ -185,11 +195,17 @@ public final class WordDao_Impl implements WordDao {
   }
 
   @Override
-  public int deleteByIdSync(final long id) {
+  public int deleteByIdSync(final long id, final String ownerId) {
     __db.assertNotSuspendingTransaction();
     final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteByIdSync.acquire();
     int _argIndex = 1;
     _stmt.bindLong(_argIndex, id);
+    _argIndex = 2;
+    if (ownerId == null) {
+      _stmt.bindNull(_argIndex);
+    } else {
+      _stmt.bindString(_argIndex, ownerId);
+    }
     try {
       __db.beginTransaction();
       try {
@@ -205,148 +221,172 @@ public final class WordDao_Impl implements WordDao {
   }
 
   @Override
-  public LiveData<List<WordEntity>> getAllWords() {
-    final String _sql = "SELECT * FROM words ORDER BY id DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return __db.getInvalidationTracker().createLiveData(new String[] {"words"}, false, new Callable<List<WordEntity>>() {
-      @Override
-      @Nullable
-      public List<WordEntity> call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfWord = CursorUtil.getColumnIndexOrThrow(_cursor, "word");
-          final int _cursorIndexOfDefinition = CursorUtil.getColumnIndexOrThrow(_cursor, "definition");
-          final int _cursorIndexOfLanguage = CursorUtil.getColumnIndexOrThrow(_cursor, "language");
-          final int _cursorIndexOfSyllables = CursorUtil.getColumnIndexOrThrow(_cursor, "syllables");
-          final int _cursorIndexOfIsSaved = CursorUtil.getColumnIndexOrThrow(_cursor, "isSaved");
-          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
-          final List<WordEntity> _result = new ArrayList<WordEntity>(_cursor.getCount());
-          while (_cursor.moveToNext()) {
-            final WordEntity _item;
-            final String _tmpWord;
-            if (_cursor.isNull(_cursorIndexOfWord)) {
-              _tmpWord = null;
-            } else {
-              _tmpWord = _cursor.getString(_cursorIndexOfWord);
-            }
-            final String _tmpDefinition;
-            if (_cursor.isNull(_cursorIndexOfDefinition)) {
-              _tmpDefinition = null;
-            } else {
-              _tmpDefinition = _cursor.getString(_cursorIndexOfDefinition);
-            }
-            final String _tmpLanguage;
-            if (_cursor.isNull(_cursorIndexOfLanguage)) {
-              _tmpLanguage = null;
-            } else {
-              _tmpLanguage = _cursor.getString(_cursorIndexOfLanguage);
-            }
-            final String _tmpSyllables;
-            if (_cursor.isNull(_cursorIndexOfSyllables)) {
-              _tmpSyllables = null;
-            } else {
-              _tmpSyllables = _cursor.getString(_cursorIndexOfSyllables);
-            }
-            final boolean _tmpIsSaved;
-            final int _tmp;
-            _tmp = _cursor.getInt(_cursorIndexOfIsSaved);
-            _tmpIsSaved = _tmp != 0;
-            final long _tmpCreatedAt;
-            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
-            _item = new WordEntity(_tmpWord,_tmpDefinition,_tmpLanguage,_tmpSyllables,_tmpIsSaved,_tmpCreatedAt);
-            _item.id = _cursor.getLong(_cursorIndexOfId);
-            _result.add(_item);
-          }
-          return _result;
-        } finally {
-          _cursor.close();
-        }
-      }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
-      }
-    });
-  }
-
-  @Override
-  public LiveData<List<WordEntity>> getSavedWords() {
-    final String _sql = "SELECT * FROM words WHERE isSaved = 1 ORDER BY id DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return __db.getInvalidationTracker().createLiveData(new String[] {"words"}, false, new Callable<List<WordEntity>>() {
-      @Override
-      @Nullable
-      public List<WordEntity> call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfWord = CursorUtil.getColumnIndexOrThrow(_cursor, "word");
-          final int _cursorIndexOfDefinition = CursorUtil.getColumnIndexOrThrow(_cursor, "definition");
-          final int _cursorIndexOfLanguage = CursorUtil.getColumnIndexOrThrow(_cursor, "language");
-          final int _cursorIndexOfSyllables = CursorUtil.getColumnIndexOrThrow(_cursor, "syllables");
-          final int _cursorIndexOfIsSaved = CursorUtil.getColumnIndexOrThrow(_cursor, "isSaved");
-          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
-          final List<WordEntity> _result = new ArrayList<WordEntity>(_cursor.getCount());
-          while (_cursor.moveToNext()) {
-            final WordEntity _item;
-            final String _tmpWord;
-            if (_cursor.isNull(_cursorIndexOfWord)) {
-              _tmpWord = null;
-            } else {
-              _tmpWord = _cursor.getString(_cursorIndexOfWord);
-            }
-            final String _tmpDefinition;
-            if (_cursor.isNull(_cursorIndexOfDefinition)) {
-              _tmpDefinition = null;
-            } else {
-              _tmpDefinition = _cursor.getString(_cursorIndexOfDefinition);
-            }
-            final String _tmpLanguage;
-            if (_cursor.isNull(_cursorIndexOfLanguage)) {
-              _tmpLanguage = null;
-            } else {
-              _tmpLanguage = _cursor.getString(_cursorIndexOfLanguage);
-            }
-            final String _tmpSyllables;
-            if (_cursor.isNull(_cursorIndexOfSyllables)) {
-              _tmpSyllables = null;
-            } else {
-              _tmpSyllables = _cursor.getString(_cursorIndexOfSyllables);
-            }
-            final boolean _tmpIsSaved;
-            final int _tmp;
-            _tmp = _cursor.getInt(_cursorIndexOfIsSaved);
-            _tmpIsSaved = _tmp != 0;
-            final long _tmpCreatedAt;
-            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
-            _item = new WordEntity(_tmpWord,_tmpDefinition,_tmpLanguage,_tmpSyllables,_tmpIsSaved,_tmpCreatedAt);
-            _item.id = _cursor.getLong(_cursorIndexOfId);
-            _result.add(_item);
-          }
-          return _result;
-        } finally {
-          _cursor.close();
-        }
-      }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
-      }
-    });
-  }
-
-  @Override
-  public LiveData<List<WordEntity>> searchWords(final String query) {
-    final String _sql = "SELECT * FROM words WHERE word LIKE '%' || ? || '%' OR definition LIKE '%' || ? || '%' ORDER BY id DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
+  public LiveData<List<WordEntity>> getAllWords(final String ownerId) {
+    final String _sql = "SELECT * FROM words WHERE ownerId = ? OR ownerId = 'shared' ORDER BY id DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
-    if (query == null) {
+    if (ownerId == null) {
       _statement.bindNull(_argIndex);
     } else {
-      _statement.bindString(_argIndex, query);
+      _statement.bindString(_argIndex, ownerId);
+    }
+    return __db.getInvalidationTracker().createLiveData(new String[] {"words"}, false, new Callable<List<WordEntity>>() {
+      @Override
+      @Nullable
+      public List<WordEntity> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfWord = CursorUtil.getColumnIndexOrThrow(_cursor, "word");
+          final int _cursorIndexOfDefinition = CursorUtil.getColumnIndexOrThrow(_cursor, "definition");
+          final int _cursorIndexOfLanguage = CursorUtil.getColumnIndexOrThrow(_cursor, "language");
+          final int _cursorIndexOfSyllables = CursorUtil.getColumnIndexOrThrow(_cursor, "syllables");
+          final int _cursorIndexOfIsSaved = CursorUtil.getColumnIndexOrThrow(_cursor, "isSaved");
+          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+          final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
+          final List<WordEntity> _result = new ArrayList<WordEntity>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final WordEntity _item;
+            final String _tmpWord;
+            if (_cursor.isNull(_cursorIndexOfWord)) {
+              _tmpWord = null;
+            } else {
+              _tmpWord = _cursor.getString(_cursorIndexOfWord);
+            }
+            final String _tmpDefinition;
+            if (_cursor.isNull(_cursorIndexOfDefinition)) {
+              _tmpDefinition = null;
+            } else {
+              _tmpDefinition = _cursor.getString(_cursorIndexOfDefinition);
+            }
+            final String _tmpLanguage;
+            if (_cursor.isNull(_cursorIndexOfLanguage)) {
+              _tmpLanguage = null;
+            } else {
+              _tmpLanguage = _cursor.getString(_cursorIndexOfLanguage);
+            }
+            final String _tmpSyllables;
+            if (_cursor.isNull(_cursorIndexOfSyllables)) {
+              _tmpSyllables = null;
+            } else {
+              _tmpSyllables = _cursor.getString(_cursorIndexOfSyllables);
+            }
+            final boolean _tmpIsSaved;
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfIsSaved);
+            _tmpIsSaved = _tmp != 0;
+            final long _tmpCreatedAt;
+            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
+            _item = new WordEntity(_tmpWord,_tmpDefinition,_tmpLanguage,_tmpSyllables,_tmpIsSaved,_tmpCreatedAt);
+            _item.id = _cursor.getLong(_cursorIndexOfId);
+            if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+              _item.ownerId = null;
+            } else {
+              _item.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+            }
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public LiveData<List<WordEntity>> getSavedWords(final String ownerId) {
+    final String _sql = "SELECT * FROM words WHERE isSaved = 1 AND (ownerId = ? OR ownerId = 'shared') ORDER BY id DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
+    return __db.getInvalidationTracker().createLiveData(new String[] {"words"}, false, new Callable<List<WordEntity>>() {
+      @Override
+      @Nullable
+      public List<WordEntity> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfWord = CursorUtil.getColumnIndexOrThrow(_cursor, "word");
+          final int _cursorIndexOfDefinition = CursorUtil.getColumnIndexOrThrow(_cursor, "definition");
+          final int _cursorIndexOfLanguage = CursorUtil.getColumnIndexOrThrow(_cursor, "language");
+          final int _cursorIndexOfSyllables = CursorUtil.getColumnIndexOrThrow(_cursor, "syllables");
+          final int _cursorIndexOfIsSaved = CursorUtil.getColumnIndexOrThrow(_cursor, "isSaved");
+          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+          final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
+          final List<WordEntity> _result = new ArrayList<WordEntity>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final WordEntity _item;
+            final String _tmpWord;
+            if (_cursor.isNull(_cursorIndexOfWord)) {
+              _tmpWord = null;
+            } else {
+              _tmpWord = _cursor.getString(_cursorIndexOfWord);
+            }
+            final String _tmpDefinition;
+            if (_cursor.isNull(_cursorIndexOfDefinition)) {
+              _tmpDefinition = null;
+            } else {
+              _tmpDefinition = _cursor.getString(_cursorIndexOfDefinition);
+            }
+            final String _tmpLanguage;
+            if (_cursor.isNull(_cursorIndexOfLanguage)) {
+              _tmpLanguage = null;
+            } else {
+              _tmpLanguage = _cursor.getString(_cursorIndexOfLanguage);
+            }
+            final String _tmpSyllables;
+            if (_cursor.isNull(_cursorIndexOfSyllables)) {
+              _tmpSyllables = null;
+            } else {
+              _tmpSyllables = _cursor.getString(_cursorIndexOfSyllables);
+            }
+            final boolean _tmpIsSaved;
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfIsSaved);
+            _tmpIsSaved = _tmp != 0;
+            final long _tmpCreatedAt;
+            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
+            _item = new WordEntity(_tmpWord,_tmpDefinition,_tmpLanguage,_tmpSyllables,_tmpIsSaved,_tmpCreatedAt);
+            _item.id = _cursor.getLong(_cursorIndexOfId);
+            if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+              _item.ownerId = null;
+            } else {
+              _item.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+            }
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public LiveData<List<WordEntity>> searchWords(final String query, final String ownerId) {
+    final String _sql = "SELECT * FROM words WHERE (ownerId = ? OR ownerId = 'shared') AND (word LIKE '%' || ? || '%' OR definition LIKE '%' || ? || '%') ORDER BY id DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 3);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
     }
     _argIndex = 2;
     if (query == null) {
@@ -354,6 +394,12 @@ public final class WordDao_Impl implements WordDao {
     } else {
       _statement.bindString(_argIndex, query);
     }
+    _argIndex = 3;
+    if (query == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, query);
+    }
     return __db.getInvalidationTracker().createLiveData(new String[] {"words"}, false, new Callable<List<WordEntity>>() {
       @Override
       @Nullable
@@ -367,6 +413,7 @@ public final class WordDao_Impl implements WordDao {
           final int _cursorIndexOfSyllables = CursorUtil.getColumnIndexOrThrow(_cursor, "syllables");
           final int _cursorIndexOfIsSaved = CursorUtil.getColumnIndexOrThrow(_cursor, "isSaved");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+          final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
           final List<WordEntity> _result = new ArrayList<WordEntity>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final WordEntity _item;
@@ -402,6 +449,11 @@ public final class WordDao_Impl implements WordDao {
             _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
             _item = new WordEntity(_tmpWord,_tmpDefinition,_tmpLanguage,_tmpSyllables,_tmpIsSaved,_tmpCreatedAt);
             _item.id = _cursor.getLong(_cursorIndexOfId);
+            if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+              _item.ownerId = null;
+            } else {
+              _item.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+            }
             _result.add(_item);
           }
           return _result;
@@ -418,9 +470,15 @@ public final class WordDao_Impl implements WordDao {
   }
 
   @Override
-  public int getWordCount() {
-    final String _sql = "SELECT COUNT(*) FROM words";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public int getWordCount(final String ownerId) {
+    final String _sql = "SELECT COUNT(*) FROM words WHERE ownerId = ? OR ownerId = 'shared'";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
@@ -438,9 +496,15 @@ public final class WordDao_Impl implements WordDao {
   }
 
   @Override
-  public List<WordEntity> getAllWordsSync() {
-    final String _sql = "SELECT * FROM words ORDER BY id DESC";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public List<WordEntity> getAllWordsSync(final String ownerId) {
+    final String _sql = "SELECT * FROM words WHERE ownerId = ? ORDER BY id DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
@@ -451,6 +515,7 @@ public final class WordDao_Impl implements WordDao {
       final int _cursorIndexOfSyllables = CursorUtil.getColumnIndexOrThrow(_cursor, "syllables");
       final int _cursorIndexOfIsSaved = CursorUtil.getColumnIndexOrThrow(_cursor, "isSaved");
       final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+      final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
       final List<WordEntity> _result = new ArrayList<WordEntity>(_cursor.getCount());
       while (_cursor.moveToNext()) {
         final WordEntity _item;
@@ -486,6 +551,11 @@ public final class WordDao_Impl implements WordDao {
         _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
         _item = new WordEntity(_tmpWord,_tmpDefinition,_tmpLanguage,_tmpSyllables,_tmpIsSaved,_tmpCreatedAt);
         _item.id = _cursor.getLong(_cursorIndexOfId);
+        if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+          _item.ownerId = null;
+        } else {
+          _item.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+        }
         _result.add(_item);
       }
       return _result;
@@ -496,11 +566,17 @@ public final class WordDao_Impl implements WordDao {
   }
 
   @Override
-  public WordEntity getWordByIdSync(final long id) {
-    final String _sql = "SELECT * FROM words WHERE id = ? LIMIT 1";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+  public WordEntity getWordByIdSync(final long id, final String ownerId) {
+    final String _sql = "SELECT * FROM words WHERE id = ? AND (ownerId = ? OR ownerId = 'shared') LIMIT 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, id);
+    _argIndex = 2;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
@@ -511,6 +587,7 @@ public final class WordDao_Impl implements WordDao {
       final int _cursorIndexOfSyllables = CursorUtil.getColumnIndexOrThrow(_cursor, "syllables");
       final int _cursorIndexOfIsSaved = CursorUtil.getColumnIndexOrThrow(_cursor, "isSaved");
       final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+      final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
       final WordEntity _result;
       if (_cursor.moveToFirst()) {
         final String _tmpWord;
@@ -545,6 +622,11 @@ public final class WordDao_Impl implements WordDao {
         _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
         _result = new WordEntity(_tmpWord,_tmpDefinition,_tmpLanguage,_tmpSyllables,_tmpIsSaved,_tmpCreatedAt);
         _result.id = _cursor.getLong(_cursorIndexOfId);
+        if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+          _result.ownerId = null;
+        } else {
+          _result.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+        }
       } else {
         _result = null;
       }
@@ -556,9 +638,15 @@ public final class WordDao_Impl implements WordDao {
   }
 
   @Override
-  public WordEntity getRandomWordSync() {
-    final String _sql = "SELECT * FROM words ORDER BY RANDOM() LIMIT 1";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public WordEntity getRandomWordSync(final String ownerId) {
+    final String _sql = "SELECT * FROM words WHERE ownerId = ? OR ownerId = 'shared' ORDER BY RANDOM() LIMIT 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (ownerId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, ownerId);
+    }
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
@@ -569,6 +657,7 @@ public final class WordDao_Impl implements WordDao {
       final int _cursorIndexOfSyllables = CursorUtil.getColumnIndexOrThrow(_cursor, "syllables");
       final int _cursorIndexOfIsSaved = CursorUtil.getColumnIndexOrThrow(_cursor, "isSaved");
       final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+      final int _cursorIndexOfOwnerId = CursorUtil.getColumnIndexOrThrow(_cursor, "ownerId");
       final WordEntity _result;
       if (_cursor.moveToFirst()) {
         final String _tmpWord;
@@ -603,6 +692,11 @@ public final class WordDao_Impl implements WordDao {
         _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
         _result = new WordEntity(_tmpWord,_tmpDefinition,_tmpLanguage,_tmpSyllables,_tmpIsSaved,_tmpCreatedAt);
         _result.id = _cursor.getLong(_cursorIndexOfId);
+        if (_cursor.isNull(_cursorIndexOfOwnerId)) {
+          _result.ownerId = null;
+        } else {
+          _result.ownerId = _cursor.getString(_cursorIndexOfOwnerId);
+        }
       } else {
         _result = null;
       }

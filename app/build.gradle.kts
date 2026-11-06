@@ -87,6 +87,7 @@ dependencies {
 
     // Guava / ListenableFuture for CameraX
     implementation("com.google.guava:guava:31.1-android")
+    implementation("com.google.zxing:core:3.5.3")
 
     // Unit Testing
     testImplementation("junit:junit:4.13.2")

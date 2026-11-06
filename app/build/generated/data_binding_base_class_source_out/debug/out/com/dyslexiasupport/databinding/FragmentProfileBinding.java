@@ -17,6 +17,7 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.materialswitch.MaterialSwitch;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import java.lang.NullPointerException;
@@ -31,6 +32,15 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final TextView avatar;
 
   @NonNull
+  public final MaterialButton btnAssessment;
+
+  @NonNull
+  public final MaterialButton btnAssignNctb;
+
+  @NonNull
+  public final MaterialButton btnClassReportPdf;
+
+  @NonNull
   public final MaterialButton btnCopyCode;
 
   @NonNull
@@ -40,10 +50,19 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final MaterialButton btnLogout;
 
   @NonNull
+  public final MaterialButton btnShare;
+
+  @NonNull
   public final MaterialButton btnSyncNow;
 
   @NonNull
+  public final MaterialButton btnViewChildProgress;
+
+  @NonNull
   public final MaterialCardView cardLinkCode;
+
+  @NonNull
+  public final MaterialCardView cardPracticeControls;
 
   @NonNull
   public final Chip chipBangla;
@@ -52,10 +71,25 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final Chip chipEnglish;
 
   @NonNull
+  public final Chip chipGoalExercises;
+
+  @NonNull
+  public final Chip chipGoalMinutes;
+
+  @NonNull
+  public final ChipGroup dailyGoalModeGroup;
+
+  @NonNull
+  public final TextInputEditText editDailyGoal;
+
+  @NonNull
   public final TextInputEditText editLinkCode;
 
   @NonNull
   public final TextView guestNote;
+
+  @NonNull
+  public final TextInputLayout inputLayoutDailyGoal;
 
   @NonNull
   public final TextInputLayout inputLayoutLinkCode;
@@ -70,13 +104,25 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final LinearLayout layoutParentLink;
 
   @NonNull
+  public final LinearLayout layoutTeacherActions;
+
+  @NonNull
   public final TextView name;
 
   @NonNull
   public final TextView role;
 
   @NonNull
+  public final MaterialSwitch switchAssistant;
+
+  @NonNull
   public final MaterialSwitch switchLowEnd;
+
+  @NonNull
+  public final MaterialSwitch switchReadingOnly;
+
+  @NonNull
+  public final SwitchMaterial switchTheme;
 
   @NonNull
   public final TextView textLinkCode;
@@ -88,33 +134,55 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final TextView textSyncStatus;
 
   private FragmentProfileBinding(@NonNull ScrollView rootView, @NonNull TextView avatar,
-      @NonNull MaterialButton btnCopyCode, @NonNull MaterialButton btnLinkStudent,
-      @NonNull MaterialButton btnLogout, @NonNull MaterialButton btnSyncNow,
-      @NonNull MaterialCardView cardLinkCode, @NonNull Chip chipBangla, @NonNull Chip chipEnglish,
+      @NonNull MaterialButton btnAssessment, @NonNull MaterialButton btnAssignNctb,
+      @NonNull MaterialButton btnClassReportPdf, @NonNull MaterialButton btnCopyCode,
+      @NonNull MaterialButton btnLinkStudent, @NonNull MaterialButton btnLogout,
+      @NonNull MaterialButton btnShare, @NonNull MaterialButton btnSyncNow,
+      @NonNull MaterialButton btnViewChildProgress, @NonNull MaterialCardView cardLinkCode,
+      @NonNull MaterialCardView cardPracticeControls, @NonNull Chip chipBangla,
+      @NonNull Chip chipEnglish, @NonNull Chip chipGoalExercises, @NonNull Chip chipGoalMinutes,
+      @NonNull ChipGroup dailyGoalModeGroup, @NonNull TextInputEditText editDailyGoal,
       @NonNull TextInputEditText editLinkCode, @NonNull TextView guestNote,
-      @NonNull TextInputLayout inputLayoutLinkCode, @NonNull ChipGroup langGroup,
-      @NonNull LinearLayout layoutLearnerCode, @NonNull LinearLayout layoutParentLink,
-      @NonNull TextView name, @NonNull TextView role, @NonNull MaterialSwitch switchLowEnd,
-      @NonNull TextView textLinkCode, @NonNull TextView textLinkedCount,
-      @NonNull TextView textSyncStatus) {
+      @NonNull TextInputLayout inputLayoutDailyGoal, @NonNull TextInputLayout inputLayoutLinkCode,
+      @NonNull ChipGroup langGroup, @NonNull LinearLayout layoutLearnerCode,
+      @NonNull LinearLayout layoutParentLink, @NonNull LinearLayout layoutTeacherActions,
+      @NonNull TextView name, @NonNull TextView role, @NonNull MaterialSwitch switchAssistant,
+      @NonNull MaterialSwitch switchLowEnd, @NonNull MaterialSwitch switchReadingOnly,
+      @NonNull SwitchMaterial switchTheme, @NonNull TextView textLinkCode,
+      @NonNull TextView textLinkedCount, @NonNull TextView textSyncStatus) {
     this.rootView = rootView;
     this.avatar = avatar;
+    this.btnAssessment = btnAssessment;
+    this.btnAssignNctb = btnAssignNctb;
+    this.btnClassReportPdf = btnClassReportPdf;
     this.btnCopyCode = btnCopyCode;
     this.btnLinkStudent = btnLinkStudent;
     this.btnLogout = btnLogout;
+    this.btnShare = btnShare;
     this.btnSyncNow = btnSyncNow;
+    this.btnViewChildProgress = btnViewChildProgress;
     this.cardLinkCode = cardLinkCode;
+    this.cardPracticeControls = cardPracticeControls;
     this.chipBangla = chipBangla;
     this.chipEnglish = chipEnglish;
+    this.chipGoalExercises = chipGoalExercises;
+    this.chipGoalMinutes = chipGoalMinutes;
+    this.dailyGoalModeGroup = dailyGoalModeGroup;
+    this.editDailyGoal = editDailyGoal;
     this.editLinkCode = editLinkCode;
     this.guestNote = guestNote;
+    this.inputLayoutDailyGoal = inputLayoutDailyGoal;
     this.inputLayoutLinkCode = inputLayoutLinkCode;
     this.langGroup = langGroup;
     this.layoutLearnerCode = layoutLearnerCode;
     this.layoutParentLink = layoutParentLink;
+    this.layoutTeacherActions = layoutTeacherActions;
     this.name = name;
     this.role = role;
+    this.switchAssistant = switchAssistant;
     this.switchLowEnd = switchLowEnd;
+    this.switchReadingOnly = switchReadingOnly;
+    this.switchTheme = switchTheme;
     this.textLinkCode = textLinkCode;
     this.textLinkedCount = textLinkedCount;
     this.textSyncStatus = textSyncStatus;
@@ -153,6 +221,24 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnAssessment;
+      MaterialButton btnAssessment = ViewBindings.findChildViewById(rootView, id);
+      if (btnAssessment == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAssignNctb;
+      MaterialButton btnAssignNctb = ViewBindings.findChildViewById(rootView, id);
+      if (btnAssignNctb == null) {
+        break missingId;
+      }
+
+      id = R.id.btnClassReportPdf;
+      MaterialButton btnClassReportPdf = ViewBindings.findChildViewById(rootView, id);
+      if (btnClassReportPdf == null) {
+        break missingId;
+      }
+
       id = R.id.btnCopyCode;
       MaterialButton btnCopyCode = ViewBindings.findChildViewById(rootView, id);
       if (btnCopyCode == null) {
@@ -171,15 +257,33 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnShare;
+      MaterialButton btnShare = ViewBindings.findChildViewById(rootView, id);
+      if (btnShare == null) {
+        break missingId;
+      }
+
       id = R.id.btnSyncNow;
       MaterialButton btnSyncNow = ViewBindings.findChildViewById(rootView, id);
       if (btnSyncNow == null) {
         break missingId;
       }
 
+      id = R.id.btnViewChildProgress;
+      MaterialButton btnViewChildProgress = ViewBindings.findChildViewById(rootView, id);
+      if (btnViewChildProgress == null) {
+        break missingId;
+      }
+
       id = R.id.cardLinkCode;
       MaterialCardView cardLinkCode = ViewBindings.findChildViewById(rootView, id);
       if (cardLinkCode == null) {
+        break missingId;
+      }
+
+      id = R.id.cardPracticeControls;
+      MaterialCardView cardPracticeControls = ViewBindings.findChildViewById(rootView, id);
+      if (cardPracticeControls == null) {
         break missingId;
       }
 
@@ -195,6 +299,30 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.chipGoalExercises;
+      Chip chipGoalExercises = ViewBindings.findChildViewById(rootView, id);
+      if (chipGoalExercises == null) {
+        break missingId;
+      }
+
+      id = R.id.chipGoalMinutes;
+      Chip chipGoalMinutes = ViewBindings.findChildViewById(rootView, id);
+      if (chipGoalMinutes == null) {
+        break missingId;
+      }
+
+      id = R.id.dailyGoalModeGroup;
+      ChipGroup dailyGoalModeGroup = ViewBindings.findChildViewById(rootView, id);
+      if (dailyGoalModeGroup == null) {
+        break missingId;
+      }
+
+      id = R.id.editDailyGoal;
+      TextInputEditText editDailyGoal = ViewBindings.findChildViewById(rootView, id);
+      if (editDailyGoal == null) {
+        break missingId;
+      }
+
       id = R.id.editLinkCode;
       TextInputEditText editLinkCode = ViewBindings.findChildViewById(rootView, id);
       if (editLinkCode == null) {
@@ -204,6 +332,12 @@ public final class FragmentProfileBinding implements ViewBinding {
       id = R.id.guestNote;
       TextView guestNote = ViewBindings.findChildViewById(rootView, id);
       if (guestNote == null) {
+        break missingId;
+      }
+
+      id = R.id.inputLayoutDailyGoal;
+      TextInputLayout inputLayoutDailyGoal = ViewBindings.findChildViewById(rootView, id);
+      if (inputLayoutDailyGoal == null) {
         break missingId;
       }
 
@@ -231,6 +365,12 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layoutTeacherActions;
+      LinearLayout layoutTeacherActions = ViewBindings.findChildViewById(rootView, id);
+      if (layoutTeacherActions == null) {
+        break missingId;
+      }
+
       id = R.id.name;
       TextView name = ViewBindings.findChildViewById(rootView, id);
       if (name == null) {
@@ -243,9 +383,27 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.switchAssistant;
+      MaterialSwitch switchAssistant = ViewBindings.findChildViewById(rootView, id);
+      if (switchAssistant == null) {
+        break missingId;
+      }
+
       id = R.id.switchLowEnd;
       MaterialSwitch switchLowEnd = ViewBindings.findChildViewById(rootView, id);
       if (switchLowEnd == null) {
+        break missingId;
+      }
+
+      id = R.id.switchReadingOnly;
+      MaterialSwitch switchReadingOnly = ViewBindings.findChildViewById(rootView, id);
+      if (switchReadingOnly == null) {
+        break missingId;
+      }
+
+      id = R.id.switchTheme;
+      SwitchMaterial switchTheme = ViewBindings.findChildViewById(rootView, id);
+      if (switchTheme == null) {
         break missingId;
       }
 
@@ -267,10 +425,13 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentProfileBinding((ScrollView) rootView, avatar, btnCopyCode, btnLinkStudent,
-          btnLogout, btnSyncNow, cardLinkCode, chipBangla, chipEnglish, editLinkCode, guestNote,
-          inputLayoutLinkCode, langGroup, layoutLearnerCode, layoutParentLink, name, role,
-          switchLowEnd, textLinkCode, textLinkedCount, textSyncStatus);
+      return new FragmentProfileBinding((ScrollView) rootView, avatar, btnAssessment, btnAssignNctb,
+          btnClassReportPdf, btnCopyCode, btnLinkStudent, btnLogout, btnShare, btnSyncNow,
+          btnViewChildProgress, cardLinkCode, cardPracticeControls, chipBangla, chipEnglish,
+          chipGoalExercises, chipGoalMinutes, dailyGoalModeGroup, editDailyGoal, editLinkCode,
+          guestNote, inputLayoutDailyGoal, inputLayoutLinkCode, langGroup, layoutLearnerCode,
+          layoutParentLink, layoutTeacherActions, name, role, switchAssistant, switchLowEnd,
+          switchReadingOnly, switchTheme, textLinkCode, textLinkedCount, textSyncStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

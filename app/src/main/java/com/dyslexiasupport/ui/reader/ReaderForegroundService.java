@@ -14,6 +14,7 @@ import android.speech.tts.UtteranceProgressListener;
 import android.support.v4.media.session.MediaSessionCompat;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.media.app.NotificationCompat.MediaStyle;
 
@@ -45,6 +46,7 @@ public class ReaderForegroundService extends Service {
         void onStateChanged(boolean isPlaying, int sentenceIndex, float speedRate);
         void onSentenceHighlighted(int sentenceIndex, int startOffset, int endOffset);
         void onWordHighlighted(int wordStartOffset, int wordEndOffset);
+        default void onReadingFinished() { }
     }
 
     public class LocalBinder extends Binder {
@@ -64,6 +66,10 @@ public class ReaderForegroundService extends Service {
     private int currentSentenceIndex = 0;
     private boolean isPlaying = false;
     private float speedRate = 1.0f;
+    private long utteranceSequence;
+    private String activeUtteranceId;
+    private int resumeWordOffset;
+    private int spokenOffset;
 
     @Nullable
     private ReadAloudListener listener;
@@ -78,6 +84,9 @@ public class ReaderForegroundService extends Service {
             ttsReady = status == TextToSpeech.SUCCESS;
             if (ttsReady) {
                 setupTTSListener();
+                if (isPlaying) {
+                    speakCurrentSentence();
+                }
             }
         });
     }
@@ -137,12 +146,17 @@ public class ReaderForegroundService extends Service {
         }
         isPlaying = true;
         startForeground(NOTIFICATION_ID, buildNotification());
-        speakCurrentSentence();
+        speakCurrentSentence(resumeWordOffset);
         notifyState();
     }
 
     public void pause() {
+        if (tts != null && tts.isSpeaking()) {
+            // onRangeStart keeps this at the beginning of the currently spoken word.
+            resumeWordOffset = Math.max(0, resumeWordOffset);
+        }
         isPlaying = false;
+        activeUtteranceId = null;
         if (tts != null) {
             tts.stop();
         }
@@ -152,6 +166,7 @@ public class ReaderForegroundService extends Service {
 
     public void stopSelfService() {
         isPlaying = false;
+        activeUtteranceId = null;
         if (tts != null) {
             tts.stop();
         }
@@ -165,6 +180,7 @@ public class ReaderForegroundService extends Service {
     public void nextSentence() {
         if (currentSentenceIndex < sentences.size() - 1) {
             currentSentenceIndex++;
+            resumeWordOffset = 0;
             if (isPlaying) {
                 speakCurrentSentence();
             } else {
@@ -178,6 +194,7 @@ public class ReaderForegroundService extends Service {
     public void previousSentence() {
         if (currentSentenceIndex > 0) {
             currentSentenceIndex--;
+            resumeWordOffset = 0;
             if (isPlaying) {
                 speakCurrentSentence();
             } else {
@@ -193,10 +210,22 @@ public class ReaderForegroundService extends Service {
         if (ttsReady && tts != null) {
             tts.setSpeechRate(rate);
         }
+
         if (isPlaying) {
-            speakCurrentSentence();
+            speakCurrentSentence(resumeWordOffset);
         }
         notifyState();
+    }
+
+    /** Repeats one tapped word without changing the current sentence position. */
+    public void repeatWord(@NonNull String word) {
+        if (!ttsReady || tts == null || word.trim().isEmpty()) {
+            return;
+        }
+        boolean isBn = BanglaText.containsBangla(word);
+        tts.setLanguage(Locale.forLanguageTag(isBn ? "bn-BD" : "en-US"));
+        tts.setSpeechRate(speedRate);
+        tts.speak(word, TextToSpeech.QUEUE_FLUSH, null, "word_" + System.currentTimeMillis());
     }
 
     public float getSpeedRate() {
@@ -212,6 +241,10 @@ public class ReaderForegroundService extends Service {
     }
 
     private void speakCurrentSentence() {
+        speakCurrentSentence(0);
+    }
+
+    private void speakCurrentSentence(int startOffset) {
         if (!ttsReady || tts == null || currentSentenceIndex >= sentences.size()) {
             return;
         }
@@ -222,8 +255,12 @@ public class ReaderForegroundService extends Service {
         tts.setLanguage(locale);
         tts.setSpeechRate(speedRate);
 
-        String utteranceId = "sentence_" + currentSentenceIndex;
-        tts.speak(sentence.text, TextToSpeech.QUEUE_FLUSH, null, utteranceId);
+        String utteranceId = "sentence_" + currentSentenceIndex + "_" + (++utteranceSequence);
+        activeUtteranceId = utteranceId;
+        int safeOffset = Math.min(Math.max(0, startOffset), sentence.text.length());
+        spokenOffset = safeOffset;
+        resumeWordOffset = safeOffset;
+        tts.speak(sentence.text.substring(safeOffset), TextToSpeech.QUEUE_FLUSH, null, utteranceId);
         notifySentence();
     }
 
@@ -231,19 +268,24 @@ public class ReaderForegroundService extends Service {
         tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
             @Override
             public void onStart(String utteranceId) {
+                if (!utteranceId.equals(activeUtteranceId)) {
+                    return;
+                }
                 isPlaying = true;
                 notifyState();
             }
 
             @Override
             public void onDone(String utteranceId) {
-                if (isPlaying) {
+                if (utteranceId.equals(activeUtteranceId) && isPlaying) {
+                    resumeWordOffset = 0;
                     if (currentSentenceIndex < sentences.size() - 1) {
                         currentSentenceIndex++;
                         speakCurrentSentence();
                         startForeground(NOTIFICATION_ID, buildNotification());
                     } else {
                         isPlaying = false;
+                        if (listener != null) listener.onReadingFinished();
                         notifyState();
                         startForeground(NOTIFICATION_ID, buildNotification());
                     }
@@ -252,15 +294,21 @@ public class ReaderForegroundService extends Service {
 
             @Override
             public void onError(String utteranceId) {
-                isPlaying = false;
-                notifyState();
+                if (utteranceId.equals(activeUtteranceId)) {
+                    isPlaying = false;
+                    notifyState();
+                }
             }
 
             @Override
             public void onRangeStart(String utteranceId, int start, int end, int frame) {
-                if (listener != null && currentSentenceIndex < sentences.size()) {
+                if (utteranceId.equals(activeUtteranceId)
+                        && listener != null && currentSentenceIndex < sentences.size()) {
                     SentenceSplitter.Sentence s = sentences.get(currentSentenceIndex);
-                    listener.onWordHighlighted(s.start + start, s.start + end);
+                    resumeWordOffset = spokenOffset + start;
+                    listener.onWordHighlighted(
+                            s.start + resumeWordOffset,
+                            s.start + resumeWordOffset + (end - start));
                 }
             }
         });

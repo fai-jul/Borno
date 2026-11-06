@@ -3,138 +3,503 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ds_cream"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/ds_space_xl">
+        android:paddingStart="14dp"
+        android:paddingTop="18dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="@dimen/ds_space_xxl">
 
-        <TextView
-            android:id="@+id/greeting"
-            style="@style/Ds.Text.Display"
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginBottom="0dp">
+
+            <ImageButton
+                android:id="@+id/btnHomeMenu"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_home_menu_button"
+                android:contentDescription="@string/home_menu"
+                android:padding="12dp"
+                android:src="@drawable/ic_menu" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="154dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/greeting"
+                    style="@style/Ds.Text.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/ds_ink"
+                    android:textSize="24sp" />
+
+                <TextView
+                    style="@style/Ds.Text.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/home_subtitle"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="156dp"
+                android:layout_height="156dp"
+                android:layout_gravity="bottom|end"
+                android:adjustViewBounds="true"
+                android:importantForAccessibility="no"
+                android:scaleType="fitCenter"
+                android:src="@drawable/home_character"
+                android:translationY="-12dp" />
+        </FrameLayout>
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/ds_space_lg" />
+            android:layout_marginTop="4dp"
+            app:cardBackgroundColor="@color/ds_surface"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="1dp"
+            app:strokeColor="@color/ds_sand"
+            app:strokeWidth="1dp">
 
-        <TextView
-            style="@style/Ds.Text.Body"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/ds_space_sm"
-            android:text="@string/home_subtitle" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔥"
+                        android:textSize="32sp" />
+
+                    <TextView
+                        android:id="@+id/streakTitle"
+                        style="@style/Ds.Text.Display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/ds_mango"
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/Ds.Text.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/home_day_streak"
+                        android:textColor="@color/ds_mango"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/streakMon"
+                        style="@style/StreakDay">
+                        <TextView
+                            android:id="@+id/streakMonDot"
+                            style="@style/StreakDot"
+                            android:text="✓" />
+                        <TextView style="@style/StreakLabel" android:text="Su" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/streakTue"
+                        style="@style/StreakDay">
+                        <TextView
+                            android:id="@+id/streakTueDot"
+                            style="@style/StreakDot"
+                            android:text="✓" />
+                        <TextView style="@style/StreakLabel" android:text="Mo" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/streakWed"
+                        style="@style/StreakDay">
+                        <TextView
+                            android:id="@+id/streakWedDot"
+                            style="@style/StreakDot"
+                            android:text="✓" />
+                        <TextView style="@style/StreakLabel" android:text="Tu" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/streakThu"
+                        style="@style/StreakDay">
+                        <TextView
+                            android:id="@+id/streakThuDot"
+                            style="@style/StreakDot"
+                            android:text="✓" />
+                        <TextView style="@style/StreakLabel" android:text="We" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/streakFri"
+                        style="@style/StreakDay">
+                        <TextView
+                            android:id="@+id/streakFriDot"
+                            style="@style/StreakDotEmpty"
+                            android:text="" />
+                        <TextView style="@style/StreakLabel" android:text="Th" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/streakSat"
+                        style="@style/StreakDay">
+                        <TextView
+                            android:id="@+id/streakSatDot"
+                            style="@style/StreakDotEmpty"
+                            android:text="" />
+                        <TextView style="@style/StreakLabel" android:text="Fr" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/streakSun"
+                        style="@style/StreakDay">
+                        <TextView
+                            android:id="@+id/streakSunDot"
+                            style="@style/StreakDotEmpty"
+                            android:text="" />
+                        <TextView style="@style/StreakLabel" android:text="Sa" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/ds_space_xl"
+            android:layout_marginTop="14dp"
             android:baselineAligned="false"
             android:orientation="horizontal">
 
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardRead"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/ds_space_xs"
+                android:layout_height="138dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
-                app:featureAccent="@color/ds_primary"
-                app:featureEmoji="📖"
-                app:featureSubtitle="@string/card_read_sub"
+                app:featureAccent="@color/ds_plum"
+                app:featureImage="@drawable/read_character"
                 app:featureTitle="@string/card_read_title" />
 
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardPractice"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/ds_space_xs"
+                android:layout_height="138dp"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
-                app:featureAccent="@color/ds_mango"
-                app:featureEmoji="🎯"
-                app:featureSubtitle="@string/card_practice_sub"
+                app:featureAccent="@color/ds_leaf"
+                app:featureImage="@drawable/practice_character"
                 app:featureTitle="@string/card_practice_title" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:baselineAligned="false"
             android:orientation="horizontal">
 
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardWords"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/ds_space_xs"
+                android:layout_height="138dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
-                app:featureAccent="@color/ds_plum"
-                app:featureEmoji="⭐"
-                app:featureSubtitle="@string/card_words_sub"
+                app:featureAccent="@color/ds_coral"
+                app:featureImage="@drawable/words_character"
                 app:featureTitle="@string/card_words_title" />
 
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardScan"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/ds_space_xs"
+                android:layout_height="138dp"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
-                app:featureAccent="@color/ds_coral"
-                app:featureEmoji="📷"
-                app:featureSubtitle="@string/card_scan_sub"
+                app:featureAccent="@color/ds_mango"
+                app:featureImage="@drawable/scan_character"
                 app:featureTitle="@string/card_scan_title" />
         </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/planCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/ds_surface"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/continueLearningTitle"
+                        style="@style/Ds.Text.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/home_continue_learning"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/continueLearningSeeAll"
+                        style="@style/Ds.Text.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="8dp"
+                        android:text="@string/home_see_all"
+                        android:textColor="@color/ds_ink_soft" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/continueLearningEmoji"
+                        android:layout_width="66dp"
+                        android:layout_height="66dp"
+                        android:background="@drawable/bg_emoji_badge"
+                        android:gravity="center"
+                        android:text="🐰"
+                        android:textSize="35sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/planTitle"
+                            style="@style/Ds.Text.Title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_plan_sub_read"
+                            android:textSize="14sp" />
+
+                        <ProgressBar
+                            android:id="@+id/planProgress"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="7dp"
+                            android:layout_marginTop="10dp"
+                            android:max="3"
+                            android:progressTint="@color/ds_leaf"
+                            android:progressBackgroundTint="@color/ds_sand" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/planSteps"
+                        style="@style/Ds.Text.Caption"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/ds_leaf"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPlanAction"
+                        style="@style/Ds.CompactButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/ds_space_xs"
+                        android:gravity="center"
+                        android:minWidth="0dp"
+                        android:text="@string/home_plan_next" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/planSubtitle"
+                    style="@style/Ds.Text.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="78dp"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/ds_ink_soft" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/Ds.Text.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/home_badges"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/badgesSeeAll"
+                style="@style/Ds.Text.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                android:text="@string/home_see_all" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/BadgeTile"
+                android:id="@+id/badgeFirstLesson"
+                android:layout_width="78dp"
+                android:layout_weight="0">
+                <TextView style="@style/BadgeIcon" android:text="⭐" />
+                <TextView style="@style/BadgeLabel" android:text="@string/badge_first_lesson" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/BadgeTile"
+                android:id="@+id/badgeStreak"
+                android:layout_width="78dp"
+                android:layout_weight="0">
+                <TextView style="@style/BadgeIcon" android:text="🔥" />
+                <TextView style="@style/BadgeLabel" android:text="@string/badge_streak" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/BadgeTile"
+                android:id="@+id/badgeMathStar"
+                android:layout_width="78dp"
+                android:layout_weight="0">
+                <TextView style="@style/BadgeIcon" android:text="🏆" />
+                <TextView style="@style/BadgeLabel" android:text="@string/badge_math_star" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/BadgeTile"
+                android:id="@+id/badgeCuriousMind"
+                android:layout_width="78dp"
+                android:layout_weight="0">
+                <TextView style="@style/BadgeIcon" android:text="💡" />
+                <TextView style="@style/BadgeLabel" android:text="@string/badge_curious_mind" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/BadgeTile"
+                android:id="@+id/badgeBookworm"
+                android:layout_width="78dp"
+                android:layout_weight="0">
+                <TextView style="@style/BadgeIcon" android:text="📖" />
+                <TextView style="@style/BadgeLabel" android:text="@string/badge_bookworm" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/BadgeTile"
+                android:id="@+id/badgeFocus"
+                android:layout_width="78dp"
+                android:layout_weight="0">
+                <TextView style="@style/BadgeIcon" android:text="🎯" />
+                <TextView style="@style/BadgeLabel" android:text="@string/badge_focus" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/BadgeTile"
+                android:id="@+id/badgeRisingStar"
+                android:layout_width="78dp"
+                android:layout_weight="0">
+                <TextView style="@style/BadgeIcon" android:text="🌟" />
+                <TextView style="@style/BadgeLabel" android:text="@string/badge_rising_star" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/BadgeTile"
+                android:id="@+id/badgeGoalKeeper"
+                android:layout_width="78dp"
+                android:layout_weight="0">
+                <TextView style="@style/BadgeIcon" android:text="🏅" />
+                <TextView style="@style/BadgeLabel" android:text="@string/badge_goal_keeper" />
+            </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:baselineAligned="false"
             android:orientation="horizontal">
 
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardVoice"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/ds_space_xs"
+                android:layout_height="138dp"
                 android:layout_weight="1"
-                app:featureAccent="@color/ds_leaf"
-                app:featureEmoji="🎤"
-                app:featureSubtitle="@string/card_voice_sub"
+                app:featureAccent="@color/ds_sky"
+                app:featureImage="@drawable/talk_character"
                 app:featureTitle="@string/card_voice_title" />
 
             <com.dyslexiasupport.ui.widget.FeatureCardView
                 android:id="@+id/cardWrite"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/ds_space_xs"
+                android:layout_height="138dp"
+                android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 app:featureAccent="@color/ds_mango"
-                app:featureEmoji="✏️"
-                app:featureSubtitle="@string/card_write_sub"
+                app:featureImage="@drawable/write_character"
                 app:featureTitle="@string/card_write_title" />
         </LinearLayout>
 
         <com.dyslexiasupport.ui.widget.FeatureCardView
             android:id="@+id/cardAsk"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/ds_space_xs"
-            app:featureAccent="@color/ds_sky"
-            app:featureEmoji="✨"
-            app:featureSubtitle="@string/card_ask_sub"
+            android:layout_height="138dp"
+            android:layout_marginTop="10dp"
+            app:featureAccent="@color/ds_primary"
+            app:featureImage="@drawable/assistant_character"
             app:featureTitle="@string/card_ask_title" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:minHeight="@dimen/ds_space_xl" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnShare"
-            style="@style/Ds.TonalButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/ds_space_md"
-            android:text="@string/action_share" />
     </LinearLayout>
 </ScrollView>

@@ -19,6 +19,8 @@ public class ExerciseResultEntity {
     public int score;
     public int totalQuestions;
     public long timestamp;
+    @NonNull
+    public String ownerId = "shared";
 
     public ExerciseResultEntity(@NonNull String exerciseType, int score, int totalQuestions, long timestamp) {
         this.exerciseType = exerciseType;
