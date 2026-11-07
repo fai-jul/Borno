@@ -107,6 +107,9 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final TextView planTitle;
 
   @NonNull
+  public final MaterialCardView streakCard;
+
+  @NonNull
   public final LinearLayout streakFri;
 
   @NonNull
@@ -164,7 +167,8 @@ public final class FragmentHomeBinding implements ViewBinding {
       @NonNull TextView continueLearningSeeAll, @NonNull TextView continueLearningTitle,
       @NonNull TextView greeting, @NonNull MaterialCardView planCard,
       @NonNull ProgressBar planProgress, @NonNull TextView planSteps,
-      @NonNull TextView planSubtitle, @NonNull TextView planTitle, @NonNull LinearLayout streakFri,
+      @NonNull TextView planSubtitle, @NonNull TextView planTitle,
+      @NonNull MaterialCardView streakCard, @NonNull LinearLayout streakFri,
       @NonNull TextView streakFriDot, @NonNull LinearLayout streakMon,
       @NonNull TextView streakMonDot, @NonNull LinearLayout streakSat,
       @NonNull TextView streakSatDot, @NonNull LinearLayout streakSun,
@@ -200,6 +204,7 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.planSteps = planSteps;
     this.planSubtitle = planSubtitle;
     this.planTitle = planTitle;
+    this.streakCard = streakCard;
     this.streakFri = streakFri;
     this.streakFriDot = streakFriDot;
     this.streakMon = streakMon;
@@ -406,6 +411,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.streakCard;
+      MaterialCardView streakCard = ViewBindings.findChildViewById(rootView, id);
+      if (streakCard == null) {
+        break missingId;
+      }
+
       id = R.id.streakFri;
       LinearLayout streakFri = ViewBindings.findChildViewById(rootView, id);
       if (streakFri == null) {
@@ -501,9 +512,9 @@ public final class FragmentHomeBinding implements ViewBinding {
           badgeStreak, badgesSeeAll, btnHomeMenu, btnPlanAction, cardAsk, cardPractice, cardRead,
           cardScan, cardVoice, cardWords, cardWrite, continueLearningEmoji, continueLearningSeeAll,
           continueLearningTitle, greeting, planCard, planProgress, planSteps, planSubtitle,
-          planTitle, streakFri, streakFriDot, streakMon, streakMonDot, streakSat, streakSatDot,
-          streakSun, streakSunDot, streakThu, streakThuDot, streakTitle, streakTue, streakTueDot,
-          streakWed, streakWedDot);
+          planTitle, streakCard, streakFri, streakFriDot, streakMon, streakMonDot, streakSat,
+          streakSatDot, streakSun, streakSunDot, streakThu, streakThuDot, streakTitle, streakTue,
+          streakTueDot, streakWed, streakWedDot);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -309,6 +309,8 @@ public class HomeFragment extends Fragment {
             return;
         }
 
+        binding.streakCard.setVisibility(View.GONE);
+        binding.planCard.setVisibility(View.GONE);
         binding.cardPractice.setVisibility(View.GONE);
         binding.cardWords.setVisibility(View.GONE);
         binding.cardScan.setVisibility(View.GONE);

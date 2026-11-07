@@ -4039,6 +4039,7 @@ id staticPostLayout
 id status
 id status_bar_latest_event_content
 id stop
+id streakCard
 id streakFri
 id streakFriDot
 id streakMon

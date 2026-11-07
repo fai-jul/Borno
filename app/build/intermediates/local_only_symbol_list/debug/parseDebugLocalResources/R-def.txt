@@ -405,6 +405,7 @@ id sliderLine
 id sliderSize
 id sliderWord
 id status
+id streakCard
 id streakFri
 id streakFriDot
 id streakMon

@@ -178,6 +178,8 @@
     <string name="practice_stats_stars">মোট তারা</string>
     <string name="practice_subtitle">গেম খেলে তোমার পড়ার দক্ষতা বাড়াও!</string>
     <string name="practice_title">মজার অনুশীলন</string>
+    <string name="profile_change_role_title">ভূমিকা পরিবর্তন করুন</string>
+    <string name="profile_role_updated">ভূমিকা পরিবর্তন সফল হয়েছে ✨</string>
     <string name="profile_theme_dark">ডার্ক</string>
     <string name="profile_theme_subtitle">অ্যাপের জন্য আরামদায়ক থিম বেছে নাও।</string>
     <string name="profile_theme_title">দেখার ধরন</string>
