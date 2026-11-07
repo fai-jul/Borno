@@ -91,7 +91,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/ds_space_md"
-            android:text="@string/action_google_login" />
+            android:text="@string/action_google_login"
+            app:icon="@drawable/ic_google"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            app:iconSize="24dp"
+            app:iconTint="@null" />
+
+        <ImageButton
+            android:id="@+id/btnBiometricLogin"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/ds_space_md"
+            android:background="?selectableItemBackgroundBorderless"
+            android:contentDescription="@string/action_biometric_login"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_fingerprint"
+            android:visibility="gone"
+            app:tint="@color/ds_auth_primary" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCreate"

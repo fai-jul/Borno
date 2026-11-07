@@ -10,6 +10,9 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
+import androidx.biometric.BiometricManager;
+import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
 
 import com.dyslexiasupport.R;
 import com.dyslexiasupport.data.firebase.CloudSyncManager;
@@ -32,6 +35,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.FirebaseAuthException;
+import java.util.concurrent.Executor;
 
 public class LoginActivity extends BaseActivity {
 
@@ -39,6 +43,7 @@ public class LoginActivity extends BaseActivity {
     private SessionManager session;
     private GoogleSignInClient googleSignInClient;
     private boolean submitting;
+    private Executor biometricExecutor;
 
     private final ActivityResultLauncher<Intent> googleSignInLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
@@ -75,8 +80,10 @@ public class LoginActivity extends BaseActivity {
         applySystemBarInsets(binding.getRoot());
 
         session = new SessionManager(this);
+        biometricExecutor = ContextCompat.getMainExecutor(this);
 
         setupGoogleSignIn();
+        setupBiometricLogin();
 
         binding.btnLogin.setOnClickListener(v -> attemptLogin());
         binding.btnGoogleLogin.setOnClickListener(v -> attemptGoogleLogin());
@@ -92,6 +99,59 @@ public class LoginActivity extends BaseActivity {
         binding.btnCreate.setOnClickListener(v ->
                 startActivity(new Intent(this, RegisterActivity.class)));
         binding.btnBack.setOnClickListener(v -> finish());
+    }
+
+    private void setupBiometricLogin() {
+        boolean available = BiometricManager.from(this).canAuthenticate(
+                BiometricManager.Authenticators.BIOMETRIC_STRONG
+                        | BiometricManager.Authenticators.DEVICE_CREDENTIAL)
+                == BiometricManager.BIOMETRIC_SUCCESS;
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        boolean enabled = session.isBiometricEnabled() && firebaseUser != null;
+        binding.btnBiometricLogin.setVisibility(available && enabled ? android.view.View.VISIBLE
+                : android.view.View.GONE);
+        binding.btnBiometricLogin.setOnClickListener(v -> authenticateBiometric());
+    }
+
+    private void authenticateBiometric() {
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (firebaseUser == null || !session.isBiometricEnabled()) {
+            binding.btnBiometricLogin.setVisibility(android.view.View.GONE);
+            return;
+        }
+        BiometricPrompt prompt = new BiometricPrompt(this, biometricExecutor,
+                new BiometricPrompt.AuthenticationCallback() {
+                    @Override
+                    public void onAuthenticationSucceeded(
+                            BiometricPrompt.AuthenticationResult result) {
+                        super.onAuthenticationSucceeded(result);
+                        setSubmitting(true);
+                        session.setFirebaseUid(firebaseUser.getUid());
+                        User user = new User(
+                                session.getName().isEmpty() ? getString(R.string.guest_name)
+                                        : session.getName(),
+                                session.getEmail().isEmpty() && firebaseUser.getEmail() != null
+                                        ? firebaseUser.getEmail() : session.getEmail(),
+                                session.getRole(), session.getAvatar(), false);
+                        session.signIn(user);
+                        LinkCodeManager.ensureUserLinkCode(LoginActivity.this, user);
+                        CloudSyncManager.syncAll(LoginActivity.this, success -> {});
+                        MainActivity.launchFresh(LoginActivity.this);
+                    }
+
+                    @Override
+                    public void onAuthenticationError(int errorCode, CharSequence errString) {
+                        super.onAuthenticationError(errorCode, errString);
+                        setSubmitting(false);
+                    }
+                });
+        BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                .setTitle(getString(R.string.login_biometric_title))
+                .setSubtitle(getString(R.string.login_biometric_subtitle))
+                .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG
+                        | BiometricManager.Authenticators.DEVICE_CREDENTIAL)
+                .build();
+        prompt.authenticate(promptInfo);
     }
 
     private void setupGoogleSignIn() {
@@ -136,7 +196,7 @@ public class LoginActivity extends BaseActivity {
 
     private void attemptForgotPassword() {
         binding.layoutEmail.setError(null);
-        String email = UiUtils.textOf(binding.inputEmail);
+        String email = UiUtils.textOf(binding.inputEmail).trim().toLowerCase(java.util.Locale.ROOT);
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             binding.layoutEmail.setError(getString(R.string.error_email_invalid));
@@ -148,7 +208,9 @@ public class LoginActivity extends BaseActivity {
                     if (task.isSuccessful()) {
                         Toast.makeText(this, R.string.login_reset_email_sent, Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(this, R.string.error_generic, Toast.LENGTH_SHORT).show();
+                        String msg = task.getException() != null && task.getException().getMessage() != null
+                                ? task.getException().getMessage() : getString(R.string.error_generic);
+                        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -158,7 +220,7 @@ public class LoginActivity extends BaseActivity {
         binding.layoutEmail.setError(null);
         binding.layoutPassword.setError(null);
 
-        String email = UiUtils.textOf(binding.inputEmail);
+        String email = UiUtils.textOf(binding.inputEmail).trim().toLowerCase(java.util.Locale.ROOT);
         String password = UiUtils.textOf(binding.inputPassword);
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -190,6 +252,7 @@ public class LoginActivity extends BaseActivity {
                         }
                         session.signIn(user);
                         session.setFirebaseUid(firebaseUser.getUid());
+                        session.setBiometricEnabled(true);
                         LinkCodeManager.ensureUserLinkCode(this, user);
                         CloudSyncManager.syncAll(this, success -> {});
                         MainActivity.launchFresh(this);
@@ -204,20 +267,41 @@ public class LoginActivity extends BaseActivity {
         submitting = value;
         binding.btnLogin.setEnabled(!value);
         binding.btnGoogleLogin.setEnabled(!value);
+        binding.btnBiometricLogin.setEnabled(!value);
         binding.btnCreate.setEnabled(!value);
         binding.btnForgotPassword.setEnabled(!value);
     }
 
     private String firebaseError(Exception error) {
+        if (error == null) {
+            return getString(R.string.error_generic);
+        }
+        if (error instanceof com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+                || error instanceof com.google.firebase.auth.FirebaseAuthInvalidUserException) {
+            return getString(R.string.error_login_failed);
+        }
         if (error instanceof FirebaseAuthException) {
             String code = ((FirebaseAuthException) error).getErrorCode();
             if ("ERROR_USER_NOT_FOUND".equals(code) || "ERROR_WRONG_PASSWORD".equals(code)
-                    || "ERROR_INVALID_CREDENTIAL".equals(code)) {
+                    || "ERROR_INVALID_CREDENTIAL".equals(code)
+                    || "ERROR_INVALID_LOGIN_CREDENTIAL".equals(code)
+                    || "invalid-credential".equalsIgnoreCase(code)
+                    || "user-not-found".equalsIgnoreCase(code)
+                    || "wrong-password".equalsIgnoreCase(code)) {
                 return getString(R.string.error_login_failed);
             }
-            if ("ERROR_TOO_MANY_REQUESTS".equals(code)) {
+            if ("ERROR_TOO_MANY_REQUESTS".equals(code) || "too-many-requests".equalsIgnoreCase(code)) {
                 return getString(R.string.error_auth_too_many_requests);
             }
+            if ("ERROR_OPERATION_NOT_ALLOWED".equals(code) || "operation-not-allowed".equalsIgnoreCase(code)) {
+                return "Email/Password sign-in is disabled in Firebase Console.";
+            }
+            if ("ERROR_INVALID_EMAIL".equals(code) || "invalid-email".equalsIgnoreCase(code)) {
+                return getString(R.string.error_email_invalid);
+            }
+        }
+        if (error.getMessage() != null && !error.getMessage().trim().isEmpty()) {
+            return error.getMessage();
         }
         return getString(R.string.error_generic);
     }

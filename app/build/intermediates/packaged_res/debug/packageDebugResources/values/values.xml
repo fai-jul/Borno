@@ -58,6 +58,7 @@
     <dimen name="ds_space_xxl">32dp</dimen>
     <dimen name="ds_touch_min">48dp</dimen>
     <string name="action_back">Go back</string>
+    <string name="action_biometric_login">Use fingerprint or device lock</string>
     <string name="action_create_account">Sign Up</string>
     <string name="action_google_login">Sign in with Google</string>
     <string name="action_import_save">Save to Library</string>
@@ -154,7 +155,7 @@
     <string name="coming_soon">Coming soon</string>
     <string name="comprehension_result">You got %1$d of %2$d questions right. Keep going!</string>
     <string name="comprehension_title">Quick reading check</string>
-    <string name="default_web_client_id">46634ad64663-dyslexia46634ad6app.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">390211112974-vaho1id1v77h2lvikmha27jbdiqt5d52.apps.googleusercontent.com</string>
     <string name="dialog_import_title">Import NCTB Lesson / PDF</string>
     <string name="error_auth_too_many_requests">Too many attempts. Please wait and try again.</string>
     <string name="error_email_invalid">Enter a valid email</string>
@@ -163,6 +164,7 @@
     <string name="error_login_failed">Email or password is wrong</string>
     <string name="error_name_required">Please enter your name</string>
     <string name="error_password_short">At least 6 characters</string>
+    <string name="firebase_database_url" translatable="false">https://borno-1240f-default-rtdb.firebaseio.com</string>
     <string name="game_back_to_practice">Back to Practice</string>
     <string name="game_builder_sub">Assemble syllables into full words</string>
     <string name="game_builder_title">Word Builder</string>
@@ -264,6 +266,8 @@
     <string name="link_code_section_title">Parent / Teacher Connection</string>
     <string name="link_code_success">Student account linked successfully! 🎉</string>
     <string name="link_code_your_code">Your Link Code:</string>
+    <string name="login_biometric_subtitle">Use your fingerprint or phone screen lock</string>
+    <string name="login_biometric_title">Unlock Dyslexia Support</string>
     <string name="login_forgot_password">Forgot password?</string>
     <string name="login_google_failed">Google Sign-In failed. Please try again.</string>
     <string name="login_no_account">Don\'t have an account? Sign up</string>

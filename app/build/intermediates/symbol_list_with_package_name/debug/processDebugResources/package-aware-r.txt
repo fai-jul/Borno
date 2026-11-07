@@ -85,9 +85,15 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array assume_strong_biometrics_models
 array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
+array crypto_fingerprint_fallback_prefixes
+array crypto_fingerprint_fallback_vendors
+array delay_showing_prompt_models
+array hide_fingerprint_instantly_prefixes
+array keyguard_biometric_and_credential_exclude_vendors
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -1403,6 +1409,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color biometric_error_color
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -2355,6 +2362,7 @@ dimen ds_touch_min
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
+dimen fingerprint_icon_size
 dimen highlight_alpha_material_colored
 dimen highlight_alpha_material_dark
 dimen highlight_alpha_material_light
@@ -3149,6 +3157,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable fingerprint_dialog_error
+drawable fingerprint_dialog_fp_icon
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable home_character
@@ -3166,6 +3176,8 @@ drawable ic_chevron_left
 drawable ic_chevron_right
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_fingerprint
+drawable ic_google
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_foreground
 drawable ic_lock_outline
@@ -3424,6 +3436,7 @@ id btnAssignNctb
 id btnAssistant
 id btnAssistantWord
 id btnBack
+id btnBiometricLogin
 id btnCapture
 id btnChat
 id btnChatHistory
@@ -3672,6 +3685,10 @@ id fill_horizontal
 id fill_vertical
 id filled
 id filterChipGroup
+id fingerprint_description
+id fingerprint_error
+id fingerprint_icon
+id fingerprint_subtitle
 id fitCenter
 id fitEnd
 id fitStart
@@ -3765,6 +3782,7 @@ id line3
 id linear
 id list
 id listMode
+id listWords
 id list_item
 id m3_side_sheet
 id marquee
@@ -3895,6 +3913,7 @@ id percent
 id performance
 id permissionView
 id pin
+id placeholderEmoji
 id placeholderTitle
 id planCard
 id planProgress
@@ -3926,7 +3945,6 @@ id readerText
 id readerTitle
 id recommendationContainer
 id rectangles
-id recyclerWords
 id report_drawn
 id resultAvatar
 id resultCard
@@ -4058,6 +4076,7 @@ id text
 id text2
 id textAccuracy
 id textAvatar
+id textComingSoon
 id textDefinition
 id textEmpty
 id textEnd
@@ -4303,6 +4322,7 @@ layout design_text_input_start_icon
 layout dialog_add_word
 layout dialog_game_result
 layout dialog_import_text
+layout fingerprint_dialog_layout
 layout fragment_coming_soon
 layout fragment_home
 layout fragment_library
@@ -4423,6 +4443,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_back
+string action_biometric_login
 string action_create_account
 string action_google_login
 string action_import_save
@@ -4490,6 +4511,8 @@ string badge_locked
 string badge_math_star
 string badge_rising_star
 string badge_streak
+string biometric_or_screen_lock_prompt_message
+string biometric_prompt_message
 string bottom_sheet_behavior
 string bottomsheet_action_collapse
 string bottomsheet_action_expand
@@ -4558,7 +4581,9 @@ string common_signin_button_text
 string common_signin_button_text_long
 string comprehension_result
 string comprehension_title
+string confirm_device_credential_password
 string copy_toast_msg
+string default_error_msg
 string default_web_client_id
 string dialog_import_title
 string error_a11y_label
@@ -4573,9 +4598,22 @@ string error_password_short
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string face_or_screen_lock_prompt_message
+string face_prompt_message
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
+string fingerprint_dialog_icon_description
+string fingerprint_dialog_touch_sensor
+string fingerprint_error_hw_not_available
+string fingerprint_error_hw_not_present
+string fingerprint_error_lockout
+string fingerprint_error_no_fingerprints
+string fingerprint_error_user_canceled
+string fingerprint_not_recognized
+string fingerprint_or_screen_lock_prompt_message
+string fingerprint_prompt_message
+string firebase_database_url
 string game_back_to_practice
 string game_builder_sub
 string game_builder_title
@@ -4599,6 +4637,9 @@ string game_speed_sub
 string game_speed_title
 string game_wrong
 string gcm_defaultSenderId
+string generic_error_no_device_credential
+string generic_error_no_keyguard
+string generic_error_user_canceled
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
@@ -4680,6 +4721,8 @@ string link_code_linked_count
 string link_code_section_title
 string link_code_success
 string link_code_your_code
+string login_biometric_subtitle
+string login_biometric_title
 string login_forgot_password
 string login_google_failed
 string login_no_account
@@ -4924,6 +4967,7 @@ string scan_retake
 string scan_save
 string scan_saved
 string scan_working
+string screen_lock_prompt_message
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
@@ -4970,6 +5014,13 @@ string tip_double_space
 string tip_no_end
 string tip_repeated
 string tip_space_before
+string use_biometric_label
+string use_biometric_or_screen_lock_label
+string use_face_label
+string use_face_or_screen_lock_label
+string use_fingerprint_label
+string use_fingerprint_or_screen_lock_label
+string use_screen_lock_label
 string verification_check_button
 string verification_check_hint
 string verification_failed

@@ -104,6 +104,9 @@
     <string name="login_reset_title">Reset Password</string>
     <string name="login_reset_desc">Enter your account email to receive a password reset link.</string>
     <string name="login_google_failed">Google Sign-In failed. Please try again.</string>
+    <string name="action_biometric_login">Use fingerprint or device lock</string>
+    <string name="login_biometric_title">Unlock Dyslexia Support</string>
+    <string name="login_biometric_subtitle">Use your fingerprint or phone screen lock</string>
     <string name="login_no_account">Don\'t have an account? Sign up</string>
     <string name="hint_email">Enter your email</string>
     <string name="hint_password">Enter your password</string>

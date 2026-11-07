@@ -4,93 +4,103 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DiffUtil;
-import androidx.recyclerview.widget.ListAdapter;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.Nullable;
 
 import com.dyslexiasupport.R;
 import com.dyslexiasupport.data.local.entity.WordEntity;
 import com.dyslexiasupport.databinding.ItemVocabularyWordBinding;
 
-public class VocabularyAdapter extends ListAdapter<WordEntity, VocabularyAdapter.WordHolder> {
+import java.util.ArrayList;
+import java.util.List;
+
+public class VocabularyAdapter extends BaseAdapter {
 
     public interface OnWordActionListener {
         void onToggleFavorite(@NonNull WordEntity word);
         void onListenWord(@NonNull WordEntity word);
     }
 
-    private static final DiffUtil.ItemCallback<WordEntity> DIFF = new DiffUtil.ItemCallback<WordEntity>() {
-        @Override
-        public boolean areItemsTheSame(@NonNull WordEntity oldItem, @NonNull WordEntity newItem) {
-            return oldItem.id == newItem.id;
-        }
-
-        @Override
-        public boolean areContentsTheSame(@NonNull WordEntity oldItem, @NonNull WordEntity newItem) {
-            return oldItem.id == newItem.id
-                    && oldItem.isSaved == newItem.isSaved
-                    && oldItem.word.equals(newItem.word)
-                    && (oldItem.definition == null ? newItem.definition == null : oldItem.definition.equals(newItem.definition));
-        }
-    };
-
     private final OnWordActionListener listener;
+    private List<WordEntity> items = new ArrayList<>();
 
     public VocabularyAdapter(@NonNull OnWordActionListener listener) {
-        super(DIFF);
         this.listener = listener;
     }
 
-    @NonNull
-    @Override
-    public WordHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemVocabularyWordBinding binding = ItemVocabularyWordBinding.inflate(
-                LayoutInflater.from(parent.getContext()), parent, false);
-        return new WordHolder(binding);
+    public void submitList(@Nullable List<WordEntity> newItems) {
+        this.items = newItems != null ? new ArrayList<>(newItems) : new ArrayList<>();
+        notifyDataSetChanged();
     }
 
     @Override
-    public void onBindViewHolder(@NonNull WordHolder holder, int position) {
-        holder.bind(getItem(position));
+    public int getCount() {
+        return items.size();
     }
 
-    class WordHolder extends RecyclerView.ViewHolder {
+    @Override
+    public WordEntity getItem(int position) {
+        return items.get(position);
+    }
 
-        private final ItemVocabularyWordBinding b;
+    @Override
+    public long getItemId(int position) {
+        return items.get(position).id;
+    }
 
-        WordHolder(@NonNull ItemVocabularyWordBinding binding) {
-            super(binding.getRoot());
-            b = binding;
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        View view;
+        if (convertView == null) {
+            ItemVocabularyWordBinding binding = ItemVocabularyWordBinding.inflate(
+                    LayoutInflater.from(parent.getContext()), parent, false);
+            view = binding.getRoot();
+            holder = new ViewHolder(binding);
+            view.setTag(holder);
+        } else {
+            view = convertView;
+            holder = (ViewHolder) view.getTag();
         }
 
-        void bind(@NonNull WordEntity item) {
-            Context context = b.getRoot().getContext();
-            b.textWord.setText(item.word);
+        WordEntity item = getItem(position);
+        Context context = parent.getContext();
+        ItemVocabularyWordBinding b = holder.binding;
 
-            if (item.syllables != null && !item.syllables.trim().isEmpty()) {
-                b.textSyllables.setText(item.syllables);
-                b.textSyllables.setVisibility(View.VISIBLE);
-            } else {
-                b.textSyllables.setVisibility(View.GONE);
-            }
+        b.textWord.setText(item.word);
 
-            if (item.definition != null && !item.definition.trim().isEmpty()) {
-                b.textDefinition.setText(item.definition);
-                b.textDefinition.setVisibility(View.VISIBLE);
-            } else {
-                b.textDefinition.setVisibility(View.GONE);
-            }
+        if (item.syllables != null && !item.syllables.trim().isEmpty()) {
+            b.textSyllables.setText(item.syllables);
+            b.textSyllables.setVisibility(View.VISIBLE);
+        } else {
+            b.textSyllables.setVisibility(View.GONE);
+        }
 
-            boolean isBn = "bn".equalsIgnoreCase(item.language);
-            b.badgeLang.setText(context.getString(isBn ? R.string.lang_bangla : R.string.lang_english));
+        if (item.definition != null && !item.definition.trim().isEmpty()) {
+            b.textDefinition.setText(item.definition);
+            b.textDefinition.setVisibility(View.VISIBLE);
+        } else {
+            b.textDefinition.setVisibility(View.GONE);
+        }
 
-            int starRes = item.isSaved ? android.R.drawable.btn_star_big_on : android.R.drawable.btn_star_big_off;
-            b.btnFavorite.setImageResource(starRes);
+        boolean isBn = "bn".equalsIgnoreCase(item.language);
+        b.badgeLang.setText(context.getString(isBn ? R.string.lang_bangla : R.string.lang_english));
 
-            b.btnFavorite.setOnClickListener(v -> listener.onToggleFavorite(item));
-            b.btnListen.setOnClickListener(v -> listener.onListenWord(item));
+        int starRes = item.isSaved ? android.R.drawable.btn_star_big_on : android.R.drawable.btn_star_big_off;
+        b.btnFavorite.setImageResource(starRes);
+
+        b.btnFavorite.setOnClickListener(v -> listener.onToggleFavorite(item));
+        b.btnListen.setOnClickListener(v -> listener.onListenWord(item));
+
+        return view;
+    }
+
+    private static class ViewHolder {
+        final ItemVocabularyWordBinding binding;
+        ViewHolder(@NonNull ItemVocabularyWordBinding binding) {
+            this.binding = binding;
         }
     }
 }

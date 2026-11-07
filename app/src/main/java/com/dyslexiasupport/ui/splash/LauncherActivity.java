@@ -20,8 +20,9 @@ public class LauncherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         boolean signedIn = new SessionManager(this).isSignedIn();
+        boolean biometricLock = new SessionManager(this).isBiometricEnabled();
         Class<?> next = signedIn
-                ? MainActivity.class
+                ? (biometricLock ? LoginActivity.class : MainActivity.class)
                 : LoginActivity.class;
         startActivity(new Intent(this, next));
         finish();

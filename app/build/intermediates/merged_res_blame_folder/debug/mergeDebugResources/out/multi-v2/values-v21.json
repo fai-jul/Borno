@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.dyslexiasupport.app-mergeDebugResources-54:/values-v21/values-v21.xml",
+            "outputFile": "com.dyslexiasupport.app-mergeDebugResources-55:/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "/Users/faijul/.gradle/caches/8.13/transforms/5d25d006905622a42548e3e00888be92/transformed/credentials-play-services-auth-1.2.0-rc01/res/values-v21/values-v21.xml",

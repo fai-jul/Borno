@@ -25,6 +25,7 @@ public class SessionManager {
     private static final String KEY_ASSISTANT_ENABLED = "assistant_enabled";
     private static final String KEY_READING_ONLY = "reading_only";
     private static final String KEY_ASSIGNED_TEXT = "assigned_text_id";
+    private static final String KEY_BIOMETRIC_ENABLED = "biometric_enabled";
 
     private final SharedPreferences prefs;
 
@@ -54,6 +55,10 @@ public class SessionManager {
 
     public String getName() {
         return prefs.getString(KEY_NAME, "");
+    }
+
+    public String getEmail() {
+        return prefs.getString(KEY_EMAIL, "");
     }
 
     public String getAvatar() {
@@ -101,6 +106,14 @@ public class SessionManager {
 
     public void setFirebaseUid(String uid) {
         prefs.edit().putString(KEY_FIREBASE_UID, uid).apply();
+    }
+
+    public boolean isBiometricEnabled() {
+        return prefs.getBoolean(KEY_BIOMETRIC_ENABLED, false);
+    }
+
+    public void setBiometricEnabled(boolean enabled) {
+        prefs.edit().putBoolean(KEY_BIOMETRIC_ENABLED, enabled).apply();
     }
 
     public int getLinkedCount() {

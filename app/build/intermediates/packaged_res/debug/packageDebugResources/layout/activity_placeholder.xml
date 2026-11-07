@@ -1,37 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ds_cream"
-    android:gravity="center"
-    android:orientation="vertical"
     android:padding="@dimen/ds_space_xl">
 
     <TextView
+        android:id="@+id/placeholderEmoji"
         style="@style/Ds.Text.Display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        android:text="🚧" />
+        android:text="🚧"
+        app:layout_constraintBottom_toTopOf="@+id/placeholderTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/placeholderTitle"
         style="@style/Ds.Text.Display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/ds_space_lg" />
+        android:layout_marginTop="@dimen/ds_space_lg"
+        app:layout_constraintBottom_toTopOf="@+id/textComingSoon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/placeholderEmoji" />
 
     <TextView
+        android:id="@+id/textComingSoon"
         style="@style/Ds.Text.Body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/ds_space_sm"
-        android:text="@string/coming_soon" />
+        android:text="@string/coming_soon"
+        app:layout_constraintBottom_toTopOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/placeholderTitle" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnBack"
         style="@style/Ds.BackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/ds_space_xl"
-        android:text="" />
-</LinearLayout>
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textComingSoon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

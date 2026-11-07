@@ -85,6 +85,8 @@ drawable ic_back_chevron
 drawable ic_borno_logo
 drawable ic_chevron_left
 drawable ic_chevron_right
+drawable ic_fingerprint
+drawable ic_google
 drawable ic_launcher_foreground
 drawable ic_lock_outline
 drawable ic_logo
@@ -145,6 +147,7 @@ id btnAssignNctb
 id btnAssistant
 id btnAssistantWord
 id btnBack
+id btnBiometricLogin
 id btnCapture
 id btnChat
 id btnChatHistory
@@ -334,6 +337,7 @@ id layoutTeacherActions
 id learnerList
 id levelGroup
 id list
+id listWords
 id mascotAvatar
 id mascotSpeech
 id micHalo
@@ -350,6 +354,7 @@ id panelCrop
 id panelEdit
 id partsSection
 id permissionView
+id placeholderEmoji
 id placeholderTitle
 id planCard
 id planProgress
@@ -373,7 +378,6 @@ id readerScroll
 id readerText
 id readerTitle
 id recommendationContainer
-id recyclerWords
 id resultAvatar
 id resultCard
 id resultScore
@@ -418,6 +422,7 @@ id tapHint
 id taskGroup
 id textAccuracy
 id textAvatar
+id textComingSoon
 id textDefinition
 id textEmpty
 id textGamesPlayed
@@ -490,6 +495,7 @@ menu home_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string action_back
+string action_biometric_login
 string action_create_account
 string action_google_login
 string action_import_save
@@ -595,6 +601,7 @@ string error_generic
 string error_login_failed
 string error_name_required
 string error_password_short
+string firebase_database_url
 string game_back_to_practice
 string game_builder_sub
 string game_builder_title
@@ -696,6 +703,8 @@ string link_code_linked_count
 string link_code_section_title
 string link_code_success
 string link_code_your_code
+string login_biometric_subtitle
+string login_biometric_title
 string login_forgot_password
 string login_google_failed
 string login_no_account

@@ -54,7 +54,7 @@ public class RegisterActivity extends BaseActivity {
         binding.layoutPassword.setError(null);
 
         String name = UiUtils.textOf(binding.inputName);
-        String email = UiUtils.textOf(binding.inputEmail);
+        String email = UiUtils.textOf(binding.inputEmail).trim().toLowerCase(java.util.Locale.ROOT);
         String password = UiUtils.textOf(binding.inputPassword);
 
         boolean valid = true;
@@ -88,14 +88,9 @@ public class RegisterActivity extends BaseActivity {
                     }
                     FirebaseUser firebaseUser = task.getResult().getUser();
                     firebaseUser.updateProfile(new com.google.firebase.auth.UserProfileChangeRequest.Builder()
-                                    .setDisplayName(name)
-                                    .build())
+                            .setDisplayName(name)
+                            .build())
                             .addOnCompleteListener(profileTask -> {
-                                if (!profileTask.isSuccessful()) {
-                                    setSubmitting(false);
-                                    binding.layoutName.setError(getString(R.string.error_generic));
-                                    return;
-                                }
                                 User user = new User(name, email, role, avatar, false);
                                 session.setFirebaseUid(firebaseUser.getUid());
                                 com.dyslexiasupport.data.firebase.LinkCodeManager
@@ -103,9 +98,10 @@ public class RegisterActivity extends BaseActivity {
                                 firebaseUser.sendEmailVerification()
                                         .addOnCompleteListener(emailTask -> {
                                             if (!emailTask.isSuccessful()) {
-                                                setSubmitting(false);
-                                                binding.layoutEmail.setError(getString(R.string.error_generic));
-                                                return;
+                                                android.widget.Toast.makeText(this,
+                                                        "Could not send verification email: " +
+                                                        (emailTask.getException() != null ? emailTask.getException().getMessage() : "Unknown error"),
+                                                        android.widget.Toast.LENGTH_LONG).show();
                                             }
                                             startActivity(new android.content.Intent(
                                                     this, EmailVerificationActivity.class)
@@ -141,17 +137,35 @@ public class RegisterActivity extends BaseActivity {
     }
 
     private String firebaseError(Exception error) {
+        if (error == null) {
+            return getString(R.string.error_generic);
+        }
+        if (error instanceof com.google.firebase.auth.FirebaseAuthUserCollisionException) {
+            return getString(R.string.error_email_taken);
+        }
+        if (error instanceof com.google.firebase.auth.FirebaseAuthWeakPasswordException) {
+            return getString(R.string.error_password_short);
+        }
         if (error instanceof com.google.firebase.auth.FirebaseAuthException) {
             String code = ((com.google.firebase.auth.FirebaseAuthException) error).getErrorCode();
-            if ("ERROR_EMAIL_ALREADY_IN_USE".equals(code)) {
+            if ("ERROR_EMAIL_ALREADY_IN_USE".equals(code) || "email-already-in-use".equalsIgnoreCase(code)) {
                 return getString(R.string.error_email_taken);
             }
-            if ("ERROR_WEAK_PASSWORD".equals(code)) {
+            if ("ERROR_WEAK_PASSWORD".equals(code) || "weak-password".equalsIgnoreCase(code)) {
                 return getString(R.string.error_password_short);
             }
-            if ("ERROR_TOO_MANY_REQUESTS".equals(code)) {
+            if ("ERROR_TOO_MANY_REQUESTS".equals(code) || "too-many-requests".equalsIgnoreCase(code)) {
                 return getString(R.string.error_auth_too_many_requests);
             }
+            if ("ERROR_OPERATION_NOT_ALLOWED".equals(code) || "operation-not-allowed".equalsIgnoreCase(code)) {
+                return "Email/Password sign-in is disabled in Firebase Console.";
+            }
+            if ("ERROR_INVALID_EMAIL".equals(code) || "invalid-email".equalsIgnoreCase(code)) {
+                return getString(R.string.error_email_invalid);
+            }
+        }
+        if (error.getMessage() != null && !error.getMessage().trim().isEmpty()) {
+            return error.getMessage();
         }
         return getString(R.string.error_generic);
     }

@@ -4,10 +4,10 @@ package com.dyslexiasupport.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.dyslexiasupport.R;
@@ -18,29 +18,38 @@ import java.lang.String;
 
 public final class ActivityPlaceholderBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final MaterialButton btnBack;
 
   @NonNull
+  public final TextView placeholderEmoji;
+
+  @NonNull
   public final TextView placeholderTitle;
 
   @NonNull
-  public final LinearLayout root;
+  public final ConstraintLayout root;
 
-  private ActivityPlaceholderBinding(@NonNull LinearLayout rootView,
-      @NonNull MaterialButton btnBack, @NonNull TextView placeholderTitle,
-      @NonNull LinearLayout root) {
+  @NonNull
+  public final TextView textComingSoon;
+
+  private ActivityPlaceholderBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton btnBack, @NonNull TextView placeholderEmoji,
+      @NonNull TextView placeholderTitle, @NonNull ConstraintLayout root,
+      @NonNull TextView textComingSoon) {
     this.rootView = rootView;
     this.btnBack = btnBack;
+    this.placeholderEmoji = placeholderEmoji;
     this.placeholderTitle = placeholderTitle;
     this.root = root;
+    this.textComingSoon = textComingSoon;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -71,16 +80,28 @@ public final class ActivityPlaceholderBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.placeholderEmoji;
+      TextView placeholderEmoji = ViewBindings.findChildViewById(rootView, id);
+      if (placeholderEmoji == null) {
+        break missingId;
+      }
+
       id = R.id.placeholderTitle;
       TextView placeholderTitle = ViewBindings.findChildViewById(rootView, id);
       if (placeholderTitle == null) {
         break missingId;
       }
 
-      LinearLayout root = (LinearLayout) rootView;
+      ConstraintLayout root = (ConstraintLayout) rootView;
 
-      return new ActivityPlaceholderBinding((LinearLayout) rootView, btnBack, placeholderTitle,
-          root);
+      id = R.id.textComingSoon;
+      TextView textComingSoon = ViewBindings.findChildViewById(rootView, id);
+      if (textComingSoon == null) {
+        break missingId;
+      }
+
+      return new ActivityPlaceholderBinding((ConstraintLayout) rootView, btnBack, placeholderEmoji,
+          placeholderTitle, root, textComingSoon);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

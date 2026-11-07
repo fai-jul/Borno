@@ -4,6 +4,7 @@ package com.dyslexiasupport.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +24,9 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   @NonNull
   public final MaterialButton btnBack;
+
+  @NonNull
+  public final ImageButton btnBiometricLogin;
 
   @NonNull
   public final MaterialButton btnCreate;
@@ -49,12 +53,14 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextInputLayout layoutPassword;
 
   private ActivityLoginBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnBack,
-      @NonNull MaterialButton btnCreate, @NonNull MaterialButton btnForgotPassword,
-      @NonNull MaterialButton btnGoogleLogin, @NonNull MaterialButton btnLogin,
-      @NonNull TextInputEditText inputEmail, @NonNull TextInputEditText inputPassword,
-      @NonNull TextInputLayout layoutEmail, @NonNull TextInputLayout layoutPassword) {
+      @NonNull ImageButton btnBiometricLogin, @NonNull MaterialButton btnCreate,
+      @NonNull MaterialButton btnForgotPassword, @NonNull MaterialButton btnGoogleLogin,
+      @NonNull MaterialButton btnLogin, @NonNull TextInputEditText inputEmail,
+      @NonNull TextInputEditText inputPassword, @NonNull TextInputLayout layoutEmail,
+      @NonNull TextInputLayout layoutPassword) {
     this.rootView = rootView;
     this.btnBack = btnBack;
+    this.btnBiometricLogin = btnBiometricLogin;
     this.btnCreate = btnCreate;
     this.btnForgotPassword = btnForgotPassword;
     this.btnGoogleLogin = btnGoogleLogin;
@@ -95,6 +101,12 @@ public final class ActivityLoginBinding implements ViewBinding {
       id = R.id.btnBack;
       MaterialButton btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
+        break missingId;
+      }
+
+      id = R.id.btnBiometricLogin;
+      ImageButton btnBiometricLogin = ViewBindings.findChildViewById(rootView, id);
+      if (btnBiometricLogin == null) {
         break missingId;
       }
 
@@ -146,8 +158,9 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ScrollView) rootView, btnBack, btnCreate, btnForgotPassword,
-          btnGoogleLogin, btnLogin, inputEmail, inputPassword, layoutEmail, layoutPassword);
+      return new ActivityLoginBinding((ScrollView) rootView, btnBack, btnBiometricLogin, btnCreate,
+          btnForgotPassword, btnGoogleLogin, btnLogin, inputEmail, inputPassword, layoutEmail,
+          layoutPassword);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.dyslexiasupport.R;
 import com.dyslexiasupport.data.local.entity.WordEntity;
@@ -64,8 +63,7 @@ public class VocabularyActivity extends BaseActivity implements VocabularyAdapte
 
     private void setupList() {
         adapter = new VocabularyAdapter(this);
-        binding.recyclerWords.setLayoutManager(new LinearLayoutManager(this));
-        binding.recyclerWords.setAdapter(adapter);
+        binding.listWords.setAdapter(adapter);
     }
 
     private void setupFilterAndSearch() {

@@ -191,6 +191,7 @@ public class HomeFragment extends Fragment {
                         .setNegativeButton(android.R.string.cancel, null)
                         .setPositiveButton(R.string.action_logout, (dialog, which) -> {
                             session.signOut();
+                            com.google.firebase.auth.FirebaseAuth.getInstance().signOut();
                             LoginActivity.launchFresh(requireActivity());
                         })
                         .show();

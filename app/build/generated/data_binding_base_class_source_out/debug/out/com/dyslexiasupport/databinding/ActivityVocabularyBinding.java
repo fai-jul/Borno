@@ -5,10 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.dyslexiasupport.R;
@@ -52,7 +52,7 @@ public final class ActivityVocabularyBinding implements ViewBinding {
   public final ChipGroup filterChipGroup;
 
   @NonNull
-  public final RecyclerView recyclerWords;
+  public final ListView listWords;
 
   @NonNull
   public final TextView textEmpty;
@@ -61,7 +61,7 @@ public final class ActivityVocabularyBinding implements ViewBinding {
       @NonNull MaterialButton btnAddWord, @NonNull MaterialButton btnBack,
       @NonNull MaterialButton btnFlashcards, @NonNull Chip chipAll, @NonNull Chip chipBangla,
       @NonNull Chip chipEnglish, @NonNull Chip chipSaved, @NonNull TextInputEditText editSearch,
-      @NonNull ChipGroup filterChipGroup, @NonNull RecyclerView recyclerWords,
+      @NonNull ChipGroup filterChipGroup, @NonNull ListView listWords,
       @NonNull TextView textEmpty) {
     this.rootView = rootView;
     this.btnAddWord = btnAddWord;
@@ -73,7 +73,7 @@ public final class ActivityVocabularyBinding implements ViewBinding {
     this.chipSaved = chipSaved;
     this.editSearch = editSearch;
     this.filterChipGroup = filterChipGroup;
-    this.recyclerWords = recyclerWords;
+    this.listWords = listWords;
     this.textEmpty = textEmpty;
   }
 
@@ -158,9 +158,9 @@ public final class ActivityVocabularyBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.recyclerWords;
-      RecyclerView recyclerWords = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerWords == null) {
+      id = R.id.listWords;
+      ListView listWords = ViewBindings.findChildViewById(rootView, id);
+      if (listWords == null) {
         break missingId;
       }
 
@@ -172,7 +172,7 @@ public final class ActivityVocabularyBinding implements ViewBinding {
 
       return new ActivityVocabularyBinding((LinearLayout) rootView, btnAddWord, btnBack,
           btnFlashcards, chipAll, chipBangla, chipEnglish, chipSaved, editSearch, filterChipGroup,
-          recyclerWords, textEmpty);
+          listWords, textEmpty);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
