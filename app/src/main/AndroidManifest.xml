@@ -95,6 +95,7 @@
             <activity android:name=".ui.practice.GameActivity" android:exported="false" />
             <activity android:name=".ui.onboarding.AssessmentActivity" android:exported="false" />
             <activity android:name=".ui.profile.ParentDashboardActivity" android:exported="false" />
+            <activity android:name=".ui.profile.AssessmentHubActivity" android:exported="false" />
 
             <service
                 android:name=".ui.reader.ReaderForegroundService"

@@ -36,12 +36,12 @@
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/drawable/bg_streak_done.xml"
     },
     {
-        "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/mipmap-anydpi-v26/ic_launcher.xml"
-    },
-    {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/anim_fade_in.xml.flat",
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/anim/fade_in.xml"
+    },
+    {
+        "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/layout_activity_placeholder.xml.flat",
@@ -86,10 +86,6 @@
     {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/drawable_ic_theme_dark.xml.flat",
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/drawable/ic_theme_dark.xml"
-    },
-    {
-        "merged": "com.dyslexiasupport.app-debug-57:/drawable_ic_google.png.flat",
-        "source": "com.dyslexiasupport.app-main-59:/drawable/ic_google.png"
     },
     {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/layout_fragment_practice.xml.flat",
@@ -264,6 +260,14 @@
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/drawable/bg_streak_current.xml"
     },
     {
+        "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/layout_activity_assessment_hub.xml.flat",
+        "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/layout/activity_assessment_hub.xml"
+    },
+    {
+        "merged": "com.dyslexiasupport.app-debug-57:/layout_activity_assessment_hub.xml.flat",
+        "source": "com.dyslexiasupport.app-main-59:/layout/activity_assessment_hub.xml"
+    },
+    {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/layout_activity_main.xml.flat",
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/layout/activity_main.xml"
     },
@@ -336,10 +340,6 @@
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/anim/pulse.xml"
     },
     {
-        "merged": "com.dyslexiasupport.app-debug-57:/layout_activity_login.xml.flat",
-        "source": "com.dyslexiasupport.app-main-59:/layout/activity_login.xml"
-    },
-    {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/anim_game_question_enter.xml.flat",
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/anim/game_question_enter.xml"
     },
@@ -360,12 +360,16 @@
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/drawable/ic_logo.xml"
     },
     {
+        "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/menu_home_menu.xml.flat",
+        "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/menu/home_menu.xml"
+    },
+    {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/drawable-nodpi_words_character.png.flat",
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/drawable-nodpi/words_character.png"
     },
     {
-        "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/menu_home_menu.xml.flat",
-        "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/menu/home_menu.xml"
+        "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/drawable_ic_google.png.flat",
+        "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/drawable/ic_google.png"
     },
     {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-debug-57:/drawable_bg_mic_halo.xml.flat",

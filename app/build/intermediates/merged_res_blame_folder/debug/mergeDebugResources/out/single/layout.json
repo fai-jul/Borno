@@ -4,6 +4,10 @@
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/layout/item_vocabulary_word.xml"
     },
     {
+        "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-mergeDebugResources-56:/layout/activity_assessment_hub.xml",
+        "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/layout/activity_assessment_hub.xml"
+    },
+    {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-mergeDebugResources-56:/layout/fragment_practice.xml",
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/layout/fragment_practice.xml"
     },
@@ -60,6 +64,10 @@
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/layout/activity_write.xml"
     },
     {
+        "merged": "com.dyslexiasupport.app-mergeDebugResources-56:/layout/activity_assessment_hub.xml",
+        "source": "com.dyslexiasupport.app-main-59:/layout/activity_assessment_hub.xml"
+    },
+    {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-mergeDebugResources-56:/layout/view_feature_card.xml",
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/layout/view_feature_card.xml"
     },
@@ -102,10 +110,6 @@
     {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-mergeDebugResources-56:/layout/fragment_library.xml",
         "source": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-main-59:/layout/fragment_library.xml"
-    },
-    {
-        "merged": "com.dyslexiasupport.app-mergeDebugResources-56:/layout/activity_login.xml",
-        "source": "com.dyslexiasupport.app-main-59:/layout/activity_login.xml"
     },
     {
         "merged": "/Users/faijul/.gradle/daemon/8.13/com.dyslexiasupport.app-mergeDebugResources-56:/layout/activity_main.xml",

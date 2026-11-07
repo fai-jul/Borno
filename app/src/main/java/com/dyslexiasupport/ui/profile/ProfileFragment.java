@@ -44,6 +44,7 @@ public class ProfileFragment extends Fragment {
         binding.avatar.setText(session.getAvatar());
         binding.name.setText(session.getName());
         binding.role.setText(session.getRole().labelRes);
+        binding.role.setOnClickListener(v -> showRoleSelectionDialog());
         binding.guestNote.setVisibility(session.isGuest() ? View.VISIBLE : View.GONE);
 
         // Set the initial choice BEFORE attaching the listener, or we would loop.
@@ -106,6 +107,43 @@ public class ProfileFragment extends Fragment {
         send.setType("text/plain");
         send.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text));
         startActivity(Intent.createChooser(send, getString(R.string.action_share)));
+    }
+
+    private void showRoleSelectionDialog() {
+        com.dyslexiasupport.data.model.Role[] roles = com.dyslexiasupport.data.model.Role.values();
+        String[] items = new String[roles.length];
+        int currentSelection = 0;
+        for (int i = 0; i < roles.length; i++) {
+            items[i] = getString(roles[i].labelRes);
+            if (roles[i] == session.getRole()) {
+                currentSelection = i;
+            }
+        }
+
+        new MaterialAlertDialogBuilder(requireContext())
+                .setTitle(R.string.profile_change_role_title)
+                .setSingleChoiceItems(items, currentSelection, (dialog, which) -> {
+                    com.dyslexiasupport.data.model.Role selectedRole = roles[which];
+                    dialog.dismiss();
+                    if (selectedRole != session.getRole()) {
+                        com.dyslexiasupport.data.model.User updatedUser = new com.dyslexiasupport.data.model.User(
+                                session.getName().isEmpty() ? getString(R.string.guest_name) : session.getName(),
+                                session.getEmail(),
+                                selectedRole,
+                                session.getAvatar(),
+                                session.isGuest());
+                        session.signIn(updatedUser);
+                        com.dyslexiasupport.data.firebase.LinkCodeManager.ensureUserLinkCode(requireContext(), updatedUser);
+                        binding.role.setText(selectedRole.labelRes);
+                        setupLinkCodeSection();
+                        Toast.makeText(requireContext(), R.string.profile_role_updated, Toast.LENGTH_SHORT).show();
+                        if (getActivity() != null) {
+                            getActivity().recreate();
+                        }
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
     }
 
     private void setupLinkCodeSection() {

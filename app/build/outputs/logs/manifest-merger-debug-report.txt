@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:106:13-114:24
+INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:107:13-115:24
 	android:grantUriPermissions
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:110:17-51
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:111:17-51
 	android:authorities
 		INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:108:17-68
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:109:17-68
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:109:17-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:110:17-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:107:17-66
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:108:17-66
 manifest
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-163:12
-INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-163:12
-INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-163:12
-INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-163:12
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-164:12
+INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-164:12
+INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-164:12
+INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:2:1-164:12
 MERGED from [androidx.databinding:viewbinding:8.13.2] /Users/faijul/.gradle/caches/8.13/transforms/8959da5b9066113734d067b84a82c164/transformed/viewbinding-8.13.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.camera:camera-video:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/2cee7b213c1b6f6d3e6c7731427e0ae4/transformed/camera-video-1.4.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.camera:camera-view:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/1b03fd9c3e172f736766518971f0a898/transformed/camera-view-1.4.1/AndroidManifest.xml:2:1-7:12
@@ -227,8 +227,8 @@ ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:30:
 	android:name
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:30:25-73
 application
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:34:9-162:23
-INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:34:9-162:23
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:34:9-163:23
+INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:34:9-163:23
 MERGED from [androidx.camera:camera-camera2:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/368764dd764e2ad320230de44f2a5e9c/transformed/camera-camera2-1.4.1/AndroidManifest.xml:23:5-34:19
 MERGED from [androidx.camera:camera-camera2:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/368764dd764e2ad320230de44f2a5e9c/transformed/camera-camera2-1.4.1/AndroidManifest.xml:23:5-34:19
 MERGED from [androidx.camera:camera-core:1.4.1] /Users/faijul/.gradle/caches/8.13/transforms/10e5a1fb5c1c61dcd53a6cd9ab3bdb96/transformed/camera-core-1.4.1/AndroidManifest.xml:23:5-34:19
@@ -435,92 +435,98 @@ ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:97:
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:97:74-98
 	android:name
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:97:23-73
+activity#com.dyslexiasupport.ui.profile.AssessmentHubActivity
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:98:13-99
+	android:exported
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:98:72-96
+	android:name
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:98:23-71
 service#com.dyslexiasupport.ui.reader.ReaderForegroundService
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:99:13-102:65
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:100:13-103:65
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:101:17-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:102:17-41
 	android:foregroundServiceType
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:102:17-62
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:103:17-62
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:100:17-66
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:101:17-66
 provider#com.dyslexiasupport.system.VocabularyContentProvider
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:117:13-122:81
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:118:13-123:81
 	android:readPermission
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:121:17-77
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:122:17-77
 	android:authorities
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:119:17-77
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:120:17-77
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:120:17-40
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:121:17-40
 	android:writePermission
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:122:17-78
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:123:17-78
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:118:17-65
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:119:17-65
 receiver#com.dyslexiasupport.system.DailyReminderReceiver
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:125:13-127:44
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:126:13-128:44
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:127:17-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:128:17-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:126:17-61
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:127:17-61
 receiver#com.dyslexiasupport.system.BootReceiver
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:130:13-137:24
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:131:13-138:24
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:132:17-40
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:133:17-40
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:131:17-52
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:132:17-52
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:133:17-136:33
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:134:17-137:33
 action#android.intent.action.BOOT_COMPLETED
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:134:21-83
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:135:21-83
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:134:29-80
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:135:29-80
 action#android.intent.action.MY_PACKAGE_REPLACED
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:135:21-88
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:136:21-88
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:135:29-85
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:136:29-85
 receiver#com.dyslexiasupport.system.WordWidgetProvider
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:140:13-151:24
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:141:13-152:24
 	android:label
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:143:17-53
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:144:17-53
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:142:17-40
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:143:17-40
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:141:17-58
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:142:17-58
 intent-filter#action:name:android.appwidget.action.APPWIDGET_UPDATE+action:name:com.dyslexiasupport.ACTION_REFRESH_WIDGET
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:144:17-147:33
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:145:17-148:33
 action#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:145:21-88
-	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:145:29-85
-action#com.dyslexiasupport.ACTION_REFRESH_WIDGET
 ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:146:21-88
 	android:name
 		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:146:29-85
+action#com.dyslexiasupport.ACTION_REFRESH_WIDGET
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:147:21-88
+	android:name
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:147:29-85
 meta-data#android.appwidget.provider
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:148:17-150:64
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:149:17-151:64
 	android:resource
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:150:21-61
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:151:21-61
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:149:21-62
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:150:21-62
 service#androidx.appcompat.app.AppLocalesMetadataHolderService
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:154:13-161:23
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:155:13-162:23
 	android:enabled
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:156:17-40
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:157:17-40
 	android:exported
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:157:17-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:158:17-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:155:17-86
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:156:17-86
 meta-data#autoStoreLocales
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:158:17-160:44
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:159:17-161:44
 	android:value
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:160:21-41
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:161:21-41
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:159:21-52
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:160:21-52
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:111:17-113:58
+ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:112:17-114:58
 	android:resource
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:113:21-55
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:114:21-55
 	android:name
-		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:112:21-71
+		ADDED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml:113:21-71
 uses-sdk
 INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/faijul/Documents/Dyslexia/app/src/main/AndroidManifest.xml

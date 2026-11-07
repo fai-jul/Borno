@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
@@ -35,6 +36,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.List;
 import java.util.concurrent.Executor;
 
 public class LoginActivity extends BaseActivity {
@@ -126,17 +131,10 @@ public class LoginActivity extends BaseActivity {
                             BiometricPrompt.AuthenticationResult result) {
                         super.onAuthenticationSucceeded(result);
                         setSubmitting(true);
-                        session.setFirebaseUid(firebaseUser.getUid());
-                        User user = new User(
-                                session.getName().isEmpty() ? getString(R.string.guest_name)
-                                        : session.getName(),
-                                session.getEmail().isEmpty() && firebaseUser.getEmail() != null
-                                        ? firebaseUser.getEmail() : session.getEmail(),
-                                session.getRole(), session.getAvatar(), false);
-                        session.signIn(user);
-                        LinkCodeManager.ensureUserLinkCode(LoginActivity.this, user);
-                        CloudSyncManager.syncAll(LoginActivity.this, success -> {});
-                        MainActivity.launchFresh(LoginActivity.this);
+                        String name = session.getName().isEmpty() ? getString(R.string.guest_name) : session.getName();
+                        String email = session.getEmail().isEmpty() && firebaseUser.getEmail() != null
+                                ? firebaseUser.getEmail() : session.getEmail();
+                        fetchUserProfileAndFinishLogin(firebaseUser, name, email);
                     }
 
                     @Override
@@ -178,15 +176,7 @@ public class LoginActivity extends BaseActivity {
                         FirebaseUser fbUser = FirebaseAuth.getInstance().getCurrentUser();
                         String name = account.getDisplayName() != null ? account.getDisplayName() : "Friend";
                         String email = account.getEmail() != null ? account.getEmail() : "";
-                        User user = new User(name, email, Role.CHILD, "👤", false);
-
-                        session.signIn(user);
-                        session.setFirebaseUid(fbUser.getUid());
-
-                        LinkCodeManager.ensureUserLinkCode(LoginActivity.this, user);
-                        CloudSyncManager.syncAll(LoginActivity.this, success -> {});
-
-                        MainActivity.launchFresh(LoginActivity.this);
+                        fetchUserProfileAndFinishLogin(fbUser, name, email);
                     } else {
                         setSubmitting(false);
                         Toast.makeText(this, R.string.login_google_failed, Toast.LENGTH_SHORT).show();
@@ -238,28 +228,75 @@ public class LoginActivity extends BaseActivity {
                     if (task.isSuccessful() && task.getResult() != null
                             && task.getResult().getUser() != null) {
                         FirebaseUser firebaseUser = task.getResult().getUser();
-                        User user = new User(firebaseUser.getDisplayName() != null
-                                ? firebaseUser.getDisplayName() : getString(R.string.guest_name),
-                                email, Role.CHILD, "👤", false);
-                        if (!firebaseUser.isEmailVerified()) {
-                            setSubmitting(false);
-                            startActivity(new Intent(this, EmailVerificationActivity.class)
-                                    .putExtra(EmailVerificationActivity.EXTRA_EMAIL, email)
-                                    .putExtra(EmailVerificationActivity.EXTRA_NAME, user.getName())
-                                    .putExtra(EmailVerificationActivity.EXTRA_ROLE, user.getRole().name())
-                                    .putExtra(EmailVerificationActivity.EXTRA_AVATAR, user.getAvatar()));
-                            return;
-                        }
-                        session.signIn(user);
-                        session.setFirebaseUid(firebaseUser.getUid());
-                        session.setBiometricEnabled(true);
-                        LinkCodeManager.ensureUserLinkCode(this, user);
-                        CloudSyncManager.syncAll(this, success -> {});
-                        MainActivity.launchFresh(this);
+                        String name = firebaseUser.getDisplayName() != null
+                                ? firebaseUser.getDisplayName() : getString(R.string.guest_name);
+                        fetchUserProfileAndFinishLogin(firebaseUser, name, email);
                     } else {
                         setSubmitting(false);
                         binding.layoutPassword.setError(firebaseError(task.getException()));
                     }
+                });
+    }
+
+    private void fetchUserProfileAndFinishLogin(@NonNull FirebaseUser firebaseUser,
+                                                @NonNull String defaultName,
+                                                @NonNull String defaultEmail) {
+        String uid = firebaseUser.getUid();
+        FirebaseFirestore.getInstance().collection("users").document(uid).get()
+                .addOnCompleteListener(task -> {
+                    Role role = Role.CHILD;
+                    String name = defaultName;
+                    String avatar = "👤";
+                    String linkCode = null;
+
+                    if (task.isSuccessful() && task.getResult() != null && task.getResult().exists()) {
+                        DocumentSnapshot snapshot = task.getResult();
+                        String roleStr = snapshot.getString("role");
+                        if (roleStr != null) {
+                            try {
+                                role = Role.valueOf(roleStr);
+                            } catch (Exception ignored) {}
+                        }
+                        String docName = snapshot.getString("name");
+                        if (docName != null && !docName.trim().isEmpty()) {
+                            name = docName;
+                        }
+                        String docAvatar = snapshot.getString("avatar");
+                        if (docAvatar != null && !docAvatar.trim().isEmpty()) {
+                            avatar = docAvatar;
+                        }
+                        linkCode = snapshot.getString("linkCode");
+                        @SuppressWarnings("unchecked")
+                        List<String> linked = (List<String>) snapshot.get("linkedStudents");
+                        if (linked != null) {
+                            session.setLinkedCount(linked.size());
+                        }
+                    } else if (session.getRole() != null) {
+                        role = session.getRole();
+                    }
+
+                    if (linkCode != null && !linkCode.trim().isEmpty()) {
+                        session.setLinkCode(linkCode);
+                    }
+
+                    User user = new User(name, defaultEmail, role, avatar, false);
+
+                    if (!firebaseUser.isEmailVerified()) {
+                        setSubmitting(false);
+                        startActivity(new Intent(this, EmailVerificationActivity.class)
+                                .putExtra(EmailVerificationActivity.EXTRA_EMAIL, defaultEmail)
+                                .putExtra(EmailVerificationActivity.EXTRA_NAME, user.getName())
+                                .putExtra(EmailVerificationActivity.EXTRA_ROLE, user.getRole().name())
+                                .putExtra(EmailVerificationActivity.EXTRA_AVATAR, user.getAvatar()));
+                        return;
+                    }
+
+                    session.signIn(user);
+                    session.setFirebaseUid(firebaseUser.getUid());
+                    session.setBiometricEnabled(true);
+                    LinkCodeManager.ensureUserLinkCode(this, user);
+                    CloudSyncManager.syncAll(this, success -> {});
+                    MainActivity.launchFresh(this);
                 });
     }
 

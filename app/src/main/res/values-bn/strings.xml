@@ -101,4 +101,6 @@
     <string name="btn_view_child_progress">📊 সন্তানের অগ্রগতি দেখো</string>
     <string name="btn_class_report_pdf">📄 শ্রেণির রিপোর্ট পিডিএফ</string>
     <string name="btn_assign_nctb">📖 পাঠ নির্ধারণ করো</string>
+    <string name="profile_change_role_title">ভূমিকা পরিবর্তন করুন</string>
+    <string name="profile_role_updated">ভূমিকা পরিবর্তন সফল হয়েছে ✨</string>
 </resources>

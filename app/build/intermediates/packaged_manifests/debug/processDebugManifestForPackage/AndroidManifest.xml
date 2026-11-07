@@ -125,6 +125,9 @@
         <activity
             android:name="com.dyslexiasupport.ui.profile.ParentDashboardActivity"
             android:exported="false" />
+        <activity
+            android:name="com.dyslexiasupport.ui.profile.AssessmentHubActivity"
+            android:exported="false" />
 
         <service
             android:name="com.dyslexiasupport.ui.reader.ReaderForegroundService"

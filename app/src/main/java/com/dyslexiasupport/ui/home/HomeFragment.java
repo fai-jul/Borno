@@ -142,6 +142,9 @@ public class HomeFragment extends Fragment {
                     boolean hasDashboard = session.getRole() == Role.PARENT
                             || session.getRole() == Role.TEACHER;
                     popup.getMenu().findItem(R.id.home_menu_dashboard).setVisible(hasDashboard);
+                    boolean hasAssessments = session.getRole() == Role.TEACHER
+                            || session.getRole() == Role.CHILD;
+                    popup.getMenu().findItem(R.id.home_menu_assessments).setVisible(hasAssessments);
                     if (hasDashboard) {
                         popup.getMenu().findItem(R.id.home_menu_dashboard).setTitle(
                                 session.getRole() == Role.TEACHER
@@ -161,6 +164,11 @@ public class HomeFragment extends Fragment {
                         }
                         if (id == R.id.home_menu_dashboard) {
                             startActivity(new Intent(requireContext(), ParentDashboardActivity.class));
+                            return true;
+                        }
+                        if (id == R.id.home_menu_assessments) {
+                            startActivity(new Intent(requireContext(),
+                                    com.dyslexiasupport.ui.profile.AssessmentHubActivity.class));
                             return true;
                         }
                         if (id == R.id.home_menu_share) {
