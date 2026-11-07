@@ -827,6 +827,7 @@ string practice_title
 string profile_assessment
 string profile_assistant_disabled
 string profile_assistant_enabled
+string profile_avatar_content_description
 string profile_change_role_title
 string profile_controls_title
 string profile_daily_goal_hint

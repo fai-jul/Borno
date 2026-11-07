@@ -16,9 +16,9 @@ public interface ExerciseResultDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     long insert(ExerciseResultEntity result);
 
-    @Query("SELECT * FROM exercise_results WHERE ownerId = :ownerId ORDER BY timestamp DESC")
+    @Query("SELECT * FROM exercise_results WHERE ownerId = :ownerId OR ownerId LIKE 'local_%' ORDER BY timestamp DESC")
     LiveData<List<ExerciseResultEntity>> getAllResults(String ownerId);
 
-    @Query("SELECT * FROM exercise_results WHERE ownerId = :ownerId ORDER BY timestamp DESC")
+    @Query("SELECT * FROM exercise_results WHERE ownerId = :ownerId OR ownerId LIKE 'local_%' ORDER BY timestamp DESC")
     List<ExerciseResultEntity> getAllResultsSync(String ownerId);
 }

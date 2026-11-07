@@ -163,7 +163,7 @@ public final class NoteDao_Impl implements NoteDao {
 
   @Override
   public LiveData<List<NoteEntity>> getAllNotes(final String ownerId) {
-    final String _sql = "SELECT * FROM notes WHERE ownerId = ? ORDER BY updatedAt DESC";
+    final String _sql = "SELECT * FROM notes WHERE ownerId = ? OR ownerId LIKE 'local_%' ORDER BY updatedAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     if (ownerId == null) {
@@ -226,7 +226,7 @@ public final class NoteDao_Impl implements NoteDao {
 
   @Override
   public List<NoteEntity> getAllNotesSync(final String ownerId) {
-    final String _sql = "SELECT * FROM notes WHERE ownerId = ? ORDER BY updatedAt DESC";
+    final String _sql = "SELECT * FROM notes WHERE ownerId = ? OR ownerId LIKE 'local_%' ORDER BY updatedAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     if (ownerId == null) {

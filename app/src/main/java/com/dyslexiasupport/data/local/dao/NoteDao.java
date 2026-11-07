@@ -27,9 +27,9 @@ public interface NoteDao {
     @Delete
     void delete(NoteEntity note);
 
-    @Query("SELECT * FROM notes WHERE ownerId = :ownerId ORDER BY updatedAt DESC")
+    @Query("SELECT * FROM notes WHERE ownerId = :ownerId OR ownerId LIKE 'local_%' ORDER BY updatedAt DESC")
     LiveData<List<NoteEntity>> getAllNotes(String ownerId);
 
-    @Query("SELECT * FROM notes WHERE ownerId = :ownerId ORDER BY updatedAt DESC")
+    @Query("SELECT * FROM notes WHERE ownerId = :ownerId OR ownerId LIKE 'local_%' ORDER BY updatedAt DESC")
     List<NoteEntity> getAllNotesSync(String ownerId);
 }

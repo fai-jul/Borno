@@ -79,7 +79,7 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
 
   @Override
   public LiveData<List<ReadingSessionEntity>> getAllSessions(final String ownerId) {
-    final String _sql = "SELECT * FROM reading_sessions WHERE ownerId = ? ORDER BY timestamp DESC";
+    final String _sql = "SELECT * FROM reading_sessions WHERE ownerId = ? OR ownerId LIKE 'local_%' ORDER BY timestamp DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     if (ownerId == null) {
@@ -142,7 +142,7 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
 
   @Override
   public LiveData<Long> getTotalReadingTimeSeconds(final String ownerId) {
-    final String _sql = "SELECT SUM(durationSeconds) FROM reading_sessions WHERE ownerId = ?";
+    final String _sql = "SELECT SUM(durationSeconds) FROM reading_sessions WHERE ownerId = ? OR ownerId LIKE 'local_%'";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     if (ownerId == null) {
@@ -183,7 +183,7 @@ public final class ReadingSessionDao_Impl implements ReadingSessionDao {
 
   @Override
   public List<ReadingSessionEntity> getAllSessionsSync(final String ownerId) {
-    final String _sql = "SELECT * FROM reading_sessions WHERE ownerId = ? ORDER BY timestamp DESC";
+    final String _sql = "SELECT * FROM reading_sessions WHERE ownerId = ? OR ownerId LIKE 'local_%' ORDER BY timestamp DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     if (ownerId == null) {

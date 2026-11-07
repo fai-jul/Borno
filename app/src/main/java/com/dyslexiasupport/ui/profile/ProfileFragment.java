@@ -40,7 +40,7 @@ public class ProfileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         session = new SessionManager(requireContext());
 
-        binding.avatar.setText(session.getAvatar());
+        setAvatar();
         binding.avatar.setOnClickListener(v -> showAvatarSelectionDialog());
         binding.name.setText(session.getName());
         binding.role.setText(session.getRole().labelRes);
@@ -95,7 +95,7 @@ public class ProfileFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (binding != null && session != null) {
-            binding.avatar.setText(session.getAvatar());
+            setAvatar();
             binding.name.setText(session.getName());
             binding.role.setText(session.getRole().labelRes);
             binding.textLinkedCount.setText(getString(
@@ -134,6 +134,12 @@ public class ProfileFragment extends Fragment {
                 })
                 .setNegativeButton(android.R.string.cancel, null)
                 .show();
+    }
+
+    private void setAvatar() {
+        String avatar = session.getAvatar();
+        binding.avatar.setText(avatar);
+        binding.avatar.setContentDescription(getString(R.string.profile_avatar_content_description));
     }
 
     private void setupThemeSection() {

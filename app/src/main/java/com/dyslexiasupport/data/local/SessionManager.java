@@ -62,7 +62,8 @@ public class SessionManager {
     }
 
     public String getAvatar() {
-        return prefs.getString(KEY_AVATAR, "👤");
+        String avatar = prefs.getString(KEY_AVATAR, "");
+        return avatar == null || avatar.trim().isEmpty() ? "🐼" : avatar;
     }
 
     public Role getRole() {

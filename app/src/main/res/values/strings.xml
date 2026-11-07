@@ -118,6 +118,7 @@
     <string name="action_create_account">Sign Up</string>
     <string name="register_have_account">Already have an account? Log in</string>
     <string name="label_avatar">Pick your buddy</string>
+    <string name="profile_avatar_content_description">Your selected avatar</string>
     <string name="label_role">I am a…</string>
     <string name="role_child">Young learner</string>
     <string name="role_parent">Parent</string>

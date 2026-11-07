@@ -55,6 +55,7 @@
     <string name="action_back">ফিরে যাও</string>
     <string name="share_text">পড়ার এই সহায়ক অ্যাপটি ব্যবহার করে দেখো!</string>
     <string name="coming_soon">শীঘ্রই আসছে</string>
+    <string name="profile_avatar_content_description">তোমার বেছে নেওয়া অবতার</string>
     <string name="action_google_login">গুগল দিয়ে লগইন করো</string>
     <string name="default_web_client_id">46634ad64663-dyslexia46634ad6app.apps.googleusercontent.com</string>
     <string name="login_forgot_password">পাসওয়ার্ড ভুলে গেছ?</string>

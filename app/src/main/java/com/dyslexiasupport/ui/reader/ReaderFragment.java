@@ -32,6 +32,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.dyslexiasupport.R;
 import com.dyslexiasupport.data.library.ReadingText;
+import com.dyslexiasupport.data.local.entity.ReadingSessionEntity;
+import com.dyslexiasupport.data.repository.AppRepository;
 import com.dyslexiasupport.databinding.FragmentReaderBinding;
 import com.dyslexiasupport.ui.home.TabHost;
 import com.dyslexiasupport.ui.library.LibraryViewModel;
@@ -54,6 +56,7 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
     private ReaderForegroundService readerService;
     private boolean isBound = false;
     private ReadingText currentReadingText;
+    private long sessionStartTime = 0;
 
     private final ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
@@ -390,7 +393,11 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
         if (text == null) {
             return;
         }
-        currentReadingText = text;
+        if (currentReadingText == null || !currentReadingText.id.equals(text.id)) {
+            saveReadingSession();
+            currentReadingText = text;
+            sessionStartTime = System.currentTimeMillis();
+        }
         library.markAsRead(text.id);
 
         java.util.List<ReadingText> allTexts = library.getAll().getValue();
@@ -416,8 +423,31 @@ public class ReaderFragment extends Fragment implements ReaderForegroundService.
         binding.guide.configure(s.guideMode, bandPx, scrimColor);
     }
 
+    private void saveReadingSession() {
+        if (currentReadingText != null && sessionStartTime > 0 && getContext() != null) {
+            long durationSeconds = (System.currentTimeMillis() - sessionStartTime) / 1000;
+            if (durationSeconds >= 3) {
+                AppRepository repo = new AppRepository(requireContext());
+                repo.insertReadingSession(new ReadingSessionEntity(
+                        currentReadingText.id,
+                        currentReadingText.title,
+                        durationSeconds,
+                        System.currentTimeMillis()
+                ));
+            }
+            sessionStartTime = System.currentTimeMillis();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        saveReadingSession();
+        super.onPause();
+    }
+
     @Override
     public void onDestroyView() {
+        saveReadingSession();
         super.onDestroyView();
         if (isBound) {
             if (readerService != null) {

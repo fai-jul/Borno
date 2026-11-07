@@ -338,6 +338,14 @@ public class HomeFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (binding != null && (!sessions.isEmpty() || !results.isEmpty())) {
+            updatePlan();
+        }
+    }
+
     private void updatePlan() {
         if (binding == null) {
             return;

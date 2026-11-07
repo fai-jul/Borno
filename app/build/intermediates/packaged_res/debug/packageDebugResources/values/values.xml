@@ -380,6 +380,7 @@
     <string name="profile_assessment">Take onboarding reading check</string>
     <string name="profile_assistant_disabled">The reading assistant is disabled by the parent.</string>
     <string name="profile_assistant_enabled">Enable Bangla reading assistant</string>
+    <string name="profile_avatar_content_description">Your selected avatar</string>
     <string name="profile_change_role_title">Change Role</string>
     <string name="profile_controls_title">Home practice controls</string>
     <string name="profile_daily_goal_hint">Daily goal</string>
