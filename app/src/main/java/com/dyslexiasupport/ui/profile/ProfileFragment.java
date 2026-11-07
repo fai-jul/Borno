@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.dyslexiasupport.R;
 import com.dyslexiasupport.data.local.SessionManager;
+import com.dyslexiasupport.data.model.Role;
 import com.dyslexiasupport.databinding.FragmentProfileBinding;
 import com.dyslexiasupport.ui.onboarding.AssessmentActivity;
 import com.dyslexiasupport.ui.auth.LoginActivity;
@@ -31,8 +32,6 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
-        binding.btnAssessment.setOnClickListener(v ->
-                startActivity(new Intent(requireContext(), AssessmentActivity.class)));
         return binding.getRoot();
     }
 
@@ -42,10 +41,20 @@ public class ProfileFragment extends Fragment {
         session = new SessionManager(requireContext());
 
         binding.avatar.setText(session.getAvatar());
+        binding.avatar.setOnClickListener(v -> showAvatarSelectionDialog());
         binding.name.setText(session.getName());
         binding.role.setText(session.getRole().labelRes);
         binding.role.setOnClickListener(v -> showRoleSelectionDialog());
         binding.guestNote.setVisibility(session.isGuest() ? View.VISIBLE : View.GONE);
+
+        Role role = session.getRole();
+        if (role == Role.PARENT || role == Role.TEACHER) {
+            binding.btnAssessment.setVisibility(View.GONE);
+        } else {
+            binding.btnAssessment.setVisibility(View.VISIBLE);
+            binding.btnAssessment.setOnClickListener(v ->
+                    startActivity(new Intent(requireContext(), AssessmentActivity.class)));
+        }
 
         // Set the initial choice BEFORE attaching the listener, or we would loop.
         boolean bangla = "bn".equals(currentLanguage());
@@ -86,9 +95,45 @@ public class ProfileFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (binding != null && session != null) {
+            binding.avatar.setText(session.getAvatar());
+            binding.name.setText(session.getName());
+            binding.role.setText(session.getRole().labelRes);
             binding.textLinkedCount.setText(getString(
                     R.string.link_code_linked_count, session.getLinkedCount()));
         }
+    }
+
+    private void showAvatarSelectionDialog() {
+        String[] avatars = new String[]{"🐼", "🐯", "🐰", "🐶", "🐱", "🐸"};
+        int currentSelection = 0;
+        String currentAvatar = session.getAvatar();
+        for (int i = 0; i < avatars.length; i++) {
+            if (avatars[i].equals(currentAvatar)) {
+                currentSelection = i;
+                break;
+            }
+        }
+
+        new MaterialAlertDialogBuilder(requireContext())
+                .setTitle(R.string.label_avatar)
+                .setSingleChoiceItems(avatars, currentSelection, (dialog, which) -> {
+                    String selectedAvatar = avatars[which];
+                    dialog.dismiss();
+                    if (!selectedAvatar.equals(session.getAvatar())) {
+                        com.dyslexiasupport.data.model.User updatedUser = new com.dyslexiasupport.data.model.User(
+                                session.getName().isEmpty() ? getString(R.string.guest_name) : session.getName(),
+                                session.getEmail(),
+                                session.getRole(),
+                                selectedAvatar,
+                                session.isGuest());
+                        session.signIn(updatedUser);
+                        com.dyslexiasupport.data.firebase.LinkCodeManager.ensureUserLinkCode(requireContext(), updatedUser);
+                        binding.avatar.setText(selectedAvatar);
+                        Toast.makeText(requireContext(), R.string.profile_role_updated, Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
     }
 
     private void setupThemeSection() {
